@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.pentaho</groupId>
+  <artifactId>pentaho-ce-bundle-parent-pom</artifactId>
+  <version>7.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>org.pentaho</groupId>
+    <artifactId>pentaho-ce-jar-parent-pom</artifactId>
+    <version>7.1-SNAPSHOT</version>
+  </parent>
+  
+
+  <build>
+  
+    <pluginManagement>
+      <plugins>
+      
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>${maven-bundle-plugin.version}</version>
+          <extensions>true</extensions>
+          <configuration>
+            <instructions>
+              <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+              <Bundle-Version>${project.version}</Bundle-Version>
+            </instructions>
+          </configuration>
+        </plugin>
+      
+      </plugins>
+    
+    </pluginManagement>
+  
+    <plugins>
+    
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>generate-bundle-manifest</id>
+            <phase>${generate-bundle-manifest-phase}</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+            <configuration>
+              <!-- override to specify import/export packages -->
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    
+    </plugins>
+  
+  </build>
+  
+  <profiles>
+  
+    <profile>
+      <id>bundle-javascript</id>
+      <activation>
+        <file>
+          <exists>${build.javascriptConfigDirectory}/osgi/${requirejs.build.file}</exists>
+        </file>
+      </activation>
+
+      <build>
+        <plugins>
+        
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>bundle-javascript_unpack-rjs</id>
+                <phase>${bundle-javascript_unpack-rjs-phase}</phase>
+                <goals>
+                  <goal>unpack</goal>
+                </goals>
+                <configuration>
+                  <artifactItems>
+                    <artifactItem>
+                      <groupId>org.webjars</groupId>
+                      <artifactId>rjs</artifactId>
+                      <version>${rjs.version}</version>
+                    </artifactItem>
+                  </artifactItems>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>bundle-javascript_add-resource</id>
+                <phase>${bundle-javascript_add-resource-phase}</phase>
+                <goals>
+                  <goal>add-resource</goal>
+                </goals>
+                <configuration>
+                  <resources>
+                    <resource>
+                      <directory>${build.javascriptOutputDirectory}</directory>
+                      <includes>
+                        <include>**/*</include>
+                      </includes>
+                    </resource>
+                  </resources>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>com.github.bringking</groupId>
+            <artifactId>requirejs-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>bundle-javascript_optimize</id>
+                <phase>${bundle-javascript_optimize-phase}</phase>
+                <goals>
+                  <goal>optimize</goal>
+                </goals>
+                <configuration>
+                  <nodeExecutable>${frontend-maven-plugin.installDirectory}/node/node</nodeExecutable>
+                  <optimizerFile>${rjs.webjar.file}</optimizerFile>
+                  <configFile>${build.javascriptConfigDirectory}/osgi/${requirejs.build.file}</configFile>
+                  <optimizerParameters>
+                    <parameter>appDir=${build.javascriptSourceDirectory}</parameter>
+                    <parameter>baseUrl=.</parameter>
+                    <parameter>dir=${build.javascriptOutputDirectory}</parameter>
+                    <parameter>optimize=uglify2</parameter>
+                    <parameter>generateSourceMaps=true</parameter>
+                    <parameter>preserveLicenseComments=false</parameter>
+                  </optimizerParameters>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        
+        </plugins>
+        
+      </build>
+    </profile>
+  
+  </profiles>
+  
+</project>
