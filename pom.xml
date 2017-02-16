@@ -519,6 +519,7 @@
                 <configuration>
                   <nodeExecutable>${frontend-maven-plugin.installDirectory}/node/node</nodeExecutable>
                   <configFile>${build.javascriptConfigDirectory}/${requirejs.build.file}</configFile>
+                  <optimizerFile>${pentaho-js-build.dir}/r.js</optimizerFile>
                   <filterConfig>true</filterConfig>
                 </configuration>
               </execution>
