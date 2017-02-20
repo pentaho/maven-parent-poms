@@ -11,7 +11,8 @@
     <artifactId>pentaho-ce-jar-parent-pom</artifactId>
     <version>7.1-SNAPSHOT</version>
   </parent>
-  
+
+  <name>Pentaho Community Edition Project Parent POM For Bundle Projects</name>
 
   <build>
   
@@ -21,7 +22,6 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>${maven-bundle-plugin.version}</version>
           <extensions>true</extensions>
           <configuration>
             <instructions>
