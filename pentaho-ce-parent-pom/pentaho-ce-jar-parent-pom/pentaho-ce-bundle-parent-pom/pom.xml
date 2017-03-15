@@ -14,6 +14,12 @@
 
   <name>Pentaho Community Edition Project Parent POM For Bundle Projects</name>
 
+  <properties>
+    <!-- These properties need to be redefined here or profile activation will not work with them -->
+    <build.javascriptConfigDirectory>${basedir}/src/main/config/javascript</build.javascriptConfigDirectory>
+    <requirejs.build.file>build.js</requirejs.build.file>
+  </properties>
+
   <build>
   
     <pluginManagement>
@@ -32,11 +38,10 @@
         </plugin>
       
       </plugins>
-    
     </pluginManagement>
   
     <plugins>
-    
+
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
@@ -71,7 +76,7 @@
 
       <build>
         <plugins>
-        
+
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
@@ -94,7 +99,7 @@
               </execution>
             </executions>
           </plugin>
-          
+
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
@@ -145,9 +150,9 @@
               </execution>
             </executions>
           </plugin>
-        
+
         </plugins>
-        
+
       </build>
     </profile>
   
