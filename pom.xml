@@ -143,6 +143,10 @@
     <build.javascriptConfigDirectory>${basedir}/src/main/config/javascript</build.javascriptConfigDirectory>
     <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
     <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+
+    <license-helper-maven-plugin.version>1.0</license-helper-maven-plugin.version>
+    <license.organizationName>Pentaho Corporation (Pentaho)</license.organizationName>
+    <license.inceptionYear>2002</license.inceptionYear>
   </properties>
   <build>
     <pluginManagement>
@@ -279,6 +283,11 @@
           <groupId>com.soebes.maven.plugins</groupId>
           <artifactId>iterator-maven-plugin</artifactId>
           <version>${iterator-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.pentaho.maven.plugins</groupId>
+          <artifactId>license-helper-maven-plugin</artifactId>
+          <version>${license-helper-maven-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -861,7 +870,8 @@
       </dependencies>
     </profile>
     <profile>
-      <id>license</id>
+      <!-- remove this profile later (license-helper-maven-plugin) will handle this when we are ready to enforce license in all projects -->
+      <id>license-deprecated</id>
       <activation>
         <file>
           <exists>${basedir}/LICENSE.txt</exists>
@@ -898,6 +908,43 @@
       <properties>
         <license.generateBundle>true</license.generateBundle>
         <license.licenceFile>${basedir}/LICENSE.txt</license.licenceFile>
+      </properties>
+    </profile>
+
+    <profile>
+      <!-- Once we have all projects set up to use the new plugin, the `license-deprecated` profile can go away -->
+      <id>license-check</id>
+      <activation>
+        <property>
+          <name>licenseCheck</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.pentaho.maven.plugins</groupId>
+            <artifactId>license-helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>generate-licenses</id>
+                <phase>generate-resources</phase>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>check-license</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>check-project-license</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+      <properties>
+        <license.generateBundle>true</license.generateBundle>
       </properties>
     </profile>
   </profiles>

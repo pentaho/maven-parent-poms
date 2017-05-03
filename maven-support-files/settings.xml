@@ -93,5 +93,7 @@
       </pluginRepositories>
     </profile>
   </profiles>
-
+  <pluginGroups>
+    <pluginGroup>org.pentaho.maven.plugins</pluginGroup>
+  </pluginGroups>
 </settings>
