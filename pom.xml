@@ -92,11 +92,8 @@
     <bundle-javascript_unpack-rjs-phase>initialize</bundle-javascript_unpack-rjs-phase>
     <javascript_unpack-dependencies-phase>initialize</javascript_unpack-dependencies-phase>
     <javascript_override-profilebuilder-phase>process-resources</javascript_override-profilebuilder-phase>
-    <obfuscate_merge-maps-phase>process-resources</obfuscate_merge-maps-phase>
     <bundle-javascript_optimize-phase>generate-sources</bundle-javascript_optimize-phase>
     <bundle-javascript_add-resource-phase>process-sources</bundle-javascript_add-resource-phase>
-    <obfuscate-version-for-license-phase>process-sources</obfuscate-version-for-license-phase>
-    <replace-references-phase>process-sources</replace-references-phase>
     <generate-bundle-manifest-phase>compile</generate-bundle-manifest-phase>
     <javascript-test_copy-resources-phase>generate-test-resources</javascript-test_copy-resources-phase>
     <javascript-test_npm-install-phase>generate-test-resources</javascript-test_npm-install-phase>
@@ -104,16 +101,9 @@
     <javascript-test_karma-phase>test</javascript-test_karma-phase>
     <javascript-requirecfg_aggregate-phase>prepare-package</javascript-requirecfg_aggregate-phase>
     <javascript_optimize-phase>prepare-package</javascript_optimize-phase>
-    <obfuscate-bundle_unpack-obf-jar-phase>prepare-package</obfuscate-bundle_unpack-obf-jar-phase>
-    <obfuscate-bundle_replace-obf-classes-in-blueprint-phase>prepare-package</obfuscate-bundle_replace-obf-classes-in-blueprint-phase>
-    <jar-bundle-phase>package</jar-bundle-phase>
-    <obfuscate_execute-phase>package</obfuscate_execute-phase>
     <assembly_package-phase>package</assembly_package-phase>
     <assembly_appendId>false</assembly_appendId>
     <javascript-assembly_package-phase>package</javascript-assembly_package-phase>
-    <obfuscate-bundle_generate-bundle-manifest-phase>package</obfuscate-bundle_generate-bundle-manifest-phase>
-    <obfuscate-bundle_jar-bundle-phase>package</obfuscate-bundle_jar-bundle-phase>
-    <obfuscate_attach-artifacts-phase>package</obfuscate_attach-artifacts-phase>
     <test-integration_add-resources-phase>pre-integration-test</test-integration_add-resources-phase>
     <test-integration_add-source-phase>pre-integration-test</test-integration_add-source-phase>
     <test-integration_jacoco-agent-prep-phase>pre-integration-test</test-integration_jacoco-agent-prep-phase>
