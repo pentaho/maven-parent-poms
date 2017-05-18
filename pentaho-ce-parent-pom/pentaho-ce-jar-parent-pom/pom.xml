@@ -1,50 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.pentaho</groupId>
+  <artifactId>pentaho-ce-jar-parent-pom</artifactId>
+  <version>8.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-ce-parent-pom</artifactId>
     <version>8.0-SNAPSHOT</version>
   </parent>
-  <groupId>org.pentaho</groupId>
-  <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-  <version>8.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>Pentaho Community Edition Project Parent POM For Java Projects</name>
+  
   <modules>
     <module>pentaho-ce-bundle-parent-pom</module>
   </modules>
+
+  <name>Pentaho Community Edition Project Parent POM For Java Projects</name>
+
   <properties>
-    <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks>
-    <source.jdk.version>1.8</source.jdk.version>
-    <checkstyle-properties-url>http://nexus.pentaho.org/content/groups/omni/com/pentaho/pentaho-coding-standards/checkstyle-maven-properties/${pentaho-coding-standards.version}/checkstyle-maven-properties-${pentaho-coding-standards.version}.properties</checkstyle-properties-url>
-    <sonar.branch>${SCM_BRANCH}</sonar.branch>
-    <sonar.project.name>${project.artifactId}</sonar.project.name>
-    <checkstyle-config-url>http://nexus.pentaho.org/content/groups/omni/com/pentaho/pentaho-coding-standards/pentaho-checkstyle/${pentaho-coding-standards.version}/pentaho-checkstyle-${pentaho-coding-standards.version}.xml</checkstyle-config-url>
-    <sonar.host.url>http://sonar.pentaho.com:9000</sonar.host.url>
-    <maven-failsafe-plugin.reuseForks>true</maven-failsafe-plugin.reuseForks>
-    <maven-failsafe-plugin.forkCount>1</maven-failsafe-plugin.forkCount>
+    <!-- VERSIONS -->
     <junit.version>4.11</junit.version>
-    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    <sonar.language>java</sonar.language>
-    <sonar.jacoco.itReportPath>${project.build.directory}/jacoco-it.exec</sonar.jacoco.itReportPath>
-    <SCM_BRANCH>master</SCM_BRANCH>
-    <sonar.projectName>${sonar.project.name}</sonar.projectName>
-    <maven-surefire-plugin.forkCount>1</maven-surefire-plugin.forkCount>
-    <sonar.jacoco.reportPath>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPath>
-    <target.jdk.version>1.8</target.jdk.version>
+
     <pentaho-coding-standards.version>1.0.5</pentaho-coding-standards.version>
+    
+    <checkstyle-config-url>http://nexus.pentaho.org/content/groups/omni/com/pentaho/pentaho-coding-standards/pentaho-checkstyle/${pentaho-coding-standards.version}/pentaho-checkstyle-${pentaho-coding-standards.version}.xml</checkstyle-config-url>
+    <checkstyle-properties-url>http://nexus.pentaho.org/content/groups/omni/com/pentaho/pentaho-coding-standards/checkstyle-maven-properties/${pentaho-coding-standards.version}/checkstyle-maven-properties-${pentaho-coding-standards.version}.properties</checkstyle-properties-url>
+
+    <source.jdk.version>1.8</source.jdk.version>
+    <target.jdk.version>1.8</target.jdk.version>
+
+    <!-- http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html -->
+    <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks> <!-- default setting is reuseForks = true -->
+    <maven-surefire-plugin.forkCount>1</maven-surefire-plugin.forkCount> <!-- default setting is forkCount = 1 -->
     <maven-surefire-plugin.testFailureIgnore>false</maven-surefire-plugin.testFailureIgnore>
+    <maven-failsafe-plugin.reuseForks>true</maven-failsafe-plugin.reuseForks> <!-- default setting is reuseForks = true -->
+    <maven-failsafe-plugin.forkCount>1</maven-failsafe-plugin.forkCount> <!-- default setting is forkCount = 1 -->    
+    
+    <SCM_BRANCH>master</SCM_BRANCH>
+    <sonar.project.name>${project.artifactId}</sonar.project.name>
+    <sonar.host.url>http://sonar.pentaho.com:9000</sonar.host.url>
+    <sonar.language>java</sonar.language>
+    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+    <sonar.projectName>${sonar.project.name}</sonar.projectName>
+    <sonar.branch>${SCM_BRANCH}</sonar.branch>
+    <sonar.jacoco.reportPath>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.jacoco.itReportPath>${project.build.directory}/jacoco-it.exec</sonar.jacoco.itReportPath>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+
   <build>
     <pluginManagement>
       <plugins>
@@ -128,6 +133,16 @@
       </plugin>
     </plugins>
   </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <profiles>
     <profile>
       <id>test-integration</id>
@@ -136,6 +151,10 @@
           <name>runITs</name>
         </property>
       </activation>
+      <properties>
+        <integration-test.resources>src/it/resources</integration-test.resources>
+        <integration-test.src>src/it/java</integration-test.src>
+      </properties>
       <build>
         <plugins>
           <plugin>
@@ -240,16 +259,13 @@
               <forkCount>${maven-failsafe-plugin.forkCount}</forkCount>
               <reuseForks>${maven-failsafe-plugin.reuseForks}</reuseForks>
               <testClassesDirectory>${project.build.directory}/it-classes</testClassesDirectory>
-              <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+              <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory> <!-- SEE https://jira.sonarsource.com/browse/SONARJAVA-45 -->
             </configuration>
           </plugin>
         </plugins>
       </build>
-      <properties>
-        <integration-test.resources>src/it/resources</integration-test.resources>
-        <integration-test.src>src/it/java</integration-test.src>
-      </properties>
     </profile>
+
     <profile>
       <id>reporting</id>
       <activation>
@@ -340,6 +356,7 @@
         </plugins>
       </reporting>
     </profile>
+
     <profile>
       <id>javadoc</id>
       <activation>
@@ -367,6 +384,7 @@
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>sonar</id>
       <activation>
