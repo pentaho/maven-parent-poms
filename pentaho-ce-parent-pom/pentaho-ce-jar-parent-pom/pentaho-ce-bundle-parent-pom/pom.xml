@@ -70,6 +70,70 @@
       <build>
         <plugins>
           <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>set-custom-properties</id>
+                <phase>${javascript_transpile_custom_properties-phase}</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <exportAntProperties>true</exportAntProperties>
+                  <target>
+                    <condition property="optimize-javascript-src-dir" value="${build.transpiledJavascriptOutputDirectory}">
+                      <equals arg1="${js.transpile.project}" arg2="true"/>
+                    </condition>
+                    <property name="optimize-javascript-src-dir" value="${build.javascriptSourceDirectory}"/>
+
+                    <condition property="optimize-javascript-gen-src-maps" value="false">
+                      <equals arg1="${js.transpile.project}" arg2="true"/>
+                    </condition>
+                    <property name="optimize-javascript-gen-src-maps" value="true" />
+
+                    <condition property="skip.js-transpile" value="false">
+                      <equals arg1="${js.transpile.project}" arg2="true"/>
+                    </condition>
+                    <property name="skip.js-transpile" value="true" />
+
+                    <condition property="skip.sass-transpile" value="false">
+                      <equals arg1="${css.sass.project}" arg2="true"/>
+                    </condition>
+                    <property name="skip.sass-transpile" value="true" />
+
+                    <condition property="skip.npm-install" value="false">
+                      <equals arg1="${js.transpile.project}" arg2="true"/>
+                    </condition>
+                    <condition property="skip.npm-install" value="false">
+                      <equals arg1="${css.sass.project}" arg2="true"/>
+                    </condition>
+                    <property name="skip.npm-install" value="true" />
+
+                    <echo message="optimize-javascript-src-dir = ${optimize-javascript-src-dir}"/>
+                    <echo message="optimize-javascript-gen-src-maps = ${optimize-javascript-gen-src-maps}"/>
+                    <echo message="skip.js-transpile = ${skip.js-transpile}"/>
+                    <echo message="skip.sass-transpile = ${skip.sass-transpile}"/>
+                  </target>
+                </configuration>
+              </execution>
+              <execution>
+                <id>cleanup-temp-transpile-folder</id>
+                <phase>${javascript-transpile_cleanup-phase}</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <delete dir="${build.transpiledJavascriptOutputDirectory}"
+                            includeemptydirs="true"/>
+                  </target>
+                  <skip>${skip.js-transpile}</skip>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
             <groupId>com.github.eirslett</groupId>
             <artifactId>frontend-maven-plugin</artifactId>
             <executions>
@@ -79,6 +143,39 @@
                 <goals>
                   <goal>install-node-and-npm</goal>
                 </goals>
+              </execution>
+              <execution>
+                <id>npm install</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <phase>${node-npm_install-phase}</phase>
+                <configuration>
+                  <arguments>install</arguments>
+                  <skip>${skip.npm-install}</skip>
+                </configuration>
+              </execution>
+              <execution>
+                <id>transpile-sass</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <phase>${bundle-sass_optimize-phase}</phase>
+                <configuration>
+                  <arguments>run sass-transpile -src_folder=${build.javascriptSourceDirectory} -out_folder=${build.javascriptOutputDirectory}</arguments>
+                  <skip>${skip.sass-transpile}</skip>
+                </configuration>
+              </execution>
+              <execution>
+                <id>transpile-js-release</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <phase>${bundle-javascript_transpile_optimize-phase}</phase>
+                <configuration>
+                  <arguments>run js-transpile -generate_src_map=true -src_folder=${build.javascriptSourceDirectory} -out_folder=${build.transpiledJavascriptOutputDirectory}</arguments>
+                  <skip>${skip.js-transpile}</skip>
+                </configuration>
               </execution>
             </executions>
           </plugin>
@@ -141,11 +238,11 @@
                   <optimizerFile>${rjs.webjar.file}</optimizerFile>
                   <configFile>${build.javascriptConfigDirectory}/osgi/${requirejs.build.file}</configFile>
                   <optimizerParameters>
-                    <parameter>appDir=${build.javascriptSourceDirectory}</parameter>
+                    <parameter>appDir=${optimize-javascript-src-dir}</parameter>
                     <parameter>baseUrl=.</parameter>
                     <parameter>dir=${build.javascriptOutputDirectory}</parameter>
                     <parameter>optimize=uglify2</parameter>
-                    <parameter>generateSourceMaps=true</parameter>
+                    <parameter>generateSourceMaps=${optimize-javascript-gen-src-maps}</parameter>
                     <parameter>preserveLicenseComments=false</parameter>
                   </optimizerParameters>
                 </configuration>
