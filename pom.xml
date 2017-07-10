@@ -75,7 +75,7 @@
     <maven-surefire-report-plugin.version>2.19</maven-surefire-report-plugin.version>
     <maven-verifier-plugin.version>1.1</maven-verifier-plugin.version>
     <sonar-maven-plugin.version>2.7.1</sonar-maven-plugin.version>
-    <license-helper-maven-plugin.version>1.0</license-helper-maven-plugin.version>
+    <license-helper-maven-plugin.version>1.4</license-helper-maven-plugin.version>
     <!-- DO NOT, under ANY circumstance, use maven-bundle-plugin verion 2.5.4, it overrides all phase bindings with the default,
        and generally just makes a mess of things -->
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
@@ -150,8 +150,12 @@
     <frontend-maven-plugin.workingDirectory>${pentaho.basedir}</frontend-maven-plugin.workingDirectory>
     <frontend-maven-plugin.installDirectory>${pentaho.basedir}/target</frontend-maven-plugin.installDirectory>
 
+    <!-- License Configuration -->
     <license.organizationName>Pentaho Corporation (Pentaho)</license.organizationName>
     <license.inceptionYear>2002</license.inceptionYear>
+    <license.licenseFile>LICENSE.txt</license.licenseFile>
+    <license.bundleLicenseFile>META-INF/LICENSE.txt</license.bundleLicenseFile>
+    <license.failOnLicenseCheck>false</license.failOnLicenseCheck>
   </properties>
 
   <scm>
@@ -343,6 +347,26 @@
             <configuration>
               <property>pentaho.basedir</property>
             </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.pentaho.maven.plugins</groupId>
+        <artifactId>license-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>bundle-license</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>bundle</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>check-license</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>check-license</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
@@ -927,85 +951,6 @@
           <scope>test</scope>
         </dependency>
       </dependencies>
-    </profile>
-
-    <profile>
-      <!-- remove this profile later (license-helper-maven-plugin) will handle this when we are ready to enforce license in all projects -->
-      <id>license-deprecated</id>
-      <activation>
-        <file>
-          <exists>${basedir}/LICENSE.txt</exists>
-        </file>
-      </activation>
-      <properties>
-        <license.generateBundle>true</license.generateBundle>
-        <license.licenceFile>${basedir}/LICENSE.txt</license.licenceFile>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-resources-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>copy-license</id>
-                <phase>prepare-package</phase>
-                <goals>
-                  <goal>copy-resources</goal>
-                </goals>
-                <configuration>
-                  <outputDirectory>${project.build.outputDirectory}/META-INF</outputDirectory>
-                  <resources>
-                    <resource>
-                      <directory>${basedir}</directory>
-                      <filtering>true</filtering>
-                      <includes>
-                        <include>LICENSE.txt</include>
-                      </includes>
-                    </resource>
-                  </resources>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <!-- Once we have all projects set up to use the new plugin, the `license-deprecated` profile can go away -->
-      <id>license-check</id>
-      <activation>
-        <property>
-          <name>licenseCheck</name>
-        </property>
-      </activation>
-      <properties>
-        <license.generateBundle>true</license.generateBundle>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.pentaho.maven.plugins</groupId>
-            <artifactId>license-helper-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>generate-licenses</id>
-                <phase>generate-resources</phase>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-              </execution>
-              <execution>
-                <id>check-license</id>
-                <phase>validate</phase>
-                <goals>
-                  <goal>check-project-license</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
   </profiles>
 </project>
