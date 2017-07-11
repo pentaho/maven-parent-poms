@@ -119,11 +119,12 @@
     <javascript-doc_copy-resources-phase>pre-site</javascript-doc_copy-resources-phase>
 
     <pentaho.resolve.repo>http://nexus.pentaho.org/content/groups/omni/</pentaho.resolve.repo>
-    <pentaho.public.release.repo>http://nexus.pentaho.org/content/repositories/public-release/</pentaho.public.release.repo>
-    <pentaho.public.snapshot.repo>http://nexus.pentaho.org/content/repositories/public-snapshot/</pentaho.public.snapshot.repo>
-    <pentaho.private.release.repo>http://nexus.pentaho.org/content/repositories/private-release/</pentaho.private.release.repo>
-    <pentaho.private.snapshot.repo>http://nexus.pentaho.org/content/repositories/private-snapshot/</pentaho.private.snapshot.repo>
-
+    <!-- No default repository URL deployments, these must be defined at build-time -->
+    <pentaho.public.release.repo></pentaho.public.release.repo>
+    <pentaho.public.snapshot.repo></pentaho.public.snapshot.repo>
+    <pentaho.private.release.repo></pentaho.private.release.repo>
+    <pentaho.private.snapshot.repo></pentaho.private.snapshot.repo>
+    
     <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
