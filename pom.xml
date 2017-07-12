@@ -80,8 +80,8 @@
        and generally just makes a mess of things -->
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
 
-    <nodejs.version>v4.4.5</nodejs.version>
-    <npm.version>2.15.4</npm.version>
+    <nodejs.version>v7.10.0</nodejs.version>
+    <npm.version>4.6.1</npm.version>
     <rjs.version>2.1.19</rjs.version>
 
     <!-- PHASE BINDINGS -->
@@ -91,10 +91,14 @@
     <eula-wrap_assign-deps-to-properties-phase>initialize</eula-wrap_assign-deps-to-properties-phase>
     <bundle-javascript_unpack-rjs-phase>initialize</bundle-javascript_unpack-rjs-phase>
     <javascript_unpack-dependencies-phase>initialize</javascript_unpack-dependencies-phase>
+    <javascript_transpile_custom_properties-phase>validate</javascript_transpile_custom_properties-phase>
     <javascript_override-profilebuilder-phase>process-resources</javascript_override-profilebuilder-phase>
     <bundle-javascript_optimize-phase>generate-sources</bundle-javascript_optimize-phase>
+    <bundle-javascript_transpile_optimize-phase>generate-sources</bundle-javascript_transpile_optimize-phase>
     <bundle-javascript_add-resource-phase>process-sources</bundle-javascript_add-resource-phase>
+    <bundle-sass_optimize-phase>process-sources</bundle-sass_optimize-phase>
     <generate-bundle-manifest-phase>compile</generate-bundle-manifest-phase>
+    <javascript-transpile_cleanup-phase>compile</javascript-transpile_cleanup-phase>
     <javascript-test_copy-resources-phase>generate-test-resources</javascript-test_copy-resources-phase>
     <javascript-test_npm-install-phase>generate-test-resources</javascript-test_npm-install-phase>
     <test-unit-execute-phase>test</test-unit-execute-phase>
@@ -132,6 +136,7 @@
 
     <build.javascriptSourceDirectory>${basedir}/src/main/javascript</build.javascriptSourceDirectory>
     <build.javascriptOutputDirectory>${project.build.directory}/javascriptOutput</build.javascriptOutputDirectory>
+    <build.transpiledJavascriptOutputDirectory>${project.build.directory}/transpiledJavascriptOutput</build.transpiledJavascriptOutputDirectory>
     <build.javascriptConfigDirectory>${basedir}/src/main/config/javascript</build.javascriptConfigDirectory>
 
     <build.javascriptTestSourceDirectory>${basedir}/src/test/javascript</build.javascriptTestSourceDirectory>
@@ -145,6 +150,12 @@
 
     <requirejs.build.file>build.js</requirejs.build.file>
     <js.project.list>dummy</js.project.list>
+
+    <!-- Set to true if javascript sources need to be transpiled (e.g.: if it uses es6) -->
+    <js.transpile.project>false</js.transpile.project>
+
+    <!-- Set to true if using sass for styling.project needs to be transpiled (e.g.: if it uses es6) -->
+    <css.sass.project>false</css.sass.project>
 
     <docjs.config.file />
 
