@@ -67,9 +67,8 @@
     <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
     <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
     <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
-    <maven-project-info-reports-plugin.version>2.8.1</maven-project-info-reports-plugin.version>
+    <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
     <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
-    <maven-site-plugin.version>3.4</maven-site-plugin.version>
     <maven-source-plugin.version>2.4</maven-source-plugin.version>
     <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
     <maven-surefire-report-plugin.version>2.19</maven-surefire-report-plugin.version>
@@ -128,7 +127,7 @@
     <pentaho.public.snapshot.repo></pentaho.public.snapshot.repo>
     <pentaho.private.release.repo></pentaho.private.release.repo>
     <pentaho.private.snapshot.repo></pentaho.private.snapshot.repo>
-    
+
     <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
