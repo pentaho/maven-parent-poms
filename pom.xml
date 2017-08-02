@@ -677,10 +677,16 @@
             <artifactId>frontend-maven-plugin</artifactId>
             <executions>
               <execution>
+                <id>node-npm_install</id>
+                <phase>${node-npm_install-phase}</phase>
+                <goals>
+                  <goal>install-node-and-npm</goal>
+                </goals>
+              </execution>
+              <execution>
                 <id>javascript-test_npm-install</id>
                 <phase>${javascript-test_npm-install-phase}</phase>
                 <goals>
-                  <goal>install-node-and-npm</goal>
                   <goal>npm</goal>
                 </goals>
                 <configuration>
