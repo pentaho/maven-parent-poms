@@ -176,16 +176,48 @@
 
   <distributionManagement>
     <repository>
-      <id>pentaho.public.release.repo</id>
-      <name>Pentaho Public Release Repository</name>
-      <url>${pentaho.public.release.repo}</url>
+      <id>sonatype.staging.repo</id>
+      <name>Maven Central Release Staging</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
     <snapshotRepository>
-      <id>pentaho.public.snapshot.repo</id>
-      <name>Pentaho Public Snapshot Repository</name>
-      <url>${pentaho.public.snapshot.repo}</url>
+      <id>sonatype.snapshot.repo</id>
+      <name>Sonatype Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>pentaho.resolve.repo</id>
+      <name>Pentaho Resolve Repo</name>
+      <url>${pentaho.resolve.repo}</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>interval:7200</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>plugins</id>
+      <name>Pentaho Resolve Repo</name>
+      <url>${pentaho.resolve.repo}</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>interval:7200</updatePolicy>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
 
   <build>
     <pluginManagement>
