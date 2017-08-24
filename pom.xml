@@ -173,17 +173,17 @@
     <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
-
+  
   <distributionManagement>
     <repository>
-      <id>sonatype.staging.repo</id>
-      <name>Maven Central Release Staging</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+      <id>pentaho.public.release.repo</id>
+      <name>Pentaho Public Release Repository</name>
+      <url>${pentaho.public.release.repo}</url>
     </repository>
     <snapshotRepository>
-      <id>sonatype.snapshot.repo</id>
-      <name>Sonatype Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <id>pentaho.public.snapshot.repo</id>
+      <name>Pentaho Public Snapshot Repository</name>
+      <url>${pentaho.public.snapshot.repo}</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -1001,5 +1001,27 @@
         </dependency>
       </dependencies>
     </profile>
+    
+    <profile>
+      <id>sonatype</id>
+      <activation>
+        <property>
+          <name>sonatype</name>
+        </property>
+      </activation>
+      <distributionManagement>
+        <repository>
+          <id>sonatype.staging.repo</id>
+          <name>Maven Central Release Staging</name>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+        <snapshotRepository>
+          <id>sonatype.snapshot.repo</id>
+          <name>Sonatype Snapshots</name>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+    
   </profiles>
 </project>
