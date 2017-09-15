@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-parent-pom</artifactId>
-  <version>7.1-SNAPSHOT</version>
+  <version>7.1.0.4-66</version>
   <packaging>pom</packaging>
-  
-  <!-- 
-    NOTICE!  Please consider this to be an abstract parent pom and DO NOT inherit from it directly.
-    
-    use pentaho-ce-parent-pom, or something extending from it, for public projects
-   -->
-
   <name>Pentaho Project Parent Pom</name>
-
-  <modules>
-    <module>pentaho-ce-parent-pom</module>
-  </modules>
-  
   <organization>
     <name>Pentaho Corporation</name>
     <url>http://www.pentaho.com</url>
   </organization>
-
   <developers>
     <developer>
       <name>Pentaho Build Team</name>
@@ -33,141 +21,20 @@
       </roles>
     </developer>
   </developers>
-
+  <modules>
+    <module>pentaho-ce-parent-pom</module>
+  </modules>
+  <scm>
+    <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
+  </scm>
   <issueManagement>
     <system>JIRA</system>
     <url>http://jira.pentaho.com</url>
   </issueManagement>
-
   <ciManagement>
     <system>Jenkins</system>
     <url>http://ci.pentaho.com</url>
   </ciManagement>
-  
-  <properties>
-    
-    <!-- VERSIONS -->
-    <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
-    <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
-    <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
-    <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-    <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-    <maven-site-plugin.version>3.4</maven-site-plugin.version>
-    <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
-    <build-helper-maven-plugin.version>1.9.1</build-helper-maven-plugin.version>
-    <requirejs-maven-plugin.version>2.0.4</requirejs-maven-plugin.version>
-    <frontend-maven-plugin.version>1.3</frontend-maven-plugin.version>
-    <directory-maven-plugin.version>0.1</directory-maven-plugin.version>
-    <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
-    <iterator-maven-plugin.version>0.4</iterator-maven-plugin.version>
-    <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
-    <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
-    <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
-    <maven-failsafe-plugin.version>2.19</maven-failsafe-plugin.version>
-    <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
-    <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
-    <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
-    <maven-project-info-reports-plugin.version>2.8.1</maven-project-info-reports-plugin.version>
-    <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
-    <maven-site-plugin.version>3.4</maven-site-plugin.version>
-    <maven-source-plugin.version>2.4</maven-source-plugin.version>
-    <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
-    <maven-surefire-report-plugin.version>2.19</maven-surefire-report-plugin.version>
-    <maven-verifier-plugin.version>1.1</maven-verifier-plugin.version>
-    <sonar-maven-plugin.version>2.7.1</sonar-maven-plugin.version>
-    <!-- DO NOT, under ANY circumstance, use maven-bundle-plugin verion 2.5.4, it overrides all phase bindings with the default,
-       and generally just makes a mess of things -->
-    <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
-
-
-    <nodejs.version>v4.4.5</nodejs.version>
-    <npm.version>2.15.4</npm.version>
-    <rjs.version>2.1.19</rjs.version>
-    
-    <!-- PHASE BINDINGS -->
-    <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
-    <node-npm_install-phase>initialize</node-npm_install-phase>
-    <test-unit-jacoco-agent-prep-phase>initialize</test-unit-jacoco-agent-prep-phase>
-    <eula-wrap_assign-deps-to-properties-phase>initialize</eula-wrap_assign-deps-to-properties-phase>
-    <bundle-javascript_unpack-rjs-phase>initialize</bundle-javascript_unpack-rjs-phase>
-    <javascript_unpack-dependencies-phase>initialize</javascript_unpack-dependencies-phase>
-    <javascript_override-profilebuilder-phase>process-resources</javascript_override-profilebuilder-phase>
-    <obfuscate_merge-maps-phase>process-resources</obfuscate_merge-maps-phase>
-    <bundle-javascript_optimize-phase>generate-sources</bundle-javascript_optimize-phase>
-    <bundle-javascript_add-resource-phase>process-sources</bundle-javascript_add-resource-phase>
-    <obfuscate-version-for-license-phase>process-sources</obfuscate-version-for-license-phase>
-    <replace-references-phase>process-sources</replace-references-phase>
-    <generate-bundle-manifest-phase>compile</generate-bundle-manifest-phase>
-    <javascript-test_copy-resources-phase>generate-test-resources</javascript-test_copy-resources-phase>
-    <javascript-test_npm-install-phase>generate-test-resources</javascript-test_npm-install-phase>
-    <test-unit-execute-phase>test</test-unit-execute-phase>
-    <javascript-test_karma-phase>test</javascript-test_karma-phase>
-    <javascript-requirecfg_aggregate-phase>prepare-package</javascript-requirecfg_aggregate-phase>
-    <javascript_optimize-phase>prepare-package</javascript_optimize-phase>
-    <obfuscate-bundle_unpack-obf-jar-phase>prepare-package</obfuscate-bundle_unpack-obf-jar-phase>
-    <obfuscate-bundle_replace-obf-classes-in-blueprint-phase>prepare-package</obfuscate-bundle_replace-obf-classes-in-blueprint-phase>
-    <jar-bundle-phase>package</jar-bundle-phase>
-    <obfuscate_execute-phase>package</obfuscate_execute-phase>
-    <assembly_package-phase>package</assembly_package-phase>
-    <assembly_appendId>false</assembly_appendId>
-    <javascript-assembly_package-phase>package</javascript-assembly_package-phase>
-    <obfuscate-bundle_generate-bundle-manifest-phase>package</obfuscate-bundle_generate-bundle-manifest-phase>
-    <obfuscate-bundle_jar-bundle-phase>package</obfuscate-bundle_jar-bundle-phase>
-    <obfuscate_attach-artifacts-phase>package</obfuscate_attach-artifacts-phase>
-    <test-integration_add-resources-phase>pre-integration-test</test-integration_add-resources-phase>
-    <test-integration_add-source-phase>pre-integration-test</test-integration_add-source-phase>
-    <test-integration_jacoco-agent-prep-phase>pre-integration-test</test-integration_jacoco-agent-prep-phase>
-    <test-integration_compile-phase>pre-integration-test</test-integration_compile-phase>
-    <test-integration_execute-phase>integration-test</test-integration_execute-phase>
-    <eula-wrap_create-izpack-installer-jar-phase>verify</eula-wrap_create-izpack-installer-jar-phase>
-    <eula-wrap_create-dist-phase>verify</eula-wrap_create-dist-phase>
-    <eula-wrap_attach-dist-phase>verify</eula-wrap_attach-dist-phase>
-    <test-unit-jacoco-report-phase>verify</test-unit-jacoco-report-phase>
-    <attach-sources-phase>verify</attach-sources-phase>
-    <test-integration_jacoco-report-phase>verify</test-integration_jacoco-report-phase>
-    <test-integration_report-phase>verify</test-integration_report-phase>
-    <javascript-doc_copy-resources-phase>pre-site</javascript-doc_copy-resources-phase>
-    
-    
-    <pentaho.resolve.repo>http://nexus.pentaho.org/content/groups/omni/</pentaho.resolve.repo>
-    <pentaho.public.release.repo>http://nexus.pentaho.org/content/repositories/public-release/</pentaho.public.release.repo>
-    <pentaho.public.snapshot.repo>http://nexus.pentaho.org/content/repositories/public-snapshot/</pentaho.public.snapshot.repo>
-    <pentaho.private.release.repo>http://nexus.pentaho.org/content/repositories/private-release/</pentaho.private.release.repo>
-    <pentaho.private.snapshot.repo>http://nexus.pentaho.org/content/repositories/private-snapshot/</pentaho.private.snapshot.repo>
-
-    <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>
-
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  
-    <build.javascriptSourceDirectory>${basedir}/src/main/javascript</build.javascriptSourceDirectory>
-    <build.javascriptOutputDirectory>${project.build.directory}/javascriptOutput</build.javascriptOutputDirectory>
-    <build.javascriptConfigDirectory>${basedir}/src/main/config/javascript</build.javascriptConfigDirectory>
-        
-    <build.javascriptTestSourceDirectory>${basedir}/src/test/javascript</build.javascriptTestSourceDirectory>
-    <build.javascriptTestOutputDirectory>${project.build.directory}/test-javascript</build.javascriptTestOutputDirectory>
-    <build.javascriptTestConfigDirectory>${basedir}/src/test/config/javascript</build.javascriptTestConfigDirectory>
-
-    <build.dependenciesDirectory>${project.build.directory}/dependency</build.dependenciesDirectory>
-
-    <pentaho-js-build.dir>${build.dependenciesDirectory}/pentaho-js-build</pentaho-js-build.dir>
-    <rjs.webjar.file>${build.dependenciesDirectory}/META-INF/resources/webjars/rjs/${rjs.version}/bin/r.js</rjs.webjar.file>
-    
-    <requirejs.build.file>build.js</requirejs.build.file>
-    <js.project.list>dummy</js.project.list>
-    
-    <docjs.config.file />
-        
-    <frontend-maven-plugin.workingDirectory>${pentaho.basedir}</frontend-maven-plugin.workingDirectory>
-    <frontend-maven-plugin.installDirectory>${pentaho.basedir}/target</frontend-maven-plugin.installDirectory>
-
-  </properties>
-  
-  <scm>
-    <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
-  
   <distributionManagement>
     <repository>
       <id>pentaho.public.release.repo</id>
@@ -180,134 +47,190 @@
       <url>${pentaho.public.snapshot.repo}</url>
     </snapshotRepository>
   </distributionManagement>
-  
+  <properties>
+    <javascript-assembly_package-phase>package</javascript-assembly_package-phase>
+    <eula-wrap_attach-dist-phase>verify</eula-wrap_attach-dist-phase>
+    <eula-wrap_assign-deps-to-properties-phase>initialize</eula-wrap_assign-deps-to-properties-phase>
+    <pentaho.private.snapshot.repo>http://nexus.pentaho.org/content/repositories/private-snapshot/</pentaho.private.snapshot.repo>
+    <js.project.list>dummy</js.project.list>
+    <build-helper-maven-plugin.version>1.9.1</build-helper-maven-plugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <bundle-javascript_unpack-rjs-phase>initialize</bundle-javascript_unpack-rjs-phase>
+    <test-integration_add-source-phase>pre-integration-test</test-integration_add-source-phase>
+    <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
+    <docjs.config.file></docjs.config.file>
+    <test-integration_jacoco-agent-prep-phase>pre-integration-test</test-integration_jacoco-agent-prep-phase>
+    <test-unit-jacoco-report-phase>verify</test-unit-jacoco-report-phase>
+    <build.dependenciesDirectory>${project.build.directory}/dependency</build.dependenciesDirectory>
+    <pentaho-js-build.dir>${build.dependenciesDirectory}/pentaho-js-build</pentaho-js-build.dir>
+    <javascript-test_karma-phase>test</javascript-test_karma-phase>
+    <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+    <obfuscate_merge-maps-phase>process-resources</obfuscate_merge-maps-phase>
+    <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>
+    <javascript-doc_copy-resources-phase>pre-site</javascript-doc_copy-resources-phase>
+    <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+    <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+    <javascript-requirecfg_aggregate-phase>prepare-package</javascript-requirecfg_aggregate-phase>
+    <javascript_unpack-dependencies-phase>initialize</javascript_unpack-dependencies-phase>
+    <assembly_package-phase>package</assembly_package-phase>
+    <pentaho.private.release.repo>http://nexus.pentaho.org/content/repositories/private-release/</pentaho.private.release.repo>
+    <assembly_appendId>false</assembly_appendId>
+    <directory-maven-plugin.version>0.1</directory-maven-plugin.version>
+    <pentaho.resolve.repo>http://nexus.pentaho.org/content/groups/omni/</pentaho.resolve.repo>
+    <pentaho.public.release.repo>http://nexus.pentaho.org/content/repositories/public-release/</pentaho.public.release.repo>
+    <maven-project-info-reports-plugin.version>2.8.1</maven-project-info-reports-plugin.version>
+    <build.javascriptTestConfigDirectory>${basedir}/src/test/config/javascript</build.javascriptTestConfigDirectory>
+    <attach-sources-phase>verify</attach-sources-phase>
+    <maven-failsafe-plugin.version>2.19</maven-failsafe-plugin.version>
+    <maven-verifier-plugin.version>1.1</maven-verifier-plugin.version>
+    <maven-surefire-report-plugin.version>2.19</maven-surefire-report-plugin.version>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <replace-references-phase>process-sources</replace-references-phase>
+    <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+    <obfuscate_attach-artifacts-phase>package</obfuscate_attach-artifacts-phase>
+    <frontend-maven-plugin.workingDirectory>${pentaho.basedir}</frontend-maven-plugin.workingDirectory>
+    <javascript-test_copy-resources-phase>generate-test-resources</javascript-test_copy-resources-phase>
+    <obfuscate-bundle_jar-bundle-phase>package</obfuscate-bundle_jar-bundle-phase>
+    <obfuscate-bundle_replace-obf-classes-in-blueprint-phase>prepare-package</obfuscate-bundle_replace-obf-classes-in-blueprint-phase>
+    <build.javascriptSourceDirectory>${basedir}/src/main/javascript</build.javascriptSourceDirectory>
+    <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
+    <javascript-test_npm-install-phase>generate-test-resources</javascript-test_npm-install-phase>
+    <npm.version>2.15.4</npm.version>
+    <maven-site-plugin.version>3.4</maven-site-plugin.version>
+    <javascript_optimize-phase>prepare-package</javascript_optimize-phase>
+    <maven-source-plugin.version>2.4</maven-source-plugin.version>
+    <bundle-javascript_optimize-phase>generate-sources</bundle-javascript_optimize-phase>
+    <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+    <bundle-javascript_add-resource-phase>process-sources</bundle-javascript_add-resource-phase>
+    <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
+    <build.javascriptOutputDirectory>${project.build.directory}/javascriptOutput</build.javascriptOutputDirectory>
+    <javascript_override-profilebuilder-phase>process-resources</javascript_override-profilebuilder-phase>
+    <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+    <eula-wrap_create-dist-phase>verify</eula-wrap_create-dist-phase>
+    <test-integration_report-phase>verify</test-integration_report-phase>
+    <sonar-maven-plugin.version>2.7.1</sonar-maven-plugin.version>
+    <obfuscate-bundle_generate-bundle-manifest-phase>package</obfuscate-bundle_generate-bundle-manifest-phase>
+    <test-integration_compile-phase>pre-integration-test</test-integration_compile-phase>
+    <eula-wrap_create-izpack-installer-jar-phase>verify</eula-wrap_create-izpack-installer-jar-phase>
+    <pentaho.public.snapshot.repo>http://nexus.pentaho.org/content/repositories/public-snapshot/</pentaho.public.snapshot.repo>
+    <test-integration_jacoco-report-phase>verify</test-integration_jacoco-report-phase>
+    <frontend-maven-plugin.installDirectory>${pentaho.basedir}/target</frontend-maven-plugin.installDirectory>
+    <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
+    <rjs.version>2.1.19</rjs.version>
+    <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
+    <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
+    <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
+    <obfuscate-version-for-license-phase>process-sources</obfuscate-version-for-license-phase>
+    <jar-bundle-phase>package</jar-bundle-phase>
+    <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+    <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
+    <obfuscate_execute-phase>package</obfuscate_execute-phase>
+    <requirejs.build.file>build.js</requirejs.build.file>
+    <generate-bundle-manifest-phase>compile</generate-bundle-manifest-phase>
+    <test-unit-execute-phase>test</test-unit-execute-phase>
+    <build.javascriptTestOutputDirectory>${project.build.directory}/test-javascript</build.javascriptTestOutputDirectory>
+    <requirejs-maven-plugin.version>2.0.4</requirejs-maven-plugin.version>
+    <iterator-maven-plugin.version>0.4</iterator-maven-plugin.version>
+    <obfuscate-bundle_unpack-obf-jar-phase>prepare-package</obfuscate-bundle_unpack-obf-jar-phase>
+    <test-integration_add-resources-phase>pre-integration-test</test-integration_add-resources-phase>
+    <build.javascriptTestSourceDirectory>${basedir}/src/test/javascript</build.javascriptTestSourceDirectory>
+    <rjs.webjar.file>${build.dependenciesDirectory}/META-INF/resources/webjars/rjs/${rjs.version}/bin/r.js</rjs.webjar.file>
+    <test-integration_execute-phase>integration-test</test-integration_execute-phase>
+    <frontend-maven-plugin.version>1.3</frontend-maven-plugin.version>
+    <test-unit-jacoco-agent-prep-phase>initialize</test-unit-jacoco-agent-prep-phase>
+    <nodejs.version>v4.4.5</nodejs.version>
+    <node-npm_install-phase>initialize</node-npm_install-phase>
+    <build.javascriptConfigDirectory>${basedir}/src/main/config/javascript</build.javascriptConfigDirectory>
+    <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
+    <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+  </properties>
   <build>
     <pluginManagement>
-
       <plugins>
-
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
           <version>${maven-bundle-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>${maven-resources-plugin.version}</version>
         </plugin>
-
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
           <version>${jacoco-maven-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
           <version>${maven-source-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven-surefire-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-report-plugin</artifactId>
           <version>${maven-surefire-report-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
           <version>${maven-failsafe-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>${maven-project-info-reports-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jxr-plugin</artifactId>
           <version>${maven-jxr-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven-javadoc-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>${maven-checkstyle-plugin.version}</version>
         </plugin>
-
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>sonar-maven-plugin</artifactId>
           <version>${sonar-maven-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-verifier-plugin</artifactId>
           <version>${maven-verifier-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>${maven-jar-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven-compiler-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
           <version>${maven-clean-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
           <version>${maven-dependency-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
           <version>${maven-install-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>${maven-deploy-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
           <version>${maven-release-plugin.version}</version>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <version>${maven-site-plugin.version}</version>
           <dependencies>
@@ -318,31 +241,25 @@
             </dependency>
           </dependencies>
         </plugin>
-        
         <plugin>
           <groupId>org.commonjava.maven.plugins</groupId>
           <artifactId>directory-maven-plugin</artifactId>
           <version>${directory-maven-plugin.version}</version>
         </plugin>
-        
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
           <version>${build-helper-maven-plugin.version}</version>
         </plugin>
-        
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
           <version>${maven-assembly-plugin.version}</version>
         </plugin>
-        
         <plugin>
           <groupId>com.github.bringking</groupId>
           <artifactId>requirejs-maven-plugin</artifactId>
           <version>${requirejs-maven-plugin.version}</version>
         </plugin>
-        
         <plugin>
           <groupId>com.github.eirslett</groupId>
           <artifactId>frontend-maven-plugin</artifactId>
@@ -354,32 +271,22 @@
             <npmVersion>${npm.version}</npmVersion>
           </configuration>
         </plugin>
-        
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-antrun-plugin</artifactId>
           <version>${maven-antrun-plugin.version}</version>
         </plugin>
-
         <plugin>
           <groupId>com.soebes.maven.plugins</groupId>
           <artifactId>iterator-maven-plugin</artifactId>
           <version>${iterator-maven-plugin.version}</version>
         </plugin>
-        
       </plugins>
-      
     </pluginManagement>
-  
     <plugins>
-    
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
       </plugin>
-      
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <executions>
           <execution>
@@ -390,31 +297,25 @@
           </execution>
         </executions>
       </plugin>
-      
       <plugin>
         <groupId>org.commonjava.maven.plugins</groupId>
         <artifactId>directory-maven-plugin</artifactId>
         <executions>
           <execution>
             <id>set-highest-basedir</id>
+            <phase>${set-highest-basedir-phase}</phase>
             <goals>
               <goal>highest-basedir</goal>
             </goals>
-            <phase>${set-highest-basedir-phase}</phase>
             <configuration>
               <property>pentaho.basedir</property>
             </configuration>
           </execution>
         </executions>
       </plugin>
-      
     </plugins>
-    
   </build>
-  
-  
   <profiles>
-
     <profile>
       <id>node-npm</id>
       <activation>
@@ -422,7 +323,6 @@
           <exists>${basedir}/package.json</exists>
         </file>
       </activation>
-
       <build>
         <plugins>
           <plugin>
@@ -441,16 +341,13 @@
         </plugins>
       </build>
     </profile>
-
     <profile>
       <id>javascript-dependencies</id>
-
       <activation>
         <property>
           <name>!skipDefault</name>
         </property>
       </activation>
-
       <build>
         <plugins>
           <plugin>
@@ -484,9 +381,7 @@
           </plugin>
         </plugins>
       </build>
-
     </profile>
-
     <profile>
       <id>override-pentaho-js-build</id>
       <activation>
@@ -494,25 +389,9 @@
           <exists>${build.javascriptConfigDirectory}/profileBuilder.js</exists>
         </file>
       </activation>
-
-      <properties>
-        <dependency.pentaho-js-build.revision>1.0.0</dependency.pentaho-js-build.revision>
-      </properties>
-
-      <dependencies>
-        <dependency>
-          <groupId>pentaho</groupId>
-          <artifactId>pentaho-js-build</artifactId>
-          <version>${dependency.pentaho-js-build.revision}</version>
-          <type>zip</type>
-        </dependency>
-      </dependencies>
-
       <build>
         <plugins>
-
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
             <executions>
               <execution>
@@ -528,9 +407,7 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-resources-plugin</artifactId>
             <executions>
               <execution>
@@ -556,8 +433,18 @@
           </plugin>
         </plugins>
       </build>
+      <properties>
+        <dependency.pentaho-js-build.revision>1.0.0</dependency.pentaho-js-build.revision>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-js-build</artifactId>
+          <version>${dependency.pentaho-js-build.revision}</version>
+          <type>zip</type>
+        </dependency>
+      </dependencies>
     </profile>
-
     <profile>
       <id>javascript-requirecfg</id>
       <activation>
@@ -565,12 +452,9 @@
           <exists>${build.javascriptConfigDirectory}/context.js</exists>
         </file>
       </activation>
-
       <build>
         <plugins>
-
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-antrun-plugin</artifactId>
             <executions>
               <execution>
@@ -581,9 +465,9 @@
                 </goals>
                 <configuration>
                   <target>
-                    <concat destfile="${project.build.directory}/requireCfg.js" append="true" force="yes">
+                    <concat destfile="${project.build.directory}/requireCfg.js" force="yes" append="true">
                       <file file="${build.javascriptConfigDirectory}/context.js" />
-                      <fileset dir="${build.dependenciesDirectory}" casesensitive="yes">
+                      <fileset casesensitive="yes" dir="${build.dependenciesDirectory}">
                         <include name="${requirejs.config.files.pattern}" />
                       </fileset>
                     </concat>
@@ -592,7 +476,7 @@
                         <include name="*.jar" />
                       </fileset>
                     </path>
-                    <java classname="org.mozilla.javascript.tools.shell.Main" fork="true" classpathref="build.classpath">
+                    <java fork="true" classname="org.mozilla.javascript.tools.shell.Main" classpathref="build.classpath">
                       <arg value="${pentaho-js-build.dir}/profileBuilder.js" />
                     </java>
                   </target>
@@ -600,12 +484,9 @@
               </execution>
             </executions>
           </plugin>
-        
         </plugins>
       </build>
-      
     </profile>
-
     <profile>
       <id>javascript-bundle</id>
       <activation>
@@ -613,10 +494,8 @@
           <exists>${build.javascriptConfigDirectory}/${requirejs.build.file}</exists>
         </file>
       </activation>
-
       <build>
         <plugins>
-
           <plugin>
             <groupId>com.github.eirslett</groupId>
             <artifactId>frontend-maven-plugin</artifactId>
@@ -630,7 +509,6 @@
               </execution>
             </executions>
           </plugin>
-          
           <plugin>
             <groupId>com.github.bringking</groupId>
             <artifactId>requirejs-maven-plugin</artifactId>
@@ -650,13 +528,9 @@
               </execution>
             </executions>
           </plugin>
-        
         </plugins>
       </build>
-
     </profile>
-
-
     <profile>
       <id>javascript-test</id>
       <activation>
@@ -667,16 +541,9 @@
           <exists>${build.javascriptTestSourceDirectory}</exists>
         </file>
       </activation>
-      
-      <properties>
-        <karma.file.config>karma.ci.conf.js</karma.file.config>
-      </properties>
-      
       <build>
         <plugins>
-        
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-resources-plugin</artifactId>
             <executions>
               <execution>
@@ -696,7 +563,6 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
             <groupId>com.github.eirslett</groupId>
             <artifactId>frontend-maven-plugin</artifactId>
@@ -725,13 +591,12 @@
               </execution>
             </executions>
           </plugin>
-
         </plugins>
       </build>
-      
+      <properties>
+        <karma.file.config>karma.ci.conf.js</karma.file.config>
+      </properties>
     </profile>
-    
-
     <profile>
       <id>javascript-doc</id>
       <activation>
@@ -742,13 +607,7 @@
           <exists>${basedir}/src/doc/javascript/config/${docjs.config.file}</exists>
         </file>
       </activation>
-      
-      <properties>
-        <jsdoc3-maven-plugin.version>1.2.0</jsdoc3-maven-plugin.version>
-      </properties>
-      
       <build>
-      
         <pluginManagement>
           <plugins>
             <plugin>
@@ -758,11 +617,8 @@
             </plugin>
           </plugins>
         </pluginManagement>
-      
         <plugins>
-        
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-resources-plugin</artifactId>
             <executions>
               <execution>
@@ -784,14 +640,13 @@
               </execution>
             </executions>
           </plugin>
-          
         </plugins>
-        
       </build>
-      
+      <properties>
+        <jsdoc3-maven-plugin.version>1.2.0</jsdoc3-maven-plugin.version>
+      </properties>
       <reporting>
         <plugins>
-        
           <plugin>
             <groupId>com.phasebash.jsdoc</groupId>
             <artifactId>jsdoc3-maven-plugin</artifactId>
@@ -802,14 +657,9 @@
               </sourceFiles>
             </configuration>
           </plugin>
-          
         </plugins>
       </reporting>
-      
     </profile>
-    
-    
-
     <profile>
       <id>assembly</id>
       <activation>
@@ -817,11 +667,9 @@
           <exists>${basedir}/src/assembly/assembly.xml</exists>
         </file>
       </activation>
-
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-assembly-plugin</artifactId>
             <executions>
               <execution>
@@ -840,25 +688,16 @@
         </plugins>
       </build>
     </profile>
-
     <profile>
       <id>eula-wrap</id>
       <activation>
-        <activeByDefault>false</activeByDefault>
         <property>
           <name>eula-wrap</name>
         </property>
       </activation>
-      <properties>
-        <artifactName>${project.artifactId}-${project.version}</artifactName>
-        <izpack-maven-plugin.version>5.0.7-RC1</izpack-maven-plugin.version>
-        <pentaho-eula-wrap-config.version>1.0.11</pentaho-eula-wrap-config.version>
-      </properties>
       <build>
         <plugins>
-        
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
             <executions>
               <execution>
@@ -870,7 +709,6 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
             <groupId>org.codehaus.izpack</groupId>
             <artifactId>izpack-maven-plugin</artifactId>
@@ -891,9 +729,7 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-antrun-plugin</artifactId>
             <executions>
               <execution>
@@ -909,7 +745,7 @@
                       <zipfileset file="${pentaho:pentaho-eula-wrap-config:bat:install}" fullpath="${artifactName}/install.bat" />
                       <zipfileset file="${pentaho:pentaho-eula-wrap-config:sh:install}" fullpath="${artifactName}/install.sh" filemode="755" />
                       <zipfileset file="${pentaho:pentaho-eula-wrap-config:txt:eula}" fullpath="${artifactName}/license.txt" />
-                      <zipfileset dir="${project.build.directory}" includes="installer.jar" fullpath="${artifactName}/installer.jar" />
+                      <zipfileset fullpath="${artifactName}/installer.jar" includes="installer.jar" dir="${project.build.directory}" />
                     </zip>
                     <delete file="${project.build.directory}/installer.jar" />
                   </target>
@@ -917,7 +753,6 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
@@ -940,78 +775,78 @@
               </execution>
             </executions>
           </plugin>
-
         </plugins>
-
       </build>
-
+      <properties>
+        <pentaho-eula-wrap-config.version>1.0.11</pentaho-eula-wrap-config.version>
+        <artifactName>${project.artifactId}-${project.version}</artifactName>
+        <izpack-maven-plugin.version>5.0.7-RC1</izpack-maven-plugin.version>
+      </properties>
       <dependencies>
         <dependency>
           <groupId>pentaho</groupId>
           <artifactId>pentaho-eula-wrap-config</artifactId>
           <version>${pentaho-eula-wrap-config.version}</version>
-          <type>jar</type>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>pentaho</groupId>
           <artifactId>pentaho-eula-wrap-config</artifactId>
           <version>${pentaho-eula-wrap-config.version}</version>
-          <classifier>izpack-zip</classifier>
           <type>xml</type>
+          <classifier>izpack-zip</classifier>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>pentaho</groupId>
           <artifactId>pentaho-eula-wrap-config</artifactId>
           <version>${pentaho-eula-wrap-config.version}</version>
-          <classifier>install</classifier>
           <type>bat</type>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>pentaho</groupId>
-          <artifactId>pentaho-eula-wrap-config</artifactId>
-          <version>${pentaho-eula-wrap-config.version}</version>
           <classifier>install</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
           <type>sh</type>
+          <classifier>install</classifier>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>pentaho</groupId>
           <artifactId>pentaho-eula-wrap-config</artifactId>
           <version>${pentaho-eula-wrap-config.version}</version>
+          <type>txt</type>
           <classifier>README</classifier>
-          <type>txt</type>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>pentaho</groupId>
           <artifactId>pentaho-eula-wrap-config</artifactId>
           <version>${pentaho-eula-wrap-config.version}</version>
-          <classifier>eula</classifier>
           <type>txt</type>
+          <classifier>eula</classifier>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>pentaho</groupId>
           <artifactId>pentaho-eula-wrap-config</artifactId>
           <version>${pentaho-eula-wrap-config.version}</version>
-          <classifier>eula</classifier>
           <type>html</type>
+          <classifier>eula</classifier>
           <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>pentaho</groupId>
           <artifactId>pentaho-eula-wrap-config</artifactId>
           <version>${pentaho-eula-wrap-config.version}</version>
-          <classifier>izpack-sidebar</classifier>
           <type>png</type>
+          <classifier>izpack-sidebar</classifier>
           <scope>test</scope>
         </dependency>
       </dependencies>
     </profile>
-
     <profile>
       <id>license</id>
       <activation>
@@ -1019,14 +854,9 @@
           <exists>${basedir}/LICENSE.txt</exists>
         </file>
       </activation>
-      <properties>
-        <license.generateBundle>true</license.generateBundle>
-        <license.licenceFile>${basedir}/LICENSE.txt</license.licenceFile>
-      </properties>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-resources-plugin</artifactId>
             <executions>
               <execution>
@@ -1052,8 +882,10 @@
           </plugin>
         </plugins>
       </build>
+      <properties>
+        <license.generateBundle>true</license.generateBundle>
+        <license.licenceFile>${basedir}/LICENSE.txt</license.licenceFile>
+      </properties>
     </profile>
-
   </profiles>
-  
 </project>
