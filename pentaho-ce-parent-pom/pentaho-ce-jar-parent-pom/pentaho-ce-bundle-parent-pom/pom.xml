@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-ce-bundle-parent-pom</artifactId>
-  <version>8.0-SNAPSHOT</version>
+  <version>8.0.0.0-001</version>
   <packaging>pom</packaging>
 
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-    <version>8.0-SNAPSHOT</version>
+    <version>8.0.0.0-001</version>
   </parent>
 
   <name>Pentaho Community Edition Project Parent POM For Bundle Projects</name>
@@ -123,31 +122,31 @@
                   <exportAntProperties>true</exportAntProperties>
                   <target>
                     <condition property="optimize-javascript-src-dir" value="${build.transpiledJavascriptOutputDirectory}">
-                      <equals arg1="${js.transpile.project}" arg2="true"/>
+                      <equals arg1="${js.transpile.project}" arg2="true" />
                     </condition>
-                    <property name="optimize-javascript-src-dir" value="${build.javascriptSourceDirectory}"/>
+                    <property name="optimize-javascript-src-dir" value="${build.javascriptSourceDirectory}" />
 
                     <condition property="skip.js-transpile" value="false">
-                      <equals arg1="${js.transpile.project}" arg2="true"/>
+                      <equals arg1="${js.transpile.project}" arg2="true" />
                     </condition>
                     <property name="skip.js-transpile" value="true" />
 
                     <condition property="skip.sass-transpile" value="false">
-                      <equals arg1="${css.sass.project}" arg2="true"/>
+                      <equals arg1="${css.sass.project}" arg2="true" />
                     </condition>
                     <property name="skip.sass-transpile" value="true" />
 
                     <condition property="skip.npm-install" value="false">
-                      <equals arg1="${js.transpile.project}" arg2="true"/>
+                      <equals arg1="${js.transpile.project}" arg2="true" />
                     </condition>
                     <condition property="skip.npm-install" value="false">
-                      <equals arg1="${css.sass.project}" arg2="true"/>
+                      <equals arg1="${css.sass.project}" arg2="true" />
                     </condition>
                     <property name="skip.npm-install" value="true" />
 
-                    <echo message="optimize-javascript-src-dir = ${optimize-javascript-src-dir}"/>
-                    <echo message="skip.js-transpile = ${skip.js-transpile}"/>
-                    <echo message="skip.sass-transpile = ${skip.sass-transpile}"/>
+                    <echo message="optimize-javascript-src-dir = ${optimize-javascript-src-dir}" />
+                    <echo message="skip.js-transpile = ${skip.js-transpile}" />
+                    <echo message="skip.sass-transpile = ${skip.sass-transpile}" />
                   </target>
                 </configuration>
               </execution>
@@ -159,8 +158,7 @@
                 </goals>
                 <configuration>
                   <target>
-                    <delete dir="${build.transpiledJavascriptOutputDirectory}"
-                            includeemptydirs="true"/>
+                    <delete dir="${build.transpiledJavascriptOutputDirectory}" includeemptydirs="true" />
                   </target>
                   <skip>${skip.js-transpile}</skip>
                 </configuration>

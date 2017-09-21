@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-parent-pom</artifactId>
-  <version>8.0-SNAPSHOT</version>
+  <version>8.0.0.0-001</version>
   <packaging>pom</packaging>
 
   <!--
@@ -123,10 +122,10 @@
 
     <pentaho.resolve.repo>http://nexus.pentaho.org/content/groups/omni/</pentaho.resolve.repo>
     <!-- No default repository URL deployments, these must be defined at build-time -->
-    <pentaho.public.release.repo></pentaho.public.release.repo>
-    <pentaho.public.snapshot.repo></pentaho.public.snapshot.repo>
-    <pentaho.private.release.repo></pentaho.private.release.repo>
-    <pentaho.private.snapshot.repo></pentaho.private.snapshot.repo>
+    <pentaho.public.release.repo />
+    <pentaho.public.snapshot.repo />
+    <pentaho.private.release.repo />
+    <pentaho.private.snapshot.repo />
 
     <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>
 
@@ -171,7 +170,7 @@
 
   <scm>
     <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>pentaho-parent-pom-8.0.0.0-001</tag>
   </scm>
   
   <distributionManagement>
