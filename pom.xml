@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-parent-pom</artifactId>
-  <version>8.0.0.0-001</version>
+  <version>8.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <!--
@@ -170,7 +170,7 @@
 
   <scm>
     <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
-    <tag>pentaho-parent-pom-8.0.0.0-001</tag>
+    <tag>HEAD</tag>
   </scm>
   
   <distributionManagement>

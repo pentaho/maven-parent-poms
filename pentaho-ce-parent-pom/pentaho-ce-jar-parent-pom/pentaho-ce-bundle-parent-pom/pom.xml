@@ -4,13 +4,13 @@
 
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-ce-bundle-parent-pom</artifactId>
-  <version>8.0.0.0-001</version>
+  <version>8.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-    <version>8.0.0.0-001</version>
+    <version>8.0-SNAPSHOT</version>
   </parent>
 
   <name>Pentaho Community Edition Project Parent POM For Bundle Projects</name>
