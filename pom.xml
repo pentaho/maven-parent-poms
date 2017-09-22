@@ -13,7 +13,22 @@
    -->
 
   <name>Pentaho Project Parent Pom</name>
-
+  <description>top-level abstract parent pom for all Pentaho CE projects</description>
+  <url>http://wwww.pentaho.org</url>
+  
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <scm>
+    <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  
   <modules>
     <module>pentaho-ce-parent-pom</module>
   </modules>
@@ -167,11 +182,6 @@
     <license.bundleLicenseFile>META-INF/LICENSE.txt</license.bundleLicenseFile>
     <license.failOnLicenseCheck>false</license.failOnLicenseCheck>
   </properties>
-
-  <scm>
-    <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
   
   <distributionManagement>
     <repository>
@@ -1020,6 +1030,28 @@
           <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
       </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+                <configuration>
+                  <keyname>${gpg.keyname}</keyname>
+                  <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
     
   </profiles>

@@ -2,22 +2,38 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.pentaho</groupId>
-  <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-  <version>8.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-ce-parent-pom</artifactId>
     <version>8.0-SNAPSHOT</version>
   </parent>
   
+  <groupId>org.pentaho</groupId>
+  <artifactId>pentaho-ce-jar-parent-pom</artifactId>
+  <version>8.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <name>Pentaho Community Edition Project Parent POM For Java Projects</name>
+  <description>parent pom for Pentaho CE Java projects</description>
+  <url>http://wwww.pentaho.org</url>
+  
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <scm>
+    <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  
   <modules>
     <module>pentaho-ce-bundle-parent-pom</module>
   </modules>
 
-  <name>Pentaho Community Edition Project Parent POM For Java Projects</name>
 
   <properties>
     <!-- VERSIONS -->
