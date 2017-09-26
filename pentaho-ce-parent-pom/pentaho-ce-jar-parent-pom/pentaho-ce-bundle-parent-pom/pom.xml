@@ -24,11 +24,6 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  
-  <scm>
-    <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
  
   <properties>
     <!-- These properties need to be redefined here or profile activation will not work with them -->

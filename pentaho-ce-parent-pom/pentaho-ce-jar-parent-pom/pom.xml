@@ -25,11 +25,6 @@
     </license>
   </licenses>
   
-  <scm>
-    <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
-  
   <modules>
     <module>pentaho-ce-bundle-parent-pom</module>
   </modules>

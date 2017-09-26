@@ -26,6 +26,7 @@
   
   <scm>
     <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
+    <url>https://github.com/pentaho/maven-parent-poms</url>
     <tag>HEAD</tag>
   </scm>
 
