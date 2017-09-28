@@ -182,6 +182,7 @@
     <license.licenseFile>LICENSE.txt</license.licenseFile>
     <license.bundleLicenseFile>META-INF/LICENSE.txt</license.bundleLicenseFile>
     <license.failOnLicenseCheck>false</license.failOnLicenseCheck>
+    <pentaho-eula-wrap-config.version>${project.version}</pentaho-eula-wrap-config.version>
   </properties>
  
   <distributionManagement>
@@ -862,7 +863,6 @@
       <properties>
         <artifactName>${project.artifactId}-${project.version}</artifactName>
         <izpack-maven-plugin.version>5.0.7-RC1</izpack-maven-plugin.version>
-        <pentaho-eula-wrap-config.version>1.0.11</pentaho-eula-wrap-config.version>
       </properties>
       <build>
         <plugins>
