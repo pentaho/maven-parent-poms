@@ -183,6 +183,11 @@
     <license.bundleLicenseFile>META-INF/LICENSE.txt</license.bundleLicenseFile>
     <license.failOnLicenseCheck>false</license.failOnLicenseCheck>
     <pentaho-eula-wrap-config.version>${project.version}</pentaho-eula-wrap-config.version>
+
+    <!-- Documentation properties -->
+    <!-- parsedVersion.* properties are dynamically created by the build-helper-maven-plugin:create-doc-version-property -->
+    <doc.version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}</doc.version>
+    <doc.base.url>https://help.pentaho.com/Documentation/${doc.version}</doc.base.url>
   </properties>
  
   <distributionManagement>
@@ -376,6 +381,18 @@
     <plugins>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>create-doc-version-property</id>
+            <goals>
+              <goal>parse-version</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
