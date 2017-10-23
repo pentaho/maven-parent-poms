@@ -792,15 +792,14 @@
         <jsdoc3-maven-plugin.version>1.2.0</jsdoc3-maven-plugin.version>
         <docjs.config.includePrivate>false</docjs.config.includePrivate>
 
-        <dependency.jsdoc.template.version>${project.version}</dependency.jsdoc.template.version>
-        <dependency.jsdoc.template.artifactId>common-ui-jsdoc-template</dependency.jsdoc.template.artifactId>
+        <jsdoc.template.version>${project.version}</jsdoc.template.version>
       </properties>
 
       <dependencies>
         <dependency>
           <groupId>org.pentaho</groupId>
-          <artifactId>${dependency.jsdoc.template.artifactId}</artifactId>
-          <version>${dependency.jsdoc.template.version}</version>
+          <artifactId>common-ui-jsdoc-template</artifactId>
+          <version>${jsdoc.template.version}</version>
           <type>zip</type>
         </dependency>
       </dependencies>
@@ -866,7 +865,7 @@
                 </goals>
 
                 <configuration>
-                  <includeArtifactIds>${dependency.jsdoc.template.artifactId}</includeArtifactIds>
+                  <includeArtifactIds>common-ui-jsdoc-template</includeArtifactIds>
                   <includes>**/**</includes>
                 </configuration>
               </execution>
