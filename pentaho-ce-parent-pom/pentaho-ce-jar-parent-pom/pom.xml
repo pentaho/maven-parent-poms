@@ -36,9 +36,6 @@
     <pentaho-coding-standards.version>8.1-SNAPSHOT</pentaho-coding-standards.version>
     <checkstyle.version>8.0</checkstyle.version>
 
-    <source.jdk.version>1.8</source.jdk.version>
-    <target.jdk.version>1.8</target.jdk.version>
-
     <!-- http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html -->
     <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks> <!-- default setting is reuseForks = true -->
     <maven-surefire-plugin.forkCount>1</maven-surefire-plugin.forkCount> <!-- default setting is forkCount = 1 -->
@@ -58,32 +55,6 @@
   </properties>
 
   <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-            <source>${source.jdk.version}</source>
-            <target>${target.jdk.version}</target>
-          </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <configuration>
-            <archive>
-              <manifest>
-                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-              </manifest>
-              <manifestEntries>
-                <Source-Java-Version>${source.jdk.version}</Source-Java-Version>
-                <Target-Java-Version>${target.jdk.version}</Target-Java-Version>
-              </manifestEntries>
-            </archive>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.jacoco</groupId>
