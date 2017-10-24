@@ -172,9 +172,6 @@
     <css.sass.project>false</css.sass.project>
 
     <docjs.config.file />
-    <docjs.config.template.directory>${build.dependenciesDirectory}/jsdoc-template/template</docjs.config.template.directory>
-    <docjs.config.template.plugins>${build.dependenciesDirectory}/jsdoc-template/plugins</docjs.config.template.plugins>
-    <docjs.build.directory>${project.build.directory}/jsdoc-template-config</docjs.build.directory>
 
     <frontend-maven-plugin.workingDirectory>${pentaho.basedir}</frontend-maven-plugin.workingDirectory>
     <frontend-maven-plugin.installDirectory>${pentaho.basedir}/target</frontend-maven-plugin.installDirectory>
@@ -191,7 +188,6 @@
     <!-- parsedVersion.* properties are dynamically created by the build-helper-maven-plugin:create-doc-version-property -->
     <doc.version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}</doc.version>
     <doc.base.url>https://help.pentaho.com/Documentation/${doc.version}</doc.base.url>
-    <docjs.config.github.branch>${doc.version}</docjs.config.github.branch>
   </properties>
  
   <distributionManagement>
@@ -790,9 +786,17 @@
 
       <properties>
         <jsdoc3-maven-plugin.version>1.2.0</jsdoc3-maven-plugin.version>
+        <jsdoc.template.version>${project.version}</jsdoc.template.version>
+
+        <docjs.build.directory>${build.dependenciesDirectory}/jsdoc-template</docjs.build.directory>
+        <docjs.build.config.directory>${docjs.build.directory}/config</docjs.build.config.directory>
+
+        <docjs.config.github.branch>${doc.version}</docjs.config.github.branch>
         <docjs.config.includePrivate>false</docjs.config.includePrivate>
 
-        <jsdoc.template.version>${project.version}</jsdoc.template.version>
+        <docjs.config.template.directory>${docjs.build.directory}/template</docjs.config.template.directory>
+        <docjs.config.template.plugins>${docjs.build.directory}/plugins</docjs.config.template.plugins>
+        <docjs.config.template.customPlugins>${docjs.build.config.directory}/customPlugins</docjs.config.template.customPlugins>
       </properties>
 
       <dependencies>
@@ -842,7 +846,7 @@
 
                 <configuration>
                   <overwrite>true</overwrite>
-                  <outputDirectory>${docjs.build.directory}</outputDirectory>
+                  <outputDirectory>${docjs.build.config.directory}</outputDirectory>
                   <resources>
                     <resource>
                       <directory>${basedir}/src/doc/javascript/config</directory>
@@ -880,7 +884,7 @@
             <groupId>com.phasebash.jsdoc</groupId>
             <artifactId>jsdoc3-maven-plugin</artifactId>
             <configuration>
-              <configFile>${docjs.build.directory}/${docjs.config.file}</configFile>
+              <configFile>${docjs.build.config.directory}/${docjs.config.file}</configFile>
               <includePrivate>${docjs.config.includePrivate}</includePrivate>
               <!--
                  The jsdoc3 maven plugin requires the directoryRoots or sourceFiles defined
@@ -888,7 +892,7 @@
                  the plugin and don't cause side effects on upstream projects configuration files
               -->
               <sourceFiles>
-                <sourceFile>${docjs.build.directory}/${docjs.config.file}</sourceFile>
+                <sourceFile>${docjs.build.config.directory}/${docjs.config.file}</sourceFile>
               </sourceFiles>
             </configuration>
           </plugin>
