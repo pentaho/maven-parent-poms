@@ -98,6 +98,10 @@
     <npm.version>4.6.1</npm.version>
     <rjs.version>2.1.19</rjs.version>
 
+    <!-- jdk version -->
+    <source.jdk.version>1.8</source.jdk.version>
+    <target.jdk.version>1.8</target.jdk.version>
+
     <!-- PHASE BINDINGS -->
     <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
     <node-npm_install-phase>initialize</node-npm_install-phase>
@@ -234,7 +238,6 @@
     </pluginRepository>
   </pluginRepositories>
 
-
   <build>
     <pluginManagement>
       <plugins>
@@ -242,6 +245,14 @@
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
           <version>${maven-bundle-plugin.version}</version>
+          <extensions>true</extensions>
+          <configuration>
+            <instructions>
+              <Implementation-Version>${project.version}</Implementation-Version>
+              <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+              <Bundle-Version>${project.version}</Bundle-Version>
+            </instructions>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
@@ -296,10 +307,27 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>${maven-jar-plugin.version}</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+              </manifest>
+              <manifestEntries>
+                <Source-Java-Version>${source.jdk.version}</Source-Java-Version>
+                <Target-Java-Version>${target.jdk.version}</Target-Java-Version>
+                <Implementation-ProductID>${project.artifactId}</Implementation-ProductID>
+              </manifestEntries>
+            </archive>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${source.jdk.version}</source>
+            <target>${target.jdk.version}</target>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
