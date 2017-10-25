@@ -779,7 +779,7 @@
       <properties>
         <artifactName>${project.artifactId}-${project.version}</artifactName>
         <izpack-maven-plugin.version>5.0.7-RC1</izpack-maven-plugin.version>
-        <pentaho-eula-wrap-config.version>1.0.11</pentaho-eula-wrap-config.version>
+        <pentaho-eula-wrap-config.version>8.1-SNAPSHOT</pentaho-eula-wrap-config.version>
       </properties>
       <build>
         <plugins>
