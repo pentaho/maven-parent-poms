@@ -4,10 +4,10 @@
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
   <!--
-    This is the recommended settings.xml for development of Pentaho projects.
+    This is the recommended settings.xml for development of Hitachi Vantara projects.
     Off-site community or cloud based builds might want to try running the "central" profile (`-Dcentral`)
     to resolve maven plugin dependencies and transitves of maven plugins through the maven central repository
-    instead of the Pentaho repository. This might speed up builds, but is not guaranteed to work for all projects.
+    instead of the Hitachi Vantara repository. This might speed up builds, but is not guaranteed to work for all projects.
     You should copy this file to your ~/.m2 directory and save it as settings.xml
   -->
 
