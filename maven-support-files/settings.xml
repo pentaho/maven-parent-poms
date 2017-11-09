@@ -3,22 +3,26 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-  <!--
-    This is the recommended settings.xml for development of Hitachi Vantara projects.
-    Off-site community or cloud based builds might want to try running the "central" profile (`-Dcentral`)
-    to resolve maven plugin dependencies and transitves of maven plugins through the maven central repository
-    instead of the Hitachi Vantara repository. This might speed up builds, but is not guaranteed to work for all projects.
-    You should copy this file to your ~/.m2 directory and save it as settings.xml
-  -->
+  <!-- This is the recommended settings.xml for development of Hitachi Vantara projects. -->
 
+  <!--
+  If your wish to mirror everything through pentaho-public's repo uncomment bellow. Not recommended
+  for external developers.
+  -->
+  <!--
   <mirrors>
     <mirror>
-      <id>pentaho.resolve.repo</id>
+      <id>pentaho-public</id>
       <url>http://nexus.pentaho.org/content/groups/omni</url>
-      <mirrorOf>!plugins,*</mirrorOf>
+      <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
+  -->
 
+  <!--
+  You might want to tweak the 'updatePolicy' configuration to fit your need on having updated snapshots and
+  releases. Our recommendation is to set it to 'never' and run maven with the '-U' flag when needed.
+  -->
   <profiles>
     <profile>
       <id>pentaho</id>
@@ -27,8 +31,8 @@
       </activation>
       <repositories>
         <repository>
-          <id>pentaho.resolve.repo</id>
-          <name>Pentaho Omni</name>
+          <id>pentaho-public</id>
+          <name>Pentaho Public</name>
           <url>http://nexus.pentaho.org/content/groups/omni</url>
           <releases>
             <enabled>true</enabled>
@@ -42,48 +46,12 @@
       </repositories>
       <pluginRepositories>
         <pluginRepository>
-          <id>plugins</id>
-          <name>Maven Central</name>
-          <url>http://nexus.pentaho.org/content/groups/omni</url>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>daily</updatePolicy>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-          </snapshots>
-        </pluginRepository>
-      </pluginRepositories>
-    </profile>
-    <profile>
-      <id>central</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-      <repositories>
-        <repository>
-          <id>pentaho.resolve.repo</id>
-          <name>Pentaho Omni</name>
+          <id>pentaho-public</id>
+          <name>Pentaho Public</name>
           <url>http://nexus.pentaho.org/content/groups/omni</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>always</updatePolicy>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-          </snapshots>
-        </repository>
-      </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <id>plugins</id>
-          <name>Maven Central</name>
-          <url>http://repo1.maven.org/maven2</url>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>daily</updatePolicy>
           </releases>
           <snapshots>
             <enabled>true</enabled>
@@ -93,6 +61,8 @@
       </pluginRepositories>
     </profile>
   </profiles>
+
+  <!-- this lets you call plugins from these groups in their short form -->
   <pluginGroups>
     <pluginGroup>org.pentaho.maven.plugins</pluginGroup>
     <pluginGroup>com.pentaho.maven.plugins</pluginGroup>

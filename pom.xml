@@ -209,31 +209,31 @@
 
   <repositories>
     <repository>
-      <id>pentaho.resolve.repo</id>
+      <id>pentaho-public</id>
       <name>Pentaho Resolve Repo</name>
       <url>${pentaho.resolve.repo}</url>
       <releases>
         <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
+        <updatePolicy>daily</updatePolicy>
       </releases>
       <snapshots>
         <enabled>true</enabled>
-        <updatePolicy>interval:7200</updatePolicy>
+        <updatePolicy>daily</updatePolicy>
       </snapshots>
     </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
-      <id>plugins</id>
+      <id>pentaho-public</id>
       <name>Pentaho Resolve Repo</name>
       <url>${pentaho.resolve.repo}</url>
       <releases>
         <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
+        <updatePolicy>daily</updatePolicy>
       </releases>
       <snapshots>
         <enabled>true</enabled>
-        <updatePolicy>interval:7200</updatePolicy>
+        <updatePolicy>daily</updatePolicy>
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
