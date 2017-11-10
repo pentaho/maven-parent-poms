@@ -150,6 +150,7 @@
     <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>    
     <pentaho.staging.repo.root.url>http://10.177.178.195</pentaho.staging.repo.root.url>
     <nexus.staging.profile.id>0</nexus.staging.profile.id>
+    <nexus.staging.server.id />
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -1108,7 +1109,7 @@
           <extensions>true</extensions>
           <configuration>
             <nexusUrl>${pentaho.staging.repo.root.url}</nexusUrl>
-            <serverId>staging-trial</serverId>
+            <serverId>${nexus.staging.server.id}</serverId>
             <stagingProfileId>${nexus.staging.profile.id}</stagingProfileId>
           </configuration>
         </plugin>
