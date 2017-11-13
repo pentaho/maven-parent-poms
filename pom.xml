@@ -147,8 +147,10 @@
     <pentaho.private.release.repo />
     <pentaho.private.snapshot.repo />
 
-    <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>
-
+    <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>    
+    <pentaho.staging.repo.root.url>http://10.177.178.195</pentaho.staging.repo.root.url>
+    <nexus.staging.profile.id>0</nexus.staging.profile.id>
+    <nexus.staging.server.id />
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -1095,6 +1097,24 @@
         </plugins>
       </build>
     </profile>
-    
+   <!-- Support Nexus Staging Deployment -->
+   <profile>
+   <id>deploy-to-staging</id>
+    <build>
+      <plugins>      
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.6.8</version>
+          <extensions>true</extensions>
+          <configuration>
+            <nexusUrl>${pentaho.staging.repo.root.url}</nexusUrl>
+            <serverId>${nexus.staging.server.id}</serverId>
+            <stagingProfileId>${nexus.staging.profile.id}</stagingProfileId>
+          </configuration>
+        </plugin>
+      </plugins>      
+    </build>
+    </profile>  
   </profiles>
 </project>
