@@ -90,6 +90,7 @@
     <maven-verifier-plugin.version>1.1</maven-verifier-plugin.version>
     <sonar-maven-plugin.version>2.7.1</sonar-maven-plugin.version>
     <license-helper-maven-plugin.version>1.26</license-helper-maven-plugin.version>
+    <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
     <!-- DO NOT, under ANY circumstance, use maven-bundle-plugin verion 2.5.4, it overrides all phase bindings with the default,
        and generally just makes a mess of things -->
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
@@ -395,6 +396,13 @@
         <plugin>
           <artifactId>maven-antrun-plugin</artifactId>
           <version>${maven-antrun-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${maven-war-plugin.version}</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>com.soebes.maven.plugins</groupId>
