@@ -33,7 +33,7 @@
     <!-- VERSIONS -->
     <junit.version>4.11</junit.version>
 
-    <pentaho-coding-standards.version>8.1-SNAPSHOT</pentaho-coding-standards.version>
+    <coding-standards.version>8.1-SNAPSHOT</coding-standards.version>
     <checkstyle.version>8.0</checkstyle.version>
 
     <!-- http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html -->
@@ -120,7 +120,7 @@
           <dependency>
             <groupId>org.pentaho</groupId>
             <artifactId>coding-standards</artifactId>
-            <version>${pentaho-coding-standards.version}</version>
+            <version>${coding-standards.version}</version>
             <type>zip</type>
           </dependency>
         </dependencies>
