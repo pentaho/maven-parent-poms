@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-ce-parent-pom</artifactId>
-    <version>8.1-SNAPSHOT</version>
+    <version>8.1.0-SNAPSHOT</version>
   </parent>
   
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-  <version>8.1-SNAPSHOT</version>
+  <version>8.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Pentaho Community Edition Project Parent POM For Java Projects</name>
@@ -33,7 +33,7 @@
     <!-- VERSIONS -->
     <junit.version>4.11</junit.version>
 
-    <coding-standards.version>8.1-SNAPSHOT</coding-standards.version>
+    <coding-standards.version>8.1.0-SNAPSHOT</coding-standards.version>
     <checkstyle.version>8.0</checkstyle.version>
 
     <!-- http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html -->
