@@ -40,9 +40,11 @@
     <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks> <!-- default setting is reuseForks = true -->
     <maven-surefire-plugin.forkCount>1</maven-surefire-plugin.forkCount> <!-- default setting is forkCount = 1 -->
     <maven-surefire-plugin.testFailureIgnore>false</maven-surefire-plugin.testFailureIgnore>
+    <maven-surefire-plugin.argLine/>
     <maven-failsafe-plugin.reuseForks>true</maven-failsafe-plugin.reuseForks> <!-- default setting is reuseForks = true -->
     <maven-failsafe-plugin.forkCount>1</maven-failsafe-plugin.forkCount> <!-- default setting is forkCount = 1 -->    
-    
+    <maven-failsafe-plugin.argLine/>
+
     <SCM_BRANCH>master</SCM_BRANCH>
     <sonar.project.name>${project.artifactId}</sonar.project.name>
     <sonar.host.url>http://sonar.pentaho.com:9000</sonar.host.url>
@@ -67,7 +69,7 @@
               <goal>prepare-agent</goal>
             </goals>
             <configuration>
-              <propertyName>surefireArgLine</propertyName>
+              <propertyName>jacocoSurefireArgLine</propertyName>
             </configuration>
           </execution>
           <execution>
@@ -89,7 +91,7 @@
               <goal>test</goal>
             </goals>
             <configuration>
-              <argLine>${surefireArgLine}</argLine>
+              <argLine>@{jacocoSurefireArgLine} ${maven-surefire-plugin.argLine}</argLine>
               <forkCount>${maven-surefire-plugin.forkCount}</forkCount>
               <reuseForks>${maven-surefire-plugin.reuseForks}</reuseForks>
               <testFailureIgnore>${maven-surefire-plugin.testFailureIgnore}</testFailureIgnore>
@@ -200,7 +202,7 @@
                   <goal>prepare-agent-integration</goal>
                 </goals>
                 <configuration>
-                  <propertyName>failsafeArgLine</propertyName>
+                  <propertyName>jacocoFailsafeArgLine</propertyName>
                 </configuration>
               </execution>
               <execution>
@@ -249,7 +251,7 @@
               </execution>
             </executions>
             <configuration>
-              <argLine>${failsafeArgLine}</argLine>
+              <argLine>@{jacocoFailsafeArgLine} ${maven-failsafe-plugin.argLine}</argLine>
               <forkCount>${maven-failsafe-plugin.forkCount}</forkCount>
               <reuseForks>${maven-failsafe-plugin.reuseForks}</reuseForks>
               <testClassesDirectory>${project.build.directory}/it-classes</testClassesDirectory>
