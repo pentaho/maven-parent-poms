@@ -35,6 +35,7 @@
 
     <coding-standards.version>8.1.0.0-SNAPSHOT</coding-standards.version>
     <checkstyle.version>8.0</checkstyle.version>
+    <spotbugs.version>3.1.2</spotbugs.version>
 
     <!-- http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html -->
     <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks> <!-- default setting is reuseForks = true -->
@@ -404,5 +405,39 @@
         </plugins>
       </build>
     </profile>
+    
+    <profile>
+      <id>spotbugs</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-maven-plugin</artifactId>
+            <version>${spotbugs.version}</version>
+            <configuration>
+              <includeFilterFile>findbugs/pentaho_checks.xml</includeFilterFile>
+            </configuration>
+            <executions>
+              <execution>
+                <id>spotbugs-check</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+            <dependencies>
+              <dependency>
+                <groupId>org.pentaho</groupId>
+                <artifactId>coding-standards</artifactId>
+                <version>${coding-standards.version}</version>
+                <type>zip</type>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
   </profiles>
 </project>
