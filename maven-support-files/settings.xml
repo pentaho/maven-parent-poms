@@ -66,5 +66,6 @@
   <pluginGroups>
     <pluginGroup>org.pentaho.maven.plugins</pluginGroup>
     <pluginGroup>com.pentaho.maven.plugins</pluginGroup>
+    <pluginGroup>com.github.spotbugs</pluginGroup>
   </pluginGroups>
 </settings>
