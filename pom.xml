@@ -69,10 +69,9 @@
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <maven-site-plugin.version>3.4</maven-site-plugin.version>
     <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
-    <build-helper-maven-plugin.version>1.9.1</build-helper-maven-plugin.version>
+    <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
     <requirejs-maven-plugin.version>2.0.4</requirejs-maven-plugin.version>
     <frontend-maven-plugin.version>1.3</frontend-maven-plugin.version>
-    <directory-maven-plugin.version>0.1</directory-maven-plugin.version>
     <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
     <iterator-maven-plugin.version>0.4</iterator-maven-plugin.version>
     <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
@@ -180,8 +179,8 @@
 
     <docjs.config.file />
 
-    <frontend-maven-plugin.workingDirectory>${pentaho.basedir}</frontend-maven-plugin.workingDirectory>
-    <frontend-maven-plugin.installDirectory>${pentaho.basedir}/target</frontend-maven-plugin.installDirectory>
+    <frontend-maven-plugin.workingDirectory>${project.rootdir}</frontend-maven-plugin.workingDirectory>
+    <frontend-maven-plugin.installDirectory>${frontend-maven-plugin.workingDirectory}/target</frontend-maven-plugin.installDirectory>
 
     <!-- License Configuration -->
     <license.organizationName>Hitachi Vantara</license.organizationName>
@@ -364,11 +363,6 @@
           </dependencies>
         </plugin>
         <plugin>
-          <groupId>org.commonjava.maven.plugins</groupId>
-          <artifactId>directory-maven-plugin</artifactId>
-          <version>${directory-maven-plugin.version}</version>
-        </plugin>
-        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
           <version>${build-helper-maven-plugin.version}</version>
@@ -425,10 +419,19 @@
         <artifactId>build-helper-maven-plugin</artifactId>
         <executions>
           <execution>
-            <id>create-doc-version-property</id>
+            <id>set-doc-version-property</id>
             <goals>
               <goal>parse-version</goal>
             </goals>
+          </execution>
+          <execution>
+            <id>set-root-dir-property</id>
+            <goals>
+              <goal>rootlocation</goal>
+            </goals>
+            <configuration>
+              <rootLocationProperty>project.rootdir</rootLocationProperty>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -440,22 +443,6 @@
             <goals>
               <goal>attach-descriptor</goal>
             </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.commonjava.maven.plugins</groupId>
-        <artifactId>directory-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>set-highest-basedir</id>
-            <phase>${set-highest-basedir-phase}</phase>
-            <goals>
-              <goal>highest-basedir</goal>
-            </goals>
-            <configuration>
-              <property>pentaho.basedir</property>
-            </configuration>
           </execution>
         </executions>
       </plugin>
