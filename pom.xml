@@ -250,9 +250,8 @@
           <extensions>true</extensions>
           <configuration>
             <instructions>
+              <!-- Required for generic jar version checking -->
               <Implementation-Version>${project.version}</Implementation-Version>
-              <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-              <Bundle-Version>${project.version}</Bundle-Version>
             </instructions>
           </configuration>
         </plugin>
