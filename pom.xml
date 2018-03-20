@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-parent-pom</artifactId>
-  <version>8.0-SNAPSHOT</version>
+  <version>8.0.0.4-247</version>
   <packaging>pom</packaging>
 
   <!--
@@ -182,7 +182,7 @@
     <license.licenseFile>LICENSE.txt</license.licenseFile>
     <license.bundleLicenseFile>META-INF/LICENSE.txt</license.bundleLicenseFile>
     <license.failOnLicenseCheck>false</license.failOnLicenseCheck>
-    <pentaho-eula-wrap-config.version>${project.version}</pentaho-eula-wrap-config.version>
+    <pentaho-eula-wrap-config.version>8.0.0.4-247</pentaho-eula-wrap-config.version>
 
     <!-- Documentation properties -->
     <!-- parsedVersion.* properties are dynamically created by the build-helper-maven-plugin:create-doc-version-property -->
