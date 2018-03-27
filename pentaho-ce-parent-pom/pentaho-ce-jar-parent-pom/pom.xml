@@ -33,10 +33,6 @@
     <!-- VERSIONS -->
     <junit.version>4.11</junit.version>
 
-    <coding-standards.version>8.1.0.0-SNAPSHOT</coding-standards.version>
-    <checkstyle.version>8.0</checkstyle.version>
-    <spotbugs.version>3.1.2</spotbugs.version>
-
     <!-- http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html -->
     <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks> <!-- default setting is reuseForks = true -->
     <maven-surefire-plugin.forkCount>1</maven-surefire-plugin.forkCount> <!-- default setting is forkCount = 1 -->
@@ -55,33 +51,13 @@
     <sonar.branch>${SCM_BRANCH}</sonar.branch>
     <sonar.jacoco.reportPath>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPath>
     <sonar.jacoco.itReportPath>${project.build.directory}/jacoco-it.exec</sonar.jacoco.itReportPath>
+
+    <jacocoSurefireArgLine/> <!-- this is set by jacoco's prepare-agent execution -->
+    <jacocoFailsafeArgLine/> <!-- this is set by jacoco's prepare-agent execution -->
   </properties>
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>test-unit-jacoco-agent-prep</id>
-            <phase>${test-unit-jacoco-agent-prep-phase}</phase>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-            <configuration>
-              <propertyName>jacocoSurefireArgLine</propertyName>
-            </configuration>
-          </execution>
-          <execution>
-            <id>test-unit-jacoco-report</id>
-            <phase>${test-unit-jacoco-report-phase}</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <executions>
@@ -92,7 +68,7 @@
               <goal>test</goal>
             </goals>
             <configuration>
-              <argLine>@{jacocoSurefireArgLine} ${maven-surefire-plugin.argLine}</argLine>
+              <argLine>-Dfile.encoding=${project.build.sourceEncoding} @{jacocoSurefireArgLine} ${maven-surefire-plugin.argLine}</argLine> <!-- this is set by jacoco's prepare-agent execution -->
               <forkCount>${maven-surefire-plugin.forkCount}</forkCount>
               <reuseForks>${maven-surefire-plugin.reuseForks}</reuseForks>
               <testFailureIgnore>${maven-surefire-plugin.testFailureIgnore}</testFailureIgnore>
@@ -111,22 +87,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>com.puppycrawl.tools</groupId>
-            <artifactId>checkstyle</artifactId>
-            <version>${checkstyle.version}</version>
-          </dependency>
-          <dependency>
-            <groupId>org.pentaho</groupId>
-            <artifactId>coding-standards</artifactId>
-            <version>${coding-standards.version}</version>
-            <type>zip</type>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -151,6 +111,9 @@
       <properties>
         <integration-test.resources>src/it/resources</integration-test.resources>
         <integration-test.src>src/it/java</integration-test.src>
+        <!-- only used in audit mode -->
+        <test-integration_jacoco-agent-prep-phase>pre-integration-test</test-integration_jacoco-agent-prep-phase>
+        <test-integration_jacoco-report-phase>verify</test-integration_jacoco-report-phase>
       </properties>
       <build>
         <plugins>
@@ -193,29 +156,6 @@
             </executions>
           </plugin>
           <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>test-integration_jacoco-agent-prep</id>
-                <phase>${test-integration_jacoco-agent-prep-phase}</phase>
-                <goals>
-                  <goal>prepare-agent-integration</goal>
-                </goals>
-                <configuration>
-                  <propertyName>jacocoFailsafeArgLine</propertyName>
-                </configuration>
-              </execution>
-              <execution>
-                <id>test-integration_jacoco-report</id>
-                <phase>${test-integration_jacoco-report-phase}</phase>
-                <goals>
-                  <goal>report-integration</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <executions>
               <execution>
@@ -252,7 +192,7 @@
               </execution>
             </executions>
             <configuration>
-              <argLine>@{jacocoFailsafeArgLine} ${maven-failsafe-plugin.argLine}</argLine>
+              <argLine>-Dfile.encoding=${project.build.sourceEncoding} @{jacocoFailsafeArgLine} ${maven-failsafe-plugin.argLine}</argLine> <!-- this is set by jacoco's prepare-agent-integration execution -->
               <forkCount>${maven-failsafe-plugin.forkCount}</forkCount>
               <reuseForks>${maven-failsafe-plugin.reuseForks}</reuseForks>
               <testClassesDirectory>${project.build.directory}/it-classes</testClassesDirectory>
@@ -261,97 +201,6 @@
           </plugin>
         </plugins>
       </build>
-    </profile>
-
-    <profile>
-      <id>reporting</id>
-      <activation>
-        <property>
-          <name>!maven.test.skip</name>
-        </property>
-      </activation>
-      <reporting>
-        <plugins>
-          <plugin>
-            <artifactId>maven-project-info-reports-plugin</artifactId>
-            <configuration>
-              <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-            </configuration>
-          </plugin>
-          <plugin>
-            <artifactId>maven-jxr-plugin</artifactId>
-            <reportSets>
-              <reportSet>
-                <id>jxr</id>
-                <reports>
-                  <report>jxr</report>
-                </reports>
-              </reportSet>
-            </reportSets>
-            <configuration>
-              <linkJavadoc>true</linkJavadoc>
-            </configuration>
-          </plugin>
-          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <reportSets>
-              <reportSet>
-                <id>javadoc</id>
-                <reports>
-                  <report>javadoc</report>
-                </reports>
-              </reportSet>
-            </reportSets>
-            <configuration>
-              <failOnError>false</failOnError>
-            </configuration>
-          </plugin>
-          <plugin>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <reportSets>
-              <reportSet>
-                <id>checkstyle</id>
-                <reports>
-                  <report>checkstyle</report>
-                </reports>
-              </reportSet>
-            </reportSets>
-            <configuration>
-              <!--  configuration file comes from coding-standards artifact -->
-              <configLocation>checkstyle/pentaho_checks.xml</configLocation>
-              <linkXRef>true</linkXRef>
-              <cacheFile />
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-          </plugin>
-          <plugin>
-            <artifactId>maven-surefire-report-plugin</artifactId>
-            <reportSets>
-              <reportSet>
-                <id>unit-tests</id>
-                <reports>
-                  <report>report-only</report>
-                </reports>
-              </reportSet>
-              <reportSet>
-                <id>integration-tests</id>
-                <reports>
-                  <report>failsafe-report-only</report>
-                </reports>
-              </reportSet>
-            </reportSets>
-            <configuration>
-              <linkXRef>true</linkXRef>
-            </configuration>
-          </plugin>
-          <plugin>
-            <artifactId>maven-site-plugin</artifactId>
-          </plugin>
-        </plugins>
-      </reporting>
     </profile>
 
     <profile>
@@ -377,63 +226,6 @@
                 </configuration>
               </execution>
             </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>sonar</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>sonar-maven-plugin</artifactId>
-            <version>${sonar-maven-plugin.version}</version>
-            <executions>
-              <execution>
-                <id>sonar_publish</id>
-                <configuration>
-                  <sonarHostURL>${sonar.host.url}</sonarHostURL>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    
-    <profile>
-      <id>spotbugs</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>com.github.spotbugs</groupId>
-            <artifactId>spotbugs-maven-plugin</artifactId>
-            <version>${spotbugs.version}</version>
-            <configuration>
-              <includeFilterFile>findbugs/pentaho_checks.xml</includeFilterFile>
-            </configuration>
-            <executions>
-              <execution>
-                <id>spotbugs-check</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>check</goal>
-                </goals>
-              </execution>
-            </executions>
-            <dependencies>
-              <dependency>
-                <groupId>org.pentaho</groupId>
-                <artifactId>coding-standards</artifactId>
-                <version>${coding-standards.version}</version>
-                <type>zip</type>
-              </dependency>
-            </dependencies>
           </plugin>
         </plugins>
       </build>
