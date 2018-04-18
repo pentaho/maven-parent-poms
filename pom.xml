@@ -161,6 +161,8 @@
     <build.javascriptTestSourceDirectory>${basedir}/src/test/javascript</build.javascriptTestSourceDirectory>
     <build.javascriptTestOutputDirectory>${project.build.directory}/test-javascript</build.javascriptTestOutputDirectory>
     <build.javascriptTestConfigDirectory>${basedir}/src/test/config/javascript</build.javascriptTestConfigDirectory>
+	
+    <jenkins.javascript-test_karma.reportsDirectory>${basedir}/target/js-reports</jenkins.javascript-test_karma.reportsDirectory>
 
     <build.dependenciesDirectory>${project.build.directory}/dependency</build.dependenciesDirectory>
 
