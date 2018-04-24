@@ -15,7 +15,7 @@
   <name>Pentaho Project Parent Pom</name>
   <description>top-level abstract parent pom for all Pentaho CE projects</description>
   <url>http://wwww.pentaho.org</url>
-   
+
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -23,7 +23,7 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  
+
   <scm>
     <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
     <url>https://github.com/pentaho/maven-parent-poms</url>
@@ -68,7 +68,7 @@
     <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <maven-site-plugin.version>3.4</maven-site-plugin.version>
-    <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
+    <maven-dependency-plugin.version>3.1.0</maven-dependency-plugin.version>
     <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
     <requirejs-maven-plugin.version>2.0.4</requirejs-maven-plugin.version>
     <frontend-maven-plugin.version>1.3</frontend-maven-plugin.version>
@@ -146,7 +146,7 @@
     <pentaho.private.release.repo />
     <pentaho.private.snapshot.repo />
 
-    <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>    
+    <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>
     <pentaho.staging.repo.root.url>http://10.177.178.195</pentaho.staging.repo.root.url>
     <nexus.staging.profile.id>0</nexus.staging.profile.id>
     <nexus.staging.server.id />
@@ -202,7 +202,7 @@
     <doc.version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}</doc.version>
     <doc.base.url>https://help.pentaho.com/Documentation/${doc.version}</doc.base.url>
   </properties>
- 
+
   <distributionManagement>
     <repository>
       <id>pentaho.public.release.repo</id>
@@ -1133,7 +1133,7 @@
         </dependency>
       </dependencies>
     </profile>
-    
+
     <profile>
       <id>sonatype</id>
       <activation>
@@ -1360,7 +1360,7 @@
    <profile>
    <id>deploy-to-staging</id>
     <build>
-      <plugins>      
+      <plugins>
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -1372,8 +1372,8 @@
             <stagingProfileId>${nexus.staging.profile.id}</stagingProfileId>
           </configuration>
         </plugin>
-      </plugins>      
+      </plugins>
     </build>
-    </profile>  
+    </profile>
   </profiles>
 </project>
