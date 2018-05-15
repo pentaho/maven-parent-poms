@@ -80,7 +80,7 @@
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
 
 
-    <nodejs.version>v4.4.5</nodejs.version>
+    <nodejs.version>v4.5.0</nodejs.version>
     <npm.version>2.15.4</npm.version>
     <rjs.version>2.1.19</rjs.version>
     
