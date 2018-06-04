@@ -62,28 +62,28 @@
 
   <properties>
     <!-- VERSIONS -->
-    <jacoco-maven-plugin.version>0.8.0</jacoco-maven-plugin.version>
-    <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+    <jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
+    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
     <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-    <maven-site-plugin.version>3.4</maven-site-plugin.version>
+    <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
     <maven-dependency-plugin.version>3.1.0</maven-dependency-plugin.version>
     <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
     <requirejs-maven-plugin.version>2.0.4</requirejs-maven-plugin.version>
     <frontend-maven-plugin.version>1.3</frontend-maven-plugin.version>
     <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
-    <iterator-maven-plugin.version>0.4</iterator-maven-plugin.version>
+    <iterator-maven-plugin.version>0.5.1</iterator-maven-plugin.version>
     <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
     <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
-    <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
     <maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
-    <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
-    <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+    <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
+    <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
     <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
     <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
     <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
-    <maven-source-plugin.version>2.4</maven-source-plugin.version>
+    <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
     <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
     <maven-surefire-report-plugin.version>2.21.0</maven-surefire-report-plugin.version>
     <maven-verifier-plugin.version>1.1</maven-verifier-plugin.version>
@@ -103,7 +103,7 @@
     <target.jdk.version>1.8</target.jdk.version>
     <checkstyle.version>8.0</checkstyle.version>
     <coding-standards.version>9.0.0.0-SNAPSHOT</coding-standards.version>
-    <spotbugs.version>3.1.2</spotbugs.version>
+    <spotbugs.version>3.1.3</spotbugs.version>
 
     <!-- PHASE BINDINGS -->
     <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
@@ -298,6 +298,9 @@
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven-javadoc-plugin.version}</version>
+          <configuration>
+            <doclint>none</doclint>
+          </configuration>
         </plugin>
 
         <plugin>
