@@ -90,9 +90,8 @@
     <sonar-maven-plugin.version>2.7.1</sonar-maven-plugin.version>
     <license-helper-maven-plugin.version>1.26</license-helper-maven-plugin.version>
     <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
-    <!-- DO NOT, under ANY circumstance, use maven-bundle-plugin verion 2.5.4, it overrides all phase bindings with the default,
-       and generally just makes a mess of things -->
-    <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
+    <maven-bundle-plugin.version>3.5.0</maven-bundle-plugin.version>
+    <maven-karaf-plugin.version>4.2.0</maven-karaf-plugin.version>
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
@@ -261,6 +260,11 @@
               <Implementation-Version>${project.version}</Implementation-Version>
             </instructions>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.karaf.tooling</groupId>
+          <artifactId>karaf-maven-plugin</artifactId>
+          <version>${karaf-maven-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
