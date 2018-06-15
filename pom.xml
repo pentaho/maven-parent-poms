@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-parent-pom</artifactId>
-  <version>8.1.0.0-SNAPSHOT</version>
+  <version>8.1.0.0-365</version>
   <packaging>pom</packaging>
 
   <!--
@@ -27,7 +27,7 @@
   <scm>
     <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
     <url>https://github.com/pentaho/maven-parent-poms</url>
-    <tag>HEAD</tag>
+    <tag>pentaho-parent-pom-8.1.0.0-365</tag>
   </scm>
 
   <modules>
@@ -320,7 +320,7 @@
             <configLocation>${checkstyle.configLocation}</configLocation>
             <linkXRef>${checkstyle.linkXRef}</linkXRef>
             <consoleOutput>${checkstyle.consoleOutput}</consoleOutput>
-            <cacheFile/>
+            <cacheFile />
           </configuration>
         </plugin>
 
@@ -1185,8 +1185,8 @@
         <test-unit-jacoco-agent-prep-phase>initialize</test-unit-jacoco-agent-prep-phase>
         <test-unit-jacoco-report-phase>verify</test-unit-jacoco-report-phase>
         <!-- disabled by default, will be enabled if runITs -->
-        <test-integration_jacoco-agent-prep-phase/>
-        <test-integration_jacoco-report-phase/>
+        <test-integration_jacoco-agent-prep-phase />
+        <test-integration_jacoco-report-phase />
       </properties>
       <build>
         <plugins>
