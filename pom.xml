@@ -91,7 +91,7 @@
     <license-helper-maven-plugin.version>1.26</license-helper-maven-plugin.version>
     <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
-    <maven-karaf-plugin.version>4.2.0</maven-karaf-plugin.version>
+    <karaf-maven-plugin.version>3.0.8</karaf-maven-plugin.version>
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
