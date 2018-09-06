@@ -100,6 +100,9 @@
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
     <fasterxml-jackson.version>2.9.5</fasterxml-jackson.version>
 
+    <!-- spring-security version -->
+    <spring-security.version>4.1.5.RELEASE</spring-security.version>
+
     <!-- jdk version -->
     <source.jdk.version>1.8</source.jdk.version>
     <target.jdk.version>1.8</target.jdk.version>
