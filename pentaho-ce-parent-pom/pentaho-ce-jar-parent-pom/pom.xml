@@ -231,5 +231,24 @@
       </build>
     </profile>
     
+    <profile>
+      <id>unit-test-output-redirect</id>
+      <activation>
+        <property>
+          <name>redirectTestOutputToFile</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+              <configuration>
+                <redirectTestOutputToFile>true</redirectTestOutputToFile>
+              </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
   </profiles>
 </project>
