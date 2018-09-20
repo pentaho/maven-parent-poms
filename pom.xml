@@ -1449,24 +1449,45 @@
         </plugins>
       </reporting>
     </profile>
-   <!-- Support Nexus Staging Deployment -->
-   <profile>
-   <id>deploy-to-staging</id>
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.8</version>
-          <extensions>true</extensions>
-          <configuration>
-            <nexusUrl>${pentaho.staging.repo.root.url}</nexusUrl>
-            <serverId>${nexus.staging.server.id}</serverId>
-            <stagingProfileId>${nexus.staging.profile.id}</stagingProfileId>
-          </configuration>
-        </plugin>
-      </plugins>
-    </build>
+    
+    <!-- Support Nexus Staging Deployment -->
+    <profile>
+      <id>deploy-to-staging</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.8</version>
+            <extensions>true</extensions>
+            <configuration>
+              <nexusUrl>${pentaho.staging.repo.root.url}</nexusUrl>
+              <serverId>${nexus.staging.server.id}</serverId>
+              <stagingProfileId>${nexus.staging.profile.id}</stagingProfileId>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
+    
+    <profile>
+      <id>unit-test-output-redirect</id>
+      <activation>
+        <property>
+          <name>redirectTestOutputToFile</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+              <configuration>
+                <redirectTestOutputToFile>true</redirectTestOutputToFile>
+              </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
   </profiles>
 </project>
