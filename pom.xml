@@ -83,7 +83,10 @@
     <nodejs.version>v4.5.0</nodejs.version>
     <npm.version>2.15.4</npm.version>
     <rjs.version>2.1.19</rjs.version>
-    
+
+    <dom4j.version>2.1.1</dom4j.version>
+    <jaxen.version>1.1.6</jaxen.version>
+
     <!-- PHASE BINDINGS -->
     <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
     <node-npm_install-phase>initialize</node-npm_install-phase>
@@ -167,7 +170,22 @@
     <developerConnection>scm:git:git@github.com:pentaho/maven-parent-poms.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
-  
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>${dom4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jaxen</groupId>
+        <artifactId>jaxen</artifactId>
+        <version>${jaxen.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <distributionManagement>
     <repository>
       <id>pentaho.public.release.repo</id>
