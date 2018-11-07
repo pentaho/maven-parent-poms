@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-parent-pom</artifactId>
   <version>9.0.0.0-SNAPSHOT</version>
+
   <packaging>pom</packaging>
 
   <!--
@@ -95,7 +97,7 @@
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
-    <rjs.version>2.3.5</rjs.version>
+    <requirejs.version>2.3.6</requirejs.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
     <fasterxml-jackson.version>2.9.5</fasterxml-jackson.version>
@@ -119,7 +121,7 @@
     <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
     <node-npm_install-phase>initialize</node-npm_install-phase>
     <eula-wrap_assign-deps-to-properties-phase>initialize</eula-wrap_assign-deps-to-properties-phase>
-    <bundle-javascript_unpack-rjs-phase>initialize</bundle-javascript_unpack-rjs-phase>
+    <javascript_unpack-rjs-phase>initialize</javascript_unpack-rjs-phase>
     <javascript_unpack-dependencies-phase>initialize</javascript_unpack-dependencies-phase>
     <javascript_transpile_custom_properties-phase>validate</javascript_transpile_custom_properties-phase>
     <javascript_override-profilebuilder-phase>process-resources</javascript_override-profilebuilder-phase>
@@ -127,6 +129,7 @@
     <bundle-javascript_transpile_optimize-phase>generate-sources</bundle-javascript_transpile_optimize-phase>
     <bundle-javascript_add-resource-phase>process-sources</bundle-javascript_add-resource-phase>
     <bundle-sass_optimize-phase>process-sources</bundle-sass_optimize-phase>
+    <bundle-javascript_unpack-rjs-phase>initialize</bundle-javascript_unpack-rjs-phase>
     <generate-bundle-manifest-phase>compile</generate-bundle-manifest-phase>
     <javascript-transpile_cleanup-phase>compile</javascript-transpile_cleanup-phase>
     <javascript-test_copy-resources-phase>generate-test-resources</javascript-test_copy-resources-phase>
@@ -177,7 +180,7 @@
     <build.dependenciesDirectory>${project.build.directory}/dependency</build.dependenciesDirectory>
 
     <pentaho-js-build.dir>${build.dependenciesDirectory}/pentaho-js-build</pentaho-js-build.dir>
-    <rjs.webjar.file>${build.dependenciesDirectory}/META-INF/resources/webjars/rjs/${rjs.version}/bin/r.js</rjs.webjar.file>
+    <rjs.webjar.file>${build.dependenciesDirectory}/META-INF/resources/webjars/requirejs/${requirejs.version}/bin/r.js</rjs.webjar.file>
 
     <requirejs.build.file>build.js</requirejs.build.file>
     <js.project.list>dummy</js.project.list>
@@ -297,6 +300,18 @@
         <groupId>jaxen</groupId>
         <artifactId>jaxen</artifactId>
         <version>${jaxen.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>requirejs</artifactId>
+        <version>${requirejs.version}</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>*</artifactId>
+            <groupId>*</groupId>
+          </exclusion>
+        </exclusions>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -561,6 +576,7 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
     <plugins>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -764,9 +780,11 @@
           <exists>${build.javascriptConfigDirectory}/profileBuilder.js</exists>
         </file>
       </activation>
+
       <properties>
         <dependency.pentaho-js-build.revision>1.0.0</dependency.pentaho-js-build.revision>
       </properties>
+
       <dependencies>
         <dependency>
           <groupId>pentaho</groupId>
@@ -775,10 +793,12 @@
           <type>zip</type>
         </dependency>
       </dependencies>
+
       <build>
         <plugins>
           <plugin>
             <artifactId>maven-dependency-plugin</artifactId>
+
             <executions>
               <execution>
                 <id>override-pentaho-js-build_unpack-dependencies</id>
@@ -793,21 +813,27 @@
               </execution>
             </executions>
           </plugin>
+
           <plugin>
             <artifactId>maven-resources-plugin</artifactId>
+
             <executions>
               <execution>
                 <id>override-pentaho-js-build_override-profilebuilder</id>
                 <phase>${javascript_override-profilebuilder-phase}</phase>
+
                 <goals>
                   <goal>copy-resources</goal>
                 </goals>
+
                 <configuration>
                   <outputDirectory>${pentaho-js-build.dir}</outputDirectory>
                   <resources>
                     <resource>
                       <directory>${build.javascriptConfigDirectory}</directory>
+
                       <filtering>true</filtering>
+
                       <includes>
                         <include>profileBuilder.js</include>
                       </includes>
@@ -863,6 +889,7 @@
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>javascript-bundle</id>
       <activation>
@@ -885,6 +912,29 @@
               </execution>
             </executions>
           </plugin>
+
+          <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>javascript_unpack-rjs</id>
+                <phase>${javascript_unpack-rjs-phase}</phase>
+                <goals>
+                  <goal>unpack</goal>
+                </goals>
+                <configuration>
+                  <artifactItems>
+                    <artifactItem>
+                      <groupId>org.webjars.npm</groupId>
+                      <artifactId>requirejs</artifactId>
+                      <includes>**/r.js</includes>
+                    </artifactItem>
+                  </artifactItems>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
           <plugin>
             <groupId>com.github.bringking</groupId>
             <artifactId>requirejs-maven-plugin</artifactId>
@@ -892,13 +942,15 @@
               <execution>
                 <id>javascript-bundle_optimize</id>
                 <phase>${javascript_optimize-phase}</phase>
+
                 <goals>
                   <goal>optimize</goal>
                 </goals>
+
                 <configuration>
                   <nodeExecutable>${frontend-maven-plugin.installDirectory}/node/node</nodeExecutable>
+                  <optimizerFile>${rjs.webjar.file}</optimizerFile>
                   <configFile>${build.javascriptConfigDirectory}/${requirejs.build.file}</configFile>
-                  <optimizerFile>${pentaho-js-build.dir}/r.js</optimizerFile>
                   <filterConfig>true</filterConfig>
                 </configuration>
               </execution>
@@ -1462,7 +1514,7 @@
         </plugins>
       </reporting>
     </profile>
-    
+
     <!-- Support Nexus Staging Deployment -->
     <profile>
       <id>deploy-to-staging</id>
@@ -1482,7 +1534,7 @@
         </plugins>
       </build>
     </profile>
-    
+
     <profile>
       <id>unit-test-output-redirect</id>
       <activation>
@@ -1501,6 +1553,6 @@
         </plugins>
       </build>
     </profile>
-    
+
   </profiles>
 </project>
