@@ -7,7 +7,7 @@
     <artifactId>pentaho-ce-jar-parent-pom</artifactId>
     <version>9.0.0.0-SNAPSHOT</version>
   </parent>
-  
+
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-ce-bundle-parent-pom</artifactId>
   <version>9.0.0.0-SNAPSHOT</version>
@@ -16,7 +16,7 @@
   <name>Pentaho Community Edition Project Parent POM For Bundle Projects</name>
   <description>parent pom for Pentaho CE osgi projects</description>
   <url>http://wwww.pentaho.org</url>
-  
+
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -24,7 +24,7 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
- 
+
   <properties>
     <!-- These properties need to be redefined here or profile activation will not work with them -->
     <build.javascriptConfigDirectory>${basedir}/src/main/config/javascript</build.javascriptConfigDirectory>
@@ -218,9 +218,9 @@
                 <configuration>
                   <artifactItems>
                     <artifactItem>
-                      <groupId>org.webjars</groupId>
-                      <artifactId>rjs</artifactId>
-                      <version>${rjs.version}</version>
+                      <groupId>org.webjars.npm</groupId>
+                      <artifactId>requirejs</artifactId>
+                      <includes>**/r.js</includes>
                     </artifactItem>
                   </artifactItems>
                 </configuration>
@@ -264,6 +264,7 @@
                   <nodeExecutable>${frontend-maven-plugin.installDirectory}/node/node</nodeExecutable>
                   <optimizerFile>${rjs.webjar.file}</optimizerFile>
                   <configFile>${build.javascriptConfigDirectory}/osgi/${requirejs.build.file}</configFile>
+
                   <optimizerParameters>
                     <parameter>appDir=${optimize-javascript-src-dir}</parameter>
                     <parameter>baseUrl=.</parameter>
