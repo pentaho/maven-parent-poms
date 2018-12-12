@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.pentaho</groupId>
-  <artifactId>pentaho-ce-bundle-parent-pom</artifactId>
-  <version>7.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-    <version>7.1-SNAPSHOT</version>
+    <version>7.1.0.19-174</version>
   </parent>
-
+  <groupId>org.pentaho</groupId>
+  <artifactId>pentaho-ce-bundle-parent-pom</artifactId>
+  <version>7.1.0.19-174</version>
+  <packaging>pom</packaging>
   <name>Pentaho Community Edition Project Parent POM For Bundle Projects</name>
-
   <properties>
-    <!-- These properties need to be redefined here or profile activation will not work with them -->
     <build.javascriptConfigDirectory>${basedir}/src/main/config/javascript</build.javascriptConfigDirectory>
     <requirejs.build.file>build.js</requirejs.build.file>
   </properties>
-
   <build>
-  
     <pluginManagement>
       <plugins>
-      
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
@@ -36,12 +30,9 @@
             </instructions>
           </configuration>
         </plugin>
-      
       </plugins>
     </pluginManagement>
-  
     <plugins>
-
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
@@ -53,19 +44,13 @@
             <goals>
               <goal>manifest</goal>
             </goals>
-            <configuration>
-              <!-- override to specify import/export packages -->
-            </configuration>
+            <configuration></configuration>
           </execution>
         </executions>
       </plugin>
-    
     </plugins>
-  
   </build>
-  
   <profiles>
-  
     <profile>
       <id>bundle-javascript</id>
       <activation>
@@ -73,10 +58,8 @@
           <exists>${build.javascriptConfigDirectory}/osgi/${requirejs.build.file}</exists>
         </file>
       </activation>
-
       <build>
         <plugins>
-
           <plugin>
             <groupId>com.github.eirslett</groupId>
             <artifactId>frontend-maven-plugin</artifactId>
@@ -90,9 +73,7 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
             <executions>
               <execution>
@@ -113,7 +94,6 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
@@ -137,7 +117,6 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
             <groupId>com.github.bringking</groupId>
             <artifactId>requirejs-maven-plugin</artifactId>
@@ -164,12 +143,8 @@
               </execution>
             </executions>
           </plugin>
-
         </plugins>
-
       </build>
     </profile>
-  
   </profiles>
-  
 </project>
