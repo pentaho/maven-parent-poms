@@ -1562,5 +1562,32 @@
       </build>
     </profile>
 
+    <profile>
+      <id>owasp</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <version>4.0.0</version>
+            <configuration>
+              <cveUrl12Modified>http://nexus.pentaho.org/repository/proxy-nist-feeds/xml/cve/1.2/nvdcve-modified.xml.gz</cveUrl12Modified>
+              <cveUrl20Modified>http://nexus.pentaho.org/repository/proxy-nist-feeds/xml/cve/2.0/nvdcve-2.0-modified.xml.gz</cveUrl20Modified>
+              <cveUrl12Base>http://nexus.pentaho.org/repository/proxy-nist-feeds/xml/cve/1.2/nvdcve-%d.xml.gz</cveUrl12Base>
+              <cveUrl20Base>http://nexus.pentaho.org/repository/proxy-nist-feeds/xml/cve/2.0/nvdcve-2.0-%d.xml.gz</cveUrl20Base>
+              <format>all</format>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
   </profiles>
 </project>
