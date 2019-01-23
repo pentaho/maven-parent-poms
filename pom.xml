@@ -1624,8 +1624,7 @@
 		        <goals>
 		          <goal>prepare</goal>
 		        </goals>
-		        <configuration>
-		        
+		        <configuration>		        
 		        </configuration>	            
 	          </execution>
 	        </executions>
