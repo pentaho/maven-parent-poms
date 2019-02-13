@@ -64,6 +64,9 @@
 
   <properties>
     <!-- VERSIONS -->
+    <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
+    <aries.blueprint.core.version>1.4.2</aries.blueprint.core.version>
+
     <jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
@@ -226,6 +229,17 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.apache.aries.blueprint</groupId>
+        <artifactId>org.apache.aries.blueprint.api</artifactId>
+        <version>${aries.blueprint.api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.aries.blueprint</groupId>
+        <artifactId>org.apache.aries.blueprint.core</artifactId>
+        <version>${aries.blueprint.core.version}</version>
+      </dependency>
+
       <dependency>
         <groupId>org.codehaus.jackson</groupId>
         <artifactId>jackson-jaxrs</artifactId>
