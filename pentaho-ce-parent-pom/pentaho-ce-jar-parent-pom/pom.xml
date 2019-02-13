@@ -43,15 +43,6 @@
     <maven-failsafe-plugin.argLine/>
 
     <SCM_BRANCH>master</SCM_BRANCH>
-    <sonar.project.name>${project.artifactId}</sonar.project.name>
-    <sonar.host.url>http://sonar.pentaho.com:9000</sonar.host.url>
-    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    <sonar.projectName>${sonar.project.name}</sonar.projectName>
-    <sonar.sources>.</sonar.sources>
-    <sonar.inclusions>src/main/**</sonar.inclusions>
-    <sonar.jacoco.reportPaths>${project.build.directory}/jacoco.exec,${project.build.directory}/jacoco-it.exec</sonar.jacoco.reportPaths>
-    <sonar.dependencyCheck.reportPath>${project.build.directory}/dependency-check-report.xml</sonar.dependencyCheck.reportPath>
-    <sonar.dependencyCheck.htmlReportPath>${project.build.directory}/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
     
     <jacocoSurefireArgLine/> <!-- this is set by jacoco's prepare-agent execution -->
     <jacocoFailsafeArgLine/> <!-- this is set by jacoco's prepare-agent execution -->
