@@ -1632,6 +1632,42 @@
 	    </plugins>
 	  </build>
     </profile>
+
+    <profile>
+      <id>sonar</id>
+      <activation>
+        <property>
+          <name>sonar</name>
+        </property>
+      </activation>
+	    <properties>
+        <sonar.project.name>${project.artifactId}</sonar.project.name>
+        <sonar.host.url>http://sonar.pentaho.com:9000</sonar.host.url>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        <sonar.projectName>${sonar.project.name}</sonar.projectName>
+        <sonar.sources>.</sonar.sources>
+        <sonar.inclusions>src/main/**</sonar.inclusions>
+        <sonar.jacoco.reportPaths>${project.build.directory}/jacoco.exec,${project.build.directory}/jacoco-it.exec</sonar.jacoco.reportPaths>
+        <sonar.dependencyCheck.reportPath>${project.build.directory}/dependency-check-report.xml</sonar.dependencyCheck.reportPath>
+        <sonar.dependencyCheck.htmlReportPath>${project.build.directory}/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sonar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     
   </profiles>
 </project>
