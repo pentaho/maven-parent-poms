@@ -70,6 +70,8 @@
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
     <aries.blueprint.core.version>1.4.2</aries.blueprint.core.version>
 
+    <pax-web.version>3.1.4</pax-web.version>
+
     <pax-url-aether.version>2.3.0</pax-url-aether.version>
 
     <activemq.version>5.10.1</activemq.version>
@@ -259,6 +261,21 @@
         <groupId>org.apache.aries.blueprint</groupId>
         <artifactId>org.apache.aries.blueprint.core</artifactId>
         <version>${aries.blueprint.core.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.ops4j.pax.web</groupId>
+        <artifactId>pax-web-extender-whiteboard</artifactId>
+        <version>${pax-web.version}</version>
+        <!-- Mostly needed for HttpService Whiteboard registration in blueprint files -->
+        <!-- If not the case, modules should override the runtime scope -->
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.ops4j.pax.web</groupId>
+        <artifactId>pax-web-spi</artifactId>
+        <version>${pax-web.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
