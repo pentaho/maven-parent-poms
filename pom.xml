@@ -64,8 +64,12 @@
 
   <properties>
     <!-- VERSIONS -->
-    <osgi.core.version>4.3.1</osgi.core.version>
-    <osgi.compendium.version>4.3.1</osgi.compendium.version>
+    <!-- We are using Felix Framework 4.2.1, which is partially OSGi 5.0 complaint. In particular,
+         it includes the org.osgi.framework.wiring.BundleWire.getProvider() method needed by
+         pax-url-aether/2.3.0, the org.osgi.framework.InvalidSyntaxException required by kettle-core,
+         among others. For this reason we are choosing OSGi core 5.0.0. -->
+    <osgi.core.version>5.0.0</osgi.core.version>
+    <osgi.compendium.version>5.0.0</osgi.compendium.version>
 
     <felix.http.version>2.3.2</felix.http.version>
 
