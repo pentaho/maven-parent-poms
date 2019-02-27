@@ -71,6 +71,8 @@
     <osgi.core.version>5.0.0</osgi.core.version>
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
 
+    <karaf.version>3.0.3</karaf.version>
+
     <felix.http.version>2.3.2</felix.http.version>
 
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
@@ -256,6 +258,54 @@
         <artifactId>org.osgi.compendium</artifactId>
         <version>${osgi.compendium.version}</version>
         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.karaf</groupId>
+        <artifactId>org.apache.karaf.main</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf</groupId>
+        <artifactId>org.apache.karaf.util</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.features</groupId>
+        <artifactId>org.apache.karaf.features.core</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.kar</groupId>
+        <artifactId>org.apache.karaf.kar.core</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.bundle</groupId>
+        <artifactId>org.apache.karaf.bundle.core</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.karaf.management</groupId>
+        <artifactId>org.apache.karaf.management.boot</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.karaf.jaas</groupId>
+        <artifactId>org.apache.karaf.jaas.boot</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.jaas</groupId>
+        <artifactId>org.apache.karaf.jaas.modules</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.jaas</groupId>
+        <artifactId>org.apache.karaf.jaas.config</artifactId>
+        <version>${karaf.version}</version>
       </dependency>
 
       <dependency>
