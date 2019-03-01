@@ -117,6 +117,7 @@
     <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
     <karaf-maven-plugin.version>3.0.8</karaf-maven-plugin.version>
+    <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
@@ -704,6 +705,9 @@
           <groupId>org.apache.karaf.tooling</groupId>
           <artifactId>karaf-maven-plugin</artifactId>
           <version>${karaf-maven-plugin.version}</version>
+          <configuration>
+            <aggregateFeatures>${karaf-maven-plugin.aggregateFeatures}</aggregateFeatures>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
@@ -1457,6 +1461,25 @@
                 </configuration>
               </execution>
             </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!-- This profile generates a feature file to deploy in karaf. -->
+      <id>feature-generation</id>
+      <activation>
+        <file>
+          <exists>${basedir}/src/main/feature</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.karaf.tooling</groupId>
+            <artifactId>karaf-maven-plugin</artifactId>
+            <extensions>true</extensions>
           </plugin>
         </plugins>
       </build>
