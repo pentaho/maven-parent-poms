@@ -64,6 +64,9 @@
 
   <properties>
     <!-- VERSIONS -->
+
+    <slf4j.version>1.7.7</slf4j.version>
+
     <!-- We are using Felix Framework 4.2.1, which is partially OSGi 5.0 complaint. In particular,
          it includes the org.osgi.framework.wiring.BundleWire.getProvider() method needed by
          pax-url-aether/2.3.0, the org.osgi.framework.InvalidSyntaxException required by kettle-core,
@@ -262,6 +265,17 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.core</artifactId>
