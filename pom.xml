@@ -148,7 +148,7 @@
     <checkstyle.version>8.0</checkstyle.version>
     <coding-standards.version>8.3.0.0-SNAPSHOT</coding-standards.version>
     <spotbugs.version>3.1.3</spotbugs.version>
-    <appscan-maven-plugin.version>1.0.1</appscan-maven-plugin.version>
+    <appscan-maven-plugin.version>1.0.1.hvpatch</appscan-maven-plugin.version>
     <dependency-check-maven.version>4.0.0</dependency-check-maven.version>
 
     <!-- PHASE BINDINGS -->
@@ -1858,12 +1858,12 @@
         </plugins>
       </build>
     </profile>
-    
+
     <profile>
       <id>appscan</id>
-	  <build>
-	    <pluginManagement>
-	      <plugins>
+      <build>
+        <pluginManagement>
+          <plugins>
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-compiler-plugin</artifactId>
@@ -1873,27 +1873,35 @@
                 <debuglevel>lines,vars,source</debuglevel>
               </configuration>
             </plugin>
-	      </plugins>
-	    </pluginManagement>
-	    <plugins>
-	      <plugin>
-	        <groupId>com.ibm.security</groupId>
-	        <artifactId>appscan-maven-plugin</artifactId>
-	        <version>${appscan-maven-plugin.version}</version>
-	        <executions>
-	          <execution>
-	            <id>appscan-prepare</id>
-		        <phase>package</phase>
-		        <goals>
-		          <goal>prepare</goal>
-		        </goals>
-		        <configuration>		        
-		        </configuration>	            
-	          </execution>
-	        </executions>
-	      </plugin>
-	    </plugins>
-	  </build>
+          </plugins>
+        </pluginManagement>
+        <plugins>
+          <plugin>
+            <groupId>com.ibm.security</groupId>
+            <artifactId>appscan-maven-plugin</artifactId>
+            <version>${appscan-maven-plugin.version}</version>
+            <executions>
+              <execution>
+                <id>appscan-filename</id>
+                <phase>initialize</phase>
+                <goals>
+                  <goal>filename</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>appscan-prepare</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>prepare</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <m_output>${appscan-filename}</m_output>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
 
     <profile>
