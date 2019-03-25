@@ -64,12 +64,17 @@
 
   <properties>
     <!-- VERSIONS -->
+
+    <slf4j.version>1.7.7</slf4j.version>
+
     <!-- We are using Felix Framework 4.2.1, which is partially OSGi 5.0 complaint. In particular,
          it includes the org.osgi.framework.wiring.BundleWire.getProvider() method needed by
          pax-url-aether/2.3.0, the org.osgi.framework.InvalidSyntaxException required by kettle-core,
          among others. For this reason we are choosing OSGi core 5.0.0. -->
     <osgi.core.version>5.0.0</osgi.core.version>
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
+
+    <karaf.version>3.0.3</karaf.version>
 
     <felix.http.version>2.3.2</felix.http.version>
 
@@ -79,6 +84,8 @@
     <pax-web.version>3.1.4</pax-web.version>
 
     <pax-url-aether.version>2.3.0</pax-url-aether.version>
+
+    <cxf.version>3.1.9</cxf.version>
 
     <activemq.version>5.10.1</activemq.version>
 
@@ -113,6 +120,7 @@
     <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
     <karaf-maven-plugin.version>3.0.8</karaf-maven-plugin.version>
+    <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
@@ -258,6 +266,17 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+
+      <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.core</artifactId>
         <version>${osgi.core.version}</version>
@@ -268,6 +287,54 @@
         <artifactId>org.osgi.compendium</artifactId>
         <version>${osgi.compendium.version}</version>
         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.karaf</groupId>
+        <artifactId>org.apache.karaf.main</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf</groupId>
+        <artifactId>org.apache.karaf.util</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.features</groupId>
+        <artifactId>org.apache.karaf.features.core</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.kar</groupId>
+        <artifactId>org.apache.karaf.kar.core</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.bundle</groupId>
+        <artifactId>org.apache.karaf.bundle.core</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.karaf.management</groupId>
+        <artifactId>org.apache.karaf.management.boot</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.karaf.jaas</groupId>
+        <artifactId>org.apache.karaf.jaas.boot</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.jaas</groupId>
+        <artifactId>org.apache.karaf.jaas.modules</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.jaas</groupId>
+        <artifactId>org.apache.karaf.jaas.config</artifactId>
+        <version>${karaf.version}</version>
       </dependency>
 
       <dependency>
@@ -684,6 +751,9 @@
           <groupId>org.apache.karaf.tooling</groupId>
           <artifactId>karaf-maven-plugin</artifactId>
           <version>${karaf-maven-plugin.version}</version>
+          <configuration>
+            <aggregateFeatures>${karaf-maven-plugin.aggregateFeatures}</aggregateFeatures>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
@@ -1437,6 +1507,25 @@
                 </configuration>
               </execution>
             </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!-- This profile generates a feature file to deploy in karaf. -->
+      <id>feature-generation</id>
+      <activation>
+        <file>
+          <exists>${basedir}/src/main/feature</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.karaf.tooling</groupId>
+            <artifactId>karaf-maven-plugin</artifactId>
+            <extensions>true</extensions>
           </plugin>
         </plugins>
       </build>
