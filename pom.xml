@@ -2034,7 +2034,7 @@
       </activation>
 	    <properties>
         <sonar.project.name>${project.artifactId}</sonar.project.name>
-        <sonar.host.url>http://sonar.pentaho.com:9000</sonar.host.url>
+        <sonar.host.url>http://sonar.pentaho.net:9000</sonar.host.url>
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
         <sonar.projectName>${sonar.project.name}</sonar.projectName>
         <sonar.sources>.</sonar.sources>
