@@ -64,35 +64,33 @@
 
   <properties>
     <copyright.year>2019</copyright.year>
-    <!-- VERSIONS -->
 
-    <slf4j.version>1.7.7</slf4j.version>
+    <!-- VERSIONS -->
+    <slf4j.version>1.7.12</slf4j.version>
     <logback.version>1.2.0</logback.version>
     <log4j.version>1.2.17</log4j.version>
     <commons-logging.version>1.2</commons-logging.version>
     <postgresql.version>42.2.5</postgresql.version>
 
-    <!-- We are using Felix Framework 4.2.1, which is partially OSGi 5.0 complaint. In particular,
-         it includes the org.osgi.framework.wiring.BundleWire.getProvider() method needed by
-         pax-url-aether/2.3.0, the org.osgi.framework.InvalidSyntaxException required by kettle-core,
-         among others. For this reason we are choosing OSGi core 5.0.0. -->
-    <osgi.core.version>5.0.0</osgi.core.version>
+    <osgi.core.version>6.0.0</osgi.core.version>
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
 
-    <karaf.version>3.0.3</karaf.version>
+    <karaf.version>4.2.6</karaf.version>
 
-    <felix.http.version>2.3.2</felix.http.version>
+    <felix.http.api.version>3.0.0</felix.http.api.version>
+    <felix.http.proxy.version>3.0.6</felix.http.proxy.version>
+    <felix.http.bridge.version>4.0.6</felix.http.bridge.version>
 
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
-    <aries.blueprint.core.version>1.4.2</aries.blueprint.core.version>
+    <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
 
-    <pax-web.version>3.1.4</pax-web.version>
+    <pax-web.version>7.2.10</pax-web.version>
 
-    <pax-url-aether.version>2.3.0</pax-url-aether.version>
+    <pax-url-aether.version>2.6.1</pax-url-aether.version>
 
-    <cxf.version>3.1.9</cxf.version>
+    <cxf.version>3.3.1</cxf.version>
 
-    <activemq.version>5.10.1</activemq.version>
+    <activemq.version>5.15.9</activemq.version>
 
     <derby.version>10.14.2.0</derby.version>
 
@@ -126,8 +124,9 @@
     <license-helper-maven-plugin.version>1.27</license-helper-maven-plugin.version>
     <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
-    <karaf-maven-plugin.version>3.0.8</karaf-maven-plugin.version>
+    <karaf-maven-plugin.version>4.2.5</karaf-maven-plugin.version>
     <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
+    <karaf-maven-plugin.enableGeneration>true</karaf-maven-plugin.enableGeneration>
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
@@ -418,12 +417,6 @@
       </dependency>
 
       <dependency>
-        <groupId>org.apache.karaf.management</groupId>
-        <artifactId>org.apache.karaf.management.boot</artifactId>
-        <version>${karaf.version}</version>
-      </dependency>
-
-      <dependency>
         <groupId>org.apache.karaf.jaas</groupId>
         <artifactId>org.apache.karaf.jaas.boot</artifactId>
         <version>${karaf.version}</version>
@@ -450,6 +443,11 @@
         <version>${aries.blueprint.core.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>org.ops4j.pax.web</groupId>
+        <artifactId>pax-web-api</artifactId>
+        <version>${pax-web.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.ops4j.pax.web</groupId>
         <artifactId>pax-web-extender-whiteboard</artifactId>
@@ -906,6 +904,7 @@
           <version>${karaf-maven-plugin.version}</version>
           <configuration>
             <aggregateFeatures>${karaf-maven-plugin.aggregateFeatures}</aggregateFeatures>
+            <enableGeneration>${karaf-maven-plugin.enableGeneration}</enableGeneration>
           </configuration>
         </plugin>
         <plugin>
