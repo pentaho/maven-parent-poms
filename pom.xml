@@ -151,6 +151,9 @@
     <spring-security-kerberos.version>1.0.1.RELEASE</spring-security-kerberos.version>
     <karaf-springframework-override.version>4.1.9.RELEASE_1</karaf-springframework-override.version>
 
+    <xercesImpl.version>2.12.0</xercesImpl.version>
+    <xml-apis.version>1.4.01</xml-apis.version>
+
     <!-- jdk version -->
     <source.jdk.version>1.8</source.jdk.version>
     <target.jdk.version>1.8</target.jdk.version>
@@ -508,6 +511,18 @@
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-redshift</artifactId>
         <version>${aws-java-sdk.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>xerces</groupId>
+        <artifactId>xercesImpl</artifactId>
+        <version>${xercesImpl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>xml-apis</groupId>
+        <artifactId>xml-apis</artifactId>
+        <version>${xml-apis.version}</version>
       </dependency>
 
       <dependency>
