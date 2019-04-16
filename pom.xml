@@ -154,6 +154,8 @@
     <xercesImpl.version>2.12.0</xercesImpl.version>
     <xml-apis.version>1.4.01</xml-apis.version>
 
+    <enunciate-jersey-rt.version>1.27</enunciate-jersey-rt.version>
+
     <!-- jdk version -->
     <source.jdk.version>1.8</source.jdk.version>
     <target.jdk.version>1.8</target.jdk.version>
@@ -712,6 +714,18 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-test</artifactId>
         <version>${spring-boot.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.codehaus.enunciate</groupId>
+        <artifactId>enunciate-jersey-rt</artifactId>
+        <version>${enunciate-jersey-rt.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
 
     </dependencies>
