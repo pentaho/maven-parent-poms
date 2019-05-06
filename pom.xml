@@ -50,6 +50,8 @@
     <postgresql.version>42.2.5</postgresql.version>
     <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
     <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+    <derby.version>10.14.2.0</derby.version>
+
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
     <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
