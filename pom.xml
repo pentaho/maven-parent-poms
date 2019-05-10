@@ -88,7 +88,7 @@
 
     <cxf.version>3.1.9</cxf.version>
 
-    <activemq.version>5.15.8</activemq.version>
+    <activemq.version>5.15.9</activemq.version>
 
     <derby.version>10.14.2.0</derby.version>
 
