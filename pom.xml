@@ -536,7 +536,7 @@
       </dependency>
 
       <dependency>
-        <groupId>org.webjars.bower</groupId>
+        <groupId>org.webjars.npm</groupId>
         <artifactId>bootstrap</artifactId>
         <version>${bootstrap.version}</version>
       </dependency>
