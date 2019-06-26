@@ -82,6 +82,7 @@
        and generally just makes a mess of things -->
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
 
+    <bootstrap.version>3.4.1</bootstrap.version>
 
     <nodejs.version>v4.5.0</nodejs.version>
     <npm.version>2.15.4</npm.version>
@@ -198,6 +199,12 @@
         <groupId>commons-fileupload</groupId>
         <artifactId>commons-fileupload</artifactId>
         <version>${commons-fileupload.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>bootstrap</artifactId>
+        <version>${bootstrap.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
