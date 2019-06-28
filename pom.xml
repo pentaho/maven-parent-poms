@@ -129,6 +129,7 @@
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
     <requirejs.version>2.3.6</requirejs.version>
+    <bootstrap.version>3.4.1</bootstrap.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
     <fasterxml-jackson.version>2.9.8</fasterxml-jackson.version>
@@ -532,6 +533,12 @@
         <groupId>org.webjars.npm</groupId>
         <artifactId>requirejs</artifactId>
         <version>${requirejs.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>bootstrap</artifactId>
+        <version>${bootstrap.version}</version>
       </dependency>
 
       <dependency>
