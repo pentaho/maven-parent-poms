@@ -445,19 +445,6 @@
 
       <dependency>
         <groupId>org.ops4j.pax.web</groupId>
-        <artifactId>pax-web-api</artifactId>
-        <version>${pax-web.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.ops4j.pax.web</groupId>
-        <artifactId>pax-web-extender-whiteboard</artifactId>
-        <version>${pax-web.version}</version>
-        <!-- Mostly needed for HttpService Whiteboard registration in blueprint files -->
-        <!-- If not the case, modules should override the runtime scope -->
-        <scope>runtime</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.ops4j.pax.web</groupId>
         <artifactId>pax-web-spi</artifactId>
         <version>${pax-web.version}</version>
         <scope>provided</scope>
