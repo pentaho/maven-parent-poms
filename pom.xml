@@ -132,6 +132,7 @@
     <requirejs.version>2.3.6</requirejs.version>
     <bootstrap.version>3.4.1</bootstrap.version>
     <jquery.version>3.4.0</jquery.version>
+    <jquery-ui.version>1.12.1</jquery-ui.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
     <fasterxml-jackson.version>2.9.8</fasterxml-jackson.version>
@@ -544,6 +545,11 @@
         <groupId>org.webjars.npm</groupId>
         <artifactId>requirejs</artifactId>
         <version>${requirejs.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.bower</groupId><!-- here we are using bower and not npm because the npm version only has source code -->
+        <artifactId>jquery-ui</artifactId>
+        <version>${jquery-ui.version}</version>
       </dependency>
 
       <dependency>
