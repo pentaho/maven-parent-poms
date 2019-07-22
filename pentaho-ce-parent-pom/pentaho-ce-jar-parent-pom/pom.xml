@@ -1,73 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.pentaho</groupId>
-  <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-  <version>7.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-ce-parent-pom</artifactId>
-    <version>7.1-SNAPSHOT</version>
+    <version>7.1.0.26-212</version>
   </parent>
-  
+  <groupId>org.pentaho</groupId>
+  <artifactId>pentaho-ce-jar-parent-pom</artifactId>
+  <version>7.1.0.26-212</version>
+  <packaging>pom</packaging>
+  <name>Pentaho Community Edition Project Parent POM For Java Projects</name>
   <modules>
     <module>pentaho-ce-bundle-parent-pom</module>
   </modules>
-
-  <name>Pentaho Community Edition Project Parent POM For Java Projects</name>
-
   <properties>
-  
-    <!-- VERSIONS -->
-    <junit.version>4.11</junit.version>
-
-    <pentaho-coding-standards.version>1.0.5</pentaho-coding-standards.version>
-    
-    <checkstyle-config-url>http://nexus.pentaho.org/content/groups/omni/com/pentaho/pentaho-coding-standards/pentaho-checkstyle/${pentaho-coding-standards.version}/pentaho-checkstyle-${pentaho-coding-standards.version}.xml</checkstyle-config-url>
-    <checkstyle-properties-url>http://nexus.pentaho.org/content/groups/omni/com/pentaho/pentaho-coding-standards/checkstyle-maven-properties/${pentaho-coding-standards.version}/checkstyle-maven-properties-${pentaho-coding-standards.version}.properties</checkstyle-properties-url>
-
+    <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks>
     <source.jdk.version>1.8</source.jdk.version>
-    <target.jdk.version>1.8</target.jdk.version>
-
-    <!-- http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html -->
-    <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks> <!-- default setting is reuseForks = true -->
-    <maven-surefire-plugin.forkCount>1</maven-surefire-plugin.forkCount> <!-- default setting is forkCount = 1 -->
-    <maven-surefire-plugin.testFailureIgnore>false</maven-surefire-plugin.testFailureIgnore>
-    <maven-failsafe-plugin.reuseForks>true</maven-failsafe-plugin.reuseForks> <!-- default setting is reuseForks = true -->
-    <maven-failsafe-plugin.forkCount>1</maven-failsafe-plugin.forkCount> <!-- default setting is forkCount = 1 -->    
-    
-    <SCM_BRANCH>master</SCM_BRANCH>
-    <sonar.project.name>${project.artifactId}</sonar.project.name>
-    <sonar.host.url>http://sonar.pentaho.com:9000</sonar.host.url>
-    <sonar.language>java</sonar.language>
-    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    <sonar.projectName>${sonar.project.name}</sonar.projectName>
+    <checkstyle-properties-url>http://nexus.pentaho.org/content/groups/omni/com/pentaho/pentaho-coding-standards/checkstyle-maven-properties/${pentaho-coding-standards.version}/checkstyle-maven-properties-${pentaho-coding-standards.version}.properties</checkstyle-properties-url>
     <sonar.branch>${SCM_BRANCH}</sonar.branch>
-    <sonar.jacoco.reportPath>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.project.name>${project.artifactId}</sonar.project.name>
+    <checkstyle-config-url>http://nexus.pentaho.org/content/groups/omni/com/pentaho/pentaho-coding-standards/pentaho-checkstyle/${pentaho-coding-standards.version}/pentaho-checkstyle-${pentaho-coding-standards.version}.xml</checkstyle-config-url>
+    <sonar.host.url>http://sonar.pentaho.com:9000</sonar.host.url>
+    <maven-failsafe-plugin.reuseForks>true</maven-failsafe-plugin.reuseForks>
+    <maven-failsafe-plugin.forkCount>1</maven-failsafe-plugin.forkCount>
+    <junit.version>4.11</junit.version>
+    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+    <sonar.language>java</sonar.language>
     <sonar.jacoco.itReportPath>${project.build.directory}/jacoco-it.exec</sonar.jacoco.itReportPath>
-    
+    <SCM_BRANCH>master</SCM_BRANCH>
+    <sonar.projectName>${sonar.project.name}</sonar.projectName>
+    <maven-surefire-plugin.forkCount>1</maven-surefire-plugin.forkCount>
+    <sonar.jacoco.reportPath>${project.build.directory}/jacoco.exec</sonar.jacoco.reportPath>
+    <target.jdk.version>1.8</target.jdk.version>
+    <pentaho-coding-standards.version>1.0.5</pentaho-coding-standards.version>
+    <maven-surefire-plugin.testFailureIgnore>false</maven-surefire-plugin.testFailureIgnore>
   </properties>
-
-
-  <build>  
-
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
     <pluginManagement>
-
       <plugins>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <configuration>
             <source>${source.jdk.version}</source>
             <target>${target.jdk.version}</target>
           </configuration>
         </plugin>
-
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <configuration>
             <archive>
@@ -82,13 +70,9 @@
             </archive>
           </configuration>
         </plugin>
-
       </plugins>
-
     </pluginManagement>
-
     <plugins>
-
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -112,9 +96,7 @@
           </execution>
         </executions>
       </plugin>
-
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <executions>
           <execution>
@@ -123,18 +105,16 @@
             <goals>
               <goal>test</goal>
             </goals>
-              <configuration>
-                <argLine>${surefireArgLine}</argLine>
-                <forkCount>${maven-surefire-plugin.forkCount}</forkCount>
-                <reuseForks>${maven-surefire-plugin.reuseForks}</reuseForks>
-                <testFailureIgnore>${maven-surefire-plugin.testFailureIgnore}</testFailureIgnore>
-              </configuration>
+            <configuration>
+              <argLine>${surefireArgLine}</argLine>
+              <forkCount>${maven-surefire-plugin.forkCount}</forkCount>
+              <reuseForks>${maven-surefire-plugin.reuseForks}</reuseForks>
+              <testFailureIgnore>${maven-surefire-plugin.testFailureIgnore}</testFailureIgnore>
+            </configuration>
           </execution>
         </executions>
       </plugin>
-
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
         <executions>
           <execution>
@@ -146,43 +126,19 @@
           </execution>
         </executions>
       </plugin>
-        
     </plugins>
-
   </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-
   <profiles>
-
     <profile>
       <id>test-integration</id>
       <activation>
-        <activeByDefault>false</activeByDefault>
         <property>
           <name>runITs</name>
         </property>
       </activation>
-
-      <properties>
-        <integration-test.src>src/it/java</integration-test.src>
-        <integration-test.resources>src/it/resources</integration-test.resources>
-      </properties>
-
       <build>
-
         <plugins>
-
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-resources-plugin</artifactId>
             <executions>
               <execution>
@@ -202,7 +158,6 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
@@ -221,7 +176,6 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
@@ -245,9 +199,7 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <executions>
               <execution>
@@ -265,9 +217,7 @@
               </execution>
             </executions>
           </plugin>
-
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <executions>
               <execution>
@@ -290,43 +240,33 @@
               <forkCount>${maven-failsafe-plugin.forkCount}</forkCount>
               <reuseForks>${maven-failsafe-plugin.reuseForks}</reuseForks>
               <testClassesDirectory>${project.build.directory}/it-classes</testClassesDirectory>
-              <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory> <!-- SEE https://jira.sonarsource.com/browse/SONARJAVA-45 -->
+              <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
             </configuration>
           </plugin>
-
         </plugins>
-
       </build>
+      <properties>
+        <integration-test.resources>src/it/resources</integration-test.resources>
+        <integration-test.src>src/it/java</integration-test.src>
+      </properties>
     </profile>
-
-
     <profile>
       <id>reporting</id>
       <activation>
-        <activeByDefault>false</activeByDefault>
         <property>
           <name>!maven.test.skip</name>
         </property>
       </activation>
-
       <reporting>
-    
         <plugins>
-    
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-project-info-reports-plugin</artifactId>
             <configuration>
               <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
             </configuration>
           </plugin>
-    
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jxr-plugin</artifactId>
-            <configuration>
-              <linkJavadoc>true</linkJavadoc>
-            </configuration>
             <reportSets>
               <reportSet>
                 <id>jxr</id>
@@ -335,14 +275,12 @@
                 </reports>
               </reportSet>
             </reportSets>
-          </plugin>
-    
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
             <configuration>
-              <failOnError>false</failOnError>
+              <linkJavadoc>true</linkJavadoc>
             </configuration>
+          </plugin>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
             <reportSets>
               <reportSet>
                 <id>javadoc</id>
@@ -351,17 +289,12 @@
                 </reports>
               </reportSet>
             </reportSets>
-          </plugin>
-    
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
             <configuration>
-              <configLocation>${checkstyle-config-url}</configLocation>
-              <propertiesLocation>${checkstyle-properties-url}</propertiesLocation>
-              <linkXRef>true</linkXRef>
-              <cacheFile />
+              <failOnError>false</failOnError>
             </configuration>
+          </plugin>
+          <plugin>
+            <artifactId>maven-checkstyle-plugin</artifactId>
             <reportSets>
               <reportSet>
                 <id>checkstyle</id>
@@ -370,19 +303,19 @@
                 </reports>
               </reportSet>
             </reportSets>
+            <configuration>
+              <configLocation>${checkstyle-config-url}</configLocation>
+              <propertiesLocation>${checkstyle-properties-url}</propertiesLocation>
+              <linkXRef>true</linkXRef>
+              <cacheFile />
+            </configuration>
           </plugin>
-    
           <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
           </plugin>
-    
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-report-plugin</artifactId>
-            <configuration>
-              <linkXRef>true</linkXRef>
-            </configuration>
             <reportSets>
               <reportSet>
                 <id>unit-tests</id>
@@ -397,20 +330,16 @@
                 </reports>
               </reportSet>
             </reportSets>
+            <configuration>
+              <linkXRef>true</linkXRef>
+            </configuration>
           </plugin>
-    
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
           </plugin>
-    
         </plugins>
-    
       </reporting>
-
     </profile>
-
-
     <profile>
       <id>javadoc</id>
       <activation>
@@ -421,15 +350,14 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <executions>
               <execution>
                 <id>attach-javadoc</id>
+                <phase>package</phase>
                 <goals>
                   <goal>jar</goal>
                 </goals>
-                <phase>package</phase>
                 <configuration>
                   <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration>
@@ -439,17 +367,13 @@
         </plugins>
       </build>
     </profile>
-
-
     <profile>
       <id>sonar</id>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
-
       <build>
         <plugins>
-
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>sonar-maven-plugin</artifactId>
@@ -463,13 +387,8 @@
               </execution>
             </executions>
           </plugin>
-
         </plugins>
       </build>
-
     </profile>
-    
-    
   </profiles>
-
 </project>
