@@ -1608,7 +1608,7 @@
       </activation>
       <properties>
         <artifactName>${project.artifactId}-${project.version}</artifactName>
-        <izpack-maven-plugin.version>5.0.7-RC1</izpack-maven-plugin.version>
+        <izpack-maven-plugin.version>5.1.3</izpack-maven-plugin.version>
       </properties>
       <build>
         <plugins>
@@ -1640,6 +1640,7 @@
                   <kind>standard</kind>
                   <installFile>${pentaho:pentaho-eula-wrap-config:xml:izpack-zip}</installFile>
                   <finalName>installer</finalName>
+                  <enableAttachArtifact>false</enableAttachArtifact>
                 </configuration>
               </execution>
             </executions>
