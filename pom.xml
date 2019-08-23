@@ -1252,7 +1252,7 @@
       </activation>
 
       <properties>
-        <dependency.pentaho-js-build.revision>2.0.2</dependency.pentaho-js-build.revision>
+        <dependency.pentaho-js-build.revision>2.0.1</dependency.pentaho-js-build.revision>
       </properties>
 
       <dependencies>
