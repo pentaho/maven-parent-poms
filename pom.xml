@@ -69,6 +69,7 @@
     <slf4j.version>1.7.7</slf4j.version>
     <logback.version>1.2.0</logback.version>
     <log4j.version>1.2.17</log4j.version>
+    <commons-logging.version>1.2</commons-logging.version>
     <postgresql.version>42.2.5</postgresql.version>
 
     <!-- We are using Felix Framework 4.2.1, which is partially OSGi 5.0 complaint. In particular,
@@ -309,6 +310,11 @@
         <groupId>log4j</groupId>
         <artifactId>apache-log4j-extras</artifactId>
         <version>${log4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>${commons-logging.version}</version>
       </dependency>
       <dependency>
         <groupId>org.postgresql</groupId>
