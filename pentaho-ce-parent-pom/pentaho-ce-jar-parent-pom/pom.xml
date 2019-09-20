@@ -34,12 +34,13 @@
     <junit.version>4.11</junit.version>
 
     <!-- http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html -->
-    <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks> <!-- default setting is reuseForks = true -->
-    <maven-surefire-plugin.forkCount>1</maven-surefire-plugin.forkCount> <!-- default setting is forkCount = 1 -->
-    <maven-surefire-plugin.testFailureIgnore>false</maven-surefire-plugin.testFailureIgnore>
+    <maven-surefire-plugin.reuseForks>true</maven-surefire-plugin.reuseForks>   <!-- default setting is reuseForks = true -->
+    <maven-surefire-plugin.forkCount>1</maven-surefire-plugin.forkCount>        <!-- default setting is forkCount = 1 -->
+    <maven-surefire-plugin.testFailureIgnore>${maven.test.failure.ignore}</maven-surefire-plugin.testFailureIgnore>
     <maven-surefire-plugin.argLine/>
-    <maven-failsafe-plugin.reuseForks>true</maven-failsafe-plugin.reuseForks> <!-- default setting is reuseForks = true -->
-    <maven-failsafe-plugin.forkCount>1</maven-failsafe-plugin.forkCount> <!-- default setting is forkCount = 1 -->    
+    <maven-failsafe-plugin.reuseForks>true</maven-failsafe-plugin.reuseForks>   <!-- default setting is reuseForks = true -->
+    <maven-failsafe-plugin.forkCount>1</maven-failsafe-plugin.forkCount>        <!-- default setting is forkCount = 1 -->
+    <maven-failsafe-plugin.testFailureIgnore>${maven.test.failure.ignore}</maven-failsafe-plugin.testFailureIgnore>
     <maven-failsafe-plugin.argLine/>
 
     <SCM_BRANCH>master</SCM_BRANCH>
@@ -60,7 +61,7 @@
               <goal>test</goal>
             </goals>
             <configuration>
-              <argLine>-Dfile.encoding=${project.build.sourceEncoding} @{jacocoSurefireArgLine} ${maven-surefire-plugin.argLine}</argLine> <!-- this is set by jacoco's prepare-agent execution -->
+              <argLine>-Dfile.encoding=${project.build.sourceEncoding} @{jacocoSurefireArgLine} ${maven-surefire-plugin.argLine}</argLine>
               <forkCount>${maven-surefire-plugin.forkCount}</forkCount>
               <reuseForks>${maven-surefire-plugin.reuseForks}</reuseForks>
               <testFailureIgnore>${maven-surefire-plugin.testFailureIgnore}</testFailureIgnore>
@@ -101,8 +102,6 @@
         </property>
       </activation>
       <properties>
-        <integration-test.resources>src/it/resources</integration-test.resources>
-        <integration-test.src>src/it/java</integration-test.src>
         <!-- only used in audit mode -->
         <test-integration_jacoco-agent-prep-phase>pre-integration-test</test-integration_jacoco-agent-prep-phase>
         <test-integration_jacoco-report-phase>verify</test-integration_jacoco-report-phase>
@@ -122,7 +121,7 @@
                   <outputDirectory>${project.build.directory}/it-classes</outputDirectory>
                   <resources>
                     <resource>
-                      <directory>${integration-test.resources}</directory>
+                      <directory>src/it/resources</directory>
                     </resource>
                   </resources>
                 </configuration>
@@ -141,7 +140,7 @@
                 </goals>
                 <configuration>
                   <sources>
-                    <source>${integration-test.src}</source>
+                    <source>src/it/java</source>
                   </sources>
                 </configuration>
               </execution>
@@ -184,11 +183,11 @@
               </execution>
             </executions>
             <configuration>
-              <argLine>-Dfile.encoding=${project.build.sourceEncoding} @{jacocoFailsafeArgLine} ${maven-failsafe-plugin.argLine}</argLine> <!-- this is set by jacoco's prepare-agent-integration execution -->
+              <argLine>-Dfile.encoding=${project.build.sourceEncoding} @{jacocoFailsafeArgLine} ${maven-failsafe-plugin.argLine}</argLine>
               <forkCount>${maven-failsafe-plugin.forkCount}</forkCount>
               <reuseForks>${maven-failsafe-plugin.reuseForks}</reuseForks>
               <testClassesDirectory>${project.build.directory}/it-classes</testClassesDirectory>
-              <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory> <!-- SEE https://jira.sonarsource.com/browse/SONARJAVA-45 -->
+              <testFailureIgnore>${maven-failsafe-plugin.testFailureIgnore}</testFailureIgnore>
             </configuration>
           </plugin>
         </plugins>
