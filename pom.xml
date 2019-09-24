@@ -184,6 +184,14 @@
     <appscan-maven-plugin.version>1.0.1.hvpatch</appscan-maven-plugin.version>
     <dependency-check-maven.version>4.0.0</dependency-check-maven.version>
 
+    <!-- Monitoring versions -->
+    <!-- Guava Event Bus version must be the same throughout all components of Monitoring otherwise service references
+         won't be properly satisfied.
+         The version must be no higher than 17.0 because newer versions include final methods which prevents the class
+         from being proxied in OSGi blueprint services. -->
+    <guava.monitoring.version>17.0</guava.monitoring.version>
+    <camel.version>2.17.7</camel.version>
+
     <!-- PHASE BINDINGS -->
     <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
     <node-npm_install-phase>initialize</node-npm_install-phase>
