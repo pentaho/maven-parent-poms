@@ -1697,6 +1697,8 @@
       </activation>
       <properties>
         <artifactName>${project.artifactId}-${project.version}</artifactName>
+        <artifactExtension>${project.extension}</artifactExtension>
+        <izpack-file>${pentaho:pentaho-eula-wrap-config:xml:izpack-zip}</izpack-file>
         <izpack-maven-plugin.version>5.1.3</izpack-maven-plugin.version>
       </properties>
       <build>
@@ -1727,7 +1729,7 @@
                 <configuration>
                   <baseDir>${project.build.directory}</baseDir>
                   <kind>standard</kind>
-                  <installFile>${pentaho:pentaho-eula-wrap-config:xml:izpack-zip}</installFile>
+                  <installFile>${izpack-file}</installFile>
                   <finalName>installer</finalName>
                   <enableAttachArtifact>false</enableAttachArtifact>
                 </configuration>
@@ -1795,6 +1797,14 @@
           <version>${pentaho-eula-wrap-config.version}</version>
           <type>xml</type>
           <classifier>izpack-zip</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>xml</type>
+          <classifier>izpack-kar</classifier>
           <scope>test</scope>
         </dependency>
         <dependency>
