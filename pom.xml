@@ -128,6 +128,7 @@
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
     <karaf-maven-plugin.version>3.0.8</karaf-maven-plugin.version>
     <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
+    <karaf-maven-plugin.includeTransitiveDependency>true</karaf-maven-plugin.includeTransitiveDependency>
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
@@ -910,6 +911,7 @@
           <version>${karaf-maven-plugin.version}</version>
           <configuration>
             <aggregateFeatures>${karaf-maven-plugin.aggregateFeatures}</aggregateFeatures>
+            <includeTransitiveDependency>${karaf-maven-plugin.includeTransitiveDependency}</includeTransitiveDependency>
           </configuration>
         </plugin>
         <plugin>
