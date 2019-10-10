@@ -135,6 +135,7 @@
     <karaf-maven-plugin.archiveZip>true</karaf-maven-plugin.archiveZip>
     <karaf-maven-plugin.markTransitiveAsDependency>true</karaf-maven-plugin.markTransitiveAsDependency>
     <karaf-maven-plugin.primaryFeatureName>${project.artifactId}</karaf-maven-plugin.primaryFeatureName>
+    <karaf-maven-plugin.prerequisiteFeatures></karaf-maven-plugin.prerequisiteFeatures>
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
@@ -940,10 +941,11 @@
               <configuration>
                 <enableGeneration>${karaf-maven-plugin.enableGeneration}</enableGeneration>
                 <aggregateFeatures>${karaf-maven-plugin.aggregateFeatures}</aggregateFeatures>
-	            <includeTransitiveDependency>${karaf-maven-plugin.includeTransitiveDependency}</includeTransitiveDependency>
+	              <includeTransitiveDependency>${karaf-maven-plugin.includeTransitiveDependency}</includeTransitiveDependency>
                 <addBundlesToPrimaryFeature>${karaf-maven-plugin.addBundlesToPrimaryFeature}</addBundlesToPrimaryFeature>
                 <markTransitiveAsDependency>${karaf-maven-plugin.markTransitiveAsDependency}</markTransitiveAsDependency>
                 <primaryFeatureName>${karaf-maven-plugin.primaryFeatureName}</primaryFeatureName>
+                <prerequisiteFeatures>${karaf-maven-plugin.prerequisiteFeatures}</prerequisiteFeatures>
               </configuration>
             </execution>
             <execution>
