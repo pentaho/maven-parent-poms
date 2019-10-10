@@ -464,6 +464,12 @@
       </dependency>
 
       <dependency>
+        <groupId>org.apache.karaf.diagnostic</groupId>
+        <artifactId>org.apache.karaf.diagnostic.boot</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+
+      <dependency>
         <groupId>org.apache.aries.blueprint</groupId>
         <artifactId>org.apache.aries.blueprint.api</artifactId>
         <version>${aries.blueprint.api.version}</version>
