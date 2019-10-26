@@ -469,6 +469,11 @@
         <artifactId>org.apache.karaf.diagnostic.boot</artifactId>
         <version>${karaf.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.karaf.specs</groupId>
+        <artifactId>org.apache.karaf.specs.activator</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.apache.aries.blueprint</groupId>
