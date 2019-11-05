@@ -276,6 +276,10 @@
     <!-- parsedVersion.* properties are dynamically created by the build-helper-maven-plugin:create-doc-version-property -->
     <doc.version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}</doc.version>
     <doc.base.url>https://help.pentaho.com/Documentation/${doc.version}</doc.base.url>
+
+    <!-- SonarQube general configuration -->
+    <sonar.dependencyCheck.reportPath>${project.build.directory}/dependency-check-report.xml</sonar.dependencyCheck.reportPath>
+    <sonar.dependencyCheck.htmlReportPath>${project.build.directory}/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
   </properties>
 
   <dependencyManagement>
@@ -2021,25 +2025,6 @@
     </profile>
 
     <profile>
-      <id>unit-test-output-redirect</id>
-      <activation>
-        <property>
-          <name>redirectTestOutputToFile</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
-              <configuration>
-                <redirectTestOutputToFile>true</redirectTestOutputToFile>
-              </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
       <id>owasp</id>
       <build>
         <plugins>
@@ -2111,42 +2096,5 @@
         </plugins>
       </build>
     </profile>
-
-    <profile>
-      <id>sonar</id>
-      <activation>
-        <property>
-          <name>sonar</name>
-        </property>
-      </activation>
-	    <properties>
-        <sonar.project.name>${project.artifactId}</sonar.project.name>
-        <sonar.host.url>http://sonar.pentaho.net:9000</sonar.host.url>
-        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-        <sonar.projectName>${sonar.project.name}</sonar.projectName>
-        <sonar.sources>.</sonar.sources>
-        <sonar.inclusions>src/main/**</sonar.inclusions>
-        <sonar.jacoco.reportPaths>${project.build.directory}/jacoco.exec,${project.build.directory}/jacoco-it.exec</sonar.jacoco.reportPaths>
-        <sonar.dependencyCheck.reportPath>${project.build.directory}/dependency-check-report.xml</sonar.dependencyCheck.reportPath>
-        <sonar.dependencyCheck.htmlReportPath>${project.build.directory}/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.sonarsource.scanner.maven</groupId>
-            <artifactId>sonar-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sonar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    
   </profiles>
 </project>
