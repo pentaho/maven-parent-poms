@@ -140,6 +140,7 @@
     <dom4j.version>2.1.1</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
     <xstream.version>1.4.11.1</xstream.version>
+    <jackrabbit.version>2.16.5</jackrabbit.version>
     <commons-compress.version>1.18</commons-compress.version>
     <commons-fileupload.version>1.4</commons-fileupload.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
@@ -496,6 +497,32 @@
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream</artifactId>
         <version>${xstream.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.jackrabbit</groupId>
+        <artifactId>jackrabbit-api</artifactId>
+        <version>${jackrabbit.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.jackrabbit</groupId>
+        <artifactId>jackrabbit-core</artifactId>
+        <version>${jackrabbit.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.jackrabbit</groupId>
+        <artifactId>jackrabbit-spi</artifactId>
+        <version>${jackrabbit.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.jackrabbit</groupId>
+        <artifactId>jackrabbit-spi-commons</artifactId>
+        <version>${jackrabbit.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.jackrabbit</groupId>
+        <artifactId>jackrabbit-jcr-commons</artifactId>
+        <version>${jackrabbit.version}</version>
       </dependency>
 
       <dependency>
