@@ -155,6 +155,8 @@
     <commons-fileupload.version>1.4</commons-fileupload.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
     <jetty.version>9.4.18.v20190429</jetty.version>
+    <httpclient.version>4.5.9</httpclient.version>
+    <httpcore.version>4.4.11</httpcore.version>
 
     <!-- spring version -->
     <spring.version>4.3.22.RELEASE</spring.version>
@@ -669,11 +671,32 @@
         <artifactId>xercesImpl</artifactId>
         <version>${xercesImpl.version}</version>
       </dependency>
-
       <dependency>
         <groupId>xml-apis</groupId>
         <artifactId>xml-apis</artifactId>
         <version>${xml-apis.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>${httpclient.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpcore</artifactId>
+        <version>${httpcore.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient-osgi</artifactId>
+        <version>${httpclient.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpcore-osgi</artifactId>
+        <version>${httpcore.version}</version>
       </dependency>
 
       <dependency>
