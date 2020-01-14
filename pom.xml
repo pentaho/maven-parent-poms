@@ -232,20 +232,16 @@
     <javascript-doc_copy-resources-phase>pre-site</javascript-doc_copy-resources-phase>
 
     <!-- Node and npm root repositoryies -->
-    <nodeDownloadRoot>http://nexus.pentaho.org/repository/proxy-nodejs-generic/</nodeDownloadRoot>
-    <npmDownloadRoot>http://nexus.pentaho.org/repository/group-npm/npm/-/</npmDownloadRoot>
+    <nodeDownloadRoot>http://orl-jfrog-lb.pentaho.net/artifactory/nodejs-dist/</nodeDownloadRoot>
+    <npmDownloadRoot>http://orl-jfrog-lb.pentaho.net/artifactory/npm-release/npm/-/</npmDownloadRoot>
 
-    <pentaho.resolve.repo>http://nexus.pentaho.org/content/groups/omni/</pentaho.resolve.repo>
+    <pentaho.resolve.repo>http://orl-jfrog-lb.pentaho.net/artifactory/pnt-mvn</pentaho.resolve.repo>
     <!-- No default repository URL deployments, these must be defined at build-time -->
     <pentaho.public.release.repo />
     <pentaho.public.snapshot.repo />
     <pentaho.private.release.repo />
     <pentaho.private.snapshot.repo />
 
-    <site.publish.url>http://nexus.pentaho.org/content/sites/public-site</site.publish.url>
-    <pentaho.staging.repo.root.url>http://10.177.178.195</pentaho.staging.repo.root.url>
-    <nexus.staging.profile.id>0</nexus.staging.profile.id>
-    <nexus.staging.server.id />
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -2220,54 +2216,6 @@
           </plugin>
         </plugins>
       </reporting>
-    </profile>
-
-    <!-- Support Nexus Staging Deployment -->
-    <profile>
-      <id>deploy-to-staging</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.8</version>
-            <extensions>true</extensions>
-            <configuration>
-              <nexusUrl>${pentaho.staging.repo.root.url}</nexusUrl>
-              <serverId>${nexus.staging.server.id}</serverId>
-              <stagingProfileId>${nexus.staging.profile.id}</stagingProfileId>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>owasp</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.owasp</groupId>
-            <artifactId>dependency-check-maven</artifactId>
-            <version>${dependency-check-maven.version}</version>
-            <configuration>
-              <cveUrl12Modified>http://nexus.pentaho.org/repository/proxy-nist-feeds/json/cve/1.1/nvdcve-modified.json.gz</cveUrl12Modified>
-              <cveUrl20Modified>http://nexus.pentaho.org/repository/proxy-nist-feeds/json/cve/1.1/nvdcve-1.1-modified.json.gz</cveUrl20Modified>
-              <cveUrl12Base>http://nexus.pentaho.org/repository/proxy-nist-feeds/json/cve/1.1/nvdcve-%d.json.gz</cveUrl12Base>
-              <cveUrl20Base>http://nexus.pentaho.org/repository/proxy-nist-feeds/json/cve/1.1/nvdcve-1.1-%d.json.gz</cveUrl20Base>
-              <format>all</format>
-              <skipSystemScope>true</skipSystemScope>
-            </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>aggregate</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
 
     <profile>
