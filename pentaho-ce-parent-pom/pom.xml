@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.pentaho</groupId>
-  <artifactId>pentaho-ce-parent-pom</artifactId>
-  <version>7.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-parent-pom</artifactId>
-    <version>7.1-SNAPSHOT</version>
+    <version>7.1.0.32-246</version>
   </parent>
-
+  <groupId>org.pentaho</groupId>
+  <artifactId>pentaho-ce-parent-pom</artifactId>
+  <version>7.1.0.32-246</version>
+  <packaging>pom</packaging>
   <name>Pentaho Community Edition Project Parent Pom</name>
   <description>a parent pom for general configuration of Pentaho sponsored open source projects</description>
   <url>http://www.pentaho.org</url>
   <inceptionYear>2002</inceptionYear>
-
-  <modules>
-    <module>pentaho-ce-jar-parent-pom</module>
-  </modules>
-
   <licenses>
     <license>
       <name>The MIT License</name>
@@ -28,5 +22,7 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
+  <modules>
+    <module>pentaho-ce-jar-parent-pom</module>
+  </modules>
 </project>
