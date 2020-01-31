@@ -141,6 +141,10 @@
     <npm.version>5.7.1</npm.version>
     <requirejs.version>2.3.6</requirejs.version>
     <bootstrap.version>3.4.1</bootstrap.version>
+
+    <!-- When changing the jQuery version, be sure to rename/adapt the corresponding AMD "overrides" file:
+         pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.npm/jquery/3.4.1/overrides.json
+     -->
     <jquery.version>3.4.1</jquery.version>
     <jquery-ui.version>1.12.1</jquery-ui.version>
     <fancyapps__fancybox.version>3.5.5</fancyapps__fancybox.version>
