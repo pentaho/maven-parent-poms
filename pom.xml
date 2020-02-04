@@ -136,7 +136,8 @@
     <fancyapps__fancybox.version>3.5.5</fancyapps__fancybox.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
-    <fasterxml-jackson.version>2.9.9</fasterxml-jackson.version>
+    <fasterxml-jackson.version>2.9.10</fasterxml-jackson.version>
+    <fasterxml-jackson-databind.version>2.9.10.2</fasterxml-jackson-databind.version>
     <dom4j.version>2.1.1</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
     <xstream.version>1.4.11.1</xstream.version>
@@ -449,7 +450,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>${fasterxml-jackson.version}</version>
+        <version>${fasterxml-jackson-databind.version}</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.jaxrs</groupId>
