@@ -2256,13 +2256,6 @@
             <version>${appscan-maven-plugin.version}</version>
             <executions>
               <execution>
-                <id>appscan-filename</id>
-                <phase>initialize</phase>
-                <goals>
-                  <goal>filename</goal>
-                </goals>
-              </execution>
-              <execution>
                 <id>appscan-prepare</id>
                 <phase>package</phase>
                 <goals>
@@ -2270,9 +2263,6 @@
                 </goals>
               </execution>
             </executions>
-            <configuration>
-              <m_output>${appscan-filename}</m_output>
-            </configuration>
           </plugin>
         </plugins>
       </build>
