@@ -248,6 +248,10 @@
     <pentaho.private.release.repo />
     <pentaho.private.snapshot.repo />
 
+    <pentaho.docker.pull.host>pnt-docker.orl-jfrog-lb.pentaho.net/</pentaho.docker.pull.host>
+    <!-- No default docker push repository, it must be defined at build-time -->
+    <pentaho.docker.push.host>${pentaho.docker.public.push.host}</pentaho.docker.push.host>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
