@@ -152,6 +152,9 @@
      -->
     <angular.version>1.7.8</angular.version>
     <angular-translate.version>2.18.1</angular-translate.version>
+    <angular-ui-bootstrap-bower.version>1.3.3</angular-ui-bootstrap-bower.version>
+    <uirouter-core.version>5.0.23</uirouter-core.version>
+    <uirouter-angularjs.version>1.0.22</uirouter-angularjs.version>
 
     <fancyapps__fancybox.version>3.5.5</fancyapps__fancybox.version>
 
@@ -749,6 +752,79 @@
         <groupId>org.webjars.npm</groupId>
         <artifactId>jquery</artifactId>
         <version>${jquery.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.webjars.bower</groupId>
+        <artifactId>angular</artifactId>
+        <version>${angular.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>angular-i18n</artifactId>
+        <version>${angular.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.bower</groupId>
+        <artifactId>angular-translate</artifactId>
+        <version>${angular-translate.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.bower</groupId>
+        <artifactId>angular-route</artifactId>
+        <version>${angular.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.bower</groupId>
+        <artifactId>angular-sanitize</artifactId>
+        <version>${angular.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.bower</groupId>
+        <artifactId>angular-animate</artifactId>
+        <version>${angular.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.bower</groupId>
+        <artifactId>angular-ui-bootstrap-bower</artifactId>
+        <version>${angular-ui-bootstrap-bower.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>angular-mocks</artifactId>
+        <version>${angular.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>uirouter__core</artifactId>
+        <version>${uirouter-core.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>uirouter__angularjs</artifactId>
+        <version>${uirouter-angularjs.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
 
       <dependency>
