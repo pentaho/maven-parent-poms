@@ -146,6 +146,13 @@
      -->
     <jquery.version>3.4.1</jquery.version>
     <jquery-ui.version>1.12.1</jquery-ui.version>
+
+    <!-- When changing the Angular version, be sure to rename/adapt the corresponding AMD "overrides" files:
+         pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.bower/angular/1.7.8/overrides.json
+     -->
+    <angular.version>1.7.8</angular.version>
+    <angular-translate.version>2.18.1</angular-translate.version>
+
     <fancyapps__fancybox.version>3.5.5</fancyapps__fancybox.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
