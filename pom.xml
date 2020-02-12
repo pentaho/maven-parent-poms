@@ -226,6 +226,11 @@
     <pentaho.staging.repo.root.url>http://10.177.178.195</pentaho.staging.repo.root.url>
     <nexus.staging.profile.id>0</nexus.staging.profile.id>
     <nexus.staging.server.id />
+    
+    <pentaho.docker.pull.host>pnt-docker.orl-jfrog-lb.pentaho.net/</pentaho.docker.pull.host>
+    <!-- No default docker push repository, it must be defined at build-time -->
+    <pentaho.docker.push.host>${pentaho.docker.public.push.host}</pentaho.docker.push.host>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
