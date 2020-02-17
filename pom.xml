@@ -144,6 +144,7 @@
     <jackrabbit.version>2.16.5</jackrabbit.version>
     <commons-compress.version>1.18</commons-compress.version>
     <commons-fileupload.version>1.4</commons-fileupload.version>
+    <commons-codec.version>1.14</commons-codec.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
     <tomcat.version>8.5.51</tomcat.version>
 
@@ -544,6 +545,11 @@
         <version>${commons-fileupload.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${commons-codec.version}</version>
+      </dependency>
       <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-core</artifactId>
