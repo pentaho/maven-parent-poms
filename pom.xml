@@ -158,6 +158,7 @@
     <commons-compress.version>1.18</commons-compress.version>
     <commons-fileupload.version>1.4</commons-fileupload.version>
     <commons-vfs2.version>2.3</commons-vfs2.version>
+    <commons-codec.version>1.14</commons-codec.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
     <jetty.version>9.4.18.v20190429</jetty.version>
     <httpclient.version>4.5.9</httpclient.version>
@@ -645,6 +646,11 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-vfs2</artifactId>
         <version>${commons-vfs2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${commons-codec.version}</version>
       </dependency>
       <dependency>
         <groupId>com.amazonaws</groupId>
