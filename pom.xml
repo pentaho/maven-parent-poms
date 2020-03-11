@@ -252,17 +252,17 @@
     <javascript-doc_copy-resources-phase>pre-site</javascript-doc_copy-resources-phase>
 
     <!-- Node and npm root repositoryies -->
-    <nodeDownloadRoot>http://orl-jfrog-lb.pentaho.net/artifactory/nodejs-dist/</nodeDownloadRoot>
-    <npmDownloadRoot>http://orl-jfrog-lb.pentaho.net/artifactory/npm-release/npm/-/</npmDownloadRoot>
+    <nodeDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/nodejs-dist/</nodeDownloadRoot>
+    <npmDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/npm-release/npm/-/</npmDownloadRoot>
 
-    <pentaho.resolve.repo>http://orl-jfrog-lb.pentaho.net/artifactory/pnt-mvn</pentaho.resolve.repo>
+    <pentaho.resolve.repo>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn</pentaho.resolve.repo>
     <!-- No default repository URL deployments, these must be defined at build-time -->
     <pentaho.public.release.repo />
     <pentaho.public.snapshot.repo />
     <pentaho.private.release.repo />
     <pentaho.private.snapshot.repo />
 
-    <pentaho.docker.pull.host>pnt-docker.orl-jfrog-lb.pentaho.net/</pentaho.docker.pull.host>
+    <pentaho.docker.pull.host>pnt-docker.repo.orl.eng.hitachivantara.com/</pentaho.docker.pull.host>
     <!-- No default docker push repository, it must be defined at build-time -->
     <pentaho.docker.push.host>${pentaho.docker.public.push.host}</pentaho.docker.push.host>
 
