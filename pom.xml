@@ -153,7 +153,6 @@
     <jackrabbit.version>2.16.5</jackrabbit.version>
     <commons-compress.version>1.18</commons-compress.version>
     <commons-fileupload.version>1.4</commons-fileupload.version>
-    <commons-vfs2.version>2.3</commons-vfs2.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
     <jetty.version>9.4.18.v20190429</jetty.version>
     <httpclient.version>4.5.9</httpclient.version>
@@ -641,11 +640,7 @@
         <artifactId>commons-fileupload</artifactId>
         <version>${commons-fileupload.version}</version>
       </dependency>
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-vfs2</artifactId>
-        <version>${commons-vfs2.version}</version>
-      </dependency>
+
       <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-core</artifactId>
