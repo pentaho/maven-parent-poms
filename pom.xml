@@ -176,6 +176,9 @@
     <kafka-clients.version>0.10.2.2</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
     <tomcat.version>8.5.51</tomcat.version>
+    <taglibs-standard.version>1.2.5</taglibs-standard.version>
+    <servlet-api.version>2.5</servlet-api.version>
+    <jsp-api.version>2.1</jsp-api.version>
 
     <!-- spring version -->
     <spring.version>4.3.22.RELEASE</spring.version>
@@ -737,6 +740,27 @@
         <groupId>org.eclipse.paho</groupId>
         <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
         <version>${paho.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>${servlet-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>${jsp-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.taglibs</groupId>
+        <artifactId>taglibs-standard-spec</artifactId>
+        <version>${taglibs-standard.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.taglibs</groupId>
+        <artifactId>taglibs-standard-impl</artifactId>
+        <version>${taglibs-standard.version}</version>
       </dependency>
 
       <dependency>
