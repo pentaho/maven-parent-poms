@@ -123,6 +123,7 @@
     <license-helper-maven-plugin.version>1.27</license-helper-maven-plugin.version>
     <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
+    <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
 
     <karaf-maven-plugin.version>4.2.6</karaf-maven-plugin.version>
     <hitachi-karaf-maven-plugin.version>4.2.6-R2</hitachi-karaf-maven-plugin.version>
@@ -321,6 +322,13 @@
     <!-- SonarQube general configuration -->
     <sonar.dependencyCheck.reportPath>${project.build.directory}/dependency-check-report.xml</sonar.dependencyCheck.reportPath>
     <sonar.dependencyCheck.htmlReportPath>${project.build.directory}/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
+
+    <!-- region Protobuf / gRPC configuration-->
+    <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+    <protoc.version>3.11.4</protoc.version>
+    <grpc.version>1.27.0</grpc.version>
+    <!-- endregion -->
+
   </properties>
 
   <dependencyManagement>
@@ -1035,6 +1043,19 @@
         </exclusions>
       </dependency>
 
+      <!-- region gRPC -->
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-protobuf</artifactId>
+        <version>${grpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-stub</artifactId>
+        <version>${grpc.version}</version>
+      </dependency>
+      <!-- endregion -->
+
     </dependencies>
   </dependencyManagement>
 
@@ -1083,6 +1104,17 @@
   </pluginRepositories>
 
   <build>
+    <extensions>
+      <extension>
+        <!-- This extension plugin generates and normalizes properties related to the operating system.
+             These can be used to select characteristics of the build which are OS specific.
+             An example of this is the protobuf-maven-plugin which uses a OS specific artifact to generate code. -->
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+        <version>${os-maven-plugin.version}</version>
+      </extension>
+    </extensions>
+
     <pluginManagement>
       <plugins>
         <plugin>
@@ -1333,6 +1365,14 @@
           <groupId>org.pentaho.maven.plugins</groupId>
           <artifactId>license-helper-maven-plugin</artifactId>
           <version>${license-helper-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.xolstice.maven.plugins</groupId>
+          <artifactId>protobuf-maven-plugin</artifactId>
+          <version>${protobuf-maven-plugin.version}</version>
+          <configuration>
+            <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -1940,6 +1980,53 @@
             </plugin>
           </plugins>
         </pluginManagement>
+      </build>
+    </profile>
+
+    <profile>
+      <!-- This profile generates java code from protobuf specification files.
+           This includes java gRPC code for services declared in the proto files. -->
+      <id>proto-to-java</id>
+
+      <activation>
+        <file>
+          <exists>${basedir}/src/main/proto</exists>
+        </file>
+      </activation>
+
+      <dependencies>
+        <dependency>
+          <groupId>io.grpc</groupId>
+          <artifactId>grpc-protobuf</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>io.grpc</groupId>
+          <artifactId>grpc-stub</artifactId>
+        </dependency>
+      </dependencies>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.xolstice.maven.plugins</groupId>
+            <artifactId>protobuf-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>generate-grpc-java</id>
+                <goals>
+                  <goal>compile</goal>
+                  <goal>compile-custom</goal>
+                </goals>
+                <configuration>
+                  <pluginId>grpc-java</pluginId>
+                  <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
+                  <outputDirectory>${project.build.directory}/generated-sources/protobuf/java</outputDirectory>
+                  <clearOutputDirectory>false</clearOutputDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
       </build>
     </profile>
 
