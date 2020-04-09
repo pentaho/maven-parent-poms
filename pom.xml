@@ -2031,6 +2031,48 @@
     </profile>
 
     <profile>
+      <!-- Creates and attaches a zip artifact with all proto definition files. -->
+      <id>proto-sources-artifact</id>
+
+      <activation>
+        <file>
+          <exists>${basedir}/src/main/proto</exists>
+        </file>
+      </activation>
+
+      <properties>
+        <proto.sources.artifact.file>${project.build.directory}/${project.build.finalName}-proto.zip</proto.sources.artifact.file>
+      </properties>
+
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>zip-proto-sources-and-attach-artifact</id>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <phase>package</phase>
+                <configuration>
+                  <target>
+                    <zip destfile="${proto.sources.artifact.file}"
+                         basedir="${basedir}/src/main/proto"
+                         includes="**/*.proto"/>
+                    <attachartifact file="${proto.sources.artifact.file}"
+                                    type="zip"
+                                    classifier="proto"/>
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
       <id>eula-wrap</id>
       <activation>
         <property>
