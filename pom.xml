@@ -149,9 +149,9 @@
     <jquery-ui.version>1.12.1</jquery-ui.version>
 
     <!-- When changing the Angular version, be sure to rename/adapt the corresponding AMD "overrides" files:
-         pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.bower/angular/1.7.8/overrides.json
+         pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.bower/angular/1.8.0/overrides.json
      -->
-    <angular.version>1.7.8</angular.version>
+    <angular.version>1.8.0</angular.version>
     <angular-translate.version>2.18.1</angular-translate.version>
     <angular-ui-bootstrap-bower.version>1.3.3</angular-ui-bootstrap-bower.version>
     <uirouter-core.version>5.0.23</uirouter-core.version>
