@@ -13,11 +13,22 @@
   <mirrors>
     <mirror>
       <id>pentaho-public</id>
-      <url>http://nexus.pentaho.org/content/groups/omni</url>
+      <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
   -->
+
+  <!--
+  Don't forget to add setting-security.xml so that the password get's decrypted  
+  -->
+  <servers>
+    <server>
+      <id>pentaho-public</id>
+      <username>devreaduser</username>
+      <password>{zIMyJWfHKfoHiBJAVsAgW4E5BcJzR+nhTtgPy0J+/rs=}</password>
+    </server>
+  </servers>
 
   <!--
   You might want to tweak the 'updatePolicy' configuration to fit your need on having updated snapshots and
@@ -33,7 +44,7 @@
         <repository>
           <id>pentaho-public</id>
           <name>Pentaho Public</name>
-          <url>http://nexus.pentaho.org/content/groups/omni</url>
+          <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>always</updatePolicy>
@@ -48,7 +59,7 @@
         <pluginRepository>
           <id>pentaho-public</id>
           <name>Pentaho Public</name>
-          <url>http://nexus.pentaho.org/content/groups/omni</url>
+          <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>always</updatePolicy>
