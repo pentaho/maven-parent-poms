@@ -177,6 +177,7 @@
     <kafka-clients.version>0.10.2.2</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
     <tomcat.version>8.5.51</tomcat.version>
+    <h2.version>1.4.200</h2.version>
 
     <!-- spring version -->
     <spring.version>4.3.22.RELEASE</spring.version>
@@ -745,6 +746,12 @@
         <groupId>org.eclipse.paho</groupId>
         <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
         <version>${paho.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${h2.version}</version>
       </dependency>
 
       <dependency>
