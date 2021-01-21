@@ -63,7 +63,7 @@
   </ciManagement>
 
   <properties>
-    <copyright.year>2020</copyright.year>
+    <copyright.year>2021</copyright.year>
 
     <!-- VERSIONS -->
     <slf4j.version>1.7.12</slf4j.version>
