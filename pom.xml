@@ -179,16 +179,16 @@
     <tomcat.version>8.5.51</tomcat.version>
 
     <!-- spring version -->
-    <spring.version>4.3.22.RELEASE</spring.version>
+    <spring.version>5.3.3</spring.version>
     <spring-ldap.version>2.3.2.RELEASE</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security.version>4.2.9.RELEASE</spring-security.version>
+    <spring-security.version>5.4.2</spring-security.version>
     <spring-security-core-tests.version>2.0.5.RELEASE</spring-security-core-tests.version>
     <spring-retry.version>1.2.2.RELEASE</spring-retry.version>
-    <spring-boot.version>1.5.16.RELEASE</spring-boot.version>
+    <spring-boot.version>2.4.2</spring-boot.version>
     <spring-security-kerberos.version>1.0.1.RELEASE</spring-security-kerberos.version>
     <karaf-springframework-override.version>4.1.9.RELEASE_1</karaf-springframework-override.version>
 
