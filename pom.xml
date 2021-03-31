@@ -169,28 +169,28 @@
     <commons-compress.version>1.20</commons-compress.version>
     <commons-fileupload.version>1.4</commons-fileupload.version>
     <commons-vfs2.version>2.7.0</commons-vfs2.version>
-    <commons-codec.version>1.14</commons-codec.version>
+    <commons-codec.version>1.15</commons-codec.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
     <jetty.version>9.4.18.v20190429</jetty.version>
     <httpclient.version>4.5.9</httpclient.version>
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>0.10.2.2</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
-    <tomcat.version>8.5.51</tomcat.version>
+    <tomcat.version>9.0.44</tomcat.version>
     <bcprov-jdk14.version>1.65</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
 
     <!-- spring version -->
-    <spring.version>4.3.22.RELEASE</spring.version>
+    <spring.version>5.3.3</spring.version>
     <spring-ldap.version>2.3.2.RELEASE</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security.version>4.2.9.RELEASE</spring-security.version>
+    <spring-security.version>5.4.2</spring-security.version>
     <spring-security-core-tests.version>2.0.5.RELEASE</spring-security-core-tests.version>
     <spring-retry.version>1.2.2.RELEASE</spring-retry.version>
-    <spring-boot.version>1.5.16.RELEASE</spring-boot.version>
+    <spring-boot.version>2.4.2</spring-boot.version>
     <spring-security-kerberos.version>1.0.1.RELEASE</spring-security-kerberos.version>
     <karaf-springframework-override.version>4.1.9.RELEASE_1</karaf-springframework-override.version>
 
@@ -667,6 +667,12 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-vfs2</artifactId>
         <version>${commons-vfs2.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs-client</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>commons-codec</groupId>
@@ -884,6 +890,12 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-core</artifactId>
         <version>${spring.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jcl</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.springframework</groupId>
