@@ -177,6 +177,8 @@
     <kafka-clients.version>0.10.2.2</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
     <tomcat.version>9.0.44</tomcat.version>
+    <bcprov-jdk14.version>1.65</bcprov-jdk14.version>
+    <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
 
     <!-- spring version -->
     <spring.version>5.3.3</spring.version>
@@ -751,6 +753,16 @@
         <groupId>org.eclipse.paho</groupId>
         <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
         <version>${paho.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk14</artifactId>
+        <version>${bcprov-jdk14.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk15on</artifactId>
+        <version>${bcprov-jdk15on.version}</version>
       </dependency>
 
       <dependency>
