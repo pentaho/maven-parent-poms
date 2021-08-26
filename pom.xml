@@ -333,6 +333,7 @@
     <grpc.version>1.27.0</grpc.version>
     <!-- endregion -->
 
+    <hv-security-web.version>0.5.0</hv-security-web.version>
   </properties>
 
   <dependencyManagement>
@@ -1087,6 +1088,33 @@
       </dependency>
       <!-- endregion -->
 
+      <!-- region HV Web Security -->
+      <dependency>
+        <groupId>com.hitachivantara.security.web</groupId>
+        <artifactId>security-web-server-api</artifactId>
+        <version>${hv-security-web.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hitachivantara.security.web</groupId>
+        <artifactId>security-web-server-model-impl</artifactId>
+        <version>${hv-security-web.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hitachivantara.security.web</groupId>
+        <artifactId>security-web-server-service-impl</artifactId>
+        <version>${hv-security-web.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hitachivantara.security.web</groupId>
+        <artifactId>csrf-token-service-client-java-jax-rs-v1</artifactId>
+        <version>${hv-security-web.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hitachivantara.security.web</groupId>
+        <artifactId>csrf-token-service-client-java-jax-rs-v2</artifactId>
+        <version>${hv-security-web.version}</version>
+      </dependency>
+      <!-- endregion HV Web Security -->
     </dependencies>
   </dependencyManagement>
 
