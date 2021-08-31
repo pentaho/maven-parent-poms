@@ -213,6 +213,12 @@
     <appscan-maven-plugin.version>1.0.7</appscan-maven-plugin.version>
     <dependency-check-maven.version>5.2.2</dependency-check-maven.version>
 
+    <!-- Endorsed Standards Excluded from Java 11+ -->
+    <jakarta.activation.version>1.2.2</jakarta.activation.version>
+    <jakarta.xml.bind-api.version>2.3.3</jakarta.xml.bind-api.version>
+    <jaxb-impl.version>2.3.3</jaxb-impl.version>
+    <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
+
     <!-- Monitoring versions -->
     <!-- Guava Event Bus version must be the same throughout all components of Monitoring otherwise service references
          won't be properly satisfied.
@@ -1073,6 +1079,30 @@
             <artifactId>mail</artifactId>
           </exclusion>
         </exclusions>
+      </dependency>
+
+      <!-- Endorsed Standards Excluded from Java 11+ -->
+      <dependency>
+        <groupId>com.sun.activation</groupId>
+        <artifactId>jakarta.activation</artifactId>
+        <version>${jakarta.activation.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.xml.bind</groupId>
+        <artifactId>jakarta.xml.bind-api</artifactId>
+        <version>${jakarta.xml.bind-api.version}</version>
+      </dependency>
+      <!-- Runtime -->
+      <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>${jaxb-impl.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.xml.ws</groupId>
+        <artifactId>jakarta.xml.ws-api</artifactId>
+        <version>${jakarta.xml.ws-api.version}</version>
       </dependency>
 
       <!-- region gRPC -->
