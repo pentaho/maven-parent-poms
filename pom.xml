@@ -340,6 +340,7 @@
     <!-- endregion -->
 
     <hv-security-web.version>0.5.0</hv-security-web.version>
+    <snowflake-jdbc.version>3.6.28</snowflake-jdbc.version>
   </properties>
 
   <dependencyManagement>
