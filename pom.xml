@@ -219,6 +219,15 @@
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
     <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
 
+    <!-- GWT Java 11 compatibility -->
+    <gwt.version>2.5.1</gwt.version>
+    <gwt-incubator.version>2.1.0</gwt-incubator.version>
+    <gwt-dnd.version>3.3.4</gwt-dnd.version>
+    <gwtmockito.version>1.1.9</gwtmockito.version>
+    <gwtx.version>1.5.2</gwtx.version>
+    <GWT-FX.version>0.5.0</GWT-FX.version>
+    <jsinterop-annotations.version>2.0.0</jsinterop-annotations.version>
+
     <!-- Monitoring versions -->
     <!-- Guava Event Bus version must be the same throughout all components of Monitoring otherwise service references
          won't be properly satisfied.
@@ -1146,6 +1155,61 @@
         <version>${hv-security-web.version}</version>
       </dependency>
       <!-- endregion HV Web Security -->
+
+      <!-- GWT Java 11+ compatibility -->
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt-user</artifactId>
+        <version>${gwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt-dev</artifactId>
+        <version>${gwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt-servlet</artifactId>
+        <version>${gwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt-codeserver</artifactId>
+        <version>${gwt.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt-incubator</artifactId>
+        <version>${gwt-incubator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.allen-sauer.gwt.dnd</groupId>
+        <artifactId>gwt-dnd</artifactId>
+        <version>${gwt-dnd.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.gwt.gwtmockito</groupId>
+        <artifactId>gwtmockito</artifactId>
+        <version>${gwtmockito.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.jsinterop</groupId>
+        <artifactId>jsinterop-annotations</artifactId>
+        <version>${jsinterop-annotations.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.gwtx</groupId>
+        <artifactId>gwtx</artifactId>
+        <version>${gwtx.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>GWT-FX</groupId>
+        <artifactId>GWT-FX</artifactId>
+        <version>${GWT-FX.version}</version>
+      </dependency>
+      <!-- end GWT Java 11+ compatibility -->
+
     </dependencies>
   </dependencyManagement>
 
