@@ -220,11 +220,11 @@
     <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
 
     <!-- GWT Java 11 compatibility -->
-    <gwt.version>2.5.1</gwt.version>
+    <gwt.version>2.9.0</gwt.version>
     <gwt-incubator.version>2.1.0</gwt-incubator.version>
     <gwt-dnd.version>3.3.4</gwt-dnd.version>
     <gwtmockito.version>1.1.9</gwtmockito.version>
-    <gwtx.version>1.5.2</gwtx.version>
+    <gwtx.version>1.5.4-java11</gwtx.version>
     <GWT-FX.version>0.5.0</GWT-FX.version>
     <jsinterop-annotations.version>2.0.0</jsinterop-annotations.version>
 
