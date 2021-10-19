@@ -348,7 +348,7 @@
     <grpc.version>1.27.0</grpc.version>
     <!-- endregion -->
 
-    <hv-security-web.version>0.5.1</hv-security-web.version>
+    <hv-security-web.version>0.6.0</hv-security-web.version>
     <snowflake-jdbc.version>3.6.28</snowflake-jdbc.version>
   </properties>
 
