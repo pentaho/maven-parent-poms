@@ -180,7 +180,7 @@
     <tomcat.version>9.0.50</tomcat.version>
     <bcprov-jdk14.version>1.65</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
-    <simple-jndi.version>1.0.9</simple-jndi.version>
+    <simple-jndi.version>1.0.10</simple-jndi.version>
 
     <!-- spring version -->
     <spring.version>5.3.3</spring.version>
