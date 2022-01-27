@@ -196,7 +196,7 @@
     <spring-security-kerberos.version>1.0.1.RELEASE</spring-security-kerberos.version>
     <karaf-springframework-override.version>4.1.9.RELEASE_1</karaf-springframework-override.version>
 
-    <xercesImpl.version>2.12.0</xercesImpl.version>
+    <xercesImpl.version>2.12.2</xercesImpl.version>
     <xml-apis.version>1.4.01</xml-apis.version>
 
     <enunciate-jersey-rt.version>1.27</enunciate-jersey-rt.version>
