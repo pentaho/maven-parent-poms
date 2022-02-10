@@ -202,10 +202,8 @@
     <enunciate-jersey-rt.version>1.27</enunciate-jersey-rt.version>
 
     <!-- jdk version -->
-    <source.jdk.version>1.8</source.jdk.version>
-    <target.jdk.version>1.8</target.jdk.version>
-    <maven.compiler.source>${source.jdk.version}</maven.compiler.source>
-    <maven.compiler.target>${target.jdk.version}</maven.compiler.target>
+    <!-- build for Java 8 compatibility for 9.3; to be updated to Java 11 in the next release -->
+    <maven.compiler.release>8</maven.compiler.release>
     <compilerArgument/>
     <checkstyle.version>8.0</checkstyle.version>
     <coding-standards.version>9.3.0.0-SNAPSHOT</coding-standards.version>
