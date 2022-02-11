@@ -203,6 +203,8 @@
 
     <!-- jdk version -->
     <!-- build for Java 8 compatibility for 9.3; to be updated to Java 11 in the next release -->
+    <source.jdk.version>1.8</source.jdk.version>
+    <target.jdk.version>1.8</target.jdk.version>
     <maven.compiler.release>8</maven.compiler.release>
     <compilerArgument/>
     <checkstyle.version>8.0</checkstyle.version>
