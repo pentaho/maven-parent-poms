@@ -178,6 +178,7 @@
     <kafka-clients.version>0.10.2.2</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
     <tomcat.version>9.0.50</tomcat.version>
+    <h2.version>2.1.210</h2.version>
     <bcprov-jdk14.version>1.65</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
     <simple-jndi.version>1.0.10</simple-jndi.version>
@@ -748,6 +749,12 @@
         <groupId>xml-apis</groupId>
         <artifactId>xml-apis</artifactId>
         <version>${xml-apis.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${h2.version}</version>
       </dependency>
 
       <dependency>
