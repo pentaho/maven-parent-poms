@@ -178,6 +178,7 @@
     <kafka-clients.version>0.10.2.2</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
     <tomcat.version>9.0.50</tomcat.version>
+    <h2.version>2.1.210</h2.version>
     <bcprov-jdk14.version>1.65</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
     <simple-jndi.version>1.0.10</simple-jndi.version>
@@ -202,10 +203,11 @@
     <enunciate-jersey-rt.version>1.27</enunciate-jersey-rt.version>
 
     <!-- jdk version -->
+    <!-- build for Java 8 compatibility for 9.3; to be updated to Java 11 in the next release -->
     <source.jdk.version>1.8</source.jdk.version>
     <target.jdk.version>1.8</target.jdk.version>
-    <maven.compiler.source>${source.jdk.version}</maven.compiler.source>
-    <maven.compiler.target>${target.jdk.version}</maven.compiler.target>
+    <release.jdk.version>8</release.jdk.version>
+    <maven.compiler.release>8</maven.compiler.release>
     <compilerArgument/>
     <checkstyle.version>8.0</checkstyle.version>
     <coding-standards.version>9.3.0.0-SNAPSHOT</coding-standards.version>
@@ -748,6 +750,12 @@
         <groupId>xml-apis</groupId>
         <artifactId>xml-apis</artifactId>
         <version>${xml-apis.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${h2.version}</version>
       </dependency>
 
       <dependency>
