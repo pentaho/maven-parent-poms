@@ -287,6 +287,7 @@
     <!-- parsedVersion.* properties are dynamically created by the build-helper-maven-plugin:create-doc-version-property -->
     <doc.version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}</doc.version>
     <doc.base.url>https://help.pentaho.com/Documentation/${doc.version}</doc.base.url>
+    <doc.base.wiki.url>https://pentaho-community.atlassian.net/wiki</doc.base.wiki.url>
 
     <!-- SonarQube general configuration -->
     <sonar.dependencyCheck.reportPath>${project.build.directory}/dependency-check-report.xml</sonar.dependencyCheck.reportPath>
