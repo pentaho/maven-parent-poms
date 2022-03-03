@@ -75,7 +75,7 @@
     <osgi.core.version>6.0.0</osgi.core.version>
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
 
-    <karaf.version>4.2.6</karaf.version>
+    <karaf.version>4.2.15</karaf.version>
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
     <felix.http.proxy.version>3.0.6</felix.http.proxy.version>
@@ -85,7 +85,7 @@
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
 
     <pax-web.version>7.2.10</pax-web.version>
-    <pax-url-aether.version>2.6.1</pax-url-aether.version>
+    <pax-url-aether.version>2.6.7</pax-url-aether.version>
 
     <cxf.version>3.3.1</cxf.version>
 
@@ -125,8 +125,8 @@
     <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
     <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
 
-    <karaf-maven-plugin.version>4.2.6</karaf-maven-plugin.version>
-    <hitachi-karaf-maven-plugin.version>4.2.6-R2</hitachi-karaf-maven-plugin.version>
+    <karaf-maven-plugin.version>4.2.15</karaf-maven-plugin.version>
+    <hitachi-karaf-maven-plugin.version>4.2.15</hitachi-karaf-maven-plugin.version>
     <karaf-maven-plugin.enableGeneration>true</karaf-maven-plugin.enableGeneration>
     <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
     <karaf-maven-plugin.includeTransitiveDependency>true</karaf-maven-plugin.includeTransitiveDependency>
