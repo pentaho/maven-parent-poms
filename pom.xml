@@ -218,7 +218,7 @@
 
     <!-- Node and npm root repositoryies -->
     <nodeDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/nodejs-dist/</nodeDownloadRoot>
-    <npmDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/npm/-/</npmDownloadRoot>
+    <npmDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/npm/</npmDownloadRoot>
 
     <pentaho.resolve.repo>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</pentaho.resolve.repo>
     <!-- No default repository URL deployments, these must be defined at build-time -->
