@@ -71,6 +71,7 @@
     <log4j.version>2.17.1</log4j.version>
     <commons-logging.version>1.2</commons-logging.version>
     <postgresql.version>42.2.23</postgresql.version>
+    <ini4j.version>0.5.4</ini4j.version>
 
     <osgi.core.version>6.0.0</osgi.core.version>
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
