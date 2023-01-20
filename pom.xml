@@ -164,6 +164,7 @@
     <fasterxml-jackson.version>2.14.1</fasterxml-jackson.version>
     <fasterxml-jackson-databind.version>2.14.1</fasterxml-jackson-databind.version>
     <snakeyaml.version>1.33</snakeyaml.version>
+    <org.apache.avro.version>1.11.1</org.apache.avro.version>
     <dom4j.version>2.1.1</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
     <xstream.version>1.4.19</xstream.version>
@@ -621,7 +622,11 @@
         <artifactId>snakeyaml</artifactId>
         <version>${snakeyaml.version}</version>
       </dependency>
-
+      <dependency>
+        <groupId>org.apache.avro</groupId>
+        <artifactId>avro</artifactId>
+        <version>${org.apache.avro.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.dom4j</groupId>
         <artifactId>dom4j</artifactId>
