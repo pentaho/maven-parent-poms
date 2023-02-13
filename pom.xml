@@ -166,7 +166,7 @@
     <fasterxml-jackson-databind.version>2.9.10.2</fasterxml-jackson-databind.version>
     <dom4j.version>2.1.1</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
-    <xstream.version>1.4.17</xstream.version>
+    <xstream.version>1.4.20</xstream.version>
     <jackrabbit.version>2.16.5</jackrabbit.version>
     <commons-compress.version>1.20</commons-compress.version>
     <commons-fileupload.version>1.4</commons-fileupload.version>
