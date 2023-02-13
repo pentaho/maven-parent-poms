@@ -185,7 +185,7 @@
     <simple-jndi.version>1.0.10</simple-jndi.version>
 
     <!-- spring version -->
-    <spring.version>5.3.3</spring.version>
+    <spring.version>5.3.23</spring.version>
     <spring-ldap.version>2.3.2.RELEASE</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
