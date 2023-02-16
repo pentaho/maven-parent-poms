@@ -356,8 +356,7 @@
     <hv-security-web.version>0.7.0</hv-security-web.version>
     <snowflake-jdbc.version>3.13.10</snowflake-jdbc.version>
     <commons-io.version>2.11.0</commons-io.version>
-
-    <snakeyaml.version>1.33</snakeyaml.version>
+    <rome.version>1.18.0</rome.version>
   </properties>
 
   <dependencyManagement>
@@ -1249,7 +1248,16 @@
         <version>${GWT-FX.version}</version>
       </dependency>
       <!-- end GWT Java 11+ compatibility -->
-
+      <dependency>
+        <groupId>com.rometools</groupId>
+        <artifactId>rome</artifactId>
+        <version>${rome.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.rometools</groupId>
+        <artifactId>rome-modules</artifactId>
+        <version>${rome.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
