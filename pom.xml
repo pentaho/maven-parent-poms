@@ -357,6 +357,7 @@
     <snowflake-jdbc.version>3.13.10</snowflake-jdbc.version>
     <commons-io.version>2.11.0</commons-io.version>
     <rome.version>1.18.0</rome.version>
+    <snakeyaml.version>1.33</snakeyaml.version>
   </properties>
 
   <dependencyManagement>
