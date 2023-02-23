@@ -203,6 +203,7 @@
     <xml-apis.version>1.4.01</xml-apis.version>
 
     <enunciate-jersey-rt.version>1.27</enunciate-jersey-rt.version>
+    <beanshell.version>2.0b6</beanshell.version>
 
     <!-- jdk version -->
     <!-- build for Java 8 compatibility for 9.3; to be updated to Java 11 in the next release -->
