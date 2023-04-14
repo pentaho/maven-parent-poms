@@ -181,7 +181,7 @@
     <paho.version>1.2.2</paho.version>
     <tomcat.version>9.0.70</tomcat.version>
     <h2.version>2.1.210</h2.version>
-    <bcprov-jdk14.version>1.65</bcprov-jdk14.version>
+    <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
     <simple-jndi.version>1.0.10</simple-jndi.version>
     <batik.version>1.16</batik.version>
