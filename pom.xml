@@ -4,7 +4,7 @@
 
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-parent-pom</artifactId>
-  <version>9.6.0.0-SNAPSHOT-16</version>
+  <version>9.6.0.0-SNAPSHOT</version>
 
   <packaging>pom</packaging>
 
