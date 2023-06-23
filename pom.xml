@@ -244,6 +244,9 @@
     <guava.monitoring.version>17.0</guava.monitoring.version>
     <camel.version>2.17.7</camel.version>
 
+    <!-- Guava dependency for PDI and others (not Monitoring) -->
+    <guava.version>32.0.1-jre</guava.version>
+
     <!-- PHASE BINDINGS -->
     <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
     <node-npm_install-phase>initialize</node-npm_install-phase>
