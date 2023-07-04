@@ -1,0 +1,204 @@
+name: Parent POMs merge request workflow
+on:
+  push:
+    branches:
+      - "9.5.1.0"
+      - "!master"
+    paths-ignore:
+      - .github/**
+
+  workflow_dispatch:
+    inputs:
+      modules_to_build:
+        required: true
+        description: "The modules to build when running from the root of the project. Defaults to everything ('.')"
+        default: "."
+
+env:
+  VERSION: "9.5.1.0"
+  BASE_VERSION: "9.5.0.0-240"
+  SLACK_CHANNEL: yukon-test
+  BUILD_NAME: "${{ github.event.repository.name }}-$VERSION"
+
+  SONAR_PROJECT_KEY: "org.pentaho:pentaho-parent-pom"
+  SONAR_HOST_URL: https://sonar.orl.eng.hitachivantara.com # should be set as a GH variable  and accessed by ${{ var.SONAR_HOST_URL }}
+  SONAR_LOGIN: ${{secrets.WINGMAN_SONAR_TOKEN}} # secret should be renamed
+
+  ARTIFACTORY_HOST: https://repo.orl.eng.hitachivantara.com
+  ARTIFACTORY_BASE_URL: ${ARTIFACTORY_HOST}/artifactory
+
+  RESOLVE_REPO_MIRROR: ${ARTIFACTORY_BASE_URL}/pnt-mvn
+
+  NEXUS_DEPLOY_USER: ${{ secrets.ARTIFACTORY_USER }}
+  NEXUS_DEPLOY_PASSWORD: ${{ secrets.ARTIFACTORY_API_KEY }}
+
+  PUBLIC_RELEASE_REPO_URL: ${ARTIFACTORY_BASE_URL}/pntpub-mvn-dev-orl
+  PRIVATE_RELEASE_REPO: pntprv-mvn-dev-orl
+  PRIVATE_RELEASE_REPO_URL: ${ARTIFACTORY_BASE_URL}/${RELEASE_PRIVATE_REPO}
+
+  PUBLIC_SNAPSHOT_REPO_URL: ${ARTIFACTORY_BASE_URL}/pntpub-mvn-snapshot-orl
+  PRIVATE_SNAPSHOT_REPO: pntprv-mvn-snapshot-orl
+  PRIVATE_SNAPSHOT_REPO_URL: ${ARTIFACTORY_BASE_URL}/${PRIVATE_SNAPSHOT_REPO}
+
+  DOCKER_PULL_HOST: pnt-docker.repo.orl.eng.hitachivantara.com/
+  DOCKER_PUBLIC_PUSH_HOST: pntpub-docker-dev-orl.repo.orl.eng.hitachivantara.com
+  DOCKER_PRIVATE_PUSH_HOST: pntprv-docker-dev-orl.repo.orl.eng.hitachivantara.com
+
+jobs:
+
+  setup-maven-settings:
+    name: Setup common Maven settings
+
+    runs-on: [ k8s ]
+
+    container:
+      image: docker.repo.orl.eng.hitachivantara.com/pentaho/pdi-plugins-ee:20230703.10
+      volumes:
+        - /home/runner/caches/pentaho/.m2:/root/.m2
+
+    steps:
+
+      - name: Retrieve settings file
+        id: common-maven
+        uses: pentaho/actions-common@master
+
+      - name: Copy settings.xml to .m2 directory
+        shell: sh
+        run: |
+          mkdir -p /home/runner/caches/pentaho/.m2
+          cp "${{ steps.common-maven.outputs.settings-file-path }}" /root/.m2
+
+  snapshot:
+    name: Update Snapshots
+    needs: setup-maven-settings
+
+    runs-on: [ k8s ]
+
+    container:
+      image: docker.repo.orl.eng.hitachivantara.com/pentaho/pdi-plugins-ee:20230703.10
+      volumes:
+        - /home/runner/caches/pentaho/.m2:/root/.m2
+    steps:
+
+      - run: |
+          echo ${{ needs.setup-maven-settings.env }}
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Determine which changes occurred
+        if: ${{ inputs.modules_to_build == '' }}
+        id: change_detection
+        uses: hv-actions/change-detection-builder@1.0.0
+
+      - name: Build code and deploy artifacts
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        with:
+          command: mvn clean deploy -DskipTests -pl "${{ inputs.modules_to_build || steps.change_detection.outputs.changed_modules }}" -amd
+        env:
+          cmd_type: BUILD
+
+  release-candidate:
+    name: Build Release
+    needs: setup-maven-settings
+
+    runs-on: [ k8s ]
+
+    env:
+      JFROG_CLI_BUILD_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+    container:
+      image: docker.repo.orl.eng.hitachivantara.com/pentaho/pdi-plugins-ee:20230703.10
+      volumes:
+        - /home/runner/caches/pentaho/.m2:/root/.m2
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Determine which changes occurred
+        if: ${{ inputs.modules_to_build == '' }}
+        id: change_detection
+        uses: hv-actions/change-detection-builder@1.0.0
+
+      - name: Determine version
+        id: version
+        run: |
+          version="${{ env.VERSION }}-${{ github.run_number }}"
+          echo "current-version=$version" >> $GITHUB_OUTPUT
+
+      - name: Version set
+        run: |
+          sed -i 's/BASE_VERSION/${{ env.BASE_VERSION }}/g' .github/release-versions.properties
+          
+          java -DRELEASE_MODE=true -jar /version-merger.jar . \
+            -f .github/release-versions.properties \
+            commit project.revision=${{ steps.version.outputs.current-version }} \
+            project.version=${{ steps.version.outputs.current-version }} \
+            version=${{ steps.version.outputs.current-version }} \
+            distribution.version=${{ steps.version.outputs.current-version }} \
+            project.stage=master
+
+      - name: Build code and deploy artifacts
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        with:
+          command: |
+            mvn clean deploy -DskipTests \
+              -Pcicd-release -Drelease -Dbuild.name=${{ env.BUILD_NAME }} -Dbuild.number=${{ github.run_number }} \
+              -pl "${{ inputs.modules_to_build || steps.change_detection.outputs.changed_modules }}" -amd
+        env:
+          cmd_type: BUILD
+
+      - name: Run unit-tests
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        with:
+          command: |
+            mvn verify -B -Daudit \
+              -pl "${{ inputs.modules_to_build || steps.change_detection.outputs.changed_modules }}" -amd
+        env:
+          cmd_type: UNIT_TEST
+
+      - name: Sonarqube scan
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        env:
+          sonar_utility: sonar-scanner
+          sonar_commands: '("-Dsonar.projectKey=${{env.SONAR_PROJECT_KEY}} -Dsonar.host.url=${{env.SONAR_HOST_URL}} -Dsonar.login=${{env.SONAR_LOGIN}}")'
+
+      - name: Tag release
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        env:
+          Tag_version: "${{ steps.version.outputs.current-version }}"
+          push_tag_only: true
+
+      - name: Create artifacts download links
+        shell: bash
+        run: |
+          jf config add artifactory --interactive=false --enc-password=false --basic-auth-only \
+            --artifactory-url ${{ env.ARTIFACTORY_BASE_URL }} \
+            --password ${{ env.NEXUS_DEPLOY_PASSWORD }} \
+            --user ${{ env.NEXUS_DEPLOY_USER }}
+          
+          resp=$(jf rt search --props "build.name=${{ env.BUILD_NAME }};build.number=${{ github.run_number }}" \
+            "*-${{ steps.version.outputs.current-version }}.zip")
+          
+          echo "| :gift: Files |" >> $GITHUB_STEP_SUMMARY
+          echo "|:----:|" >> $GITHUB_STEP_SUMMARY
+          
+          echo "$resp" | jq -r '.[].path' | while read -r path; do
+            link_text=$(echo "$path" | sed 's/.*\///')
+            echo "| [ $link_text ](${{ env.ARTIFACTORY_BASE_URL }}/$path) |" >> $GITHUB_STEP_SUMMARY; 
+          done
+          
+          echo "|[Full artifacts list](${{ env.ARTIFACTORY_HOST }}/ui/builds/${{ env.BUILD_NAME }}/${{ github.run_number }})|" >> $GITHUB_STEP_SUMMARY
+
+      - name: Report notifications
+        if: always()
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        env:
+          Slack_Token: ${{ secrets.SLACK_TOKEN }}
+          Slack_Channel: ${{ env.SLACK_CHANNEL }}
+          report: true

@@ -1,0 +1,101 @@
+name: Parent POMs pull request workflow
+on:
+  pull_request:
+    branches-ignore:
+      - master
+
+env:
+
+  SONAR_PROJECT_KEY: "org.pentaho:pentaho-parent-pom"
+  SONAR_HOST_URL: https://sonar.orl.eng.hitachivantara.com
+  SONAR_LOGIN: ${{secrets.WINGMAN_SONAR_TOKEN}}
+
+  RESOLVE_REPO_MIRROR: 'https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn'
+
+  NEXUS_DEPLOY_USER: ''
+  NEXUS_DEPLOY_PASSWORD: ''
+
+  PUBLIC_RELEASE_REPO_URL: 'https://repo.orl.eng.hitachivantara.com/artifactory/pntpub-mvn-dev-orl/'
+  PRIVATE_RELEASE_REPO_URL: 'https://repo.orl.eng.hitachivantara.com/artifactory/pntprv-mvn-dev-orl/'
+
+  PUBLIC_SNAPSHOT_REPO_URL: 'https://repo.orl.eng.hitachivantara.com/artifactory/pntpub-mvn-snapshot-orl'
+  PRIVATE_SNAPSHOT_REPO_URL: 'https://repo.orl.eng.hitachivantara.com/artifactory/pntprv-mvn-snapshot-orl'
+
+  DOCKER_PULL_HOST: 'pnt-docker.repo.orl.eng.hitachivantara.com/'
+  DOCKER_PUBLIC_PUSH_HOST: 'pntpub-docker-dev-orl.repo.orl.eng.hitachivantara.com'
+  DOCKER_PRIVATE_PUSH_HOST: 'pntprv-docker-dev-orl.repo.orl.eng.hitachivantara.com'
+
+  SLACK_CHANNEL: yukon-test
+
+jobs:
+
+  setup-maven-settings:
+    name: Setup common Maven settings
+
+    runs-on: [ k8s ]
+
+    container:
+      image: docker.repo.orl.eng.hitachivantara.com/pentaho/pdi-plugins-ee:20230703.10
+      volumes:
+        - /home/runner/caches/pentaho/.m2:/root/.m2
+    steps:
+
+      - name: Retrieve settings file
+        id: common-maven
+        uses: pentaho/actions-common@master
+
+      - name: Copy settings.xml to .m2 directory
+        shell: sh
+        run: |
+          mkdir -p /home/runner/caches/pentaho/.m2
+          cp "${{ steps.common-maven.outputs.settings-file-path }}" /root/.m2
+    
+
+  pull-request-job:
+    name: "Pull Request"
+    needs: setup-maven-settings
+    runs-on: [ k8s ]
+
+    container:
+      image: docker.repo.orl.eng.hitachivantara.com/pentaho/pdi-plugins-ee:20230703.10
+      volumes:
+        - /home/runner/caches/pentaho/.m2:/root/.m2
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Determine which changes occurred
+        id: change_detection
+        uses: hv-actions/change-detection-builder@1.0.0
+
+      - name: Build the project for changed modules only
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        with:
+          command: mvn clean install -pl "${{ steps.change_detection.outputs.changed_modules }}" -DskipTests -amd
+        env:
+          cmd_type: BUILD
+
+      - name: Run unit-tests
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        with:
+          command: mvn verify -pl "${{ steps.change_detection.outputs.changed_modules }}" -B -Daudit -amd
+        env:
+          cmd_type: UNIT_TEST
+
+      - name: Sonarqube scan
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        env:
+          sonar_utility: sonar-scanner
+          sonar_commands: '("-Dsonar.projectKey=${{env.SONAR_PROJECT_KEY}} -Dsonar.host.url=${{env.SONAR_HOST_URL}} -Dsonar.login=${{env.SONAR_LOGIN}} -Dsonar.pullrequest.key=${{github.event.number}} -Dsonar.pullrequest.branch=${{github.event.pull_request.head.ref}} -Dsonar.pullrequest.base=${{github.event.pull_request.base.ref}}")'
+
+      - name: Report notifications
+        if: always()
+        uses: lumada-common-services/gh-composite-actions@1.2.0
+        env:
+          Slack_Token: ${{ secrets.SLACK_TOKEN }}
+          Slack_Channel: ${{ env.SLACK_CHANNEL }}
+          report: true
