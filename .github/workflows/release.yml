@@ -1,0 +1,21 @@
+name: ${{ github.event.repository.name }} merge request workflow
+on:
+  workflow_dispatch:
+
+jobs:
+
+  pdi-plugins-ee:
+
+    runs-on: [ k8s ]
+
+    container:
+      image: docker.repo.orl.eng.hitachivantara.com/jenkins-build/maven/open-jdk/11
+      volumes:
+        - /home/runner/caches/pentaho/.m2:/root/.m2
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Push artifacts to Box
+        run: echo "Do something"
