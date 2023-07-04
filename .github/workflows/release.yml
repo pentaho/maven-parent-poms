@@ -1,4 +1,4 @@
-name: ${{ github.event.repository.name }} merge request workflow
+name: Parent POMs merge request workflow
 on:
   workflow_dispatch:
 

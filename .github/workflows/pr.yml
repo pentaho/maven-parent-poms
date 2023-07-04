@@ -1,4 +1,4 @@
-name: ${{ github.event.repository.name }} pull request workflow
+name: Parent POMs pull request workflow
 on:
   pull_request:
     branches-ignore:
