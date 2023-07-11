@@ -16,10 +16,11 @@ on:
 
 jobs:
 
-  merge-reusable-workflow:
+  reusable-merge-workflow:
     uses: pentaho/actions-common/.github/workflows/merge.yml@master
     with:
       version: "9.5.1.1"
       base_version: "9.5.0.0-240"
       slack_channels: "yukon-test"
       sonar_project_key: "org.pentaho:pentaho-parent-pom"
+      secrets: inherit
