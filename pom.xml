@@ -13,6 +13,7 @@
 
     use pentaho-ce-parent-pom, or something extending from it, for public projects
    -->
+
   <name>Pentaho Project Parent Pom</name>
   <description>top-level abstract parent pom for all Pentaho CE projects</description>
   <url>http://wwww.pentaho.org</url>
