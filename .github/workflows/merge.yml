@@ -23,4 +23,4 @@ jobs:
       base_version: "9.5.0.0-240"
       slack_channels: "yukon-test"
       sonar_project_key: "org.pentaho:pentaho-parent-pom"
-      secrets: inherit
+    secrets: inherit
