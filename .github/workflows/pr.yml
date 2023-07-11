@@ -2,7 +2,7 @@ name: Parent POMs pull request workflow
 on:
   pull_request:
     branches-ignore:
-      - vc-reusable
+      - master
 
 jobs:
 
