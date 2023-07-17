@@ -170,7 +170,8 @@
     <jackrabbit.version>2.16.5</jackrabbit.version>
     <commons-compress.version>1.20</commons-compress.version>
     <commons-fileupload.version>1.4</commons-fileupload.version>
-    <commons-vfs2.version>2.7.0</commons-vfs2.version>
+    <commons-vfs2.version>2.9.0</commons-vfs2.version>
+    <commons-lang3.version>3.12.0</commons-lang3.version>
     <commons-codec.version>1.15</commons-codec.version>
     <commons-text.version>1.10.0</commons-text.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
