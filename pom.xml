@@ -187,7 +187,7 @@
     <batik.version>1.16</batik.version>
 
     <!-- spring version -->
-    <spring.version>5.3.23</spring.version>
+    <spring.version>5.3.27</spring.version>
     <spring-ldap.version>2.3.2.RELEASE</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
