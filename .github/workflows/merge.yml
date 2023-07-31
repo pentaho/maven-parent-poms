@@ -27,7 +27,7 @@ on:
 jobs:
 
   reusable-merge-workflow:
-    uses: pentaho/actions-common/.github/workflows/merge.yml@master
+    uses: pentaho/actions-common/.github/workflows/merge.yml@actions-minion
     with:
       version: "${{ inputs.release_version }}-${{ inputs.build_number }}"
       base_version: "9.5.0.0-240"
