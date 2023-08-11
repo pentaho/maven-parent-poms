@@ -365,7 +365,7 @@
     <snowflake-jdbc.version>3.13.30</snowflake-jdbc.version>
     <commons-io.version>2.11.0</commons-io.version>
     <rome.version>1.18.0</rome.version>
-    <rhino.version>1.7.14</rhino.version>
+    <rhino.version>1.7.13</rhino.version>
     <snakeyaml.version>1.33</snakeyaml.version>
   </properties>
 
