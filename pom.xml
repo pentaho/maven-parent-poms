@@ -356,7 +356,7 @@
     <!-- endregion -->
 
     <hv-security-web.version>0.7.0</hv-security-web.version>
-    <snowflake-jdbc.version>3.13.29</snowflake-jdbc.version>
+    <snowflake-jdbc.version>3.13.30</snowflake-jdbc.version>
     <commons-io.version>2.11.0</commons-io.version>
     <snakeyaml.version>1.33</snakeyaml.version>
     <rome.version>1.18.0</rome.version>
