@@ -177,7 +177,7 @@
     <jetty.version>9.4.18.v20190429</jetty.version>
     <httpclient.version>4.5.9</httpclient.version>
     <httpcore.version>4.4.11</httpcore.version>
-    <kafka-clients.version>0.10.2.2</kafka-clients.version>
+    <kafka-clients.version>3.4.0</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
     <tomcat.version>9.0.74</tomcat.version>
     <h2.version>2.1.210</h2.version>
