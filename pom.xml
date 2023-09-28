@@ -346,7 +346,7 @@
     <!--  configuration file comes from coding-standards artifact -->
     <checkstyle.configLocation>checkstyle/pentaho_checks.xml</checkstyle.configLocation>
     <checkstyle.consoleOutput>true</checkstyle.consoleOutput>
-    <checkstyle.linkXRef>true</checkstyle.linkXRef>
+    <checkstyle.linkXRef>true</checkstyle.linkXRef>/'
     <pentaho-eula-wrap-config.version>10.1.0.0-SNAPSHOT</pentaho-eula-wrap-config.version>
 
     <!-- Documentation properties -->
@@ -371,6 +371,7 @@
     <rome.version>1.18.0</rome.version>
     <rhino.version>1.7.13</rhino.version>
     <snakeyaml.version>1.33</snakeyaml.version>
+    <janino.version>3.1.10</janino.version>
   </properties>
 
   <dependencyManagement>
