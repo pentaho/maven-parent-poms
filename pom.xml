@@ -375,6 +375,7 @@
     <rhino.version>1.7.13</rhino.version>
     <snakeyaml.version>1.33</snakeyaml.version>
     <janino.version>3.1.10</janino.version>
+    <xml-graphics-common.version>2.6</xml-graphics-common.version>
   </properties>
 
   <dependencyManagement>
