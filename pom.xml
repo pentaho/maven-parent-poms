@@ -170,7 +170,7 @@
     <jackrabbit.version>2.21.19</jackrabbit.version>
     <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
     <commons-compress.version>1.20</commons-compress.version>
-    <commons-fileupload.version>1.4</commons-fileupload.version>
+    <commons-fileupload.version>1.5</commons-fileupload.version>
     <commons-vfs2.version>2.7.0</commons-vfs2.version>
     <commons-codec.version>1.15</commons-codec.version>
     <commons-text.version>1.10.0</commons-text.version>
