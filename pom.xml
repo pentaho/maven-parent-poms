@@ -179,6 +179,7 @@
     <commons-text.version>1.10.0</commons-text.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
     <jetty.version>9.4.18.v20190429</jetty.version>
+    <jetty-server.version>9.4.51.v20230217</jetty-server.version>
     <httpclient.version>4.5.14</httpclient.version>
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
@@ -188,7 +189,10 @@
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
-    <bcprov-jdk15to18.version>1.72</bcprov-jdk15to18.version>
+    <bcprov-jdk15to18.version>1.74</bcprov-jdk15to18.version>
+    <bcmail-jdk15to18.version>1.72</bcmail-jdk15to18.version>
+    <bcpkix-jdk15to18.version>1.72</bcpkix-jdk15to18.version>
+    <bcutil-jdk15to18.version>1.72</bcutil-jdk15to18.version>
     <simple-jndi.version>1.0.13</simple-jndi.version>
 
     <batik.version>1.16</batik.version>
@@ -373,6 +377,9 @@
     <rhino.version>1.7.13</rhino.version>
     <snakeyaml.version>1.33</snakeyaml.version>
     <janino.version>3.1.10</janino.version>
+    <xml-graphics-common.version>2.6</xml-graphics-common.version>
+    <snappy-java.version>1.1.10.4</snappy-java.version>
+    <gson.version>2.10.1</gson.version>
   </properties>
 
   <dependencyManagement>
@@ -410,7 +417,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
-        <version>${jetty.version}</version>
+        <version>${jetty-server.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
