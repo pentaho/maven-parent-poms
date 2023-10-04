@@ -185,7 +185,7 @@
     <kafka-clients.version>3.4.0</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
     <tomcat.version>9.0.80</tomcat.version>
-    <h2.version>2.1.210</h2.version>
+    <h2.version>2.2.220</h2.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
