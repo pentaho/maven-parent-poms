@@ -196,6 +196,7 @@
     <simple-jndi.version>1.0.13</simple-jndi.version>
 
     <batik.version>1.16</batik.version>
+    <batik-bridge.version>1.17</batik-bridge.version>
 
     <!-- spring version -->
     <spring.version>5.3.27</spring.version>
