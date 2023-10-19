@@ -374,6 +374,7 @@
     <rhino.version>1.7.13</rhino.version>
     <snakeyaml.version>2.2</snakeyaml.version>
     <sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
+    <janino.version>3.1.10</janino.version>
   </properties>
 
   <dependencyManagement>
