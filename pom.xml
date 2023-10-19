@@ -2357,7 +2357,7 @@
                 </goals>
                 <configuration>
                   <target>
-                    <zip destfile="${project.build.directory}/${project.artifactId}-${project.version}-dist.zip" preserve0permissions="true">
+                    <zip destfile="${project.build.directory}/${artifactName}-dist.zip" preserve0permissions="true">
                       <zipfileset file="${pentaho:pentaho-eula-wrap-config:txt:README}" fullpath="${artifactName}/README.txt" />
                       <zipfileset file="${pentaho:pentaho-eula-wrap-config:bat:install}" fullpath="${artifactName}/install.bat" />
                       <zipfileset file="${pentaho:pentaho-eula-wrap-config:sh:install}" fullpath="${artifactName}/install.sh" filemode="755" />
@@ -2383,7 +2383,7 @@
                 <configuration>
                   <artifacts>
                     <artifact>
-                      <file>${project.build.directory}/${project.artifactId}-${project.version}-dist.zip</file>
+                      <file>${project.build.directory}/${artifactName}-dist.zip</file>
                       <classifier>dist</classifier>
                       <type>zip</type>
                     </artifact>
@@ -2415,6 +2415,14 @@
           <version>${pentaho-eula-wrap-config.version}</version>
           <type>xml</type>
           <classifier>izpack-kar</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>xml</type>
+          <classifier>izpack-targz-file</classifier>
           <scope>test</scope>
         </dependency>
         <dependency>
