@@ -373,7 +373,7 @@
     <commons-io.version>2.11.0</commons-io.version>
     <rome.version>1.18.0</rome.version>
     <rhino.version>1.7.13</rhino.version>
-    <snakeyaml.version>2.2</snakeyaml.version>
+    <snakeyaml.version>1.33</snakeyaml.version>
     <sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
     <janino.version>3.1.10</janino.version>
     <gson.version>2.10.1</gson.version>
