@@ -377,6 +377,7 @@
     <sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
     <janino.version>3.1.10</janino.version>
     <gson.version>2.10.1</gson.version>
+    <xml-graphics-common.version>2.6</xml-graphics-common.version>
   </properties>
 
   <dependencyManagement>
