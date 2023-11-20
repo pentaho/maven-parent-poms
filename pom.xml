@@ -90,7 +90,7 @@
 
     <cxf.version>3.3.1</cxf.version>
 
-    <activemq.version>5.15.11</activemq.version>
+    <activemq.version>5.16.7</activemq.version>
 
     <derby.version>10.14.2.0</derby.version>
 
@@ -1268,7 +1268,11 @@
         <version>${rhino.version}</version>
       </dependency>
       <!-- end GWT Java 11+ compatibility -->
-
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>activemq-all</artifactId>
+        <version>${activemq.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
