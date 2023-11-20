@@ -344,7 +344,7 @@
     <!-- Documentation properties -->
     <!-- parsedVersion.* properties are dynamically created by the build-helper-maven-plugin:set-doc-version-property -->
     <doc.version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}</doc.version>
-    <doc.base.url>https://help.hitachivantara.com/Documentation/Pentaho/${doc.version}</doc.base.url>
+    <doc.base.url>https://help.hitachivantara.com/Documentation/Pentaho/Data_Integration_and_Analytics/${doc.version}</doc.base.url>
     <doc.base.wiki.url>https://pentaho-community.atlassian.net/wiki</doc.base.wiki.url>
 
     <!-- SonarQube general configuration -->
