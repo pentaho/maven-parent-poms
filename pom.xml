@@ -90,7 +90,7 @@
 
     <cxf.version>3.3.1</cxf.version>
 
-    <activemq.version>5.15.11</activemq.version>
+    <activemq.version>5.16.7</activemq.version>
 
     <derby.version>10.14.2.0</derby.version>
 
@@ -169,7 +169,7 @@
     <xstream.version>1.4.20</xstream.version>
     <jackrabbit.version>2.21.19</jackrabbit.version>
     <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
-    <commons-compress.version>1.20</commons-compress.version>
+    <commons-compress.version>1.24.0</commons-compress.version>
     <commons-fileupload.version>1.5</commons-fileupload.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
     <commons-pool2.version>2.11.1</commons-pool2.version>
@@ -184,17 +184,15 @@
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
-    <tomcat.version>9.0.80</tomcat.version>
-    <h2.version>2.1.210</h2.version>
+    <tomcat.version>9.0.82</tomcat.version>
+    <h2.version>2.2.220</h2.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
-    <bcprov-jdk15to18.version>1.72</bcprov-jdk15to18.version>
+    <bcprov-jdk15to18.version>1.74</bcprov-jdk15to18.version>
     <simple-jndi.version>1.0.13</simple-jndi.version>
-
-    <batik.version>1.16</batik.version>
     <json-smart.version>2.5.0</json-smart.version>
-
+    <batik.version>1.17</batik.version>
     <!-- spring version -->
     <spring.version>5.3.27</spring.version>
     <spring-ldap.version>2.3.2.RELEASE</spring-ldap.version>
@@ -202,7 +200,7 @@
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security.version>5.8.4</spring-security.version>
+    <spring-security.version>5.8.7</spring-security.version>
     <spring-security-core-tests.version>2.0.5.RELEASE</spring-security-core-tests.version>
     <spring-retry.version>1.2.2.RELEASE</spring-retry.version>
     <spring-boot.version>2.4.2</spring-boot.version>
@@ -413,7 +411,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
-        <version>${jetty.version}</version>
+        <version>${jetty-server.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
@@ -1281,6 +1279,16 @@
         <groupId>org.mozilla</groupId>
         <artifactId>rhino</artifactId>
         <version>${rhino.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.xerial.snappy</groupId>
+        <artifactId>snappy-java</artifactId>
+        <version>${snappy-java.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>activemq-all</artifactId>
+        <version>${activemq.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -2357,7 +2365,7 @@
                 </goals>
                 <configuration>
                   <target>
-                    <zip destfile="${project.build.directory}/${project.artifactId}-${project.version}-dist.zip" preserve0permissions="true">
+                    <zip destfile="${project.build.directory}/${artifactName}-dist.zip" preserve0permissions="true">
                       <zipfileset file="${pentaho:pentaho-eula-wrap-config:txt:README}" fullpath="${artifactName}/README.txt" />
                       <zipfileset file="${pentaho:pentaho-eula-wrap-config:bat:install}" fullpath="${artifactName}/install.bat" />
                       <zipfileset file="${pentaho:pentaho-eula-wrap-config:sh:install}" fullpath="${artifactName}/install.sh" filemode="755" />
@@ -2383,7 +2391,7 @@
                 <configuration>
                   <artifacts>
                     <artifact>
-                      <file>${project.build.directory}/${project.artifactId}-${project.version}-dist.zip</file>
+                      <file>${project.build.directory}/${artifactName}-dist.zip</file>
                       <classifier>dist</classifier>
                       <type>zip</type>
                     </artifact>
@@ -2415,6 +2423,14 @@
           <version>${pentaho-eula-wrap-config.version}</version>
           <type>xml</type>
           <classifier>izpack-kar</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>xml</type>
+          <classifier>izpack-targz-file</classifier>
           <scope>test</scope>
         </dependency>
         <dependency>
