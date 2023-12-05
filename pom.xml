@@ -177,6 +177,7 @@
     <commons-lang3.version>3.12.0</commons-lang3.version>
     <commons-codec.version>1.15</commons-codec.version>
     <commons-text.version>1.10.0</commons-text.version>
+    <commons-net.version>3.9.0</commons-net.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
     <jetty.version>9.4.51.v20230217</jetty.version>
     <jetty-server.version>9.4.51.v20230217</jetty-server.version>
@@ -732,6 +733,11 @@
             <artifactId>hadoop-hdfs-client</artifactId>
           </exclusion>
         </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>commons-net</groupId>
+        <artifactId>commons-net</artifactId>
+        <version>${commons-net.version}</version>
       </dependency>
       <dependency>
         <groupId>commons-codec</groupId>
