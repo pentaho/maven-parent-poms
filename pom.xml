@@ -1301,7 +1301,13 @@
         <artifactId>guava</artifactId>
         <version>${guava.version}</version>
       </dependency>
+      <dependency>
+        <groupId>net.minidev</groupId>
+        <artifactId>json-smart</artifactId>
+        <version>${json-smart.version}</version>
+      </dependency>
     </dependencies>
+
   </dependencyManagement>
 
   <distributionManagement>
