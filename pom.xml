@@ -192,7 +192,7 @@
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
     <bcprov-jdk15to18.version>1.74</bcprov-jdk15to18.version>
     <simple-jndi.version>1.0.13</simple-jndi.version>
-
+    <json-smart.version>2.5.0</json-smart.version>
     <batik.version>1.17</batik.version>
 
     <!-- spring version -->
@@ -1305,6 +1305,16 @@
         <groupId>org.apache.activemq</groupId>
         <artifactId>activemq-all</artifactId>
         <version>${activemq.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.minidev</groupId>
+        <artifactId>json-smart</artifactId>
+        <version>${json-smart.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
