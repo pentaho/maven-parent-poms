@@ -243,16 +243,17 @@
     <GWT-FX.version>0.5.0</GWT-FX.version>
     <jsinterop-annotations.version>2.0.0</jsinterop-annotations.version>
 
-    <!-- Monitoring versions -->
-    <!-- Guava Event Bus version must be the same throughout all components of Monitoring otherwise service references
+    <!-- 12/12/2023 commenting guava.monitoring.version as we are upgrading to 32.1.2
+         Monitoring versions
+         Guava Event Bus version must be the same throughout all components of Monitoring otherwise service references
          won't be properly satisfied.
          The version must be no higher than 17.0 because newer versions include final methods which prevents the class
          from being proxied in OSGi blueprint services. -->
-    <guava.monitoring.version>17.0</guava.monitoring.version>
+    <!--<guava.monitoring.version>17.0</guava.monitoring.version> -->
     <camel.version>2.17.7</camel.version>
 
     <!-- Guava dependency for PDI and others (not Monitoring) -->
-    <guava.version>32.0.1-jre</guava.version>
+    <guava.version>32.1.2-jre</guava.version>
 
     <!-- PHASE BINDINGS -->
     <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
