@@ -246,7 +246,7 @@
     <camel.version>2.17.7</camel.version>
 
     <!-- Guava dependency for PDI and others (not Monitoring) -->
-    <guava.version>32.1.2-jre</guava.version>
+    <guava.version>32.1.3-jre</guava.version>
 
     <!-- PHASE BINDINGS -->
     <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
