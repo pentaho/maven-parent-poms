@@ -1304,8 +1304,8 @@
         <version>${snappy-java.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.apache.activemq</groupId>
-        <artifactId>activemq-all</artifactId>
+        <groupId>org.hitachivantara</groupId>
+        <artifactId>activemq-all-wrap</artifactId>
         <version>${activemq.version}</version>
       </dependency>
       <dependency>
