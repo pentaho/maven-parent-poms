@@ -141,6 +141,7 @@
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
     <requirejs.version>2.3.6</requirejs.version>
+    <prantlf.requirejs.version>3.0.2</prantlf.requirejs.version>
     <bootstrap.version>3.4.1</bootstrap.version>
 
     <!-- When changing the jQuery version, be sure to rename/adapt the corresponding AMD "overrides" file:
@@ -322,7 +323,7 @@
     <build.dependenciesDirectory>${project.build.directory}/dependency</build.dependenciesDirectory>
 
     <pentaho-js-build.dir>${build.dependenciesDirectory}/pentaho-js-build</pentaho-js-build.dir>
-    <rjs.webjar.file>${build.dependenciesDirectory}/META-INF/resources/webjars/requirejs/${requirejs.version}/bin/r.js</rjs.webjar.file>
+    <rjs.webjar.file>${build.dependenciesDirectory}/META-INF/resources/webjars/prantlf__requirejs/${prantlf.requirejs.version}/bin/r.js</rjs.webjar.file>
 
     <requirejs.build.file>build.js</requirejs.build.file>
     <js.project.list>dummy</js.project.list>
@@ -857,6 +858,11 @@
         <groupId>org.webjars.npm</groupId>
         <artifactId>requirejs</artifactId>
         <version>${requirejs.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>prantlf__requirejs</artifactId>
+        <version>${prantlf.requirejs.version}</version>
       </dependency>
       <dependency>
         <groupId>org.webjars</groupId>
@@ -1999,7 +2005,7 @@
                   <artifactItems>
                     <artifactItem>
                       <groupId>org.webjars.npm</groupId>
-                      <artifactId>requirejs</artifactId>
+                      <artifactId>prantlf__requirejs</artifactId>
                       <includes>**/r.js</includes>
                     </artifactItem>
                   </artifactItems>

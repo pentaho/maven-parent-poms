@@ -219,7 +219,7 @@
                   <artifactItems>
                     <artifactItem>
                       <groupId>org.webjars.npm</groupId>
-                      <artifactId>requirejs</artifactId>
+                      <artifactId>prantlf__requirejs</artifactId>
                       <includes>**/r.js</includes>
                     </artifactItem>
                   </artifactItems>
