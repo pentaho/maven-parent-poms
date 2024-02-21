@@ -181,7 +181,7 @@
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>0.10.2.2</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
-    <tomcat.version>9.0.82</tomcat.version>
+    <tomcat.version>9.0.84</tomcat.version>
     <h2.version>2.1.210</h2.version>
     <bcprov-jdk14.version>1.65</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
