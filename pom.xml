@@ -218,10 +218,10 @@
 
     <!-- jdk version -->
     <!-- build for Java 8 compatibility for 9.3; to be updated to Java 11 in the next release -->
-    <source.jdk.version>1.8</source.jdk.version>
-    <target.jdk.version>1.8</target.jdk.version>
-    <release.jdk.version>8</release.jdk.version>
-    <maven.compiler.release>8</maven.compiler.release>
+    <source.jdk.version>11</source.jdk.version>
+    <target.jdk.version>11</target.jdk.version>
+    <release.jdk.version>11</release.jdk.version>
+    <maven.compiler.release>11</maven.compiler.release>
     <compilerArgument/>
     <checkstyle.version>8.0</checkstyle.version>
     <coding-standards.version>10.2.0.0-SNAPSHOT</coding-standards.version>
@@ -236,7 +236,7 @@
     <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
 
     <!-- GWT Java 11 compatibility -->
-    <gwt.version>2.9.0</gwt.version>
+    <gwt.version>2.10.0</gwt.version>
     <gwt-incubator.version>2.1.0</gwt-incubator.version>
     <gwt-dnd.version>3.3.4</gwt-dnd.version>
     <gwtmockito.version>1.1.9</gwtmockito.version>
