@@ -164,7 +164,7 @@
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
     <fasterxml-jackson.version>2.14.2</fasterxml-jackson.version>
-    <hv-jackson-dataformat.version>2.14.1-hv</hv-jackson-dataformat.version>
+    <hv-jackson-dataformat.version>2.14.1</hv-jackson-dataformat.version>
     <fasterxml-jackson-databind.version>2.14.2</fasterxml-jackson-databind.version>
     <dom4j.version>2.1.4</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
@@ -376,6 +376,7 @@
     <rome.version>1.18.0</rome.version>
     <rhino.version>1.7.13</rhino.version>
     <safeyaml.version>1.34.1</safeyaml.version>
+    <safeyaml.bundle.version>1.34.1</safeyaml.bundle.version>
     <sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
     <janino.version>3.1.10</janino.version>
     <gson.version>2.10.1</gson.version>
@@ -652,7 +653,7 @@
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <groupId>org.hitachivantara</groupId>
         <artifactId>jackson-dataformat-yaml</artifactId>
         <version>${hv-jackson-dataformat.version}</version>
       </dependency>
@@ -679,7 +680,7 @@
 
       <!--PPP-4865 replacing snakeyaml with safeyaml-->
       <dependency>
-        <groupId>com.konloch</groupId>
+        <groupId>org.hitachivantara</groupId>
         <artifactId>safeyaml</artifactId>
         <version>${safeyaml.version}</version>
       </dependency>
