@@ -72,14 +72,13 @@
     <commons-logging.version>1.2</commons-logging.version>
     <postgresql.version>42.5.6</postgresql.version>
     <ini4j.version>0.5.4</ini4j.version>
-
     <osgi.core.version>6.0.0</osgi.core.version>
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
 
     <karaf.version>4.2.15</karaf.version>
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
-    <felix.http.proxy.version>3.0.6</felix.http.proxy.version>
+    <felix.http.proxy.version>4.0.0</felix.http.proxy.version>
     <felix.http.bridge.version>4.0.6</felix.http.bridge.version>
 
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
@@ -187,7 +186,7 @@
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
-    <tomcat.version>9.0.86</tomcat.version>
+    <tomcat.version>10.1.23</tomcat.version>
     <h2.version>2.2.224</h2.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
@@ -198,13 +197,13 @@
     <batik.version>1.17</batik.version>
 
     <!-- spring version -->
-    <spring.version>5.3.33</spring.version>
+    <spring.version>6.0.0</spring.version>
     <spring-ldap.version>2.3.2.RELEASE</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security.version>5.8.7</spring-security.version>
+    <spring-security.version>6.0.4</spring-security.version>
     <spring-security-core-tests.version>2.0.5.RELEASE</spring-security-core-tests.version>
     <spring-retry.version>1.2.2.RELEASE</spring-retry.version>
     <spring-boot.version>2.4.2</spring-boot.version>
