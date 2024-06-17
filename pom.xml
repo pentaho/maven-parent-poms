@@ -171,7 +171,7 @@
     <xstream.version>1.4.20</xstream.version>
     <jackrabbit.version>2.21.19</jackrabbit.version>
     <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
-    <commons-compress.version>1.26.1</commons-compress.version>
+    <commons-compress.version>1.26.2</commons-compress.version>
     <commons-fileupload.version>1.5</commons-fileupload.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
     <commons-pool2.version>2.11.1</commons-pool2.version>
