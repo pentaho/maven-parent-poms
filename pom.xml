@@ -171,7 +171,7 @@
     <xstream.version>1.4.20</xstream.version>
     <jackrabbit.version>2.21.19</jackrabbit.version>
     <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
-    <commons-compress.version>1.24.0</commons-compress.version>
+    <commons-compress.version>1.26.1</commons-compress.version>
     <commons-fileupload.version>1.5</commons-fileupload.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
     <commons-pool2.version>2.11.1</commons-pool2.version>
@@ -372,7 +372,7 @@
 
     <hv-security-web.version>0.9.0</hv-security-web.version>
     <snowflake-jdbc.version>3.14.1</snowflake-jdbc.version>
-    <commons-io.version>2.11.0</commons-io.version>
+    <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
     <rhino.version>1.7.13</rhino.version>
     <safeyaml.version>1.34.1</safeyaml.version>
