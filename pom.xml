@@ -292,7 +292,7 @@
     <javascript-doc_copy-resources-phase>pre-site</javascript-doc_copy-resources-phase>
 
     <!-- Node and npm root repositoryies -->
-    <nodeDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/nodejs-dist/</nodeDownloadRoot>
+    <nodeDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/nodejs-generic-remote/</nodeDownloadRoot>
     <npmDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/npm-release/npm/-/</npmDownloadRoot>
 
     <pentaho.resolve.repo>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn</pentaho.resolve.repo>
