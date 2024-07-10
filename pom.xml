@@ -68,7 +68,7 @@
     <!-- VERSIONS -->
     <slf4j.version>1.7.12</slf4j.version>
     <logback.version>1.2.10</logback.version>
-    <log4j.version>2.17.1</log4j.version>
+    <log4j.version>2.23.1</log4j.version>
     <commons-logging.version>1.2</commons-logging.version>
     <postgresql.version>42.5.6</postgresql.version>
     <ini4j.version>0.5.4</ini4j.version>
@@ -137,6 +137,7 @@
     <karaf-maven-plugin.markTransitiveAsDependency>true</karaf-maven-plugin.markTransitiveAsDependency>
     <karaf-maven-plugin.primaryFeatureName>${project.artifactId}</karaf-maven-plugin.primaryFeatureName>
     <karaf-maven-plugin.prerequisiteFeatures></karaf-maven-plugin.prerequisiteFeatures>
+    <xmlbeans.version>5.2.0</xmlbeans.version>
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
