@@ -181,8 +181,8 @@
     <commons-text.version>1.10.0</commons-text.version>
     <commons-net.version>3.9.0</commons-net.version>
     <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
-    <jetty.version>9.4.51.v20230217</jetty.version>
-    <jetty-server.version>9.4.51.v20230217</jetty-server.version>
+    <jetty.version>11.0.14</jetty.version>
+    <jetty-server.version>11.0.14</jetty-server.version>
     <httpclient.version>4.5.14</httpclient.version>
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
@@ -232,7 +232,7 @@
 
     <!-- Endorsed Standards Excluded from Java 11+ -->
     <jakarta.activation.version>1.2.2</jakarta.activation.version>
-    <jakarta.xml.bind-api.version>2.3.3</jakarta.xml.bind-api.version>
+    <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
     <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
 
