@@ -1201,6 +1201,11 @@
         <artifactId>jakarta.xml.ws-api</artifactId>
         <version>${jakarta.xml.ws-api.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.xmlbeans</groupId>
+        <artifactId>xmlbeans</artifactId>
+        <version>${xmlbeans.version}</version>
+      </dependency>
 
       <!-- region gRPC -->
       <dependency>
