@@ -845,12 +845,6 @@
       </dependency>
 
       <dependency>
-        <groupId>org.apache.avro</groupId>
-        <artifactId>avro</artifactId>
-        <version>${org.apache.avro.version}</version>
-      </dependency>
-
-      <dependency>
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcprov-jdk14</artifactId>
         <version>${bcprov-jdk14.version}</version>
