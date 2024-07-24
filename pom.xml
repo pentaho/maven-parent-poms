@@ -135,7 +135,7 @@
     <karaf-maven-plugin.primaryFeatureName>${project.artifactId}</karaf-maven-plugin.primaryFeatureName>
     <karaf-maven-plugin.prerequisiteFeatures></karaf-maven-plugin.prerequisiteFeatures>
     <xmlbeans.version>5.2.0</xmlbeans.version>
-
+    <mina-core.version>2.2.3</mina-core.version>
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
     <requirejs.version>2.3.6</requirejs.version>
@@ -1339,6 +1339,11 @@
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
         <version>${gson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.mina</groupId>
+        <artifactId>mina-core</artifactId>
+        <version>${mina-core.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
