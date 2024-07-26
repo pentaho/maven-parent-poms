@@ -1340,11 +1340,6 @@
         <artifactId>gson</artifactId>
         <version>${gson.version}</version>
       </dependency>
-      <dependency>
-        <groupId>org.apache.mina</groupId>
-        <artifactId>mina-core</artifactId>
-        <version>${mina-core.version}</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
