@@ -88,7 +88,7 @@
     <pax-web.version>7.2.10</pax-web.version>
     <pax-url-aether.version>2.6.7</pax-url-aether.version>
 
-    <cxf.version>3.3.6</cxf.version>
+    <cxf.version>3.6.4</cxf.version>
 
     <activemq.version>5.18.4</activemq.version>
 
@@ -366,7 +366,7 @@
     <!-- region Protobuf / gRPC configuration-->
     <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
     <protoc.version>3.11.4</protoc.version>
-    <grpc.version>1.27.0</grpc.version>
+    <grpc.version>1.62.2</grpc.version>
     <!-- endregion -->
 
     <hv-security-web.version>0.9.0</hv-security-web.version>
@@ -1207,6 +1207,11 @@
       <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-stub</artifactId>
+        <version>${grpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-context</artifactId>
         <version>${grpc.version}</version>
       </dependency>
       <!-- endregion -->
