@@ -139,6 +139,7 @@
     <karaf-maven-plugin.prerequisiteFeatures></karaf-maven-plugin.prerequisiteFeatures>
     <xmlbeans.version>5.2.0</xmlbeans.version>
     <mina-core.version>2.2.3</mina-core.version>
+
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
     <requirejs.version>2.3.6</requirejs.version>
@@ -190,7 +191,6 @@
     <paho.version>1.2.2</paho.version>
     <tomcat.version>9.0.91</tomcat.version>
     <h2.version>2.2.224</h2.version>
-    <org.apache.avro.version>1.11.3</org.apache.avro.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
@@ -610,6 +610,11 @@
       </dependency>
       <dependency>
         <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-mapper-asl</artifactId>
+        <version>${codehaus-jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.jackson</groupId>
         <artifactId>jackson-core-asl</artifactId>
         <version>${codehaus-jackson.version}</version>
       </dependency>
@@ -843,7 +848,6 @@
         <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
         <version>${paho.version}</version>
       </dependency>
-
       <dependency>
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcprov-jdk14</artifactId>
