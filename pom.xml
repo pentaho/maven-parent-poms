@@ -80,7 +80,7 @@
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
     <felix.http.proxy.version>3.0.6</felix.http.proxy.version>
-    <felix.http.bridge.version>4.0.6</felix.http.bridge.version>
+    <felix.http.bridge.version>4.2.18</felix.http.bridge.version>
 
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
