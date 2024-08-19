@@ -189,6 +189,7 @@
     <paho.version>1.2.2</paho.version>
     <tomcat.version>9.0.91</tomcat.version>
     <h2.version>2.2.224</h2.version>
+    <avro.version>1.11.3</avro.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
