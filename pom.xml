@@ -168,6 +168,7 @@
     <fasterxml-jackson.version>2.14.2</fasterxml-jackson.version>
     <hv-jackson-dataformat.version>2.14.1</hv-jackson-dataformat.version>
     <fasterxml-jackson-databind.version>2.14.2</fasterxml-jackson-databind.version>
+    <fasterxml-jackson.non-osgi.version>2.17.2</fasterxml-jackson.non-osgi.version>
     <dom4j.version>2.1.4</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
     <xstream.version>1.4.20</xstream.version>
