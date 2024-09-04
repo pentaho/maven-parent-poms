@@ -142,6 +142,7 @@
     <requirejs.version>2.3.6</requirejs.version>
     <prantlf.requirejs.version>3.0.2</prantlf.requirejs.version>
     <bootstrap.version>3.4.1</bootstrap.version>
+    <dojo.version>1.17.3</dojo.version>
 
     <!-- When changing the jQuery version, be sure to rename/adapt the corresponding AMD "overrides" file:
          pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.npm/jquery/3.5.1/overrides.json
