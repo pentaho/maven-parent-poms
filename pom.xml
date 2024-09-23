@@ -164,6 +164,8 @@
     <fancyapps__fancybox.version>3.5.5</fancyapps__fancybox.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
+    <jersey.version>2.44</jersey.version>
+    <javax.ws.rs-api.version>2.1</javax.ws.rs-api.version>
     <fasterxml-jackson.version>2.17.2</fasterxml-jackson.version>
     <hv-jackson-dataformat.version>2.14.1</hv-jackson-dataformat.version>
     <fasterxml-jackson-databind.version>2.17.2</fasterxml-jackson-databind.version>
@@ -374,7 +376,7 @@
     <grpc-protobuf.version>1.68.1</grpc-protobuf.version>
     <!-- endregion -->
 
-    <hv-security-web.version>0.9.0</hv-security-web.version>
+    <hv-security-web.version>0.10.0</hv-security-web.version>
     <snowflake-jdbc.version>3.22.0</snowflake-jdbc.version>
     <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
