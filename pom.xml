@@ -138,6 +138,7 @@
     <karaf-maven-plugin.primaryFeatureName>${project.artifactId}</karaf-maven-plugin.primaryFeatureName>
     <karaf-maven-plugin.prerequisiteFeatures></karaf-maven-plugin.prerequisiteFeatures>
 
+    <xmlbeans.version>5.2.0</xmlbeans.version>
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
     <requirejs.version>2.3.6</requirejs.version>
