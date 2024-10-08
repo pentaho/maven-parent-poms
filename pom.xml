@@ -379,6 +379,7 @@
     <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
     <rhino.version>1.7.13</rhino.version>
+    <snakeyaml.version>2.2</snakeyaml.version>
     <safeyaml.version>1.34.1</safeyaml.version>
     <safeyaml.bundle.version>1.34.1</safeyaml.bundle.version>
     <sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
@@ -652,6 +653,11 @@
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-yaml</artifactId>
+        <version>${fasterxml-jackson.non-osgi.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.hitachivantara</groupId>
         <artifactId>jackson-dataformat-yaml</artifactId>
         <version>${hv-jackson-dataformat.version}</version>
@@ -675,6 +681,12 @@
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-jsr310</artifactId>
         <version>${fasterxml-jackson.version}</version>
+      </dependency>
+      <!-- PPP-5163 comment replacing 'safeyaml' with 'snakeyaml' v2.0+ -->
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>${snakeyaml.version}</version>
       </dependency>
 
       <!--PPP-4865 replacing snakeyaml with safeyaml-->
