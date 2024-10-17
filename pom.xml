@@ -184,8 +184,8 @@
     <commons-text.version>1.10.0</commons-text.version>
     <commons-net.version>3.9.0</commons-net.version>
     <aws-java-sdk.version>1.12.759</aws-java-sdk.version>
-    <jetty.version>9.4.54.v20240208</jetty.version>
-    <jetty-server.version>9.4.54.v20240208</jetty-server.version>
+    <jetty.version>11.0.14</jetty.version>
+    <jetty-server.version>11.0.14</jetty-server.version>
     <httpclient.version>4.5.14</httpclient.version>
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
@@ -236,9 +236,15 @@
 
     <!-- Endorsed Standards Excluded from Java 11+ -->
     <jakarta.activation.version>1.2.2</jakarta.activation.version>
-    <jakarta.xml.bind-api.version>2.3.3</jakarta.xml.bind-api.version>
+    <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
-    <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
+    <jakarta.xml.ws-api.version>4.0.0</jakarta.xml.ws-api.version>
+    <jakarta.servlet.jsp.version>4.0.0</jakarta.servlet.jsp.version>
+    <jakarta.websocket-api.version>2.2.0</jakarta.websocket-api.version>
+    <jakarta.ws.rs-api.version>4.0.0</jakarta.ws.rs-api.version>
+    <jersey.version>3.1.7</jersey.version>
+    <jakarta.servlet.version>5.0.0</jakarta.servlet.version>
+    <jakarta.annotation-api.version>3.0.0</jakarta.annotation-api.version>
 
     <!-- GWT Java 11 compatibility -->
     <gwt.version>2.10.0</gwt.version>
