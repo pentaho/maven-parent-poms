@@ -231,7 +231,7 @@
     <spring-boot.version>2.4.2</spring-boot.version>
     <spring-security-kerberos.version>1.0.1.RELEASE</spring-security-kerberos.version>
     <karaf-springframework-override.version>4.1.9.RELEASE_1</karaf-springframework-override.version>
-
+    <spring-ws-core.version>4.0.2</spring-ws-core.version>
     <xercesImpl.version>2.12.2</xercesImpl.version>
     <xml-apis.version>1.4.01</xml-apis.version>
 
