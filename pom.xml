@@ -10,7 +10,6 @@
 
   <!--
     NOTICE!  Please consider this to be an abstract parent pom and DO NOT inherit from it directly.
-
     use pentaho-ce-parent-pom, or something extending from it, for public projects
    -->
 
