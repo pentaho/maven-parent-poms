@@ -391,6 +391,7 @@
     <org.apache.thrift.version>0.20.0</org.apache.thrift.version>
     <jettison.version>1.5.4</jettison.version>
     <amqp.version>5.22.0</amqp.version>
+    <commons-configuration2.version>2.10.1</commons-configuration2.version>
   </properties>
 
   <dependencyManagement>
