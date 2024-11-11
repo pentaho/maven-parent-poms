@@ -66,28 +66,29 @@
     <copyright.year>2022</copyright.year>
 
     <!-- VERSIONS -->
-    <slf4j.version>2.0.12</slf4j.version>
+    <slf4j.version>1.7.12</slf4j.version>
     <logback.version>1.2.10</logback.version>
     <log4j.version>2.23.1</log4j.version>
     <commons-logging.version>1.2</commons-logging.version>
     <postgresql.version>42.5.6</postgresql.version>
     <ini4j.version>0.5.4</ini4j.version>
 
-    <osgi.core.version>8.0.0</osgi.core.version>
-    <osgi.compendium.version>7.0.0</osgi.compendium.version>
+    <osgi.core.version>6.0.0</osgi.core.version>
+    <osgi.compendium.version>5.0.0</osgi.compendium.version>
 
-    <karaf.version>4.4.6</karaf.version>
+    <karaf.version>4.2.15</karaf.version>
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
     <felix.http.proxy.version>3.0.6</felix.http.proxy.version>
-    <felix.http.bridge.version>4.2.18</felix.http.bridge.version>
+    <felix.http.bridge.version>4.0.6</felix.http.bridge.version>
 
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
 
-    <pax-web.version>8.0.27</pax-web.version>
-    <pax-url-aether.version>2.6.14</pax-url-aether.version>
-    <cxf.version>3.6.4</cxf.version>
+    <pax-web.version>7.2.10</pax-web.version>
+    <pax-url-aether.version>2.6.7</pax-url-aether.version>
+
+    <cxf.version>3.3.1</cxf.version>
 
     <activemq.version>5.18.4</activemq.version>
 
@@ -123,8 +124,8 @@
     <maven-bundle-plugin.version>5.1.1</maven-bundle-plugin.version>
     <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
 
-    <karaf-maven-plugin.version>4.4.6</karaf-maven-plugin.version>
-    <hitachi-karaf-maven-plugin.version>4.4.6</hitachi-karaf-maven-plugin.version>
+    <karaf-maven-plugin.version>4.2.15</karaf-maven-plugin.version>
+    <hitachi-karaf-maven-plugin.version>4.2.15</hitachi-karaf-maven-plugin.version>
     <karaf-maven-plugin.enableGeneration>true</karaf-maven-plugin.enableGeneration>
     <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
     <karaf-maven-plugin.includeTransitiveDependency>true</karaf-maven-plugin.includeTransitiveDependency>
@@ -136,12 +137,12 @@
     <karaf-maven-plugin.prerequisiteFeatures></karaf-maven-plugin.prerequisiteFeatures>
     <xmlbeans.version>5.2.0</xmlbeans.version>
     <mina-core.version>2.2.3</mina-core.version>
+
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
     <requirejs.version>2.3.6</requirejs.version>
     <prantlf.requirejs.version>3.0.2</prantlf.requirejs.version>
     <bootstrap.version>3.4.1</bootstrap.version>
-    <dojo.version>1.17.3</dojo.version>
 
     <!-- When changing the jQuery version, be sure to rename/adapt the corresponding AMD "overrides" file:
          pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.npm/jquery/3.5.1/overrides.json
@@ -162,10 +163,9 @@
     <fancyapps__fancybox.version>3.5.5</fancyapps__fancybox.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
-    <fasterxml-jackson.version>2.17.2</fasterxml-jackson.version>
+    <fasterxml-jackson.version>2.14.2</fasterxml-jackson.version>
     <hv-jackson-dataformat.version>2.14.1</hv-jackson-dataformat.version>
-    <fasterxml-jackson-databind.version>2.17.2</fasterxml-jackson-databind.version>
-    <fasterxml-jackson.non-osgi.version>2.17.2</fasterxml-jackson.non-osgi.version>
+    <fasterxml-jackson-databind.version>2.14.2</fasterxml-jackson-databind.version>
     <dom4j.version>2.1.4</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
     <xstream.version>1.4.20</xstream.version>
@@ -181,19 +181,18 @@
     <commons-text.version>1.10.0</commons-text.version>
     <commons-net.version>3.9.0</commons-net.version>
     <aws-java-sdk.version>1.12.759</aws-java-sdk.version>
-    <jetty.version>9.4.54.v20240208</jetty.version>
-    <jetty-server.version>9.4.54.v20240208</jetty-server.version>
+    <jetty.version>9.4.51.v20230217</jetty.version>
+    <jetty-server.version>9.4.51.v20230217</jetty-server.version>
     <httpclient.version>4.5.14</httpclient.version>
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
     <tomcat.version>9.0.91</tomcat.version>
     <h2.version>2.2.224</h2.version>
-    <org.apache.avro.version>1.12.0</org.apache.avro.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
-    <bcprov-jdk15to18.version>1.78</bcprov-jdk15to18.version>
+    <bcprov-jdk15to18.version>1.74</bcprov-jdk15to18.version>
     <simple-jndi.version>1.0.13</simple-jndi.version>
     <json-smart.version>2.5.0</json-smart.version>
     <batik.version>1.17</batik.version>
@@ -205,7 +204,7 @@
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security.version>5.8.15</spring-security.version>
+    <spring-security.version>5.8.12</spring-security.version>
     <spring-security-core-tests.version>2.0.5.RELEASE</spring-security-core-tests.version>
     <spring-retry.version>1.2.2.RELEASE</spring-retry.version>
     <spring-boot.version>2.4.2</spring-boot.version>
@@ -253,7 +252,7 @@
          The version must be no higher than 17.0 because newer versions include final methods which prevents the class
          from being proxied in OSGi blueprint services. -->
     <!--<guava.monitoring.version>17.0</guava.monitoring.version> -->
-    <camel.version>3.22.2</camel.version>
+    <camel.version>2.17.7</camel.version>
 
     <!-- Guava dependency for PDI and others (not Monitoring) -->
     <guava.version>32.1.2-jre</guava.version>
@@ -376,7 +375,8 @@
     <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
     <rhino.version>1.7.13</rhino.version>
-    <snakeyaml.version>2.2</snakeyaml.version>
+    <safeyaml.version>1.34.1</safeyaml.version>
+    <safeyaml.bundle.version>1.34.1</safeyaml.bundle.version>
     <sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
     <janino.version>3.1.10</janino.version>
     <gson.version>2.10.1</gson.version>
@@ -386,9 +386,6 @@
     <openpdf.version>1.3.32</openpdf.version>
     <openrtf.version>1.2.1</openrtf.version>
     <org.apache.thrift.version>0.20.0</org.apache.thrift.version>
-    <jettison.version>1.5.4</jettison.version>
-    <amqp.version>5.22.0</amqp.version>
-    <mina-core.version>2.2.3</mina-core.version>
   </properties>
 
   <dependencyManagement>
@@ -511,13 +508,13 @@
 
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>osgi.core</artifactId>
+        <artifactId>org.osgi.core</artifactId>
         <version>${osgi.core.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>osgi.cmpn</artifactId>
+        <artifactId>org.osgi.compendium</artifactId>
         <version>${osgi.compendium.version}</version>
         <scope>provided</scope>
       </dependency>
@@ -533,18 +530,18 @@
         <version>${karaf.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.hitachivantara.karaf.features</groupId>
-        <artifactId>org.hitachivantara.karaf.features.core</artifactId>
+        <groupId>org.apache.karaf.features</groupId>
+        <artifactId>org.apache.karaf.features.core</artifactId>
         <version>${karaf.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.hitachivantara.karaf.kar</groupId>
-        <artifactId>org.hitachivantara.karaf.kar.core</artifactId>
+        <groupId>org.apache.karaf.kar</groupId>
+        <artifactId>org.apache.karaf.kar.core</artifactId>
         <version>${karaf.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.hitachivantara.karaf.bundle</groupId>
-        <artifactId>org.hitachivantara.karaf.bundle.core</artifactId>
+        <groupId>org.apache.karaf.bundle</groupId>
+        <artifactId>org.apache.karaf.bundle.core</artifactId>
         <version>${karaf.version}</version>
       </dependency>
 
@@ -554,8 +551,8 @@
         <version>${karaf.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.hitachivantara.karaf.jaas</groupId>
-        <artifactId>org.hitachivantara.karaf.jaas.modules</artifactId>
+        <groupId>org.apache.karaf.jaas</groupId>
+        <artifactId>org.apache.karaf.jaas.modules</artifactId>
         <version>${karaf.version}</version>
       </dependency>
       <dependency>
@@ -612,6 +609,16 @@
       </dependency>
       <dependency>
         <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-mapper-asl</artifactId>
+        <version>${codehaus-jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-mapper-asl</artifactId>
+        <version>${codehaus-jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.jackson</groupId>
         <artifactId>jackson-core-asl</artifactId>
         <version>${codehaus-jackson.version}</version>
       </dependency>
@@ -652,11 +659,6 @@
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.fasterxml.jackson.dataformat</groupId>
-        <artifactId>jackson-dataformat-yaml</artifactId>
-        <version>${fasterxml-jackson.non-osgi.version}</version>
-      </dependency>
-      <dependency>
         <groupId>org.hitachivantara</groupId>
         <artifactId>jackson-dataformat-yaml</artifactId>
         <version>${hv-jackson-dataformat.version}</version>
@@ -681,11 +683,12 @@
         <artifactId>jackson-datatype-jsr310</artifactId>
         <version>${fasterxml-jackson.version}</version>
       </dependency>
-      <!-- PPP-5163 comment replacing 'safeyaml' with 'snakeyaml' v2.0+ -->
+
+      <!--PPP-4865 replacing snakeyaml with safeyaml-->
       <dependency>
-        <groupId>org.yaml</groupId>
-        <artifactId>snakeyaml</artifactId>
-        <version>${snakeyaml.version}</version>
+        <groupId>org.hitachivantara</groupId>
+        <artifactId>safeyaml</artifactId>
+        <version>${safeyaml.version}</version>
       </dependency>
 
       <dependency>
