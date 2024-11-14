@@ -181,7 +181,7 @@
     <commons-codec.version>1.15</commons-codec.version>
     <commons-text.version>1.10.0</commons-text.version>
     <commons-net.version>3.9.0</commons-net.version>
-    <aws-java-sdk.version>1.11.516</aws-java-sdk.version>
+    <aws-java-sdk.version>1.12.759</aws-java-sdk.version>
     <jetty.version>9.4.54.v20240208</jetty.version>
     <jetty-server.version>9.4.54.v20240208</jetty-server.version>
     <httpclient.version>4.5.14</httpclient.version>
