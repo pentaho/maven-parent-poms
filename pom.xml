@@ -201,8 +201,8 @@
     <commons-text.version>1.10.0</commons-text.version>
     <commons-net.version>3.9.0</commons-net.version>
     <aws-java-sdk.version>1.12.759</aws-java-sdk.version>
-    <jetty.version>11.0.14</jetty.version>
-    <jetty-server.version>11.0.14</jetty-server.version>
+    <jetty.version>12.0.15</jetty.version>
+    <jetty-server.version>12.0.15</jetty-server.version>
     <httpclient.version>4.5.14</httpclient.version>
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
@@ -457,8 +457,8 @@
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-servlets</artifactId>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-servlets</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
@@ -477,8 +477,8 @@
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-webapp</artifactId>
+        <groupId>org.eclipse.jetty-ee10</groupId>
+        <artifactId>jetty-ee10-webapp</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
