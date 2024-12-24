@@ -183,6 +183,7 @@
     <antlr4-runtime.version>4.13.0</antlr4-runtime.version>
     <gwt-servlet-jakarta.version>2.11.0</gwt-servlet-jakarta.version>
     <webservices-rt.version>4.0.2</webservices-rt.version>
+    <jaxb-runtime.version>4.0.2</jaxb-runtime.version>
     <fasterxml-jackson.version>2.17.2</fasterxml-jackson.version>
     <hv-jackson-dataformat.version>2.14.1</hv-jackson-dataformat.version>
     <fasterxml-jackson-databind.version>2.17.2</fasterxml-jackson-databind.version>
