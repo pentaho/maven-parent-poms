@@ -81,7 +81,7 @@
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
     <felix.http.proxy.version>4.0.0</felix.http.proxy.version>
-    <felix.http.bridge.version>4.2.18</felix.http.bridge.version>
+    <felix.http.bridge.version>5.1.8</felix.http.bridge.version>
 
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
@@ -164,6 +164,11 @@
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
     <jersey.version>3.1.7</jersey.version>
+    <jersey-osgi.version>2.44</jersey-osgi.version>
+    <jersey-osgi-resource-locator>1.0.3</jersey-osgi-resource-locator>
+    <javax.servlet-osgi.version>3.1.0</javax.servlet-osgi.version>
+    <mimepull-osgi.version>1.9.15</mimepull-osgi.version>
+    <jakarta.servlet-osgi.version>5.0.0</jakarta.servlet-osgi.version>
     <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
     <jakarta.ws.rs-api.version>3.1.0</jakarta.ws.rs-api.version>
     <jakarta.servlet.jsp.version>3.1.0</jakarta.servlet.jsp.version>
@@ -397,7 +402,7 @@
     <grpc-protobuf.version>1.68.1</grpc-protobuf.version>
     <!-- endregion -->
 
-    <hv-security-web.version>0.11.0</hv-security-web.version>
+    <hv-security-web.version>0.12.0</hv-security-web.version>
     <snowflake-jdbc.version>3.14.1</snowflake-jdbc.version>
     <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
