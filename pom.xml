@@ -82,7 +82,7 @@
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
     <felix.http.proxy.version>4.0.0</felix.http.proxy.version>
-    <felix.http.bridge.version>4.2.18</felix.http.bridge.version>
+    <felix.http.bridge.version>5.1.8</felix.http.bridge.version>
 
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
@@ -126,10 +126,8 @@
 
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
-    <tomcat.version>9.0.100</tomcat.version>
+    <tomcat.version>10.1.30</tomcat.version>
     <pax-web.version>8.0.31</pax-web.version>
-    <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
-    <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
 
     <karaf-maven-plugin.version>4.4.6-2025.04.04</karaf-maven-plugin.version>
     <hitachi-karaf-maven-plugin.version>4.4.6-2025.04.04</hitachi-karaf-maven-plugin.version>
@@ -182,6 +180,11 @@
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
     <jersey.version>3.1.7</jersey.version>
+    <jersey-osgi.version>2.44</jersey-osgi.version>
+    <jersey-osgi-resource-locator>1.0.3</jersey-osgi-resource-locator>
+    <javax.servlet-osgi.version>3.1.0</javax.servlet-osgi.version>
+    <mimepull-osgi.version>1.9.15</mimepull-osgi.version>
+    <jakarta.servlet-osgi.version>5.0.0</jakarta.servlet-osgi.version>
     <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
     <jakarta.ws.rs-api.version>3.1.0</jakarta.ws.rs-api.version>
     <jakarta.servlet.jsp.version>3.1.0</jakarta.servlet.jsp.version>
@@ -226,7 +229,6 @@
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
-    <tomcat.version>10.1.30</tomcat.version>
     <h2.version>2.2.224</h2.version>
     <org.apache.avro.version>1.12.0</org.apache.avro.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
@@ -416,7 +418,7 @@
     <grpc-protobuf.version>1.68.1</grpc-protobuf.version>
     <!-- endregion -->
 
-    <hv-security-web.version>0.11.0</hv-security-web.version>
+    <hv-security-web.version>0.12.0</hv-security-web.version>
     <snowflake-jdbc.version>3.23.1</snowflake-jdbc.version>
     <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
