@@ -182,7 +182,6 @@
     <jersey.version>3.1.7</jersey.version>
     <jersey-osgi.version>2.44</jersey-osgi.version>
     <jersey-osgi-resource-locator>1.0.3</jersey-osgi-resource-locator>
-    <javax.servlet-osgi.version>3.1.0</javax.servlet-osgi.version>
     <mimepull-osgi.version>1.9.15</mimepull-osgi.version>
     <jakarta.servlet-osgi.version>5.0.0</jakarta.servlet-osgi.version>
     <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
