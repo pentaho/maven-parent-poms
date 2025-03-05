@@ -149,7 +149,7 @@
          pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.npm/jquery/3.5.1/overrides.json
      -->
     <jquery.version>3.5.1</jquery.version>
-    <jquery-ui.version>1.13.1</jquery-ui.version>
+    <jquery-ui.version>1.13.3</jquery-ui.version>
 
     <!-- When changing the Angular version, be sure to rename/adapt the corresponding AMD "overrides" files:
          pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.bower/angular/1.8.0/overrides.json
