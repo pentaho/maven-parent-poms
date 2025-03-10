@@ -140,8 +140,19 @@
 
     <nodejs.version>v10.0.0</nodejs.version>
     <npm.version>5.7.1</npm.version>
-    <requirejs.version>2.3.6</requirejs.version>
+    <requirejs.version>2.3.7</requirejs.version>
+
+    <!--
+      Should be updated to 3.1.0 so it includes requirejs@2.3.7. but doing so would require all projects
+      that use this dependency to update their node and karma versions, to support ES2015+ syntax
+      introduced in the new version r.js file.
+
+      It is safe to keep the current version for now, as all projects only use r.js (and not require.js) for optimization.
+      The only exception is pentaho-platform-common-ui, that includes require.js in the final build,
+      so we are overriding this version there.
+    -->
     <prantlf.requirejs.version>3.0.2</prantlf.requirejs.version>
+
     <bootstrap.version>3.4.1</bootstrap.version>
     <dojo.version>1.17.3</dojo.version>
 
