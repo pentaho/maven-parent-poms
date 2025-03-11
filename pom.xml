@@ -154,7 +154,7 @@
          pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.bower/angular/1.8.0/overrides.json
      -->
     <angular.version>1.8.0</angular.version>
-    <underscore.version>1.13.1</underscore.version>
+    <underscore.version>1.13.7</underscore.version>
     <angular-translate.version>2.18.1</angular-translate.version>
     <angular-ui-bootstrap-bower.version>1.3.3</angular-ui-bootstrap-bower.version>
     <uirouter-core.version>5.0.23</uirouter-core.version>
