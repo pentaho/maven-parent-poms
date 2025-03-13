@@ -87,6 +87,7 @@
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
 
+    <pax-web.version>8.0.30</pax-web.version>
     <pax-url-aether.version>2.6.16</pax-url-aether.version>
     <cxf.version>3.6.4</cxf.version>
 
@@ -188,12 +189,7 @@
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
-
-    <!-- As pax-web has dependencies on Tomcat components, be sure pax-web's version is in sync when changing Tomcat's version -->
     <tomcat.version>9.0.100</tomcat.version>
-    <pax-web.version>8.0.31</pax-web.version>
-    <!-- As pax-web has dependencies on Tomcat components, be sure pax-web's version is in sync when changing Tomcat's version -->
-
     <h2.version>2.2.224</h2.version>
     <org.apache.avro.version>1.12.0</org.apache.avro.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
