@@ -283,7 +283,13 @@
     <!-- Endorsed Standards Excluded from Java 11+ -->
     <jakarta.activation.version>2.1.3</jakarta.activation.version>
     <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
-    <jakarta.xml.bind-osgi.version>2.3.2</jakarta.xml.bind-osgi.version>
+    <jakarta.xml.bind-osgi.version>2.3.3</jakarta.xml.bind-osgi.version>
+    <commons-fileupload-osgi.version>1.5</commons-fileupload-osgi.version>
+    <jaxb-api-osgi.version>2.3.3</jaxb-api-osgi.version>
+    <jakarta.activation-osgi.version>1.2.1</jakarta.activation-osgi.version>
+    <jakarta.transaction-api-osgi.version>1.3.3</jakarta.transaction-api-osgi.version>
+    <istack-osgi.version>3.0.2</istack-osgi.version>
+    <xmlsec-osgi.version>4.0.3</xmlsec-osgi.version>
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
     <jakarta.xml.ws-api.version>4.0.0</jakarta.xml.ws-api.version>
     <ehcache-core.version>3.10.8</ehcache-core.version>
