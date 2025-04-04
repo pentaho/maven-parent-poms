@@ -164,32 +164,33 @@
     <fancyapps__fancybox.version>3.5.5</fancyapps__fancybox.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
-    <jersey.version>3.1.7</jersey.version>
-    <jersey-osgi.version>2.44</jersey-osgi.version>
+    <jersey.version>3.1.10</jersey.version>
+    <jersey-osgi.version>2.46</jersey-osgi.version>
     <jersey-osgi-resource-locator>1.0.3</jersey-osgi-resource-locator>
     <mimepull-osgi.version>1.9.15</mimepull-osgi.version>
     <jakarta.servlet-osgi.version>5.0.0</jakarta.servlet-osgi.version>
     <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
-    <jakarta.ws.rs-api.version>3.1.0</jakarta.ws.rs-api.version>
-    <jakarta.servlet.jsp.version>3.1.0</jakarta.servlet.jsp.version>
+    <jakarta.ws.rs-api.version>4.0.0</jakarta.ws.rs-api.version>
+    <jakarta.servlet.jsp.version>3.1.1</jakarta.servlet.jsp.version>
     <jakarta.transaction.version>2.0.1</jakarta.transaction.version>
-    <jakarta.validation.version>3.1.0</jakarta.validation.version>
+    <jakarta.validation.version>3.1.1</jakarta.validation.version>
     <jakarta.mail.version>2.1.3</jakarta.mail.version>
     <jakarta.persistence-api.version>3.2.0</jakarta.persistence-api.version>
-    <jakarta.annotation-api.version>2.1.1</jakarta.annotation-api.version>
+    <jakarta.annotation-api.version>3.0.0</jakarta.annotation-api.version>
     <jakarta.websocket-api.version>2.1.0</jakarta.websocket-api.version>
     <jakarta.inject.version>2.0.1</jakarta.inject.version>
-    <hibernate-core.version>6.5.2.Final</hibernate-core.version>
-    <hibernate-jcache.version>6.5.2.Final</hibernate-jcache.version>
-    <hibernate-commons-annotations.version>6.0.6.Final</hibernate-commons-annotations.version>
-    <hibernate-validator.version>6.2.5.Final</hibernate-validator.version>
+    <hibernate-core.version>6.6.12.Final</hibernate-core.version>
+    <hibernate-jcache.version>6.6.12.Final</hibernate-jcache.version>
+    <hibernate-commons-annotations.version>7.0.3.Final</hibernate-commons-annotations.version>
+    <hibernate-validator.version>8.0.2.Final</hibernate-validator.version>
     <jakarta.xml.soap-api.version>3.0.2</jakarta.xml.soap-api.version>
     <jakarta.jws-api.version>3.0.0</jakarta.jws-api.version>
-    <jakarta.servlet.jsp.jstl-api.version>3.0.0</jakarta.servlet.jsp.jstl-api.version>
+    <jakarta.servlet.jsp.jstl-api.version>3.0.2</jakarta.servlet.jsp.jstl-api.version>
+    <jakarta.servlet.jsp.jstl.version>3.0.1</jakarta.servlet.jsp.jstl.version>
     <antlr4-runtime.version>4.13.0</antlr4-runtime.version>
-    <gwt-servlet-jakarta.version>2.11.0</gwt-servlet-jakarta.version>
-    <webservices.version>4.0.2</webservices.version>
-    <jaxb-runtime.version>4.0.2</jaxb-runtime.version>
+    <gwt-servlet-jakarta.version>2.12.2</gwt-servlet-jakarta.version>
+    <webservices.version>4.0.4</webservices.version>
+    <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
     <fasterxml-jackson.version>2.17.2</fasterxml-jackson.version>
     <hv-jackson-dataformat.version>2.14.1</hv-jackson-dataformat.version>
     <fasterxml-jackson-databind.version>2.17.2</fasterxml-jackson-databind.version>
@@ -209,13 +210,13 @@
     <commons-text.version>1.10.0</commons-text.version>
     <commons-net.version>3.9.0</commons-net.version>
     <aws-java-sdk.version>1.12.759</aws-java-sdk.version>
-    <jetty.version>12.0.15</jetty.version>
-    <jetty-server.version>12.0.15</jetty-server.version>
+    <jetty.version>12.0.18</jetty.version>
+    <jetty-server.version>12.0.18</jetty-server.version>
     <httpclient.version>4.5.14</httpclient.version>
     <httpcore.version>4.4.11</httpcore.version>
     <kafka-clients.version>3.4.0</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
-    <tomcat.version>10.1.30</tomcat.version>
+    <tomcat.version>10.1.39</tomcat.version>
     <h2.version>2.2.224</h2.version>
     <org.apache.avro.version>1.12.0</org.apache.avro.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
@@ -227,19 +228,19 @@
     <batik.version>1.17</batik.version>
 
     <!-- spring version -->
-    <spring.version>6.0.19</spring.version>
+    <spring.version>6.2.5</spring.version>
     <spring-ldap.version>2.3.2.RELEASE</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security.version>6.1.8</spring-security.version>
+    <spring-security.version>6.4.4</spring-security.version>
     <spring-security-core-tests.version>2.0.5.RELEASE</spring-security-core-tests.version>
     <spring-retry.version>1.2.2.RELEASE</spring-retry.version>
     <spring-boot.version>2.4.2</spring-boot.version>
     <spring-security-kerberos.version>1.0.1.RELEASE</spring-security-kerberos.version>
     <karaf-springframework-override.version>4.1.9.RELEASE_1</karaf-springframework-override.version>
-    <spring-ws-core.version>4.0.2</spring-ws-core.version>
+    <spring-ws-core.version>4.0.12</spring-ws-core.version>
     <xercesImpl.version>2.12.2</xercesImpl.version>
     <xml-apis.version>1.4.01</xml-apis.version>
 
@@ -270,7 +271,7 @@
     <istack-osgi.version>3.0.2</istack-osgi.version>
     <xmlsec-osgi.version>4.0.3</xmlsec-osgi.version>
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
-    <jakarta.xml.ws-api.version>4.0.0</jakarta.xml.ws-api.version>
+    <jakarta.xml.ws-api.version>4.0.2</jakarta.xml.ws-api.version>
     <ehcache-core.version>3.10.8</ehcache-core.version>
     <ehcache-osgi.version>3.6.3</ehcache-osgi.version>
     <cache-api.version>1.1.1</cache-api.version>
