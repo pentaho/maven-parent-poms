@@ -273,10 +273,10 @@
 
     <!-- jdk version -->
     <!-- build for Java 8 compatibility for 9.3; to be updated to Java 11 in the next release -->
-    <source.jdk.version>11</source.jdk.version>
-    <target.jdk.version>11</target.jdk.version>
-    <release.jdk.version>11</release.jdk.version>
-    <maven.compiler.release>11</maven.compiler.release>
+    <source.jdk.version>17</source.jdk.version>
+    <target.jdk.version>17</target.jdk.version>
+    <release.jdk.version>17</release.jdk.version>
+    <maven.compiler.release>17</maven.compiler.release>
     <compilerArgument/>
     <checkstyle.version>10.13.0</checkstyle.version>
     <coding-standards.version>11.0.0.0-SNAPSHOT</coding-standards.version>
