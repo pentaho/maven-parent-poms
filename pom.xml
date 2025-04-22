@@ -230,6 +230,10 @@
     <spring-security-kerberos.version>1.0.1.RELEASE</spring-security-kerberos.version>
     <karaf-springframework-override.version>4.1.9.RELEASE_1</karaf-springframework-override.version>
 
+    <spring-security-oauth2.version>2.5.2.RELEASE</spring-security-oauth2.version>
+    <nimbus-jose-jwt.version>9.37.2</nimbus-jose-jwt.version>
+    <oauth2-oidc-sdk.version>8.23.1</oauth2-oidc-sdk.version>
+
     <xercesImpl.version>2.12.2</xercesImpl.version>
     <xml-apis.version>1.4.01</xml-apis.version>
 
