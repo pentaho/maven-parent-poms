@@ -98,6 +98,7 @@
     <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
     <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
     <maven-filtering.version>3.3.1</maven-filtering.version>
+    <javassist.version>3.30.2-GA</javassist.version>
     <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
     <maven-site-plugin.version>3.21.0</maven-site-plugin.version>
     <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
