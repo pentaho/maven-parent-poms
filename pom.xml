@@ -214,6 +214,7 @@
     <bcprov-jdk15to18.version>1.78.1</bcprov-jdk15to18.version>
     <simple-jndi.version>1.0.13</simple-jndi.version>
     <json-smart.version>2.5.2</json-smart.version>
+    <json-simple.version>1.1</json-simple.version>
     <batik.version>1.17</batik.version>
 
     <!-- spring version -->
