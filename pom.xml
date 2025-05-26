@@ -323,7 +323,7 @@
     <pentaho.private.release.repo />
     <pentaho.private.snapshot.repo />
 
-    <pentaho.docker.pull.host>pnt-docker.repo.orl.eng.hitachivantara.com/</pentaho.docker.pull.host>
+    <pentaho.docker.pull.host>repo.orl.eng.hitachivantara.com/pnt-docker/</pentaho.docker.pull.host>
     <!-- No default docker push repository, it must be defined at build-time -->
     <pentaho.docker.push.host>${pentaho.docker.public.push.host}</pentaho.docker.push.host>
 
