@@ -413,6 +413,7 @@
     <jettison.version>1.5.4</jettison.version>
     <amqp.version>5.22.0</amqp.version>
     <mina-core.version>2.2.4</mina-core.version>
+    <saxon.version>9.1.0.8</saxon.version>
   </properties>
 
   <dependencyManagement>
@@ -1384,6 +1385,34 @@
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
         <version>${gson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon</artifactId>
+        <version>${saxon.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon-dom</artifactId>
+        <version>${saxon.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon-jdom</artifactId>
+        <version>${saxon.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon-sql</artifactId>
+        <version>${saxon.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon-xom</artifactId>
+        <version>${saxon.version}</version>
+        <scope>compile</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
