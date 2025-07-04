@@ -294,6 +294,7 @@
     <xmlsec-osgi.version>4.0.3</xmlsec-osgi.version>
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
     <jakarta.xml.ws-api.version>4.0.2</jakarta.xml.ws-api.version>
+    <jakarta.xml.ws-osgi.version>2.3.3</jakarta.xml.ws-osgi.version>
     <ehcache-core.version>3.10.8</ehcache-core.version>
     <ehcache-osgi.version>3.6.3</ehcache-osgi.version>
     <cache-api.version>1.1.1</cache-api.version>
