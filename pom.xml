@@ -462,7 +462,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-continuation</artifactId>
-        <version>9.4.56.v20240826</version>
+        <version>${jetty-hadoop.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
