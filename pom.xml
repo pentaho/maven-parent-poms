@@ -415,6 +415,7 @@
     <netty.version>4.1.125.Final</netty.version>
     <commons-configuration2.version>2.10.1</commons-configuration2.version>
     <saxon.version>9.1.0.8</saxon.version>
+    <saxon-he.version>12.7</saxon-he.version>
   </properties>
 
   <dependencyManagement>
@@ -1397,6 +1398,11 @@
         <groupId>net.sf.saxon</groupId>
         <artifactId>saxon</artifactId>
         <version>${saxon.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>Saxon-HE</artifactId>
+        <version>${saxon-he.version}</version>
       </dependency>
       <dependency>
         <groupId>net.sf.saxon</groupId>
