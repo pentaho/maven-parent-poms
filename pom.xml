@@ -415,6 +415,7 @@
     <mina-core.version>2.2.4</mina-core.version>
     <saxon.version>9.1.0.8</saxon.version>
     <saxon-he.version>12.7</saxon-he.version>
+    <xmlresolver.version>6.0.17</xmlresolver.version>
   </properties>
 
   <dependencyManagement>
@@ -1419,6 +1420,11 @@
         <artifactId>saxon-xom</artifactId>
         <version>${saxon.version}</version>
         <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.xmlresolver</groupId>
+        <artifactId>xmlresolver</artifactId>
+        <version>${xmlresolver.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
