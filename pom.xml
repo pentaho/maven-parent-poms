@@ -414,6 +414,7 @@
     <amqp.version>5.22.0</amqp.version>
     <mina-core.version>2.2.4</mina-core.version>
     <saxon.version>9.1.0.8</saxon.version>
+    <saxon-he.version>12.7</saxon-he.version>
   </properties>
 
   <dependencyManagement>
@@ -1390,6 +1391,11 @@
         <groupId>net.sf.saxon</groupId>
         <artifactId>saxon</artifactId>
         <version>${saxon.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>Saxon-HE</artifactId>
+        <version>${saxon-he.version}</version>
       </dependency>
       <dependency>
         <groupId>net.sf.saxon</groupId>
