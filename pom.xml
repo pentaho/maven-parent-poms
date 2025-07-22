@@ -187,7 +187,8 @@
     <mimepull-osgi.version>1.9.15</mimepull-osgi.version>
     <jakarta.servlet-osgi.version>5.0.0</jakarta.servlet-osgi.version>
     <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
-    <jakarta.ws.rs-api.version>4.0.0</jakarta.ws.rs-api.version>
+    <jakarta.ws.rs-api.version>3.1.0</jakarta.ws.rs-api.version>
+    <glassfish-hk2.version>3.1.0</glassfish-hk2.version>
     <jakarta.servlet.jsp.version>3.1.1</jakarta.servlet.jsp.version>
     <jakarta.transaction.version>2.0.1</jakarta.transaction.version>
     <jakarta.validation.version>3.1.1</jakarta.validation.version>
