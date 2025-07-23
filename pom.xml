@@ -416,6 +416,7 @@
     <saxon.version>9.1.0.8</saxon.version>
     <saxon-he.version>12.7</saxon-he.version>
     <xmlresolver.version>6.0.17</xmlresolver.version>
+    <xmlunit.version>1.6</xmlunit.version>
   </properties>
 
   <dependencyManagement>
@@ -1425,6 +1426,16 @@
         <groupId>org.xmlresolver</groupId>
         <artifactId>xmlresolver</artifactId>
         <version>${xmlresolver.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.googlecode.json-simple</groupId>
+        <artifactId>json-simple</artifactId>
+        <version>${json-simple.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>xmlunit</groupId>
+        <artifactId>xmlunit</artifactId>
+        <version>${xmlunit.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
