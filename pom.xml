@@ -266,6 +266,7 @@
     <spring-ws-core.version>4.0.12</spring-ws-core.version>
     <xercesImpl.version>2.12.2</xercesImpl.version>
     <xml-apis.version>1.4.01</xml-apis.version>
+    <spring-data-jpa.version>3.3.7</spring-data-jpa.version>
 
     <enunciate-jersey-rt.version>1.27</enunciate-jersey-rt.version>
     <beanshell.version>2.1.1</beanshell.version>
