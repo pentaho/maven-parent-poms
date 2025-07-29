@@ -218,7 +218,7 @@
     <bcprov-jdk15to18.version>1.78.1</bcprov-jdk15to18.version>
     <simple-jndi.version>1.0.13</simple-jndi.version>
     <json-smart.version>2.5.2</json-smart.version>
-    <json-simple.version>1.1.1</json-simple.version>
+    <json-simple.version>1.1</json-simple.version>
     <batik.version>1.17</batik.version>
 
     <!-- spring version -->
@@ -415,8 +415,6 @@
     <mina-core.version>2.2.4</mina-core.version>
     <saxon.version>9.1.0.8</saxon.version>
     <saxon-he.version>12.7</saxon-he.version>
-    <xmlresolver.version>6.0.17</xmlresolver.version>
-    <xmlunit.version>1.6</xmlunit.version>
   </properties>
 
   <dependencyManagement>
@@ -1421,21 +1419,6 @@
         <artifactId>saxon-xom</artifactId>
         <version>${saxon.version}</version>
         <scope>compile</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.xmlresolver</groupId>
-        <artifactId>xmlresolver</artifactId>
-        <version>${xmlresolver.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.googlecode.json-simple</groupId>
-        <artifactId>json-simple</artifactId>
-        <version>${json-simple.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>xmlunit</groupId>
-        <artifactId>xmlunit</artifactId>
-        <version>${xmlunit.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
