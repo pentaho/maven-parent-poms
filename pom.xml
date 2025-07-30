@@ -70,7 +70,7 @@
     <logback.version>1.2.10</logback.version>
     <log4j.version>2.24.1</log4j.version>
     <log4j-slf4j2.version>2.24.1</log4j-slf4j2.version>
-    <commons-logging.version>1.2</commons-logging.version>
+    <commons-logging.version>1.3.5</commons-logging.version>
     <postgresql.version>42.5.6</postgresql.version>
     <ini4j.version>0.5.4</ini4j.version>
 
@@ -81,8 +81,8 @@
     <pentaho.custom.karaf.version>4.4.6-2025.07.01</pentaho.custom.karaf.version>
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
-    <felix.http.proxy.version>3.0.6</felix.http.proxy.version>
-    <felix.http.bridge.version>4.2.18</felix.http.bridge.version>
+    <felix.http.proxy.version>4.0.0</felix.http.proxy.version>
+    <felix.http.bridge.version>5.1.8</felix.http.bridge.version>
 
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
@@ -126,7 +126,7 @@
 
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
-    <tomcat.version>9.0.107</tomcat.version>
+    <tomcat.version>10.1.39</tomcat.version>
     <pax-web.version>8.0.32</pax-web.version>
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
@@ -181,6 +181,34 @@
     <fancyapps__fancybox.version>3.5.5</fancyapps__fancybox.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
+    <jersey.version>3.1.10</jersey.version>
+    <jersey-osgi.version>2.46</jersey-osgi.version>
+    <jersey-osgi-resource-locator>1.0.3</jersey-osgi-resource-locator>
+    <mimepull-osgi.version>1.9.15</mimepull-osgi.version>
+    <jakarta.servlet-osgi.version>5.0.0</jakarta.servlet-osgi.version>
+    <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
+    <jakarta.ws.rs-api.version>3.1.0</jakarta.ws.rs-api.version>
+    <glassfish-hk2.version>3.1.0</glassfish-hk2.version>
+    <jakarta.servlet.jsp.version>3.1.1</jakarta.servlet.jsp.version>
+    <jakarta.transaction.version>2.0.1</jakarta.transaction.version>
+    <jakarta.validation.version>3.1.1</jakarta.validation.version>
+    <jakarta.mail.version>2.1.3</jakarta.mail.version>
+    <jakarta.persistence-api.version>3.2.0</jakarta.persistence-api.version>
+    <jakarta.annotation-api.version>3.0.0</jakarta.annotation-api.version>
+    <jakarta.websocket-api.version>2.1.0</jakarta.websocket-api.version>
+    <jakarta.inject.version>2.0.1</jakarta.inject.version>
+    <hibernate-core.version>6.6.12.Final</hibernate-core.version>
+    <hibernate-jcache.version>6.6.12.Final</hibernate-jcache.version>
+    <hibernate-commons-annotations.version>7.0.3.Final</hibernate-commons-annotations.version>
+    <hibernate-validator.version>8.0.2.Final</hibernate-validator.version>
+    <jakarta.xml.soap-api.version>3.0.2</jakarta.xml.soap-api.version>
+    <jakarta.jws-api.version>3.0.0</jakarta.jws-api.version>
+    <jakarta.servlet.jsp.jstl-api.version>3.0.2</jakarta.servlet.jsp.jstl-api.version>
+    <jakarta.servlet.jsp.jstl.version>3.0.1</jakarta.servlet.jsp.jstl.version>
+    <antlr4-runtime.version>4.13.0</antlr4-runtime.version>
+    <gwt-servlet-jakarta.version>2.12.2</gwt-servlet-jakarta.version>
+    <webservices.version>4.0.4</webservices.version>
+    <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
     <fasterxml-jackson.version>2.17.2</fasterxml-jackson.version>
     <hv-jackson-dataformat.version>2.14.1</hv-jackson-dataformat.version>
     <fasterxml-jackson-databind.version>2.17.2</fasterxml-jackson-databind.version>
@@ -191,7 +219,7 @@
     <jackrabbit.version>2.21.19</jackrabbit.version>
     <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
     <commons-compress.version>1.26.2</commons-compress.version>
-    <commons-fileupload.version>1.5</commons-fileupload.version>
+    <commons-fileupload.version>2.0.0-M2</commons-fileupload.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
     <commons-pool2.version>2.11.1</commons-pool2.version>
     <commons-vfs2.version>2.10.0</commons-vfs2.version>
@@ -200,8 +228,9 @@
     <commons-text.version>1.10.0</commons-text.version>
     <commons-net.version>3.9.0</commons-net.version>
     <aws-java-sdk.version>1.12.788</aws-java-sdk.version>
-    <jetty.version>9.4.57.v20241219</jetty.version>
-    <jetty-server.version>9.4.57.v20241219</jetty-server.version>
+    <jetty.version>12.0.18</jetty.version>
+    <jetty-server.version>12.0.18</jetty-server.version>
+    <jetty-hadoop.version>9.4.57.v20241219</jetty-hadoop.version>
     <httpclient.version>4.5.14</httpclient.version>
     <httpclient5.version>5.4.4</httpclient5.version>
     <hadoop-shaded-protobuf_3_25.version>1.3.0</hadoop-shaded-protobuf_3_25.version>
@@ -222,21 +251,22 @@
     <batik.version>1.17</batik.version>
 
     <!-- spring version -->
-    <spring.version>5.3.39</spring.version>
+    <spring.version>6.2.5</spring.version>
     <spring-ldap.version>2.4.4</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security.version>5.8.16</spring-security.version>
+    <spring-security.version>6.4.4</spring-security.version>
     <spring-security-core-tests.version>2.0.5.RELEASE</spring-security-core-tests.version>
     <spring-retry.version>1.2.2.RELEASE</spring-retry.version>
     <spring-boot.version>2.4.2</spring-boot.version>
     <spring-security-kerberos.version>1.0.1.RELEASE</spring-security-kerberos.version>
     <karaf-springframework-override.version>4.1.9.RELEASE_1</karaf-springframework-override.version>
-
+    <spring-ws-core.version>4.0.12</spring-ws-core.version>
     <xercesImpl.version>2.12.2</xercesImpl.version>
     <xml-apis.version>1.4.01</xml-apis.version>
+    <spring-data-jpa.version>3.3.7</spring-data-jpa.version>
 
     <enunciate-jersey-rt.version>1.27</enunciate-jersey-rt.version>
     <beanshell.version>2.1.1</beanshell.version>
@@ -255,10 +285,22 @@
     <dependency-check-maven.version>5.2.2</dependency-check-maven.version>
 
     <!-- Endorsed Standards Excluded from Java 11+ -->
-    <jakarta.activation.version>1.2.2</jakarta.activation.version>
-    <jakarta.xml.bind-api.version>2.3.3</jakarta.xml.bind-api.version>
+    <jakarta.activation.version>2.1.3</jakarta.activation.version>
+    <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
+    <jakarta.xml.bind-osgi.version>2.3.3</jakarta.xml.bind-osgi.version>
+    <commons-fileupload-osgi.version>1.5</commons-fileupload-osgi.version>
+    <jaxb-api-osgi.version>2.3.3</jaxb-api-osgi.version>
+    <jakarta.activation-osgi.version>1.2.1</jakarta.activation-osgi.version>
+    <jakarta.transaction-api-osgi.version>1.3.3</jakarta.transaction-api-osgi.version>
+    <istack-osgi.version>3.0.2</istack-osgi.version>
+    <xmlsec-osgi.version>4.0.3</xmlsec-osgi.version>
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
-    <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
+    <jakarta.xml.ws-api.version>4.0.2</jakarta.xml.ws-api.version>
+    <jakarta.xml.ws-osgi.version>2.3.3</jakarta.xml.ws-osgi.version>
+    <ehcache-core.version>3.10.8</ehcache-core.version>
+    <ehcache-osgi.version>3.6.3</ehcache-osgi.version>
+    <cache-api.version>1.1.1</cache-api.version>
+    <jakarta.jms-api.version>3.1.0</jakarta.jms-api.version>
 
     <!-- GWT Java 11 compatibility -->
     <gwt.version>2.10.0</gwt.version>
@@ -395,7 +437,7 @@
     <grpc-protobuf.version>1.68.1</grpc-protobuf.version>
     <!-- endregion -->
 
-    <hv-security-web.version>0.9.0</hv-security-web.version>
+    <hv-security-web.version>0.12.0</hv-security-web.version>
     <snowflake-jdbc.version>3.24.0</snowflake-jdbc.version>
     <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
@@ -422,7 +464,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-continuation</artifactId>
-        <version>${jetty.version}</version>
+        <version>${jetty-hadoop.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
@@ -432,11 +474,6 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-io</artifactId>
-        <version>${jetty.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-jaas</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
@@ -455,13 +492,13 @@
         <version>${jetty-server.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-servlet</artifactId>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-servlet</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-servlets</artifactId>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-servlets</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
@@ -480,8 +517,8 @@
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-webapp</artifactId>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-webapp</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
@@ -668,18 +705,18 @@
         <version>${fasterxml-jackson-databind.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.fasterxml.jackson.jaxrs</groupId>
-        <artifactId>jackson-jaxrs-json-provider</artifactId>
+        <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
+        <artifactId>jackson-jakarta-rs-json-provider</artifactId>
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.fasterxml.jackson.jaxrs</groupId>
-        <artifactId>jackson-jaxrs-base</artifactId>
+        <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
+        <artifactId>jackson-jakarta-rs-base</artifactId>
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.module</groupId>
-        <artifactId>jackson-module-jaxb-annotations</artifactId>
+        <artifactId>jackson-module-jakarta-xmlbind-annotations</artifactId>
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
@@ -769,8 +806,13 @@
       </dependency>
 
       <dependency>
-        <groupId>commons-fileupload</groupId>
-        <artifactId>commons-fileupload</artifactId>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-fileupload2-core</artifactId>
+        <version>${commons-fileupload.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-fileupload2-jakarta-servlet6</artifactId>
         <version>${commons-fileupload.version}</version>
       </dependency>
       <dependency>
@@ -1221,8 +1263,8 @@
 
       <!-- Endorsed Standards Excluded from Java 11+ -->
       <dependency>
-        <groupId>com.sun.activation</groupId>
-        <artifactId>jakarta.activation</artifactId>
+        <groupId>jakarta.activation</groupId>
+        <artifactId>jakarta.activation-api</artifactId>
         <version>${jakarta.activation.version}</version>
       </dependency>
       <dependency>
@@ -1279,12 +1321,7 @@
       </dependency>
       <dependency>
         <groupId>com.hitachivantara.security.web</groupId>
-        <artifactId>csrf-token-service-client-java-jax-rs-v1</artifactId>
-        <version>${hv-security-web.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.hitachivantara.security.web</groupId>
-        <artifactId>csrf-token-service-client-java-jax-rs-v2</artifactId>
+        <artifactId>csrf-token-service-client-java-jax-rs-v3</artifactId>
         <version>${hv-security-web.version}</version>
       </dependency>
       <!-- endregion HV Web Security -->
@@ -1301,9 +1338,9 @@
         <version>${gwt.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.gwt</groupId>
-        <artifactId>gwt-servlet</artifactId>
-        <version>${gwt.version}</version>
+        <groupId>org.gwtproject</groupId>
+        <artifactId>gwt-servlet-jakarta</artifactId>
+        <version>${gwt-servlet-jakarta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.gwt</groupId>
