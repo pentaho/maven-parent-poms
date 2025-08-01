@@ -1445,29 +1445,6 @@
         <version>${saxon-he.version}</version>
       </dependency>
       <dependency>
-        <groupId>net.sf.saxon</groupId>
-        <artifactId>saxon-dom</artifactId>
-        <version>${saxon.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>net.sf.saxon</groupId>
-        <artifactId>saxon-jdom</artifactId>
-        <version>${saxon.version}</version>
-        <scope>compile</scope>
-      </dependency>
-      <dependency>
-        <groupId>net.sf.saxon</groupId>
-        <artifactId>saxon-sql</artifactId>
-        <version>${saxon.version}</version>
-        <scope>compile</scope>
-      </dependency>
-      <dependency>
-        <groupId>net.sf.saxon</groupId>
-        <artifactId>saxon-xom</artifactId>
-        <version>${saxon.version}</version>
-        <scope>compile</scope>
-      </dependency>
-      <dependency>
         <groupId>org.xmlresolver</groupId>
         <artifactId>xmlresolver</artifactId>
         <version>${xmlresolver.version}</version>
