@@ -192,6 +192,7 @@
     <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
     <commons-compress.version>1.26.2</commons-compress.version>
     <commons-fileupload.version>1.5</commons-fileupload.version>
+    <commons-fileupload.version>2.0.0-M4</commons-fileupload.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
     <commons-pool2.version>2.11.1</commons-pool2.version>
     <commons-vfs2.version>2.10.0</commons-vfs2.version>
@@ -256,6 +257,7 @@
     <!-- Endorsed Standards Excluded from Java 11+ -->
     <jakarta.activation.version>1.2.2</jakarta.activation.version>
     <jakarta.xml.bind-api.version>2.3.3</jakarta.xml.bind-api.version>
+    <commons-fileupload-osgi.version>1.6.0</commons-fileupload-osgi.version>
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
     <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
 
@@ -766,6 +768,11 @@
         <version>${commons-compress.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>commons-fileupload</groupId>
+        <artifactId>commons-fileupload</artifactId>
+        <version>${commons-fileupload-osgi.version}</version>
+      </dependency>
       <dependency>
         <groupId>commons-fileupload</groupId>
         <artifactId>commons-fileupload</artifactId>
