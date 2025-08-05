@@ -131,8 +131,8 @@
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
 
-    <karaf-maven-plugin.version>4.4.6-2025.07.01</karaf-maven-plugin.version>
-    <hitachi-karaf-maven-plugin.version>4.4.6-2025.07.01</hitachi-karaf-maven-plugin.version>
+    <karaf-maven-plugin.version>4.4.6-2025.08.05</karaf-maven-plugin.version>
+    <hitachi-karaf-maven-plugin.version>4.4.6-2025.08.05</hitachi-karaf-maven-plugin.version>
     <karaf-maven-plugin.enableGeneration>true</karaf-maven-plugin.enableGeneration>
     <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
     <karaf-maven-plugin.includeTransitiveDependency>true</karaf-maven-plugin.includeTransitiveDependency>
