@@ -70,7 +70,7 @@
     <logback.version>1.2.10</logback.version>
     <log4j.version>2.24.1</log4j.version>
     <log4j-slf4j2.version>2.24.1</log4j-slf4j2.version>
-    <commons-logging.version>1.2</commons-logging.version>
+    <commons-logging.version>1.3.5</commons-logging.version>
     <postgresql.version>42.5.6</postgresql.version>
     <ini4j.version>0.5.4</ini4j.version>
     <byte-buddy.version>1.17.5</byte-buddy.version>
@@ -82,8 +82,8 @@
     <pentaho.custom.karaf.version>4.4.6-2025.07.01</pentaho.custom.karaf.version>
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
-    <felix.http.proxy.version>3.0.6</felix.http.proxy.version>
-    <felix.http.bridge.version>4.2.18</felix.http.bridge.version>
+    <felix.http.proxy.version>4.0.0</felix.http.proxy.version>
+    <felix.http.bridge.version>5.1.8</felix.http.bridge.version>
 
     <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
@@ -93,51 +93,48 @@
 
     <activemq.version>5.18.4</activemq.version>
 
-    <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
-    <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
-    <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
-    <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
-    <maven-filtering.version>3.3.1</maven-filtering.version>
+    <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
+    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+    <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+    <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+    <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+    <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
     <javassist.version>3.30.2-GA</javassist.version>
-    <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
-    <maven-site-plugin.version>3.21.0</maven-site-plugin.version>
-    <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
-    <requirejs-maven-plugin.version>2.0.4</requirejs-maven-plugin.version>                <!-- TODO:  STILL VALID? project abandoned FEB 2014 -->
-    <frontend-maven-plugin.version>1.15.1</frontend-maven-plugin.version>
-    <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
-    <iterator-maven-plugin.version>0.5.1</iterator-maven-plugin.version>                  <!-- TODO:  STILL VALID? project abandoned AUG 2017 -->
-    <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
-    <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
-    <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-    <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
-    <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-    <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
-    <maven-jxr-plugin.version>3.6.0</maven-jxr-plugin.version>
+    <maven-dependency-plugin.version>3.1.0</maven-dependency-plugin.version>
+    <build-helper-maven-plugin.version>3.1.0-pentaho</build-helper-maven-plugin.version>
+    <requirejs-maven-plugin.version>2.0.4</requirejs-maven-plugin.version>
+    <frontend-maven-plugin.version>1.14.0</frontend-maven-plugin.version>
+    <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
+    <iterator-maven-plugin.version>0.5.1</iterator-maven-plugin.version>
+    <maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
+    <maven-checkstyle-plugin.version>3.3.1</maven-checkstyle-plugin.version>
+    <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+    <maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
+    <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
+    <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
+    <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
     <maven-project-info-reports-plugin.version>3.9.0</maven-project-info-reports-plugin.version>
-    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-    <maven-remote-resources-plugin.version>3.3.0</maven-remote-resources-plugin.version>
-    <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-    <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-    <maven-surefire-report-plugin.version>3.5.3</maven-surefire-report-plugin.version>
-    <maven-verifier-plugin.version>1.1</maven-verifier-plugin.version>                    <!-- TODO:  STILL VALID? unchanged since APR 2015 -->
-    <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
-    <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-    <maven-bundle-plugin.version>6.0.0</maven-bundle-plugin.version>
-    <os-maven-plugin.version>1.7.1</os-maven-plugin.version>
-
-    <build-helper-maven-plugin.version>3.1.0-pentaho</build-helper-maven-plugin.version>  <!-- TODO:  revisit base plugin is now at 3.6.0 -->
+    <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+    <maven-remote-resources-plugin.version>1.6.0</maven-remote-resources-plugin.version>
+    <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+    <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
+    <maven-surefire-report-plugin.version>2.21.0</maven-surefire-report-plugin.version>
+    <maven-verifier-plugin.version>1.1</maven-verifier-plugin.version>
+    <sonar-maven-plugin.version>3.5.0.1254</sonar-maven-plugin.version>
     <license-helper-maven-plugin.version>1.27</license-helper-maven-plugin.version>
-
+    <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
+    <maven-bundle-plugin.version>5.1.1</maven-bundle-plugin.version>
+    <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
 
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
-    <tomcat.version>9.0.106</tomcat.version>
+    <tomcat.version>10.1.43</tomcat.version>
     <pax-web.version>8.0.32</pax-web.version>
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
 
-    <karaf-maven-plugin.version>4.4.7</karaf-maven-plugin.version>
-    <hitachi-karaf-maven-plugin.version>4.4.6-2025.04.04</hitachi-karaf-maven-plugin.version>
+    <karaf-maven-plugin.version>4.4.6-2025.07.01</karaf-maven-plugin.version>
+    <hitachi-karaf-maven-plugin.version>4.4.6-2025.07.01</hitachi-karaf-maven-plugin.version>
     <karaf-maven-plugin.enableGeneration>true</karaf-maven-plugin.enableGeneration>
     <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
     <karaf-maven-plugin.includeTransitiveDependency>true</karaf-maven-plugin.includeTransitiveDependency>
@@ -186,6 +183,34 @@
     <fancyapps__fancybox.version>3.5.5</fancyapps__fancybox.version>
 
     <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
+    <jersey.version>3.1.10</jersey.version>
+    <jersey-osgi.version>2.46</jersey-osgi.version>
+    <jersey-osgi-resource-locator>1.0.3</jersey-osgi-resource-locator>
+    <mimepull-osgi.version>1.9.15</mimepull-osgi.version>
+    <jakarta.servlet-osgi.version>5.0.0</jakarta.servlet-osgi.version>
+    <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
+    <jakarta.ws.rs-api.version>3.1.0</jakarta.ws.rs-api.version>
+    <glassfish-hk2.version>3.1.0</glassfish-hk2.version>
+    <jakarta.servlet.jsp.version>3.1.1</jakarta.servlet.jsp.version>
+    <jakarta.transaction.version>2.0.1</jakarta.transaction.version>
+    <jakarta.validation.version>3.1.1</jakarta.validation.version>
+    <jakarta.mail.version>2.1.3</jakarta.mail.version>
+    <jakarta.persistence-api.version>3.2.0</jakarta.persistence-api.version>
+    <jakarta.annotation-api.version>3.0.0</jakarta.annotation-api.version>
+    <jakarta.websocket-api.version>2.1.0</jakarta.websocket-api.version>
+    <jakarta.inject.version>2.0.1</jakarta.inject.version>
+    <hibernate-core.version>6.6.12.Final</hibernate-core.version>
+    <hibernate-jcache.version>6.6.12.Final</hibernate-jcache.version>
+    <hibernate-commons-annotations.version>7.0.3.Final</hibernate-commons-annotations.version>
+    <hibernate-validator.version>8.0.2.Final</hibernate-validator.version>
+    <jakarta.xml.soap-api.version>3.0.2</jakarta.xml.soap-api.version>
+    <jakarta.jws-api.version>3.0.0</jakarta.jws-api.version>
+    <jakarta.servlet.jsp.jstl-api.version>3.0.2</jakarta.servlet.jsp.jstl-api.version>
+    <jakarta.servlet.jsp.jstl.version>3.0.1</jakarta.servlet.jsp.jstl.version>
+    <antlr4-runtime.version>4.13.0</antlr4-runtime.version>
+    <gwt-servlet-jakarta.version>2.12.2</gwt-servlet-jakarta.version>
+    <webservices.version>4.0.4</webservices.version>
+    <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
     <fasterxml-jackson.version>2.17.2</fasterxml-jackson.version>
     <hv-jackson-dataformat.version>2.14.1</hv-jackson-dataformat.version>
     <fasterxml-jackson-databind.version>2.17.2</fasterxml-jackson-databind.version>
@@ -196,7 +221,7 @@
     <jackrabbit.version>2.21.19</jackrabbit.version>
     <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
     <commons-compress.version>1.26.2</commons-compress.version>
-    <commons-fileupload.version>1.5</commons-fileupload.version>
+    <commons-fileupload.version>2.0.0-M2</commons-fileupload.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
     <commons-pool2.version>2.11.1</commons-pool2.version>
     <commons-vfs2.version>2.10.0</commons-vfs2.version>
@@ -204,9 +229,10 @@
     <commons-codec.version>1.15</commons-codec.version>
     <commons-text.version>1.10.0</commons-text.version>
     <commons-net.version>3.9.0</commons-net.version>
-    <aws-java-sdk.version>1.12.759</aws-java-sdk.version>
-    <jetty.version>9.4.57.v20241219</jetty.version>
-    <jetty-server.version>9.4.57.v20241219</jetty-server.version>
+    <aws-java-sdk.version>1.12.788</aws-java-sdk.version>
+    <jetty.version>12.0.18</jetty.version>
+    <jetty-server.version>12.0.18</jetty-server.version>
+    <jetty-hadoop.version>9.4.57.v20241219</jetty-hadoop.version>
     <httpclient.version>4.5.14</httpclient.version>
     <httpclient5.version>5.4.4</httpclient5.version>
     <hadoop-shaded-protobuf_3_25.version>1.3.0</hadoop-shaded-protobuf_3_25.version>
@@ -227,31 +253,32 @@
     <batik.version>1.17</batik.version>
 
     <!-- spring version -->
-    <spring.version>5.3.39</spring.version>
+    <spring.version>6.2.5</spring.version>
     <spring-ldap.version>2.4.4</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security.version>5.8.16</spring-security.version>
+    <spring-security.version>6.4.4</spring-security.version>
     <spring-security-core-tests.version>2.0.5.RELEASE</spring-security-core-tests.version>
     <spring-retry.version>1.2.2.RELEASE</spring-retry.version>
     <spring-boot.version>2.4.2</spring-boot.version>
     <spring-security-kerberos.version>1.0.1.RELEASE</spring-security-kerberos.version>
     <karaf-springframework-override.version>4.1.9.RELEASE_1</karaf-springframework-override.version>
-
+    <spring-ws-core.version>4.0.12</spring-ws-core.version>
     <xercesImpl.version>2.12.2</xercesImpl.version>
     <xml-apis.version>1.4.01</xml-apis.version>
+    <spring-data-jpa.version>3.3.7</spring-data-jpa.version>
 
     <enunciate-jersey-rt.version>1.27</enunciate-jersey-rt.version>
     <beanshell.version>2.1.1</beanshell.version>
 
     <!-- jdk version -->
     <!-- build for Java 8 compatibility for 9.3; to be updated to Java 11 in the next release -->
-    <source.jdk.version>17</source.jdk.version>
-    <target.jdk.version>17</target.jdk.version>
-    <release.jdk.version>17</release.jdk.version>
-    <maven.compiler.release>17</maven.compiler.release>
+    <source.jdk.version>11</source.jdk.version>
+    <target.jdk.version>11</target.jdk.version>
+    <release.jdk.version>11</release.jdk.version>
+    <maven.compiler.release>11</maven.compiler.release>
     <compilerArgument/>
     <checkstyle.version>10.13.0</checkstyle.version>
     <coding-standards.version>11.0.0.0-SNAPSHOT</coding-standards.version>
@@ -260,10 +287,22 @@
     <dependency-check-maven.version>5.2.2</dependency-check-maven.version>
 
     <!-- Endorsed Standards Excluded from Java 11+ -->
-    <jakarta.activation.version>1.2.2</jakarta.activation.version>
-    <jakarta.xml.bind-api.version>2.3.3</jakarta.xml.bind-api.version>
+    <jakarta.activation.version>2.1.3</jakarta.activation.version>
+    <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
+    <jakarta.xml.bind-osgi.version>2.3.3</jakarta.xml.bind-osgi.version>
+    <commons-fileupload-osgi.version>1.5</commons-fileupload-osgi.version>
+    <jaxb-api-osgi.version>2.3.3</jaxb-api-osgi.version>
+    <jakarta.activation-osgi.version>1.2.1</jakarta.activation-osgi.version>
+    <jakarta.transaction-api-osgi.version>1.3.3</jakarta.transaction-api-osgi.version>
+    <istack-osgi.version>3.0.2</istack-osgi.version>
+    <xmlsec-osgi.version>4.0.3</xmlsec-osgi.version>
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
-    <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
+    <jakarta.xml.ws-api.version>4.0.2</jakarta.xml.ws-api.version>
+    <jakarta.xml.ws-osgi.version>2.3.3</jakarta.xml.ws-osgi.version>
+    <ehcache-core.version>3.10.8</ehcache-core.version>
+    <ehcache-osgi.version>3.6.3</ehcache-osgi.version>
+    <cache-api.version>1.1.1</cache-api.version>
+    <jakarta.jms-api.version>3.1.0</jakarta.jms-api.version>
 
     <!-- GWT Java 11 compatibility -->
     <gwt.version>2.10.0</gwt.version>
@@ -400,7 +439,7 @@
     <grpc-protobuf.version>1.68.1</grpc-protobuf.version>
     <!-- endregion -->
 
-    <hv-security-web.version>0.9.0</hv-security-web.version>
+    <hv-security-web.version>0.12.0</hv-security-web.version>
     <snowflake-jdbc.version>3.24.0</snowflake-jdbc.version>
     <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
@@ -418,6 +457,8 @@
     <jettison.version>1.5.4</jettison.version>
     <amqp.version>5.22.0</amqp.version>
     <mina-core.version>2.2.4</mina-core.version>
+    <saxon.version>9.1.0.8</saxon.version>
+    <saxon-he.version>12.7</saxon-he.version>
   </properties>
 
   <dependencyManagement>
@@ -425,7 +466,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-continuation</artifactId>
-        <version>${jetty.version}</version>
+        <version>${jetty-hadoop.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
@@ -435,11 +476,6 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-io</artifactId>
-        <version>${jetty.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-jaas</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
@@ -458,13 +494,13 @@
         <version>${jetty-server.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-servlet</artifactId>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-servlet</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-servlets</artifactId>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-servlets</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
@@ -483,8 +519,8 @@
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-webapp</artifactId>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-webapp</artifactId>
         <version>${jetty.version}</version>
       </dependency>
       <dependency>
@@ -671,18 +707,18 @@
         <version>${fasterxml-jackson-databind.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.fasterxml.jackson.jaxrs</groupId>
-        <artifactId>jackson-jaxrs-json-provider</artifactId>
+        <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
+        <artifactId>jackson-jakarta-rs-json-provider</artifactId>
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.fasterxml.jackson.jaxrs</groupId>
-        <artifactId>jackson-jaxrs-base</artifactId>
+        <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
+        <artifactId>jackson-jakarta-rs-base</artifactId>
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.module</groupId>
-        <artifactId>jackson-module-jaxb-annotations</artifactId>
+        <artifactId>jackson-module-jakarta-xmlbind-annotations</artifactId>
         <version>${fasterxml-jackson.version}</version>
       </dependency>
       <dependency>
@@ -772,8 +808,13 @@
       </dependency>
 
       <dependency>
-        <groupId>commons-fileupload</groupId>
-        <artifactId>commons-fileupload</artifactId>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-fileupload2-core</artifactId>
+        <version>${commons-fileupload.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-fileupload2-jakarta-servlet6</artifactId>
         <version>${commons-fileupload.version}</version>
       </dependency>
       <dependency>
@@ -1224,8 +1265,8 @@
 
       <!-- Endorsed Standards Excluded from Java 11+ -->
       <dependency>
-        <groupId>com.sun.activation</groupId>
-        <artifactId>jakarta.activation</artifactId>
+        <groupId>jakarta.activation</groupId>
+        <artifactId>jakarta.activation-api</artifactId>
         <version>${jakarta.activation.version}</version>
       </dependency>
       <dependency>
@@ -1282,12 +1323,7 @@
       </dependency>
       <dependency>
         <groupId>com.hitachivantara.security.web</groupId>
-        <artifactId>csrf-token-service-client-java-jax-rs-v1</artifactId>
-        <version>${hv-security-web.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.hitachivantara.security.web</groupId>
-        <artifactId>csrf-token-service-client-java-jax-rs-v2</artifactId>
+        <artifactId>csrf-token-service-client-java-jax-rs-v3</artifactId>
         <version>${hv-security-web.version}</version>
       </dependency>
       <!-- endregion HV Web Security -->
@@ -1304,9 +1340,9 @@
         <version>${gwt.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.gwt</groupId>
-        <artifactId>gwt-servlet</artifactId>
-        <version>${gwt.version}</version>
+        <groupId>org.gwtproject</groupId>
+        <artifactId>gwt-servlet-jakarta</artifactId>
+        <version>${gwt-servlet-jakarta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.gwt</groupId>
@@ -1381,14 +1417,47 @@
         <version>${json-smart.version}</version>
       </dependency>
       <dependency>
-      <groupId>commons-beanutils</groupId>
-      <artifactId>commons-beanutils</artifactId>
-      <version>${commons-beanutils.version}</version>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>${commons-beanutils.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
         <version>${gson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon</artifactId>
+        <version>${saxon.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>Saxon-HE</artifactId>
+        <version>${saxon-he.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon-dom</artifactId>
+        <version>${saxon.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon-jdom</artifactId>
+        <version>${saxon.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon-sql</artifactId>
+        <version>${saxon.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.saxon</groupId>
+        <artifactId>saxon-xom</artifactId>
+        <version>${saxon.version}</version>
+        <scope>compile</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -1475,7 +1544,7 @@
               <configuration>
                 <enableGeneration>${karaf-maven-plugin.enableGeneration}</enableGeneration>
                 <aggregateFeatures>${karaf-maven-plugin.aggregateFeatures}</aggregateFeatures>
-	              <includeTransitiveDependency>${karaf-maven-plugin.includeTransitiveDependency}</includeTransitiveDependency>
+                <includeTransitiveDependency>${karaf-maven-plugin.includeTransitiveDependency}</includeTransitiveDependency>
                 <addBundlesToPrimaryFeature>${karaf-maven-plugin.addBundlesToPrimaryFeature}</addBundlesToPrimaryFeature>
                 <markTransitiveAsDependency>${karaf-maven-plugin.markTransitiveAsDependency}</markTransitiveAsDependency>
                 <primaryFeatureName>${karaf-maven-plugin.primaryFeatureName}</primaryFeatureName>
@@ -2436,6 +2505,184 @@
     </profile>
 
     <profile>
+      <id>eula-wrap</id>
+      <activation>
+        <property>
+          <name>eula-wrap</name>
+        </property>
+      </activation>
+      <properties>
+        <artifactName>${project.artifactId}-${project.version}</artifactName>
+        <artifactExtension>${project.extension}</artifactExtension>
+        <izpack-file>${pentaho:pentaho-eula-wrap-config:xml:izpack-zip}</izpack-file>
+        <izpack-maven-plugin.version>5.1.3</izpack-maven-plugin.version>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>eula-wrap_assign-deps-to-properties</id>
+                <phase>${eula-wrap_assign-deps-to-properties-phase}</phase>
+                <goals>
+                  <goal>properties</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.codehaus.izpack</groupId>
+            <artifactId>izpack-maven-plugin</artifactId>
+            <version>${izpack-maven-plugin.version}</version>
+            <executions>
+              <execution>
+                <id>eula-wrap_create-izpack-installer-jar</id>
+                <phase>${eula-wrap_create-izpack-installer-jar-phase}</phase>
+                <goals>
+                  <goal>izpack</goal>
+                </goals>
+                <configuration>
+                  <baseDir>${project.build.directory}</baseDir>
+                  <kind>standard</kind>
+                  <installFile>${izpack-file}</installFile>
+                  <finalName>installer</finalName>
+                  <enableAttachArtifact>false</enableAttachArtifact>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>eula-wrap_create-dist</id>
+                <phase>${eula-wrap_create-dist-phase}</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <zip destfile="${project.build.directory}/${artifactName}-dist.zip" preserve0permissions="true">
+                      <zipfileset file="${pentaho:pentaho-eula-wrap-config:txt:README}" fullpath="${artifactName}/README.txt" />
+                      <zipfileset file="${pentaho:pentaho-eula-wrap-config:bat:install}" fullpath="${artifactName}/install.bat" />
+                      <zipfileset file="${pentaho:pentaho-eula-wrap-config:sh:install}" fullpath="${artifactName}/install.sh" filemode="755" />
+                      <zipfileset file="${pentaho:pentaho-eula-wrap-config:txt:eula}" fullpath="${artifactName}/license.txt" />
+                      <zipfileset fullpath="${artifactName}/installer.jar" includes="installer.jar" dir="${project.build.directory}" />
+                    </zip>
+                    <delete file="${project.build.directory}/installer.jar" />
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>eula-wrap_attach-dist</id>
+                <phase>${eula-wrap_attach-dist-phase}</phase>
+                <goals>
+                  <goal>attach-artifact</goal>
+                </goals>
+                <configuration>
+                  <artifacts>
+                    <artifact>
+                      <file>${project.build.directory}/${artifactName}-dist.zip</file>
+                      <classifier>dist</classifier>
+                      <type>zip</type>
+                    </artifact>
+                  </artifacts>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+      <dependencies>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>xml</type>
+          <classifier>izpack-zip</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>xml</type>
+          <classifier>izpack-kar</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>xml</type>
+          <classifier>izpack-targz-file</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>bat</type>
+          <classifier>install</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>sh</type>
+          <classifier>install</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>txt</type>
+          <classifier>README</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>txt</type>
+          <classifier>eula</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>html</type>
+          <classifier>eula</classifier>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>pentaho</groupId>
+          <artifactId>pentaho-eula-wrap-config</artifactId>
+          <version>${pentaho-eula-wrap-config.version}</version>
+          <type>png</type>
+          <classifier>izpack-sidebar</classifier>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
       <id>sonatype</id>
       <activation>
         <property>
@@ -2612,21 +2859,21 @@
               <failOnError>false</failOnError>
             </configuration>
           </plugin>
-            <plugin>
-              <artifactId>maven-checkstyle-plugin</artifactId>
-              <reportSets>
-                <reportSet>
-                  <id>checkstyle</id>
-                  <reports>
-                    <report>checkstyle</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                <consoleOutput>false</consoleOutput>
-                <linkXRef>true</linkXRef>
-              </configuration>
-            </plugin>
+          <plugin>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <reportSets>
+              <reportSet>
+                <id>checkstyle</id>
+                <reports>
+                  <report>checkstyle</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+            <configuration>
+              <consoleOutput>false</consoleOutput>
+              <linkXRef>true</linkXRef>
+            </configuration>
+          </plugin>
           <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
