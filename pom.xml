@@ -1417,9 +1417,9 @@
         <version>${json-smart.version}</version>
       </dependency>
       <dependency>
-        <groupId>commons-beanutils</groupId>
-        <artifactId>commons-beanutils</artifactId>
-        <version>${commons-beanutils.version}</version>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>${commons-beanutils.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.gson</groupId>
@@ -1544,7 +1544,7 @@
               <configuration>
                 <enableGeneration>${karaf-maven-plugin.enableGeneration}</enableGeneration>
                 <aggregateFeatures>${karaf-maven-plugin.aggregateFeatures}</aggregateFeatures>
-                <includeTransitiveDependency>${karaf-maven-plugin.includeTransitiveDependency}</includeTransitiveDependency>
+                      <includeTransitiveDependency>${karaf-maven-plugin.includeTransitiveDependency}</includeTransitiveDependency>
                 <addBundlesToPrimaryFeature>${karaf-maven-plugin.addBundlesToPrimaryFeature}</addBundlesToPrimaryFeature>
                 <markTransitiveAsDependency>${karaf-maven-plugin.markTransitiveAsDependency}</markTransitiveAsDependency>
                 <primaryFeatureName>${karaf-maven-plugin.primaryFeatureName}</primaryFeatureName>
@@ -2859,21 +2859,21 @@
               <failOnError>false</failOnError>
             </configuration>
           </plugin>
-          <plugin>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <reportSets>
-              <reportSet>
-                <id>checkstyle</id>
-                <reports>
-                  <report>checkstyle</report>
-                </reports>
-              </reportSet>
-            </reportSets>
-            <configuration>
-              <consoleOutput>false</consoleOutput>
-              <linkXRef>true</linkXRef>
-            </configuration>
-          </plugin>
+            <plugin>
+              <artifactId>maven-checkstyle-plugin</artifactId>
+              <reportSets>
+                <reportSet>
+                  <id>checkstyle</id>
+                  <reports>
+                    <report>checkstyle</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+              <configuration>
+                <consoleOutput>false</consoleOutput>
+                <linkXRef>true</linkXRef>
+              </configuration>
+            </plugin>
           <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
