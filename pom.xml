@@ -79,7 +79,7 @@
     <osgi.compendium.version>7.0.0</osgi.compendium.version>
 
     <karaf.version>4.4.6</karaf.version>
-    <pentaho.custom.karaf.version>4.4.6-2025.07.01</pentaho.custom.karaf.version>
+    <pentaho.custom.karaf.version>4.4.6-2025.08.05</pentaho.custom.karaf.version>
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
     <felix.http.proxy.version>4.0.0</felix.http.proxy.version>
@@ -134,8 +134,8 @@
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
 
-    <karaf-maven-plugin.version>4.4.6-2025.07.01</karaf-maven-plugin.version>
-    <hitachi-karaf-maven-plugin.version>4.4.6-2025.07.01</hitachi-karaf-maven-plugin.version>
+    <karaf-maven-plugin.version>4.4.6-2025.08.05</karaf-maven-plugin.version>
+    <hitachi-karaf-maven-plugin.version>4.4.6-2025.08.05</hitachi-karaf-maven-plugin.version>
     <karaf-maven-plugin.enableGeneration>true</karaf-maven-plugin.enableGeneration>
     <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
     <karaf-maven-plugin.includeTransitiveDependency>true</karaf-maven-plugin.includeTransitiveDependency>
@@ -222,7 +222,7 @@
     <jackrabbit.version>2.21.19</jackrabbit.version>
     <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
     <commons-compress.version>1.26.2</commons-compress.version>
-    <commons-fileupload.version>2.0.0-M2</commons-fileupload.version>
+    <commons-fileupload.version>2.0.0-M4</commons-fileupload.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
     <commons-pool2.version>2.11.1</commons-pool2.version>
     <commons-vfs2.version>2.10.0</commons-vfs2.version>
@@ -291,7 +291,7 @@
     <jakarta.activation.version>2.1.3</jakarta.activation.version>
     <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
     <jakarta.xml.bind-osgi.version>2.3.3</jakarta.xml.bind-osgi.version>
-    <commons-fileupload-osgi.version>1.5</commons-fileupload-osgi.version>
+    <commons-fileupload-osgi.version>1.6.0</commons-fileupload-osgi.version>
     <jaxb-api-osgi.version>2.3.3</jaxb-api-osgi.version>
     <jakarta.activation-osgi.version>1.2.1</jakarta.activation-osgi.version>
     <jakarta.transaction-api-osgi.version>1.3.3</jakarta.transaction-api-osgi.version>
@@ -808,6 +808,11 @@
         <version>${commons-compress.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>commons-fileupload</groupId>
+        <artifactId>commons-fileupload</artifactId>
+        <version>${commons-fileupload-osgi.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-fileupload2-core</artifactId>
@@ -1545,7 +1550,7 @@
               <configuration>
                 <enableGeneration>${karaf-maven-plugin.enableGeneration}</enableGeneration>
                 <aggregateFeatures>${karaf-maven-plugin.aggregateFeatures}</aggregateFeatures>
-                      <includeTransitiveDependency>${karaf-maven-plugin.includeTransitiveDependency}</includeTransitiveDependency>
+	              <includeTransitiveDependency>${karaf-maven-plugin.includeTransitiveDependency}</includeTransitiveDependency>
                 <addBundlesToPrimaryFeature>${karaf-maven-plugin.addBundlesToPrimaryFeature}</addBundlesToPrimaryFeature>
                 <markTransitiveAsDependency>${karaf-maven-plugin.markTransitiveAsDependency}</markTransitiveAsDependency>
                 <primaryFeatureName>${karaf-maven-plugin.primaryFeatureName}</primaryFeatureName>
