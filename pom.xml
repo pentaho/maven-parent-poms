@@ -412,6 +412,7 @@
     <mina-core.version>2.2.4</mina-core.version>
     <amqp.version>5.22.0</amqp.version>
     <jettison.version>1.5.4</jettison.version>
+    <netty.version>4.1.118.Final</netty.version>
   </properties>
 
   <dependencyManagement>
