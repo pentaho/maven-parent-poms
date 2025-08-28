@@ -272,11 +272,8 @@
     <beanshell.version>2.1.1</beanshell.version>
 
     <!-- jdk version -->
-    <!-- build for Java 8 compatibility for 9.3; to be updated to Java 11 in the next release -->
-    <source.jdk.version>11</source.jdk.version>
-    <target.jdk.version>11</target.jdk.version>
-    <release.jdk.version>11</release.jdk.version>
-    <maven.compiler.release>11</maven.compiler.release>
+    <release.jdk.version>17</release.jdk.version>
+    <maven.compiler.release>${release.jdk.version}</maven.compiler.release>
     <compilerArgument/>
     <checkstyle.version>10.13.0</checkstyle.version>
     <coding-standards.version>11.0.0.0-SNAPSHOT</coding-standards.version>
@@ -1565,7 +1562,7 @@
                   <param>pentaho-platform-plugin</param>
                 </extraProtocols>
                 <!-- override expected osgi.ee to match compilation target -->
-                <javase>${source.jdk.version}</javase>
+                <javase>${release.jdk.version}</javase>
               </configuration>
             </execution>
             <execution>
@@ -1682,8 +1679,7 @@
                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
               </manifest>
               <manifestEntries>
-                <Source-Java-Version>${source.jdk.version}</Source-Java-Version>
-                <Target-Java-Version>${target.jdk.version}</Target-Java-Version>
+                <Release-Java-Version>${release.jdk.version}</Release-Java-Version>
                 <Implementation-ProductID>${project.artifactId}</Implementation-ProductID>
               </manifestEntries>
             </archive>
@@ -1693,8 +1689,7 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven-compiler-plugin.version}</version>
           <configuration>
-            <source>${source.jdk.version}</source>
-            <target>${target.jdk.version}</target>
+            <release>${maven.compiler.release}</release>
             <compilerArgument>${compilerArgument}</compilerArgument>
           </configuration>
         </plugin>
