@@ -206,7 +206,6 @@
     <jakarta.servlet.jsp.jstl-api.version>3.0.2</jakarta.servlet.jsp.jstl-api.version>
     <jakarta.servlet.jsp.jstl.version>3.0.1</jakarta.servlet.jsp.jstl.version>
     <antlr4-runtime.version>4.13.0</antlr4-runtime.version>
-    <gwt-servlet-jakarta.version>2.12.2</gwt-servlet-jakarta.version>
     <webservices.version>4.0.4</webservices.version>
     <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
     <fasterxml-jackson.version>2.17.2</fasterxml-jackson.version>
@@ -304,8 +303,9 @@
     <cache-api.version>1.1.1</cache-api.version>
     <jakarta.jms-api.version>3.1.0</jakarta.jms-api.version>
 
-    <!-- GWT Java 11 compatibility -->
-    <gwt.version>2.10.0</gwt.version>
+    <!-- GWT dependencies -->
+    <gwt.version>2.12.2</gwt.version>
+    <gwt-maven-plugin.version>2.10.0</gwt-maven-plugin.version>
     <gwt-incubator.version>2.1.0</gwt-incubator.version>
     <gwt-dnd.version>3.3.4</gwt-dnd.version>
     <gwtmockito.version>1.1.9</gwtmockito.version>
@@ -1336,24 +1336,24 @@
       </dependency>
       <!-- endregion HV Web Security -->
 
-      <!-- GWT Java 11+ compatibility -->
+      <!-- GWT dependencies -->
       <dependency>
-        <groupId>com.google.gwt</groupId>
+        <groupId>org.gwtproject</groupId>
         <artifactId>gwt-user</artifactId>
         <version>${gwt.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.gwt</groupId>
+        <groupId>org.gwtproject</groupId>
         <artifactId>gwt-dev</artifactId>
         <version>${gwt.version}</version>
       </dependency>
       <dependency>
         <groupId>org.gwtproject</groupId>
         <artifactId>gwt-servlet-jakarta</artifactId>
-        <version>${gwt-servlet-jakarta.version}</version>
+        <version>${gwt.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.gwt</groupId>
+        <groupId>org.gwtproject</groupId>
         <artifactId>gwt-codeserver</artifactId>
         <version>${gwt.version}</version>
       </dependency>
@@ -1388,7 +1388,8 @@
         <artifactId>GWT-FX</artifactId>
         <version>${GWT-FX.version}</version>
       </dependency>
-      <!-- end GWT Java 11+ compatibility -->
+      <!-- end GWT dependencies -->
+
       <dependency>
         <groupId>com.rometools</groupId>
         <artifactId>rome</artifactId>
@@ -1777,6 +1778,24 @@
           <configuration>
             <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
           </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>gwt-maven-plugin</artifactId>
+          <version>${gwt-maven-plugin.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.gwtproject</groupId>
+              <artifactId>gwt-dev</artifactId>
+              <version>${gwt.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.gwtproject</groupId>
+              <artifactId>gwt-user</artifactId>
+              <version>${gwt.version}</version>
+            </dependency>
+          </dependencies>
         </plugin>
       </plugins>
     </pluginManagement>
