@@ -253,7 +253,7 @@
 
     <!-- spring version -->
     <spring.version>6.2.5</spring.version>
-    <spring-ldap.version>2.4.4</spring-ldap.version>
+    <spring-ldap.version>3.3.3</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
