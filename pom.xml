@@ -459,6 +459,7 @@
     <xmlresolver.version>6.0.17</xmlresolver.version>
     <xmlunit.version>1.6</xmlunit.version>
     <commons-configuration2.version>2.10.1</commons-configuration2.version>
+    <apache-sshd.version>2.16.0</apache-sshd.version>
   </properties>
 
   <dependencyManagement>
@@ -1461,6 +1462,22 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-configuration2</artifactId>
         <version>${commons-configuration2.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.sshd</groupId>
+        <artifactId>sshd-core</artifactId>
+        <version>${apache-sshd.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.sshd</groupId>
+        <artifactId>sshd-sftp</artifactId>
+        <version>${apache-sshd.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.sshd</groupId>
+        <artifactId>sshd-scp</artifactId>
+        <version>${apache-sshd.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
