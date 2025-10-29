@@ -219,8 +219,8 @@
     <xstream.version>1.4.21</xstream.version>
     <woodstox-core.version>6.6.2</woodstox-core.version>
     <stax2-api.version>4.2.2</stax2-api.version>
-    <jackrabbit.version>2.21.19</jackrabbit.version>
-    <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
+    <jackrabbit.version>2.22.2</jackrabbit.version>
+    <oak-jackrabbit.version>1.82.0</oak-jackrabbit.version>
     <commons-compress.version>1.26.2</commons-compress.version>
     <commons-fileupload.version>2.0.0-M4</commons-fileupload.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
