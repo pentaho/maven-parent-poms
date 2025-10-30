@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-ce-parent-pom</artifactId>
-    <version>11.0.0.0-196</version>
+    <version>11.0.0.0-latest</version>
   </parent>
   
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-  <version>11.0.0.0-196</version>
+  <version>11.0.0.0-latest</version>
   <packaging>pom</packaging>
 
   <name>Pentaho Community Edition Project Parent POM For Java Projects</name>
