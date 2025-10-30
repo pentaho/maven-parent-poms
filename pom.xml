@@ -187,8 +187,8 @@
     <dom4j.version>2.1.4</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
     <xstream.version>1.4.21</xstream.version>
-    <jackrabbit.version>2.21.19</jackrabbit.version>
-    <oak-jackrabbit.version>1.48.0</oak-jackrabbit.version>
+    <jackrabbit.version>2.22.2</jackrabbit.version>
+    <oak-jackrabbit.version>1.82.0</oak-jackrabbit.version>
     <commons-compress.version>1.26.2</commons-compress.version>
     <commons-fileupload.version>1.6.0</commons-fileupload.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
