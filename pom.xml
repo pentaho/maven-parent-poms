@@ -254,13 +254,13 @@
     <batik.version>1.17</batik.version>
 
     <!-- spring version -->
-    <spring.version>6.2.5</spring.version>
+    <spring.version>6.2.12</spring.version>
     <spring-ldap.version>3.3.3</spring-ldap.version>
     <spring-binding.version>2.4.8.RELEASE</spring-binding.version>
     <spring-se-jcr.version>0.9</spring-se-jcr.version>
     <spring-mock.version>2.0.8</spring-mock.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security.version>6.4.4</spring-security.version>
+    <spring-security.version>6.4.12</spring-security.version>
     <spring-security-core-tests.version>2.0.5.RELEASE</spring-security-core-tests.version>
     <spring-retry.version>1.2.2.RELEASE</spring-retry.version>
     <spring-boot.version>2.4.2</spring-boot.version>
