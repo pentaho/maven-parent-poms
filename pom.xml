@@ -128,7 +128,7 @@
 
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
-    <tomcat.version>10.1.44</tomcat.version>
+    <tomcat.version>10.1.48</tomcat.version>
     <pax-web.version>8.0.32</pax-web.version>
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
