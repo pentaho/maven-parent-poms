@@ -87,7 +87,7 @@
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
 
     <pax-url-aether.version>2.6.16</pax-url-aether.version>
-    <cxf.version>3.6.8</cxf.version>
+    <cxf.version>3.6.4</cxf.version>
 
     <activemq.version>5.18.7</activemq.version>
     <byte-buddy.version>1.17.6</byte-buddy.version>
