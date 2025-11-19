@@ -77,7 +77,7 @@
     <osgi.compendium.version>7.0.0</osgi.compendium.version>
 
     <karaf.version>4.4.6</karaf.version>
-    <pentaho.custom.karaf.version>4.4.6-2025.08.05</pentaho.custom.karaf.version>
+    <pentaho.custom.karaf.version>4.4.6-2025.11.19</pentaho.custom.karaf.version>
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
     <felix.http.proxy.version>4.0.0</felix.http.proxy.version>
@@ -87,7 +87,7 @@
     <aries.blueprint.core.version>1.10.2</aries.blueprint.core.version>
 
     <pax-url-aether.version>2.6.16</pax-url-aether.version>
-    <cxf.version>3.6.4</cxf.version>
+    <cxf.version>3.6.8</cxf.version>
 
     <activemq.version>5.18.7</activemq.version>
     <byte-buddy.version>1.17.6</byte-buddy.version>
@@ -133,8 +133,8 @@
     <!-- Some pax-web components have dependencies on Tomcat components: be sure to sync both versions -->
     <!-- Karaf uses pax-web: be sure to use the custom hitachi karaf with the same version -->
 
-    <karaf-maven-plugin.version>4.4.6-2025.08.05</karaf-maven-plugin.version>
-    <hitachi-karaf-maven-plugin.version>4.4.6-2025.08.05</hitachi-karaf-maven-plugin.version>
+    <karaf-maven-plugin.version>4.4.6-2025.11.19</karaf-maven-plugin.version>
+    <hitachi-karaf-maven-plugin.version>4.4.6-2025.11.19</hitachi-karaf-maven-plugin.version>
     <karaf-maven-plugin.enableGeneration>true</karaf-maven-plugin.enableGeneration>
     <karaf-maven-plugin.aggregateFeatures>false</karaf-maven-plugin.aggregateFeatures>
     <karaf-maven-plugin.includeTransitiveDependency>true</karaf-maven-plugin.includeTransitiveDependency>
