@@ -415,7 +415,6 @@
     <jettison.version>1.5.4</jettison.version>
     <netty.version>4.1.125.Final</netty.version>
     <commons-configuration2.version>2.10.1</commons-configuration2.version>
-    <saxon.version>9.1.0.8</saxon.version>
     <saxon-he.version>12.7</saxon-he.version>
     <xmlresolver.version>6.0.17</xmlresolver.version>
     <xmlunit.version>1.6</xmlunit.version>
@@ -1396,11 +1395,6 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-configuration2</artifactId>
         <version>${commons-configuration2.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>net.sf.saxon</groupId>
-        <artifactId>saxon</artifactId>
-        <version>${saxon.version}</version>
       </dependency>
       <dependency>
         <groupId>net.sf.saxon</groupId>
