@@ -462,6 +462,10 @@
     <xmlunit.version>1.6</xmlunit.version>
     <commons-configuration2.version>2.10.1</commons-configuration2.version>
     <apache-sshd.version>2.16.0</apache-sshd.version>
+
+    <!-- poi  -->
+    <poi.version>5.5.1</poi.version>
+
   </properties>
 
   <dependencyManagement>
