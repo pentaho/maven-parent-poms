@@ -169,6 +169,7 @@
      -->
     <jquery.version>3.5.1</jquery.version>
     <jquery-ui.version>1.13.3</jquery-ui.version>
+    <datatables.version>1.13.5</datatables.version>
 
     <!-- When changing the Angular version, be sure to rename/adapt the corresponding AMD "overrides" files:
          pentaho-osgi-bundles/pentaho-webjars-deployer/src/main/resources/overrides/org.webjars.bower/angular/1.8.0/overrides.json
@@ -252,7 +253,6 @@
     <json-smart.version>2.5.2</json-smart.version>
     <json-simple.version>1.1.1</json-simple.version>
     <batik.version>1.17</batik.version>
-    <datatables.version>1.13.5</datatables.version>
 
     <!-- spring version -->
     <spring.version>6.2.12</spring.version>
