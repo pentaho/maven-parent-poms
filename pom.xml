@@ -460,6 +460,7 @@
     <mina-core.version>2.2.4</mina-core.version>
     <saxon-he.version>12.7</saxon-he.version>
     <netty.version>4.1.125.Final</netty.version>
+    <grpc-netty.version>1.78.0</grpc-netty.version>
     <xmlresolver.version>6.0.17</xmlresolver.version>
     <xmlunit.version>1.6</xmlunit.version>
     <commons-configuration2.version>2.10.1</commons-configuration2.version>
