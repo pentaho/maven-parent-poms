@@ -1918,8 +1918,8 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>flatten-maven-plugin</artifactId>
         <configuration>
-          <updatePomFile>true</updatePomFile>
-          <flattenMode>resolveCiFriendliesOnly</flattenMode>
+          <updatePomFile>false</updatePomFile>
+          <flattenMode>oss</flattenMode>
           <pomElements>
             <parent>keep</parent>
             <build>remove</build>
