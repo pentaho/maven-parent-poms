@@ -1725,6 +1725,7 @@
           <version>${maven-jar-plugin.version}</version>
           <configuration>
             <archive>
+              <addMavenDescriptor>false</addMavenDescriptor>
               <manifest>
                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
@@ -1920,6 +1921,8 @@
         <configuration>
           <updatePomFile>false</updatePomFile>
           <flattenMode>oss</flattenMode>
+          <outputDirectory>${project.build.outputDirectory}/META-INF/maven/${project.groupId}/${project.artifactId}</outputDirectory>
+          <flattenedPomFilename>pom.xml</flattenedPomFilename>
           <pomElements>
             <parent>keep</parent>
             <build>remove</build>
