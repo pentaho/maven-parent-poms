@@ -244,6 +244,7 @@
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
+    <bcprov-jdk15to18.version>1.84</bcprov-jdk15to18.version>
     <bouncycastle.version>1.84</bouncycastle.version>
     <simple-jndi.version>1.0.13</simple-jndi.version>
     <json-smart.version>2.5.2</json-smart.version>
@@ -940,6 +941,8 @@
         <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
         <version>${paho.version}</version>
       </dependency>
+
+      <!-- Bouncy Castle - support older third-party pom files in build -->
       <dependency>
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcprov-jdk14</artifactId>
@@ -949,6 +952,33 @@
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcprov-jdk15on</artifactId>
         <version>${bcprov-jdk15on.version}</version>
+      </dependency>
+
+      <!-- Bouncy Castle -->
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk15to18</artifactId>
+        <version>${bouncycastle.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcmail-jdk15to18</artifactId>
+        <version>${bouncycastle.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcpkix-jdk15to18</artifactId>
+        <version>${bouncycastle.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcutil-jdk15to18</artifactId>
+        <version>${bouncycastle.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcpkix-jdk18on</artifactId>
+        <version>${bouncycastle.version}</version>
       </dependency>
 
       <dependency>
