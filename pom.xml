@@ -187,6 +187,7 @@
     <dom4j.version>2.1.4</dom4j.version>
     <jaxen.version>1.1.6</jaxen.version>
     <xstream.version>1.4.21</xstream.version>
+    <woodstox-core.version>6.6.2</woodstox-core.version>
     <jackrabbit.version>2.22.2</jackrabbit.version>
     <oak-jackrabbit.version>1.82.0</oak-jackrabbit.version>
     <commons-compress.version>1.26.2</commons-compress.version>
