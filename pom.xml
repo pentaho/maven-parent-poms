@@ -212,6 +212,9 @@
     <paho.version>1.2.2</paho.version>
     <h2.version>2.2.224</h2.version>
     <org.apache.avro.version>1.12.0</org.apache.avro.version>
+    <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
+    <bcprov-jdk14.version>1.72</bcprov-jdk14.version>
+    <bcprov-jdk15on.version>1.65</bcprov-jdk15on.version>
     <bouncycastle.version>1.84</bouncycastle.version>
     <simple-jndi.version>1.0.13</simple-jndi.version>
     <json-smart.version>2.5.2</json-smart.version>
