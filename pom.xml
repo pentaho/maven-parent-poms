@@ -460,7 +460,7 @@
     <amqp.version>5.22.0</amqp.version>
     <mina-core.version>2.2.4</mina-core.version>
     <saxon-he.version>12.7</saxon-he.version>
-    <netty.version>4.1.131.Final</netty.version>
+    <netty.version>4.1.133.Final</netty.version>
     <xmlresolver.version>6.0.17</xmlresolver.version>
     <xmlunit.version>1.6</xmlunit.version>
     <commons-configuration2.version>2.10.1</commons-configuration2.version>
