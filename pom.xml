@@ -260,6 +260,7 @@
     <jakarta.xml.bind-api.version>2.3.3</jakarta.xml.bind-api.version>
     <jaxb-impl.version>2.3.3</jaxb-impl.version>
     <jakarta.xml.ws-api.version>2.3.3</jakarta.xml.ws-api.version>
+    <validation-api.version>1.1.0.Final</validation-api.version>
 
     <!-- GWT dependencies -->
     <gwt.version>2.12.2</gwt.version>
@@ -1252,6 +1253,17 @@
         <groupId>jakarta.xml.ws</groupId>
         <artifactId>jakarta.xml.ws-api</artifactId>
         <version>${jakarta.xml.ws-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>${validation-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>${validation-api.version}</version>
+        <classifier>sources</classifier>
       </dependency>
 
       <!-- region gRPC -->
