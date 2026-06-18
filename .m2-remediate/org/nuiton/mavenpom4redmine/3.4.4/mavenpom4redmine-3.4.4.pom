@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  Mavenpom
+
+  $Id: pom.xml 1382 2012-11-16 15:27:05Z tchemit $
+  $HeadURL: http://svn.nuiton.org/svn/mavenpom/tags/mavenpom-3.4.4/mavenpom4redmine/pom.xml $
+  %%
+  Copyright (C) 2009 - 2010 CodeLutin
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Lesser Public License for more details.
+
+  You should have received a copy of the GNU General Lesser Public
+  License along with this program.  If not, see
+  <http://www.gnu.org/licenses/lgpl-3.0.html>.
+  #L%
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- ************************************************************* -->
+  <!-- *** POM Relationships *************************************** -->
+  <!-- ************************************************************* -->
+
+  <parent>
+    <groupId>org.nuiton</groupId>
+    <artifactId>mavenpom</artifactId>
+    <version>3.4.4</version>
+  </parent>
+
+  <artifactId>mavenpom4redmine</artifactId>
+
+  <!-- add this in your pom
+  <parent>
+      <groupId>org.nuiton</groupId>
+      <artifactId>mavenpom4redmine</artifactId>
+      <version>XXX</version>
+  </parent>
+  -->
+
+  <modules>
+    <module>mavenpom4redmineAndCentral</module>
+  </modules>
+
+  <!-- ************************************************************* -->
+  <!-- *** Project Information ************************************* -->
+  <!-- ************************************************************* -->
+
+  <name>Mavenpom4redmine</name>
+
+  <description>Ancestor of all projects of Code Lutin based on a redmine
+    developpment environnement
+  </description>
+
+  <inceptionYear>2010</inceptionYear>
+
+  <!-- ************************************************************* -->
+  <!-- *** Build Environment  ************************************** -->
+  <!-- ************************************************************* -->
+
+  <!-- Build Environment : Environment Information -->
+
+  <issueManagement>
+    <system>redmine</system>
+    <url>${redmine.url}/projects/${projectId}/issues</url>
+  </issueManagement>
+
+  <!--Any mailing lists for the project-->
+  <!--on redmine platform (nuiton or chorem) we normalize it to 3 lists -->
+  <!--commits, devel and users -->
+  <!--mailingLists>
+    <mailingList>
+      <name>${listId}-commits</name>
+      <subscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-commits
+      </subscribe>
+      <unsubscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-commits
+      </unsubscribe>
+      <post>${listId}-commits@list.${platform}</post>
+      <archive>http://list.${platform}/pipermail/${listId}-commits/</archive>
+    </mailingList>
+
+    <mailingList>
+      <name>${listId}-devel</name>
+      <subscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-devel
+      </subscribe>
+      <unsubscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-devel
+      </unsubscribe>
+      <post>${listId}-devel@list.${platform}</post>
+      <archive>http://list.${platform}/pipermail/${listId}-devel/</archive>
+    </mailingList>
+
+    <mailingList>
+      <name>${listId}-users</name>
+      <subscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-users
+      </subscribe>
+      <unsubscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-users
+      </unsubscribe>
+      <post>${listId}-users@list.${platform}</post>
+      <archive>http://list.${platform}/pipermail/${listId}-users/</archive>
+    </mailingList>
+  </mailingLists-->
+
+  <!-- ************************************************************* -->
+  <!-- *** Build Settings ****************************************** -->
+  <!-- ************************************************************* -->
+
+  <properties>
+
+    <!-- the redmine plateform used (nuiton.org or chorem.org) -->
+    <platform>nuiton.org</platform>
+
+    <!-- change this to false for a private project (need some redmine login) -->
+    <publicProject>true</publicProject>
+
+    <license.licenseName>lgpl_v3</license.licenseName>
+
+    <!-- redmine configuration -->
+    <redmine.safe>false</redmine.safe>
+    <redmine.url>http://${platform}</redmine.url>
+    <redmine.projectId>${projectId}</redmine.projectId>
+    <redmine.xmlPath>${maven.gen.dir}/changes/changes.xml</redmine.xmlPath>
+    <redmine.collectedArtifacts>target/collect-artifacts.txt
+    </redmine.collectedArtifacts>
+    <redmine.collectedAttachments>target/collect-attachments.txt
+    </redmine.collectedAttachments>
+    <redmine.deploymentUrl>${repository.home.url}</redmine.deploymentUrl>
+
+    <redmine.templateDirectory>
+      http://maven-site.nuiton.org/mavenpom/announcement/redmine
+    </redmine.templateDirectory>
+
+    <!-- extra files to include in release -->
+    <redmine.releaseFiles />
+
+    <!-- use this for a lib extra files -->
+    <redmine.libReleaseFiles>
+      target/${project.artifactId}-${project.version}-deps.zip,
+      target/${project.artifactId}-${project.version}-full.zip
+    </redmine.libReleaseFiles>
+
+  </properties>
+
+  <packaging>pom</packaging>
+
+  <!-- ************************************************************* -->
+  <!-- *** Maven Environment *************************************** -->
+  <!-- ************************************************************* -->
+
+  <!-- Maven Environment : profiles -->
+  <profiles>
+
+    <!-- perform only on a release stage when using the maven-release-plugin -->
+    <profile>
+      <id>redmine-build-release-profile</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <properties>
+        <!-- fails if redmine goals are not ok -->
+        <redmine.safe>true</redmine.safe>
+      </properties>
+
+      <reporting>
+        <plugins>
+
+          <plugin>
+            <artifactId>maven-changes-plugin</artifactId>
+            <version>${changesPluginVersion}</version>
+            <configuration>
+              <issueLinkTemplatePerSystem>
+                <redmine>${redmine.issueLinkTemplate}</redmine>
+              </issueLinkTemplatePerSystem>
+              <xmlPath>${redmine.xmlPath}</xmlPath>
+            </configuration>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>changes-report</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+
+          <!-- generate issues report -->
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <version>${jredminePluginVersion}</version>
+            <configuration>
+              <anonymous>${publicProject}</anonymous>
+              <columnNames>
+                key,summary,status,assignee,tracker,priority,version,category,createdOn
+              </columnNames>
+            </configuration>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>issues-report</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+
+        </plugins>
+      </reporting>
+      <build>
+
+        <plugins>
+
+          <!--
+          - obtain redmine username
+          - collect all artifacts attached to build for announcements
+          -->
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-redmine-login</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>initialize</phase>
+                <configuration>
+                  <serverId>redmine-${platform}</serverId>
+                  <usernameOut>redmine.username</usernameOut>
+                  <privateKeyOut>redmine.apiKey</privateKeyOut>
+                </configuration>
+              </execution>
+              <execution>
+                <id>collect-build-artifacts</id>
+                <goals>
+                  <goal>collect-files</goal>
+                </goals>
+                <phase>install</phase>
+                <configuration>
+                  <descriptionFile>${redmine.collectedArtifacts}
+                  </descriptionFile>
+                  <includeAttached>true</includeAttached>
+                  <includeSiteAttached>true</includeSiteAttached>
+                </configuration>
+              </execution>
+              <execution>
+                <id>collect-build-attachements</id>
+                <goals>
+                  <goal>collect-files</goal>
+                </goals>
+                <phase>install</phase>
+                <configuration>
+                  <extraFiles>${redmine.releaseFiles}</extraFiles>
+                  <descriptionFile>${redmine.collectedAttachments}
+                  </descriptionFile>
+                  <includeAttached>false</includeAttached>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!--
+          - generate changes.xml file from redmine
+          -->
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>jredmine-generate-changes</id>
+                <goals>
+                  <goal>generate-changes</goal>
+                </goals>
+                <phase>process-classes</phase>
+                <configuration>
+                  <anonymous>${publicProject}</anonymous>
+                  <generateOnce>true</generateOnce>
+                  <actionMapping>fix:1, add:2, update:4</actionMapping>
+                  <statusIds>3,4,5</statusIds>
+                </configuration>
+              </execution>
+
+            </executions>
+
+          </plugin>
+
+        </plugins>
+
+      </build>
+    </profile>
+
+    <!-- launch this profile after a release:perform on target/checkout -->
+    <profile>
+      <id>redmine-pre-release-profile</id>
+      <activation>
+        <property>
+          <name>performRedminePreRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <properties>
+        <!-- fails if redmine goals are not ok -->
+        <redmine.safe>true</redmine.safe>
+
+        <dryRun>true</dryRun>
+        <redmine.dryRun>${dryRun}</redmine.dryRun>
+      </properties>
+
+      <build>
+
+        <defaultGoal>validate</defaultGoal>
+
+        <plugins>
+
+          <!--
+          - obtain redmine login
+          -->
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-redmine-login</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>validate</phase>
+                <configuration>
+                  <serverId>redmine-${platform}</serverId>
+                  <usernameOut>redmine.username</usernameOut>
+                  <privateKeyOut>redmine.apiKey</privateKeyOut>
+                </configuration>
+              </execution>
+
+            </executions>
+          </plugin>
+
+          <!--
+          - publish attachments
+          - generate release announcements
+          -->
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>publish-attachments</id>
+                <goals>
+                  <goal>publish-attachments</goal>
+                </goals>
+                <phase>validate</phase>
+                <configuration>
+                  <filesFromProperties>
+                    ${redmine.collectedAttachments}
+                  </filesFromProperties>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-announcement</id>
+                <goals>
+                  <goal>generate-news-announcement</goal>
+                  <goal>generate-email-announcement</goal>
+                </goals>
+                <phase>validate</phase>
+                <configuration>
+                  <anonymous>${publicProject}</anonymous>
+                  <urlDownload>
+                    ${redmine.url}/projects/${projectId}/files
+                  </urlDownload>
+                  <artifactsFile>${redmine.collectedArtifacts}</artifactsFile>
+                </configuration>
+              </execution>
+            </executions>
+
+          </plugin>
+
+        </plugins>
+
+      </build>
+    </profile>
+
+    <!-- perform a redmine release after a successfull release -->
+    <profile>
+      <id>redmine-release-profile</id>
+      <activation>
+        <property>
+          <name>performRedmineRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <properties>
+        <!-- fails if redmine goals are not ok -->
+        <redmine.safe>true</redmine.safe>
+
+        <dryRun>true</dryRun>
+        <redmine.dryRun>${dryRun}</redmine.dryRun>
+      </properties>
+      <build>
+
+        <defaultGoal>validate</defaultGoal>
+
+        <plugins>
+
+          <!--
+          - obtain redmine login
+          - send release email
+          -->
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-redmine-login</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>validate</phase>
+                <configuration>
+                  <serverId>redmine-${platform}</serverId>
+                  <usernameOut>redmine.username</usernameOut>
+                  <privateKeyOut>redmine.apiKey</privateKeyOut>
+                </configuration>
+              </execution>
+              <execution>
+                <id>send-release-email</id>
+                <goals>
+                  <goal>send-email</goal>
+                </goals>
+                <phase>validate</phase>
+                <!--inherited>false</inherited-->
+                <configuration>
+
+                  <!-- for a multi-module just run on root project -->
+                  <runOnce>true</runOnce>
+
+                  <emailTitle>[ANN] - ${project.name} ${project.version} released</emailTitle>
+                  <emailContentFile>
+                    target/generated-sources/announcement/release-email-announcement.vm
+                  </emailContentFile>
+                  <mailSender>
+                    <name>${platform} Release Notification</name>
+                    <email>noreply@${platform}</email>
+                  </mailSender>
+                  <toAddresses>
+                    <item>${listId}-users@list.${platform}</item>
+                    <item>${listId}-devel@list.${platform}</item>
+                    <item>announce-${platform}@list.${platform}</item>
+                  </toAddresses>
+                  <!--smtpHost>smtp</smtpHost-->
+                  <!-- fix bug #146 -->
+                  <encoding>iso-8859-1</encoding>
+
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!--
+           - update version in redmine
+           - publish the release news announcement in redmine
+          -->
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>jredmine-release</id>
+                <goals>
+                  <goal>update-version</goal>
+                  <goal>publish-news</goal>
+                </goals>
+                <phase>validate</phase>
+              </execution>
+            </executions>
+            <configuration>
+
+              <!-- for a multi-module just run on root project -->
+              <runOnce>true</runOnce>
+
+              <!-- udpate-version -->
+              <closeVersion>true</closeVersion>
+
+              <!-- publish-news -->
+              <newsContentFile>
+                target/generated-sources/announcement/release-news-announcement.vm
+              </newsContentFile>
+              <newsSummary>${project.description}</newsSummary>
+              <newsTitle>${project.name} ${project.version} released</newsTitle>
+
+            </configuration>
+          </plugin>
+
+        </plugins>
+
+      </build>
+    </profile>
+
+    <!-- perform a redmine release after a successfull release -->
+    <profile>
+      <id>redmine-next-version-profile</id>
+      <activation>
+        <property>
+          <name>redmineNextVersion</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <properties>
+
+      </properties>
+      <build>
+
+        <defaultGoal>validate</defaultGoal>
+
+        <plugins>
+
+          <!--
+          - obtain redmine login
+          -->
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-redmine-login</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>validate</phase>
+                <!--inherited>false</inherited-->
+                <configuration>
+                  <serverId>redmine-${platform}</serverId>
+                  <usernameOut>redmine.username</usernameOut>
+                  <privateKeyOut>redmine.apiKey</privateKeyOut>
+                  <!-- for a multi-module just run on root project -->
+                  <runOnce>true</runOnce>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!--
+            create next version if necessary and transfert all opened issued from a previous version
+           if given
+          -->
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>jredmine-next-version</id>
+                <goals>
+                  <goal>next-version</goal>
+                </goals>
+                <phase>validate</phase>
+                <!--inherited>false</inherited-->
+              </execution>
+            </executions>
+            <configuration>
+
+              <!-- for a multi-module just run on root project -->
+              <runOnce>true</runOnce>
+
+            </configuration>
+          </plugin>
+
+        </plugins>
+
+      </build>
+    </profile>
+
+    <!-- to enter into redmine -->
+    <profile>
+      <id>redmine-publish-attachments-profile</id>
+      <activation>
+        <property>
+          <name>publishAttachments</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <build>
+
+        <defaultGoal>validate</defaultGoal>
+
+        <plugins>
+
+          <!--
+          - obtain redmine login
+          -->
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-redmine-login</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>validate</phase>
+                <configuration>
+                  <serverId>redmine-${platform}</serverId>
+                  <usernameOut>redmine.username</usernameOut>
+                  <privateKeyOut>redmine.apiKey</privateKeyOut>
+                </configuration>
+              </execution>
+
+            </executions>
+          </plugin>
+
+          <!--
+          - publish attachments
+          - generate release announcements
+          -->
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>publish-attachments</id>
+                <goals>
+                  <goal>update-version</goal>
+                  <goal>publish-attachments</goal>
+                </goals>
+                <phase>validate</phase>
+                <configuration>
+                  <closeVersion>false</closeVersion>
+                </configuration>
+              </execution>
+            </executions>
+
+          </plugin>
+
+        </plugins>
+
+      </build>
+    </profile>
+
+  </profiles>
+
+</project>

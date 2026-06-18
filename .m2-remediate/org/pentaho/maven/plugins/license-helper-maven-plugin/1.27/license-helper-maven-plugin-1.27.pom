@@ -1,0 +1,170 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.pentaho.maven.plugins</groupId>
+  <artifactId>license-helper-maven-plugin</artifactId>
+  <version>1.27</version>
+  <packaging>maven-plugin</packaging>
+
+  <name>Pentaho License Helper Maven Plugin</name>
+
+  <parent>
+    <groupId>org.pentaho.maven.plugins</groupId>
+    <artifactId>maven-plugins</artifactId>
+    <version>1.21</version>
+  </parent>
+  
+  <scm>
+    <connection>scm:git:git@github.com:pentaho/pentaho-maven-plugins-ee.git</connection>
+    <url>https://github.com/pentaho/pentaho-maven-plugins-ee</url>
+    <developerConnection>scm:git:git@github.com:pentaho/pentaho-maven-plugins-ee.git</developerConnection>
+    <tag>license-helper-maven-plugin-1.27</tag>
+  </scm>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <plexus-utils.version>3.0.8</plexus-utils.version>
+    <license-maven-plugin.version>1.10</license-maven-plugin.version>
+    <commons-lang3.version>3.5</commons-lang3.version>
+    <licenses.version>1.1</licenses.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugin-tools</groupId>
+      <artifactId>maven-plugin-annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>${plexus-utils.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>license-maven-plugin</artifactId>
+      <version>${license-maven-plugin.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commons-lang3.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack-licenses</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.pentaho</groupId>
+                  <artifactId>licenses</artifactId>
+                  <version>${licenses.version}</version>
+                  <type>zip</type>
+                  <outputDirectory>${project.build.directory}/classes/META-INF/licenses</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-plugin</artifactId>
+        <configuration>
+          <goalPrefix>license-helper</goalPrefix>
+          <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+        </configuration>
+        <executions>
+          <execution>
+            <id>mojo-descriptor</id>
+            <goals>
+              <goal>descriptor</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>help-goal</id>
+            <goals>
+              <goal>helpmojo</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+
+    <profile>
+      <id>run-its</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <property>
+          <name>runITs</name>
+        </property>
+      </activation>
+      <build>
+
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-invoker-plugin</artifactId>
+            <version>2.0.0</version>
+            <configuration>
+              <debug>true</debug>
+              <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+              <pomIncludes>
+                <pomInclude>**/pom.xml</pomInclude>
+              </pomIncludes>
+              <postBuildHookScript>verify</postBuildHookScript>
+              <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
+              <settingsFile>src/it/settings.xml</settingsFile>
+              <goals>
+                <goal>clean</goal>
+                <goal>test-compile</goal>
+              </goals>
+            </configuration>
+            <executions>
+              <execution>
+                <id>integration-test</id>
+                <goals>
+                  <goal>install</goal>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+
+      </build>
+    </profile>
+  </profiles>
+</project>

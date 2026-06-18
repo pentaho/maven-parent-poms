@@ -1,0 +1,2061 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  Mavenpom
+
+  $Id: pom.xml 1382 2012-11-16 15:27:05Z tchemit $
+  $HeadURL: http://svn.nuiton.org/svn/mavenpom/tags/mavenpom-3.4.4/pom.xml $
+  %%
+  Copyright (C) 2009 - 2010 CodeLutin
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Lesser Public License for more details.
+
+  You should have received a copy of the GNU General Lesser Public
+  License along with this program.  If not, see
+  <http://www.gnu.org/licenses/lgpl-3.0.html>.
+  #L%
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- ************************************************************* -->
+  <!-- *** POM Relationships *************************************** -->
+  <!-- ************************************************************* -->
+
+  <groupId>org.nuiton</groupId>
+  <artifactId>mavenpom</artifactId>
+  <version>3.4.4</version>
+
+  <modules>
+    <module>mavenpom4redmine</module>
+    <module>mavenpom4labs</module>
+    <module>mavenpomdoc</module>
+  </modules>
+
+  <!-- ************************************************************* -->
+  <!-- *** Project Information ************************************* -->
+  <!-- ************************************************************* -->
+
+  <name>Mavenpom</name>
+
+  <description>Ancestor of all projects of Code Lutin</description>
+
+  <url>http://maven-site.nuiton.org/mavenpom</url>
+
+  <inceptionYear>2009</inceptionYear>
+
+  <licenses>
+    <license>
+      <name>Lesser General Public License (LGPL) v 3.0</name>
+      <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+
+    <developer>
+      <name>Tony Chemit</name>
+      <id>tchemit</id>
+      <email>chemit@codelutin.com</email>
+      <organization>CodeLutin</organization>
+      <timezone>+2</timezone>
+      <roles>
+        <role>developer</role>
+      </roles>
+    </developer>
+
+    <developer>
+      <name>Jean Couteau</name>
+      <id>jcouteau</id>
+      <email>couteau@codelutin.com</email>
+      <organization>CodeLutin</organization>
+      <timezone>+2</timezone>
+      <roles>
+        <role>technical writer</role>
+      </roles>
+    </developer>
+
+    <developer>
+      <name>Brendan Le Ny</name>
+      <id>bleny</id>
+      <email>bleny@codelutin.com</email>
+      <organization>CodeLutin</organization>
+      <timezone>+2</timezone>
+      <roles>
+        <role>developer</role>
+      </roles>
+    </developer>
+
+    <developer>
+      <name>Arnaud Thimel</name>
+      <id>athimel</id>
+      <email>thimel@codelutin.com</email>
+      <organization>CodeLutin</organization>
+      <timezone>+2</timezone>
+      <roles>
+        <role>developer</role>
+      </roles>
+    </developer>
+
+  </developers>
+
+  <organization>
+    <name>CodeLutin</name>
+    <url>http://www.codelutin.com/</url>
+  </organization>
+
+  <!-- ************************************************************* -->
+  <!-- *** Build Environment  ************************************** -->
+  <!-- ************************************************************* -->
+
+  <!-- Build Environment : Environment Information -->
+
+  <issueManagement>
+    <system>redmine</system>
+    <url>http://${platform}/projects/${projectId}/issues</url>
+  </issueManagement>
+
+  <ciManagement>
+    <system>hudson</system>
+    <url>${ci.host.url}/job/${projectId}</url>
+  </ciManagement>
+
+  <!--Any mailing lists for the project-->
+  <mailingLists>
+    <mailingList>
+      <name>${listId}-commits</name>
+      <subscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-commits
+      </subscribe>
+      <unsubscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-commits
+      </unsubscribe>
+      <post>${listId}-commits@list.${platform}</post>
+      <archive>http://list.${platform}/pipermail/${listId}-commits/</archive>
+    </mailingList>
+
+    <mailingList>
+      <name>${listId}-devel</name>
+      <subscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-devel
+      </subscribe>
+      <unsubscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-devel
+      </unsubscribe>
+      <post>${listId}-devel@list.${platform}</post>
+      <archive>http://list.${platform}/pipermail/${listId}-devel/</archive>
+    </mailingList>
+
+    <mailingList>
+      <name>${listId}-users</name>
+      <subscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-users
+      </subscribe>
+      <unsubscribe>
+        http://list.${platform}/cgi-bin/mailman/listinfo/${listId}-users
+      </unsubscribe>
+      <post>${listId}-users@list.${platform}</post>
+      <archive>http://list.${platform}/pipermail/${listId}-users/</archive>
+    </mailingList>
+  </mailingLists>
+
+  <!-- Source control management. -->
+  <scm>
+    <connection>scm:svn:http://svn.nuiton.org/svn/mavenpom/tags/mavenpom-3.4.4</connection>
+    <developerConnection>scm:svn:http://svn.nuiton.org/svn/mavenpom/tags/mavenpom-3.4.4</developerConnection>
+    <url>http://nuiton.org/projects/mavenpom/repository/tags/mavenpom-3.4.4</url>
+  </scm>
+
+  <!-- ************************************************************* -->
+  <!-- *** Build Settings ****************************************** -->
+  <!-- ************************************************************* -->
+
+  <properties>
+
+    <!-- the redmine plateform used (nuiton.org or chorem.org or forge.codelutin.com) -->
+    <platform>nuiton.org</platform>
+
+    <!-- a proprerty to define the id of the project, in a multi-module
+         project, you must use a hard-cored value, otherwise for modules
+         the artifactId will be expanded , otherwise, no need to override it
+    -->
+    <projectId>${project.artifactId}</projectId>
+
+    <!-- a property to define list id -->
+    <listId>${projectId}</listId>
+
+    <!-- location of central-releases repository -->
+    <central.release.repository>http://nexus.nuiton.org/nexus/content/repositories/central-releases</central.release.repository>
+
+    <!-- location of other-releases repository -->
+    <other.release.repository>http://nexus.nuiton.org/nexus/content/repositories/other-releases</other.release.repository>
+
+    <!-- location of nuiton snapshots repository -->
+    <our.snapshot.repository>http://nexus.nuiton.org/nexus/content/repositories/snapshots</our.snapshot.repository>
+
+    <!-- location of nuiton site repository -->
+    <our.site.repository>scpexe://${platform}/var/lib/redmine-${platform}/project-site</our.site.repository>
+
+    <!-- location of the release repository to use -->
+    <release.repository>${other.release.repository}</release.repository>
+
+    <!-- server to use for release -->
+    <release.server>nuiton-nexus-deploy</release.server>
+
+    <!-- location of the snapshot repository to use -->
+    <snapshot.repository>${our.snapshot.repository}</snapshot.repository>
+
+    <!-- server to use for snapshot -->
+    <snapshot.server>nuiton-nexus-deploy</snapshot.server>
+    
+    <!-- default encoding -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <!-- by default, use maven 2 source base dir -->
+    <maven.src.dir>${basedir}/src</maven.src.dir>
+
+    <!-- where to generate sources -->
+    <maven.gen.dir>${project.build.directory}/generated-sources</maven.gen.dir>
+
+    <!-- le fichier de license du projet -->
+    <maven.license.file>${project.basedir}/LICENSE.txt</maven.license.file>
+
+    <!-- url of the quality assurance platform -->
+    <qa.host.url>http://qa.${platform}/sonar</qa.host.url>
+
+    <!-- url of the continuous integration platform -->
+    <ci.host.url>http://ci.${platform}/jenkins</ci.host.url>
+
+    <mavenVersion>2.2.1</mavenVersion>
+    <antVersion>1.8.3</antVersion>
+
+    <!-- our plugins -->
+    <helperPluginVersion>2.0</helperPluginVersion>
+    <jredminePluginVersion>1.5.1</jredminePluginVersion>
+    <jrstPluginVersion>2.0.1</jrstPluginVersion>
+
+    <!-- apache maven plugins version -->
+    <antRunPluginVersion>1.7</antRunPluginVersion>
+    <assemblyPluginVersion>2.3</assemblyPluginVersion>
+    <cleanPluginVersion>2.5</cleanPluginVersion>
+    <compilerPluginVersion>2.5.1</compilerPluginVersion>
+    <dependencyPluginVersion>2.5.1</dependencyPluginVersion>
+    <deployPluginVersion>2.7</deployPluginVersion>
+    <earPluginVersion>2.8</earPluginVersion>
+    <ejbPluginVersion>2.3</ejbPluginVersion>
+    <enforcerPluginVersion>1.1.1</enforcerPluginVersion>
+    <gpgPluginVersion>1.4</gpgPluginVersion>
+    <installPluginVersion>2.4</installPluginVersion>
+    <invokerPluginVersion>1.7</invokerPluginVersion>
+    <jarPluginVersion>2.4</jarPluginVersion>
+    <javadocPluginVersion>2.9</javadocPluginVersion>
+    <pluginPluginVersion>3.2</pluginPluginVersion>
+    <pmdPluginVersion>2.7.1</pmdPluginVersion>
+    <releasePluginVersion>2.3.2</releasePluginVersion>
+    <remoteResourcesPluginVersion>1.4</remoteResourcesPluginVersion>
+    <resourcesPluginVersion>2.6</resourcesPluginVersion>
+    <sitePluginVersion>3.2</sitePluginVersion>
+    <sourcePluginVersion>2.2.1</sourcePluginVersion>
+    <surefirePluginVersion>2.12.4</surefirePluginVersion>
+    <warPluginVersion>2.3</warPluginVersion>
+
+    <!-- codehaus mojo plugins -->
+    <animalSnifferPluginVersion>1.9</animalSnifferPluginVersion>
+    <coberturaPluginVersion>2.5.2</coberturaPluginVersion>
+    <execPluginVersion>1.2.1</execPluginVersion>
+    <findbugsPluginVersion>2.5.2</findbugsPluginVersion>
+    <gwtPluginVersion>2.5.0</gwtPluginVersion>
+    <l10nPluginVersion>1.0-alpha-2</l10nPluginVersion>
+    <licensePluginVersion>1.3</licensePluginVersion>
+    <tomcatPluginVersion>2.0</tomcatPluginVersion>
+    <versionsPluginVersion>1.3.1</versionsPluginVersion>
+    <wagonPluginVersion>1.0-beta-4</wagonPluginVersion>
+    <webstartPluginVersion>1.0-beta-3</webstartPluginVersion>
+
+    <!-- codehaus plexus plugins -->
+    <plexusPluginVersion>1.3.8</plexusPluginVersion>
+    <plexusComponentMetadataPluginVersion>1.5.5</plexusComponentMetadataPluginVersion>
+
+    <!-- others plugins -->
+    <androidPluginVersion>2.8.4</androidPluginVersion>
+    <jettyPluginVersion>8.1.8.v20121106</jettyPluginVersion>
+    <statScmPluginVersion>1.2.0</statScmPluginVersion>
+
+    <!-- report plugins version -->
+    <changesPluginVersion>2.7.1</changesPluginVersion>
+    <projectInfoReportsPluginVersion>2.6</projectInfoReportsPluginVersion>
+    <changelogPluginVersion>2.2</changelogPluginVersion>
+    <jrxPluginVersion>2.3</jrxPluginVersion>
+    <sonarReportPluginVersion>0.1</sonarReportPluginVersion>
+    
+    <!-- common libs used in projects -->
+    <commonsBeanutilsVersion>1.8.3</commonsBeanutilsVersion>
+    <commonsCollectionsVersion>3.2.1</commonsCollectionsVersion>
+    <commonsEmailVersion>1.2</commonsEmailVersion>
+    <commonsHttpclientVersion>3.1</commonsHttpclientVersion>
+    <httpCommonsHttpclientVersion>4.2.2</httpCommonsHttpclientVersion>
+    <commonsIoVersion>2.4</commonsIoVersion>
+    <commonsJxpathVersion>1.3</commonsJxpathVersion>
+    <commonsLangVersion>2.6</commonsLangVersion>
+    <commonsLang3Version>3.1</commonsLang3Version>
+    <commonsLoggingVersion>1.1.1</commonsLoggingVersion>
+    <commonsPrimitivesVersion>1.0</commonsPrimitivesVersion>
+    <commonsMathVersion>2.2</commonsMathVersion>
+    <guavaVersion>13.0.1</guavaVersion>
+    <junitVersion>4.11</junitVersion>
+    <log4jVersion>1.2.17</log4jVersion>
+    
+    <!-- to deploy with scpexe for maven 3 -->
+    <wagonSshExternalVersion>1.0</wagonSshExternalVersion>
+
+    <!-- versions of javadoc tagglets -->
+    <mavenPluginToolsJavadocVersion>2.8</mavenPluginToolsJavadocVersion>
+    <plexusComponentJavadocVersion>1.5.5</plexusComponentJavadocVersion>
+
+    <!-- FIX #534 unmodifiable parameter when releasing -->
+    <helper.smtpHost>smtp</helper.smtpHost>
+
+    <!-- compiler configuration -->
+
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+    <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+
+    <!-- javadoc configuration -->
+
+    <!-- pour ne pas executer la javadoc -->
+    <maven.javadoc.skip>false</maven.javadoc.skip>
+
+    <!-- pour modifier la verbosite de la javadoc -->
+    <maven.javadoc.quiet>true</maven.javadoc.quiet>
+
+    <!-- license configuration -->
+    <license.useMissingFile>true</license.useMissingFile>
+    <license.failIfWarning>true</license.failIfWarning>
+
+    <!-- site configuration -->
+
+    <!-- locales for the site generation, by default only french -->
+    <locales>fr</locales>
+
+    <generateSitemap>true</generateSitemap>
+
+    <!-- default documentation format (if not rst, change it)-->
+    <siteSourcesType>rst</siteSourcesType>
+
+    <!-- scmwebeditor url -->
+    <scmwebeditorUrl>http://scmwebeditor.nuiton.org/scmwebeditor/checkout.action</scmwebeditorUrl>
+
+    <!-- customize maven-nuiton-skin -->
+    <scmwebeditorEnabled>true</scmwebeditorEnabled>
+    <payPalEnabled>true</payPalEnabled>
+    <googleAdSenseEnabled>true</googleAdSenseEnabled>
+    <googleSearchEnabled>true</googleSearchEnabled>
+    <piwikEnabled>true</piwikEnabled>
+    <!-- fill this property to use a specific Piwik site id -->
+    <piwikId />
+
+    <!-- central releases url -->
+    <central.release.home.url>http://maven.nuiton.org/central-releases</central.release.home.url>
+    <!-- other releases url -->
+    <other.release.home.url>http://maven.nuiton.org/other-releases</other.release.home.url>
+
+    <!-- release repository url (to be used in site.xml, by default use other-release repository) -->
+    <repository.home.url>${other.release.home.url}</repository.home.url>
+
+    <!-- release configuration -->
+
+    <!-- all modules shares the same version in our projects -->
+    <autoVersionSubmodules>true</autoVersionSubmodules>
+
+    <!-- activate this profile while doing release:prepare to make sur everything is ok (license, third-party...) -->
+    <arguments>-DperformRelease</arguments>
+    
+    <!-- release tag configuration --> 
+    <tagNameFormat>${projectId}-@{project.version}</tagNameFormat>
+
+  </properties>
+
+  <packaging>pom</packaging>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>${commonsLoggingVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-primitives</groupId>
+        <artifactId>commons-primitives</artifactId>
+        <version>${commonsPrimitivesVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>${commonsCollectionsVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>${commonsBeanutilsVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-email</artifactId>
+        <version>${commonsEmailVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>${commonsLangVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commonsLang3Version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-httpclient</groupId>
+        <artifactId>commons-httpclient</artifactId>
+        <version>${commonsHttpclientVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>${httpCommonsHttpclientVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpmime</artifactId>
+        <version>${httpCommonsHttpclientVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commonsIoVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-jxpath</groupId>
+        <artifactId>commons-jxpath</artifactId>
+        <version>${commonsJxpathVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-math</artifactId>
+        <version>${commonsMathVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guavaVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>${log4jVersion}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junitVersion}</version>
+        <scope>test</scope>
+      </dependency>
+      
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+
+    <!--Ressources-->
+    <resources>
+      <resource>
+        <directory>${maven.src.dir}/main/resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+        <excludes>
+          <exclude>**/*~</exclude>
+        </excludes>
+      </resource>
+    </resources>
+
+    <!-- Enabling the use of scpexe with maven 3.0 -->
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+         <artifactId>wagon-ssh-external</artifactId>
+         <version>${wagonSshExternalVersion}</version>
+      </extension>
+    </extensions>
+    
+    <plugins>
+
+      <!-- http://nuiton.org/issues/1683 : creates the surefire-workdir -->
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>generate-surefire-workdir</id>
+            <phase>generate-test-sources</phase>
+            <configuration>
+              <target>
+                <mkdir dir="${basedir}/target/surefire-workdir" />
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>check-project-files</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <phase>initialize</phase>
+            <configuration>
+              <rules>
+                <requireFilesExist>
+                  <files>
+                    <file>LICENSE.txt</file>
+                    <file>README.txt</file>
+                    <file>changelog.txt</file>
+                  </files>
+                </requireFilesExist>
+              </rules>
+              <ignoreCache>true</ignoreCache>
+              <failFast>true</failFast>
+              <fail>true</fail>
+
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+
+    <pluginManagement>
+
+      <plugins>
+
+        <!-- Plugins version from apache -->
+
+        <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>${antRunPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>${assemblyPluginVersion}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.nuiton</groupId>
+              <artifactId>helper-maven-plugin-api</artifactId>
+              <version>${helperPluginVersion}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${cleanPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${compilerPluginVersion}</version>
+        </plugin>
+
+
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${dependencyPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${deployPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-ear-plugin</artifactId>
+          <version>${earPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-ejb-plugin</artifactId>
+          <version>${ejbPluginVersion}</version>
+        </plugin>
+        
+        <plugin>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${enforcerPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>${gpgPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>${installPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-invoker-plugin</artifactId>
+          <version>${invokerPluginVersion}</version>
+        </plugin>
+
+          <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${jarPluginVersion}</version>
+          <inherited>true</inherited>
+
+          <configuration>
+            <archive>
+              <!-- cela fait bugger le chargement des service via
+          ServiceLoader donc on desactive -->
+              <!--index>true</index-->
+              <manifest>
+                <mainClass>${maven.jar.main.class}</mainClass>
+              </manifest>
+              <manifestEntries>
+                <url>${project.url}</url>
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${javadocPluginVersion}</version>
+          <configuration>
+            <skip>${maven.javadoc.skip}</skip>
+            <quiet>${maven.javadoc.quiet}</quiet>
+            <charset>${project.reporting.outputEncoding}</charset>
+            <links>
+              <link>http://download.oracle.com/javase/6/docs/api</link>
+            </links>
+            <tagletArtifacts>
+              <tagletArtifact>
+                <groupId>org.apache.maven.plugin-tools</groupId>
+                <artifactId>maven-plugin-tools-javadoc</artifactId>
+                <version>${mavenPluginToolsJavadocVersion}</version>
+              </tagletArtifact>
+              <tagletArtifact>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-component-javadoc</artifactId>
+                <version>${plexusComponentJavadocVersion}</version>
+              </tagletArtifact>
+            </tagletArtifacts>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-plugin-plugin</artifactId>
+          <version>${pluginPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>${pmdPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${releasePluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-remote-resources-plugin</artifactId>
+          <version>${remoteResourcesPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${resourcesPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>${sitePluginVersion}</version>
+          <configuration>
+          </configuration>
+        </plugin>
+        
+        <plugin>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>${sourcePluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${surefirePluginVersion}</version>
+          <configuration>
+            <systemPropertyVariables>
+              <java.io.tmpdir>${project.build.directory}/surefire-workdir</java.io.tmpdir>
+            </systemPropertyVariables>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${warPluginVersion}</version>
+          <configuration>
+            <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
+            <webResources>
+              <resource>
+                <directory>src/main/webapp/WEB-INF</directory>
+                <targetPath>WEB-INF</targetPath>
+                <includes>
+                  <include>web.xml</include>
+                </includes>
+                <filtering>true</filtering>
+              </resource>
+            </webResources>
+          </configuration>
+        </plugin>
+
+        <!-- Plugins version from codehaus mojo -->
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>animal-sniffer-maven-plugin</artifactId>
+          <version>${animalSnifferPluginVersion}</version>
+          <configuration>
+            <signature>
+              <groupId>org.codehaus.mojo.signature</groupId>
+              <artifactId>java16</artifactId>
+              <version>1.0</version>
+            </signature>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>${coberturaPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${execPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>${findbugsPluginVersion}</version>
+        </plugin>
+        
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>gwt-maven-plugin</artifactId>
+          <version>${gwtPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>l10n-maven-plugin</artifactId>
+          <version>${l10nPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>${licensePluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>${versionsPluginVersion}</version>
+          <configuration>
+            <generateBackupPoms>false</generateBackupPoms>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>wagon-maven-plugin</artifactId>
+          <version>${wagonPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>webstart-maven-plugin</artifactId>
+          <version>${webstartPluginVersion}</version>
+          <configuration>
+
+            <libPath>lib</libPath>
+            <makeArchive>false</makeArchive>
+            <verbose>false</verbose>
+            <canUnsign>false</canUnsign>
+            <jnlp>
+              <mainClass>${maven.jar.main.class}</mainClass>
+              <allPermissions>true</allPermissions>
+              <offlineAllowed>true</offlineAllowed>
+            </jnlp>
+            <sign>
+              <keystore>${keystorepath}</keystore>
+              <storepass>${keystorepass}</storepass>
+              <alias>${keyalias}</alias>
+              <keypass>${keypass}</keypass>
+              <verify>true</verify>
+              <keystoreConfig>
+                <delete>false</delete>
+                <gen>false</gen>
+              </keystoreConfig>
+            </sign>
+
+          </configuration>
+        </plugin>
+
+        <!-- Plugins version from codehaus plexus -->
+
+        <plugin>
+          <groupId>org.codehaus.plexus</groupId>
+          <artifactId>plexus-component-metadata</artifactId>
+          <version>${plexusComponentMetadataPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.plexus</groupId>
+          <artifactId>plexus-maven-plugin</artifactId>
+          <version>${plexusPluginVersion}</version>
+        </plugin>
+
+        <!-- Plugins version from nuiton -->
+
+         <plugin>
+          <groupId>org.nuiton</groupId>
+          <artifactId>helper-maven-plugin</artifactId>
+          <version>${helperPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.nuiton.jredmine</groupId>
+          <artifactId>jredmine-maven-plugin</artifactId>
+          <version>${jredminePluginVersion}</version>
+        </plugin>
+
+        <!-- Plugins version from others -->
+
+        <plugin>
+          <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+          <artifactId>maven-android-plugin</artifactId>
+          <version>${androidPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <version>${jettyPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat6-maven-plugin</artifactId>
+          <version>${tomcatPluginVersion}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>${tomcatPluginVersion}</version>
+        </plugin>
+        
+        <plugin>
+          <groupId>net.sf</groupId>
+          <artifactId>stat-scm</artifactId>
+          <version>${statScmPluginVersion}</version>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+
+  </build>
+
+  <reporting>
+    <excludeDefaults>true</excludeDefaults>
+  </reporting>
+  
+  <!-- ************************************************************* -->
+  <!-- *** Maven Environment *************************************** -->
+  <!-- ************************************************************* -->
+
+  <!-- prerequisites -->
+  <prerequisites>
+    <maven>2.2.1</maven>
+  </prerequisites>
+
+  <!--Distribution-->
+  <distributionManagement>
+    <repository>
+      <id>${release.server}</id>
+      <url>${release.repository}</url>
+    </repository>
+    <snapshotRepository>
+      <id>${snapshot.server}</id>
+      <url>${snapshot.repository}</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <!-- Maven Environment : profiles -->
+  <profiles>
+
+    <!-- do not execute tests (generaly a bad idea...) -->
+    <profile>
+      <id>no-tests</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <maven.test.skip>true</maven.test.skip>
+      </properties>
+    </profile>
+    <!-- do not build reports (speedup site generation in dev) -->
+    <profile>
+      <id>no-reports</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <generateReports>false</generateReports>
+      </properties>
+    </profile>
+
+    <!-- do not build dependencies detail in maven-project-info-report (speedup site generation in dev) -->
+    <profile>
+      <id>no-dep-details</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <dependency.details.enabled>true</dependency.details.enabled>
+      </properties>
+    </profile>
+    <!-- do not build locations of dependencies in maven-project-info-report (speedup site generation in dev) -->
+    <profile>
+      <id>no-dep-locations</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <dependency.locations.enabled>false</dependency.locations.enabled>
+      </properties>
+    </profile>
+
+    <!-- perform only on a release stage when using the maven-release-plugin -->
+    <profile>
+      <id>release-profile</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      
+      <build>
+
+        <plugins>
+
+          <!-- always compute source jar -->
+          <plugin>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!-- always compute javadoc jar -->
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>animal-sniffer-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <id>ensure-no-container-api</id>
+                <configuration>
+                  <rules>
+                    <bannedDependencies>
+                      <excludes>
+                        <exclude>org.codehaus.plexus:plexus-component-api</exclude>
+                      </excludes>
+                      <message>
+                        The new containers are not supported. You
+                        probably added a dependency that is missing the
+                        exclusions.
+                      </message>
+                    </bannedDependencies>
+                  </rules>
+                  <fail>true</fail>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          
+        </plugins>
+
+      </build>
+    </profile>
+
+    <!-- perform only on a release stage when using the maven-release-plugin -->
+    <profile>
+      <id>license-profile</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <build>
+
+        <defaultGoal>generate-resources</defaultGoal>
+        
+        <plugins>
+
+          <!-- add license and third-party files to build -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-licenses</id>
+                <goals>
+                  <goal>update-project-license</goal>
+                  <goal>add-third-party</goal>
+                </goals>
+                <configuration>
+                  <licenseMerges>
+                    <licenseMerge>
+                      The Apache Software License, Version 2.0|Apache License, Version 2.0|Apache License V2.0|Apache 2|ASF 2.0|apache-2.0|Apache Public License 2.0
+                    </licenseMerge>
+                    <licenseMerge>BSD License|BSD license|BSD</licenseMerge>
+                    <licenseMerge>MIT License|MIT license|MIT</licenseMerge>
+                    <licenseMerge>
+                      Lesser General Public License (LPGL) v 2.1|GNU Lesser General Public License, 2.1|LGPL 2.1
+                    </licenseMerge>
+                    <licenseMerge>
+                      Lesser General Public License (LPGL)|GNU Lesser General Public License|GNU LESSER GENERAL PUBLIC LICENSE|LGPL|lgpl
+                    </licenseMerge>
+                    <licenseMerge>
+                      COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0|Common Development and Distribution License (CDDL) v1.0
+                    </licenseMerge>
+                    <licenseMerge>Indiana University Extreme! Lab Software License, vesion 1.1.1|Indiana University Extreme! Lab Software License</licenseMerge>
+                  </licenseMerges>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+
+      </build>
+    </profile>
+
+    <profile>
+      <id>central-safe</id>      
+      <build>
+        <defaultGoal>validate</defaultGoal>
+        <plugins>
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>check-central-safe</id>
+                <inherited>true</inherited>
+                <goals>
+                  <goal>check-auto-container</goal>
+                </goals>
+                <configuration>
+                  <addMavenCentral>true</addMavenCentral>
+                  <failIfNotSafe>true</failIfNotSafe>
+                  <repositories>
+                    <central-releases>${central.release.home.url}</central-releases>
+                  </repositories>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
+    <!-- profile with all reports (include in release process) -->
+    <profile>
+      <id>reporting</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <reporting>
+        <plugins>
+
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>${javadocPluginVersion}</version>
+            <configuration>
+              <skip>${maven.javadoc.skip}</skip>
+              <quiet>${maven.javadoc.quiet}</quiet>
+              <charset>${project.reporting.outputEncoding}</charset>
+              <links>
+                <link>http://download.oracle.com/javase/6/docs/api</link>
+              </links>
+              <!--<excludePackageNames>${maven.javadoc.excludePackageNames}</excludePackageNames>-->
+              <tagletArtifacts>
+                <tagletArtifact>
+                  <groupId>org.apache.maven.plugin-tools</groupId>
+                  <artifactId>maven-plugin-tools-javadoc</artifactId>
+                  <version>${mavenPluginToolsJavadocVersion}</version>
+                </tagletArtifact>
+                <tagletArtifact>
+                  <groupId>org.codehaus.plexus</groupId>
+                  <artifactId>plexus-component-javadoc</artifactId>
+                  <version>${plexusComponentJavadocVersion}</version>
+                </tagletArtifact>
+              </tagletArtifacts>
+            </configuration>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>javadoc</report>
+                  <report>test-javadoc</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+
+          <!-- changelog:changelog
+         changelog:dev-activity
+         changelog:file-activity -->
+          <!--FIXME : TC-20090816 : there is a bug with fileactivity
+          in report, trunk url are prefix with tag/xxx-releaseNumber !-->
+          <plugin>
+            <artifactId>maven-changelog-plugin</artifactId>
+            <version>${changelogPluginVersion}</version>
+            <!--configuration>
+                <displayFileDetailUrl>http://svn.${platform}/svn/${projectId}%FILE%</displayFileDetailUrl>
+            </configuration-->
+          </plugin>
+
+          <plugin>
+            <artifactId>maven-jxr-plugin</artifactId>
+            <version>${jrxPluginVersion}</version>
+          </plugin>
+
+          <plugin>
+            <artifactId>maven-surefire-report-plugin</artifactId>
+            <version>${surefirePluginVersion}</version>
+          </plugin>
+
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <version>${licensePluginVersion}</version>
+          </plugin>
+
+          <plugin>
+            <groupId>org.codehaus.sonar-plugins</groupId>
+            <artifactId>maven-report</artifactId>
+            <version>${sonarReportPluginVersion}</version>
+            <configuration>
+              <sonarHostURL>${qa.host.url}</sonarHostURL>
+            </configuration>
+          </plugin>
+
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>versions-maven-plugin</artifactId>
+            <version>${versionsPluginVersion}</version>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>dependency-updates-report</report>
+                  <report>plugin-updates-report</report>
+                  <report>property-updates-report</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+          
+          <!--plugin>
+            <groupId>net.sf</groupId>
+            <artifactId>stat-scm</artifactId>
+            <version>${statScmPluginVersion}</version>
+          </plugin-->
+
+        </plugins>
+      </reporting>
+
+    </profile>
+
+    <!-- do not generate site if no src/site is found for module -->
+    <profile>
+      <id>no-site</id>
+      <activation>
+        <file>
+          <missing>src/site</missing>
+        </file>
+      </activation>
+
+
+      <properties>
+        <!-- no site generation -->
+        <maven.site.skip>true</maven.site.skip>
+        <maven.site.deploy.skip>true</maven.site.deploy.skip>
+      </properties>
+
+    </profile>
+
+    <profile>
+      <id>release-sign-artifacts</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-pgp-passphrase</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>verify</phase>
+                <configuration>
+                  <serverId>gpg-signer</serverId>
+                  <usernameOut>gpg.keyname</usernameOut>
+                  <passwordOut>gpg.passphrase</passwordOut>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- use this plugin to run the main class -->
+    <profile>
+      <id>run</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <defaultGoal>package</defaultGoal>
+        <plugins>
+          <plugin>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>check-run</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <phase>initialize</phase>
+                <configuration>
+                  <rules>
+                    <requireProperty>
+                      <property>maven.jar.main.class</property>
+                      <message>Could not find the "maven.jar.main.class"
+                        required property, use
+                        -Dmaven.jar.main.class=your.main.class.fqn
+                      </message>
+                    </requireProperty>
+                  </rules>
+                  <ignoreCache>true</ignoreCache>
+                  <failFast>true</failFast>
+                  <fail>true</fail>
+
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>run</id>
+                <goals>
+                  <goal>java</goal>
+                </goals>
+                <phase>compile</phase>
+                <configuration>
+                  <mainClass>${maven.jar.main.class}</mainClass>
+                  <classpathScope>runtime</classpathScope>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+      <properties>
+        <exec.mainClass>${maven.jar.main.class}</exec.mainClass>
+        <exec.classpathScope>runtime</exec.classpathScope>
+      </properties>
+    </profile>
+
+    <!-- ce plugin permet de deployer un site en local -->
+    <profile>
+      <id>staging-site-profile</id>
+      <activation>
+        <property>
+          <name>stagingSite</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <properties>
+        <stagingUrl>scpexe://localhost/var/www/maven-staging-site</stagingUrl>
+      </properties>
+      <distributionManagement>
+        <site>
+          <id>staging-site</id>
+          <url>${stagingUrl}</url>
+        </site>
+      </distributionManagement>
+    </profile>
+
+    <!-- This profile update license stuff with new goal update-file-header -->
+    <profile>
+      <id>update-file-header</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <properties>
+        <license.descriptor>src/license/project.xml</license.descriptor>
+      </properties>
+      <build>
+        <defaultGoal>process-resources</defaultGoal>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>update-file-header</id>
+                <goals>
+                  <goal>update-file-header</goal>
+                </goals>
+                <configuration>
+                  <addSvnKeyWords>true</addSvnKeyWords>
+                  <excludes>
+                    <exclude>**/i18n/*.properties</exclude>
+                    <exclude>**/THIRD-PARTY.properties</exclude>
+                    <!-- since sh scripts must begins by the line #!/bin/sh,
+                         can not use the mojo for the mojo -->
+                    <exclude>**/*.sh</exclude>
+                  </excludes>
+                </configuration>
+                <phase>process-resources</phase>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
+    <!-- just add to build the webstart -->
+    <profile>
+      <id>webstart-profile</id>
+      <activation>
+        <property>
+          <name>doWebstart</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-keystore</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>package</phase>
+                <configuration>
+                  <serverId>codelutin-keystore</serverId>
+                  <privateKeyOut>keystorepath</privateKeyOut>
+                  <passwordOut>keystorepass</passwordOut>
+                  <usernameOut>keyalias</usernameOut>
+                  <passphraseOut>keypass</passphraseOut>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>webstart-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>generate-jnlp</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jnlp-inline</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- just add to buil the local webstart (codebase will be in target/jnlp) -->
+    <profile>
+      <id>local-webstart-profile</id>
+      <activation>
+        <property>
+          <name>doLocalWebstart</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <properties>
+        <jnlp.codebase>file://${project.build.directory}/jnlp</jnlp.codebase>
+      </properties>
+      <build>
+        <plugins>
+
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-keystore</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>package</phase>
+                <configuration>
+                  <serverId>codelutin-keystore</serverId>
+                  <privateKeyOut>keystorepath</privateKeyOut>
+                  <passwordOut>keystorepass</passwordOut>
+                  <usernameOut>keyalias</usernameOut>
+                  <passphraseOut>keypass</passphraseOut>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>webstart-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>generate-jnlp-local</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jnlp-inline</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- ce profile est dedie uniquement a mavenpom pour faire des releases
+         pour corriger les url de deployements qui marcheront pour tous les
+         poms héritant de mavenpom, mais pas pour mavenpom lui-même...
+
+         Lors d'une release, il faut donc faire :
+
+         mvn release:perform -Dinternal
+
+         ou
+
+         mvn release:perform -Pinternal
+    -->
+    <profile>
+      <id>internal</id>
+      <activation>
+        <property>
+          <name>internal</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <properties>
+
+        <projectId>mavenpom</projectId>
+        <locales>fr,en</locales>
+        <siteSourcesType>apt</siteSourcesType>
+
+        <license.licenseName>lgpl_v3</license.licenseName>
+
+        <!-- release config -->
+
+        <!-- activate this profile while doing release:prepare -->
+        <arguments>-Dinternal -DperformRelease -Pcentral-safe</arguments>
+        <!-- activate this profile while doing release:perform -->
+        <releaseProfiles>internal,central-safe</releaseProfiles>
+
+        <!-- deploy releases on central-releases repository -->
+        <release.repository>${central.release.repository}</release.repository>
+        <!-- release repository url (to be used in site.xml, by default use other-release repository) -->
+        <repository.home.url>${central.release.home.url}</repository.home.url>
+        
+        <!-- must fail if redmine actions failed -->
+        <redmine.safe>true</redmine.safe>
+
+        <!-- redmine configuration -->
+        <redmine.url>http://www.${platform}</redmine.url>
+        <redmine.projectId>${projectId}</redmine.projectId>
+        <redmine.xmlPath>${maven.gen.dir}/changes/changes.xml</redmine.xmlPath>
+        <redmine.collectedArtifacts>target/collect-artifacts.txt</redmine.collectedArtifacts>
+        <redmine.deploymentUrl>${repository.home.url}</redmine.deploymentUrl>
+        <redmine.templateDirectory>
+          http://maven-site.nuiton.org/mavenpom/announcement/redmineAndCentral
+        </redmine.templateDirectory>
+        
+        <!-- extra files to include in release -->
+        <redmine.releaseFiles />
+
+      </properties>
+
+      <!-- no site since we do not want to deploy site (this is mavenpomdoc
+          purpose -->
+      <!--distributionManagement>
+        <site>
+          <id>${platform}</id>
+          <url>${our.site.repository}/${projectId}</url>
+        </site>
+      </distributionManagement-->
+      <build>
+        
+        <plugins>
+
+          <!--
+          - obtain redmine login (for both cycle default and site)
+          - collect artifacts files
+          - collect attachments files
+          -->
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-redmine-login</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>initialize</phase>
+                <inherited>false</inherited>
+                <configuration>
+                  <serverId>redmine-nuiton.org</serverId>
+                  <usernameOut>redmine.username</usernameOut>
+                  <!-- TC-20100124 just expose username, no need
+                 password -->
+                  <!--<passwordOut>redmine.password</passwordOut>-->
+                </configuration>
+              </execution>
+              <execution>
+                <id>collect-build-artifacts</id>
+                <goals>
+                  <goal>collect-files</goal>
+                </goals>
+                <phase>install</phase>
+                <configuration>
+                  <descriptionFile>${redmine.collectedArtifacts}</descriptionFile>
+                  <includeAttached>true</includeAttached>
+                  <includeSiteAttached>true</includeSiteAttached>
+                  <copyFiles>true</copyFiles>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!-- generate the changes.xml from redmine -->
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>jredmine-generate-changes</id>
+                <goals>
+                  <goal>generate-changes</goal>
+                </goals>
+                <!-- use this phase to avoid multi-invocations -->
+                <phase>process-classes</phase>
+              </execution>
+            </executions>
+            <configuration>
+
+              <generateOnce>true</generateOnce>
+              <actionMapping>fix:1, add:2, update:4</actionMapping>
+              <statusIds>3,4,5</statusIds>
+
+            </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+
+      <!--reporting>
+        <plugins>
+
+          <plugin>
+            <artifactId>maven-changes-plugin</artifactId>
+            <version>${changesPluginVersion}</version>
+            <configuration>
+              <issueLinkTemplatePerSystem>
+                <redmine>${redmine.issueLinkTemplate}</redmine>
+              </issueLinkTemplatePerSystem>
+              <xmlPath>${redmine.xmlPath}</xmlPath>
+            </configuration>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>changes-report</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <version>${jredminePluginVersion}</version>
+            <configuration>
+              <columnNames>
+                key,summary,status,assignee,tracker,priority,version,category,createdOn
+              </columnNames>
+            </configuration>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>issues-report</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+
+        </plugins>
+      </reporting-->
+
+    </profile>
+
+    <!--
+
+    -->
+    <profile>
+      <id>internal-redmine-pre-release</id>
+      <activation>
+        <property>
+          <name>internalRedminePreRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <properties>
+        <!-- always force user to add -DdryRun to perform redmine actions -->
+        <dryRun>true</dryRun>
+        <redmine.dryRun>${dryRun}</redmine.dryRun>
+      </properties>
+
+      <build>
+
+        <defaultGoal>generate-sources</defaultGoal>
+
+        <plugins>
+          <!--
+          - obtain redmine login
+          -->
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-redmine-login</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>validate</phase>
+                <configuration>
+                  <serverId>redmine-${platform}</serverId>
+                  <privateKeyOut>redmine.apiKey</privateKeyOut>
+                </configuration>
+              </execution>
+
+            </executions>
+          </plugin>
+          <!--
+          - upload attachments
+          - generate the changes.xml from redmine
+          -->
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>jredmine-pre-release</id>
+                <goals>
+                  <goal>publish-attachments</goal>
+                  <goal>generate-news-announcement</goal>
+                  <goal>generate-email-announcement</goal>
+                </goals>
+                <phase>generate-sources</phase>
+                <inherited>false</inherited>
+                <configuration>
+
+                  <!-- publish-attachments -->
+                  <filesFromProperties>${redmine.collectedAttachments}</filesFromProperties>
+
+                  <!-- generate announcements -->
+                  <urlDownload>${redmine.url}/projects/files/${projectId}</urlDownload>
+                  <artifactsFile>${redmine.collectedArtifacts}</artifactsFile>
+                  <deploymentUrl>
+                    http://repo1.maven.org/maven2
+                  </deploymentUrl>
+
+                </configuration>
+              </execution>
+            </executions>
+
+          </plugin>
+
+        </plugins>
+      </build>
+
+    </profile>
+
+    <!-- perform a redmine release after a successfull release -->
+    <profile>
+      <id>internal-redmine-release</id>
+      <activation>
+        <property>
+          <name>internalRedmineRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <properties>
+        <!-- always force user to add -DdryRun to perform redmine actions -->
+        <dryRun>true</dryRun>
+        <redmine.dryRun>${dryRun}</redmine.dryRun>
+      </properties>
+
+      <build>
+
+        <defaultGoal>validate</defaultGoal>
+
+        <plugins>
+          <!--
+          - obtain redmine login
+          - send release email
+          -->
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>get-redmine-login</id>
+                <goals>
+                  <goal>share-server-secret</goal>
+                </goals>
+                <phase>validate</phase>
+                <configuration>
+                  <serverId>redmine-${platform}</serverId>
+                  <privateKeyOut>redmine.apiKey</privateKeyOut>
+                </configuration>
+              </execution>
+              <execution>
+                <id>send-release-email</id>
+                <goals>
+                  <goal>send-email</goal>
+                </goals>
+                <phase>validate</phase>
+                <inherited>false</inherited>
+              </execution>
+            </executions>
+            <configuration>
+
+              <!-- for a multi-module just run on root project -->
+              <runOnce>true</runOnce>
+
+              <emailTitle>[ANN] - ${project.name} ${project.version} released</emailTitle>
+              <emailContentFile>target/generated-sources/announcement/release-email-announcement.vm</emailContentFile>
+              <mailSender>
+                <name>${platform} Release Notification</name>
+                <email>noreply@${platform}</email>
+              </mailSender>
+              <toAddresses>
+                <item>${listId}-users@list.${platform}</item>
+                <item>${listId}-devel@list.${platform}</item>
+                <item>announce-${platform}@list.${platform}</item>
+              </toAddresses>
+              <!--<smtpHost>smtp</smtpHost>-->
+              <!-- fix bug #146 -->
+              <encoding>iso-8859-1</encoding>
+            </configuration>
+          </plugin>
+
+          <!--
+           - update version in redmine
+           - publish a release news in redmine
+          -->
+          <plugin>
+            <groupId>org.nuiton.jredmine</groupId>
+            <artifactId>jredmine-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>jredmine-release</id>
+                <goals>
+                  <goal>update-version</goal>
+                  <goal>publish-news</goal>
+                </goals>
+                <phase>validate</phase>
+                <inherited>false</inherited>
+              </execution>
+            </executions>
+            <configuration>
+
+              <!-- for a multi-module just run on root project -->
+              <runOnce>true</runOnce>
+
+              <!-- update-version -->
+              <closeVersion>true</closeVersion>
+
+              <!-- publish-news -->
+              <newsContentFile>target/generated-sources/announcement/release-news-announcement.vm</newsContentFile>
+              <newsSummary>${project.description}</newsSummary>
+              <newsTitle>${project.name} ${project.version} released</newsTitle>
+
+            </configuration>
+          </plugin>
+
+        </plugins>
+
+      </build>
+    </profile>
+
+     <profile>
+      <id>maven-3</id>
+      <activation>
+        <file>
+          <!--  This employs that the basedir expression is only recognized by Maven 3.x (see MNG-2363) -->
+          <exists>${basedir}</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-site-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-descriptor</id>
+                <goals>
+                  <goal>attach-descriptor</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>analyze-dependencies</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <defaultGoal>verify</defaultGoal>
+        <plugins>
+          <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <inherited>true</inherited>
+            <executions>
+              <execution>
+                <id>analyze</id>
+                <goals>
+                  <goal>analyze-only</goal>
+                </goals>
+                <configuration>
+                  <verbose>true</verbose>
+                  <failOnWarning>true</failOnWarning>
+                  <ignoreNonCompile>true</ignoreNonCompile>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>collect-deploy-files</id>
+      <properties>
+        <deploy.collectedFiles>target/collect-deploy-files.txt
+        </deploy.collectedFiles>
+      </properties>
+      <build>
+        <defaultGoal>verify</defaultGoal>
+
+        <plugins>
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>collect-deploy-files</id>
+                <goals>
+                  <goal>collect-files</goal>
+                </goals>
+                <phase>verify</phase>
+                <configuration>
+                  <extraFiles>${deployFiles}</extraFiles>
+                  <descriptionFile>${deploy.collectedFiles}
+                  </descriptionFile>
+                  <includeAttached>false</includeAttached>
+                  <includeSiteAttached>false</includeSiteAttached>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>deploy-static-site-files</id>
+      <properties>
+        <deploy.collectedFiles>target/collect-deploy-files.txt
+        </deploy.collectedFiles>
+      </properties>
+      <build>
+        <defaultGoal>verify</defaultGoal>
+
+        <plugins>
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>collect-deploy-files</id>
+                <goals>
+                  <goal>collect-files</goal>
+                </goals>
+                <phase>verify</phase>
+                <configuration>
+                  <extraFiles>${deployFiles}</extraFiles>
+                  <descriptionFile>${deploy.collectedFiles}
+                  </descriptionFile>
+                  <includeAttached>false</includeAttached>
+                  <includeSiteAttached>false</includeSiteAttached>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
+
+</project>

@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jun 18 11:08:36 UTC 2026
+build-helper-maven-plugin-3.1.0-pentaho.jar>pentaho.resolve.repo=
+build-helper-maven-plugin-3.1.0-pentaho.pom>pentaho.resolve.repo=
