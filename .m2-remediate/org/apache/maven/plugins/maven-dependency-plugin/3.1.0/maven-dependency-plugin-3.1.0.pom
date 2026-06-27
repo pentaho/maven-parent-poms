@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>maven-plugins</artifactId>
+    <groupId>org.apache.maven.plugins</groupId>
+    <version>31</version>
+    <relativePath>../../pom/maven/maven-plugins/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>maven-dependency-plugin</artifactId>
+  <version>3.1.0</version>
+  <packaging>maven-plugin</packaging>
+
+  <name>Apache Maven Dependency Plugin</name>
+  <description>Provides utility goals to work with dependencies like copying, unpacking, analyzing, resolving and many more.</description>
+
+  <prerequisites>
+    <maven>${mavenVersion}</maven>
+  </prerequisites>
+
+  <scm>
+    <connection>scm:git:https://gitbox.apache.org/repos/asf/maven-dependency-plugin.git</connection>
+    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven-dependency-plugin.git</developerConnection>
+    <url>https://github.com/apache/maven-dependency-plugin/tree/${project.scm.tag}</url>
+    <tag>maven-dependency-plugin-3.1.0</tag>
+  </scm>
+  <issueManagement>
+    <system>JIRA</system>
+    <url>https://issues.apache.org/jira/browse/MDEP</url>
+  </issueManagement>
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>https://builds.apache.org/job/maven-box/job/maven-dependency-plugin/</url>
+  </ciManagement>
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <url>scm:svn:https://svn.apache.org/repos/infra/websites/production/maven/components/${maven.site.path}</url>
+    </site>
+  </distributionManagement>
+
+  <contributors>
+    <contributor>
+      <name>Bakito</name>
+    </contributor>
+    <contributor>
+      <name>Baptiste MATHUS</name>
+    </contributor>
+    <contributor>
+      <name>Kalle Korhonen</name>
+    </contributor>
+    <contributor>
+      <name>Ryan Heinen</name>
+    </contributor>
+    <contributor>
+      <name>Andreas Kuhtz</name>
+    </contributor>
+    <contributor>
+      <name>Holger Mense</name>
+    </contributor>
+    <contributor>
+      <name>Markus Karg</name>
+    </contributor>
+  </contributors>
+
+  <properties>
+    <mavenVersion>3.0</mavenVersion>
+    <doxiaVersion>1.4</doxiaVersion>
+    <pluginTestingVersion>2.1</pluginTestingVersion>
+    <javaVersion>7</javaVersion>
+  </properties>
+
+  <dependencies>
+    <!-- Remove once deprecated code has been replaced/removed  -->
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-compat</artifactId>
+      <version>${mavenVersion}</version>
+      <scope>test</scope>
+    </dependency>
+  
+    <!-- maven -->
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-artifact</artifactId>
+      <version>${mavenVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <version>${mavenVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-model</artifactId>
+      <version>${mavenVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-core</artifactId>
+      <version>${mavenVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-repository-metadata</artifactId>
+      <version>${mavenVersion}</version>
+    </dependency>
+
+    <!-- reporting -->
+    <dependency>
+      <groupId>org.apache.maven.reporting</groupId>
+      <artifactId>maven-reporting-api</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.reporting</groupId>
+      <artifactId>maven-reporting-impl</artifactId>
+      <version>2.3</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>maven-artifact-manager</artifactId>
+          <groupId>org.apache.maven</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>maven-project</artifactId>
+          <groupId>org.apache.maven</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>maven-profile</artifactId>
+          <groupId>org.apache.maven</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>maven-plugin-registry</artifactId>
+          <groupId>org.apache.maven</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.5</version>
+    </dependency>
+
+    <!-- doxia -->
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-sink-api</artifactId>
+      <version>${doxiaVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-site-renderer</artifactId>
+      <version>${doxiaVersion}</version>
+    </dependency>
+
+    <!-- plexus -->
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-archiver</artifactId>
+      <version>3.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>file-management</artifactId>
+      <version>1.2.1</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>maven-artifact-manager</artifactId>
+          <groupId>org.apache.maven</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-io</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
+    <!-- shared -->
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-dependency-analyzer</artifactId>
+      <version>1.9</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>maven-project</artifactId>
+          <groupId>org.apache.maven</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-dependency-tree</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-common-artifact-filters</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-artifact-transfer</artifactId>
+      <version>0.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-shared-utils</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>classworlds</groupId>
+      <artifactId>classworlds</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <!-- dependencies to annotations -->
+    <dependency>
+      <groupId>org.apache.maven.plugin-tools</groupId>
+      <artifactId>maven-plugin-annotations</artifactId>
+    </dependency>
+
+    <!-- test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.plugin-testing</groupId>
+      <artifactId>maven-plugin-testing-tools</artifactId>
+      <version>${pluginTestingVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency> 
+      <groupId>org.apache.maven.plugin-testing</groupId>
+      <artifactId>maven-plugin-testing-harness</artifactId>
+      <version>${pluginTestingVersion}</version>
+      <scope>test</scope>
+    </dependency>
+
+   <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-interpolation</artifactId>
+      <version>1.24</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sonatype.aether</groupId>
+      <artifactId>aether-connector-wagon</artifactId>
+      <version>1.7</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-http-lightweight</artifactId>
+      <version>1.0-beta-6</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.rat</groupId>
+          <artifactId>apache-rat-plugin</artifactId>
+          <configuration>
+            <excludes combine.children="append">
+              <!--
+                These files contain results for integration tests which can't contain license header
+                otherwise the IT's will fail.
+              -->
+              <exclude>src/it/projects/tree/expected.txt</exclude>
+              <exclude>src/it/projects/tree-includes/expected.txt</exclude>
+              <exclude>src/it/projects/tree-multimodule/expected.txt</exclude>
+              <exclude>src/it/projects/tree-multimodule/module-a/expected.txt</exclude>
+              <exclude>src/it/projects/tree-multimodule/module-b/expected.txt</exclude>
+              <exclude>src/it/projects/tree-verbose/expected.txt</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-plugin-plugin</artifactId>
+          <version>3.5</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId> 
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-bytecode-version</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <enforceBytecodeVersion>
+                  <maxJdkVersion>${maven.compiler.target}</maxJdkVersion>
+                  <ignoreClasses>
+                    <ignoreClass>module-info</ignoreClass>
+                  </ignoreClasses>
+                </enforceBytecodeVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.21.0</version>
+        <configuration>
+          <!-- Need of more heap space in order to run the unit tests !-->
+          <argLine>-Xmx384m</argLine>
+          <systemPropertyVariables>
+            <maven.home>${maven.home}</maven.home>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>run-its</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-invoker-plugin</artifactId>
+            <configuration>
+              <goals>
+                <goal>clean</goal>
+                <goal>process-sources</goal>
+              </goals>
+              <projectsDirectory>src/it/projects</projectsDirectory>
+              <pomExcludes>
+                <pomExclude>purge-local-repository-bad-pom/pom.xml</pomExclude>
+                <!-- verbose was using Maven2 code, removed with MDEP-494, requires MSHARED-339 to be fixed first -->
+                <pomExclude>tree-verbose/pom.xml</pomExclude>
+              </pomExcludes>
+              <pomIncludes>
+                <pomInclude>*/pom.xml</pomInclude>
+                <pomInclude>purge-local-repository-without-pom</pomInclude>
+              </pomIncludes>
+              <!-- for mrm -->
+              <settingsFile>src/it/mrm/settings.xml</settingsFile>
+              <filterProperties>
+                <repository.proxy.url>${repository.proxy.url}</repository.proxy.url>
+              </filterProperties>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>mrm-maven-plugin</artifactId>
+            <version>1.0.0</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>start</goal>
+                  <goal>stop</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <propertyName>repository.proxy.url</propertyName>
+              <repositories>
+                <mockRepo>
+                  <source>src/it/mrm/repository</source>
+                </mockRepo>
+                <!-- 
+                <mockRepo>
+                  <source>src/test/resources/m2repo</source>
+                </mockRepo>
+                 -->
+                <proxyRepo />
+              </repositories>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>reporting</id>
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>l10n-maven-plugin</artifactId>
+            <version>1.0-alpha-2</version>
+            <configuration>
+              <locales>
+                <locale>de</locale>
+                <locale>pt_BR</locale>
+                <locale>sv</locale>
+              </locales>
+            </configuration>
+          </plugin>
+        </plugins>
+      </reporting>
+    </profile>
+  </profiles>
+</project>

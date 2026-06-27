@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  Mavenpom
+
+  $Id: pom.xml 1382 2012-11-16 15:27:05Z tchemit $
+  $HeadURL: http://svn.nuiton.org/svn/mavenpom/tags/mavenpom-3.4.4/mavenpom4redmine/mavenpom4redmineAndCentral/pom.xml $
+  %%
+  Copyright (C) 2009 - 2010 CodeLutin
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Lesser Public License for more details.
+
+  You should have received a copy of the GNU General Lesser Public
+  License along with this program.  If not, see
+  <http://www.gnu.org/licenses/lgpl-3.0.html>.
+  #L%
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- ************************************************************* -->
+  <!-- *** POM Relationships *************************************** -->
+  <!-- ************************************************************* -->
+
+  <parent>
+    <groupId>org.nuiton</groupId>
+    <artifactId>mavenpom4redmine</artifactId>
+    <version>3.4.4</version>
+  </parent>
+
+  <artifactId>mavenpom4redmineAndCentral</artifactId>
+
+  <!-- add this in your pom
+  <parent>
+      <groupId>org.nuiton</groupId>
+      <artifactId>mavenpom4redmineAndCentral</artifactId>
+      <version>XXX</version>
+  </parent>
+  -->
+
+  <!-- ************************************************************* -->
+  <!-- *** Project Information ************************************* -->
+  <!-- ************************************************************* -->
+
+  <name>Mavenpom4redmineAndCentral</name>
+
+  <description>Ancestor of all projects of Code Lutin based on a redmine
+    developpment environnement and which are synchronized to Maven central
+  </description>
+
+  <inceptionYear>2010</inceptionYear>
+
+  <!-- ************************************************************* -->
+  <!-- *** Build Settings ****************************************** -->
+  <!-- ************************************************************* -->
+
+  <properties>
+
+    <!-- deploy releases on central-releases repository -->
+    <release.repository>${central.release.repository}</release.repository>
+
+    <!-- release repository url (to be used in site.xml) -->
+    <repository.home.url>${central.release.home.url}</repository.home.url>
+
+    <!-- use Maven central repository for announcement -->
+    <redmine.deploymentUrl>http://repo1.maven.org/maven2/</redmine.deploymentUrl>
+
+    <redmine.templateDirectory>
+      http://maven-site.nuiton.org/mavenpom/announcement/redmineAndCentral
+    </redmine.templateDirectory>
+  </properties>
+
+  <packaging>pom</packaging>
+
+  <!-- ************************************************************* -->
+  <!-- *** Maven Environment *************************************** -->
+  <!-- ************************************************************* -->
+
+  <!-- Maven Environment : profiles -->
+  <profiles>
+
+    <profile>
+      <id>central-safe</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      
+      <build>
+        <defaultGoal>validate</defaultGoal>
+        <plugins>
+          <plugin>
+            <groupId>org.nuiton</groupId>
+            <artifactId>helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>check-central-safe</id>
+                <inherited>true</inherited>
+                <goals>
+                  <goal>check-auto-container</goal>
+                </goals>
+                <configuration>
+                  <addMavenCentral>true</addMavenCentral>
+                  <failIfNotSafe>true</failIfNotSafe>
+                  <repositories>
+                    <central-releases>${central.release.home.url}</central-releases>
+                  </repositories>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
+
+</project>

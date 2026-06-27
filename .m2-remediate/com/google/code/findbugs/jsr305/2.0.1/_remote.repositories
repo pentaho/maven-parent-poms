@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jun 18 11:10:41 UTC 2026
+jsr305-2.0.1.jar>pentaho.resolve.repo=
+jsr305-2.0.1.pom>pentaho.resolve.repo=

@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jun 18 11:08:34 UTC 2026
+maven-dependency-plugin-3.1.0.jar>pentaho.resolve.repo=
+maven-dependency-plugin-3.1.0.pom>pentaho.resolve.repo=
