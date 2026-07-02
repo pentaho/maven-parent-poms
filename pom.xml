@@ -475,10 +475,25 @@
     <!-- poi  -->
     <poi.version>5.5.1</poi.version>
 
+    <!-- [PPP-6549] CVE-2016-3093: ognl:ognl < 3.0.12 vulnerable to DoS via crafted OGNL
+         expressions (fixed upstream in OGNL 3.0.12). 3.0.21 is the latest patch on the
+         3.0.x line: it clears the CVE while preserving the pre-3.2.3 OgnlContext API
+         (no-arg constructor removed starting at 3.2.3) that pentaho-kettle's
+         OgnlExpression/PropertySetter rely on. Centralized here (the common ancestor of
+         both the CE and EE parent chains) so every consumer inherits one value instead
+         of pinning its own; do not override locally. -->
+    <ognl.version>3.0.21</ognl.version>
+
   </properties>
 
   <dependencyManagement>
     <dependencies>
+      <!-- [PPP-6549] CVE-2016-3093 fix point; see ognl.version property above -->
+      <dependency>
+        <groupId>ognl</groupId>
+        <artifactId>ognl</artifactId>
+        <version>${ognl.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-continuation</artifactId>
