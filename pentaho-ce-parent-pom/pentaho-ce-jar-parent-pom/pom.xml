@@ -31,7 +31,7 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- [PPP-6549] CVE-2016-3093 fix point; see ognl.version property above -->
+      <!-- [PPP-6549] CVE-2016-3093 fix point; see ognl.version property below -->
       <dependency>
         <groupId>ognl</groupId>
         <artifactId>ognl</artifactId>
