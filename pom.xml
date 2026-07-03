@@ -73,6 +73,11 @@
     <commons-logging.version>1.3.5</commons-logging.version>
     <postgresql.version>42.7.11</postgresql.version>
 
+    <!-- com.github.mwiede:jsch - drop-in JSch fork (keeps the com.jcraft.jsch package).
+         Centralized here so all CE + EE leaves inherit one version; CVE-2023-48795
+         (Terrapin) is fixed in >= 0.2.15. -->
+    <jsch.version>0.2.26</jsch.version>
+
     <osgi.core.version>8.0.0</osgi.core.version>
     <osgi.compendium.version>7.0.0</osgi.compendium.version>
 
