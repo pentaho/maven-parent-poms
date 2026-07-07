@@ -447,7 +447,6 @@
 
     <hv-security-web.version>0.14.0</hv-security-web.version>
     <snowflake-jdbc.version>3.24.0</snowflake-jdbc.version>
-    <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
     <rhino.version>1.7.15.1</rhino.version>
     <snakeyaml.version>2.2</snakeyaml.version>
@@ -468,6 +467,8 @@
     <xmlresolver.version>6.0.17</xmlresolver.version>
     <xmlunit.version>1.6</xmlunit.version>
     <commons-configuration2.version>2.15.1</commons-configuration2.version>
+    <commons-io.version>2.18.0</commons-io.version>
+    
     <apache-sshd.version>2.16.0</apache-sshd.version>
 
     <lz4-java.version>1.10.3</lz4-java.version>
