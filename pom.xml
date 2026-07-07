@@ -939,6 +939,14 @@
         <artifactId>httpcore5</artifactId>
         <version>${httpcore5.version}</version>
       </dependency>
+      <!-- Manage httpcore5-h2 in lockstep with httpcore5 so the HTTP/2 module
+           (the artifact carrying CVE-2026-54428) is pinned to the fixed version
+           instead of riding in transitively at an older, vulnerable version. -->
+      <dependency>
+        <groupId>org.apache.httpcomponents.core5</groupId>
+        <artifactId>httpcore5-h2</artifactId>
+        <version>${httpcore5.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5</artifactId>
