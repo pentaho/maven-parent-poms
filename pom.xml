@@ -449,7 +449,7 @@
     <snowflake-jdbc.version>3.24.0</snowflake-jdbc.version>
     <commons-io.version>2.16.1</commons-io.version>
     <rome.version>1.18.0</rome.version>
-    <rhino.version>1.7.13</rhino.version>
+    <rhino.version>1.7.15.1</rhino.version>
     <snakeyaml.version>2.2</snakeyaml.version>
     <sqlite-jdbc.version>3.41.2.2</sqlite-jdbc.version>
     <janino.version>3.1.10</janino.version>
