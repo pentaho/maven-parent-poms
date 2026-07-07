@@ -241,7 +241,7 @@
     <hadoop-shaded-protobuf_3_25.version>1.3.0</hadoop-shaded-protobuf_3_25.version>
     <dnsjava.version>3.6.0</dnsjava.version>
     <httpcore.version>4.4.11</httpcore.version>
-    <httpcore5.version>5.3.4</httpcore5.version>
+    <httpcore5.version>5.4.3</httpcore5.version>
     <kafka-clients.version>4.1.2</kafka-clients.version>
     <paho.version>1.2.2</paho.version>
     <h2.version>2.2.224</h2.version>
@@ -937,6 +937,14 @@
       <dependency>
         <groupId>org.apache.httpcomponents.core5</groupId>
         <artifactId>httpcore5</artifactId>
+        <version>${httpcore5.version}</version>
+      </dependency>
+      <!-- Manage httpcore5-h2 in lockstep with httpcore5 so the HTTP/2 module
+           (the artifact carrying CVE-2026-54428) is pinned to the fixed version
+           instead of riding in transitively at an older, vulnerable version. -->
+      <dependency>
+        <groupId>org.apache.httpcomponents.core5</groupId>
+        <artifactId>httpcore5-h2</artifactId>
         <version>${httpcore5.version}</version>
       </dependency>
       <dependency>
