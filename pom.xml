@@ -478,10 +478,20 @@
     <!-- poi  -->
     <poi.version>5.5.1</poi.version>
 
+    <!-- cron-utils 9.1.7+ depends on the fixed org.glassfish:jakarta.el 3.0.4 instead of the
+         vulnerable org.glassfish:javax.el 3.0.0 (CVE-2021-28170). Managed centrally so every
+         consumer inherits the patched transitive Expression Language implementation. -->
+    <cronutils.version>9.1.7</cronutils.version>
+
   </properties>
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>com.cronutils</groupId>
+        <artifactId>cron-utils</artifactId>
+        <version>${cronutils.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-continuation</artifactId>
