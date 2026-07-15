@@ -74,6 +74,7 @@
     <postgresql.version>42.7.11</postgresql.version>
 
     <jsch.version>0.2.26</jsch.version>
+    <jsendnsca.version>3.0.0</jsendnsca.version>
 
     <osgi.core.version>8.0.0</osgi.core.version>
     <osgi.compendium.version>7.0.0</osgi.compendium.version>
