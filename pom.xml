@@ -472,6 +472,7 @@
     <xmlunit.version>1.6</xmlunit.version>
     <commons-configuration2.version>2.15.1</commons-configuration2.version>
     <commons-io.version>2.18.0</commons-io.version>
+    <hsqldb.version>2.7.4</hsqldb.version>
     
     <apache-sshd.version>2.16.0</apache-sshd.version>
 
@@ -1530,6 +1531,11 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-configuration2</artifactId>
         <version>${commons-configuration2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hsqldb</groupId>
+        <artifactId>hsqldb</artifactId>
+        <version>${hsqldb.version}</version>
       </dependency>
 
       <dependency>
