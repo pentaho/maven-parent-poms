@@ -421,6 +421,7 @@
     <netty.version>4.1.137.Final</netty.version>
     <commons-configuration2.version>2.10.1</commons-configuration2.version>
     <saxon-he.version>12.7</saxon-he.version>
+    <netty-tcnative.version>2.0.62.Final</netty-tcnative.version>
     <xmlresolver.version>6.0.17</xmlresolver.version>
     <xmlunit.version>1.6</xmlunit.version>
     <apache-sshd.version>2.20.0</apache-sshd.version>
@@ -501,6 +502,11 @@
       </dependency>
 
       <!-- Netty -->
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-buffer</artifactId>
@@ -588,6 +594,11 @@
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
+        <artifactId>netty-tcnative-boringssl-static</artifactId>
+        <version>${netty-tcnative.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
         <artifactId>netty-resolver</artifactId>
         <version>${netty.version}</version>
       </dependency>
@@ -628,8 +639,32 @@
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
+        <artifactId>netty-transport-native-epoll</artifactId>
+        <version>${netty.version}</version>
+        <classifier>linux-aarch_64</classifier>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-transport-native-epoll</artifactId>
+        <version>${netty.version}</version>
+        <classifier>linux-x86_64</classifier>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
         <artifactId>netty-transport-native-kqueue</artifactId>
         <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-transport-native-kqueue</artifactId>
+        <version>${netty.version}</version>
+        <classifier>osx-aarch_64</classifier>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-transport-native-kqueue</artifactId>
+        <version>${netty.version}</version>
+        <classifier>osx-x86_64</classifier>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
