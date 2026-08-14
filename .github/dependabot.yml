@@ -16,6 +16,7 @@ updates:
     open-pull-requests-limit: 1
     allow:
       - dependency-name: io.netty:*
+      - dependency-name: org.pentaho.hadoop:pentaho-shaded-netty
       - dependency-name: org.bouncycastle:*
     ignore:
       - dependency-name: io.netty:*
