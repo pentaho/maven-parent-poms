@@ -1,9 +1,19 @@
 version: 2
+registries:
+  pnt-mvn:
+    type: maven-repository
+    url: https://repo.pentaho.com/artifactory/pnt-mvn
+    username: ${{ secrets.PENTAHO_CICD_ONE_USER }}
+    password: ${{ secrets.PENTAHO_CICD_ONE_KEY }}
+    replaces-base: true
 updates:
   - package-ecosystem: maven
     directory: /
+    registries:
+      - pnt-mvn
     schedule:
       interval: weekly
+    open-pull-requests-limit: 1
     allow:
       - dependency-name: io.netty:*
       - dependency-name: org.bouncycastle:*
