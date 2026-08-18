@@ -6,6 +6,7 @@ updates:
       interval: weekly
     allow:
       - dependency-name: io.netty:*
+      - dependency-name: org.pentaho.hadoop:pentaho-shaded-netty
     ignore:
       - dependency-name: "*"
         update-types:
