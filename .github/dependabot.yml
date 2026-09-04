@@ -137,6 +137,10 @@ updates:
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
+      - dependency-name: org.pentaho.hadoop:pentaho-shaded-netty
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
       - dependency-name: org.slf4j:slf4j-api
         update-types:
           - version-update:semver-major
