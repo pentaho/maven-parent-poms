@@ -11,17 +11,161 @@ updates:
     registries:
       - pnt-mvn
     schedule:
-      interval: weekly
+      interval: daily
     open-pull-requests-limit: 1
     allow:
+      - dependency-name: com.fasterxml.jackson.*:*
+      - dependency-name: com.google.guava:guava
+      - dependency-name: io.grpc:grpc-protobuf
       - dependency-name: io.netty:*
-      - dependency-name: org.pentaho.hadoop:pentaho-shaded-netty
+      - dependency-name: jakarta.activation:jakarta.activation-api
+      - dependency-name: jakarta.mail:jakarta.mail-api
+      - dependency-name: jakarta.xml.bind:jakarta.xml.bind-api
+      - dependency-name: jakarta.xml.ws:jakarta.xml.ws-api
+      - dependency-name: org.apache.aries.blueprint:org.apache.aries.blueprint.core
+      - dependency-name: org.apache.httpcomponents.core5:httpcore5
+      - dependency-name: org.apache.httpcomponents:httpcore*
+      - dependency-name: org.apache.jackrabbit:*
+      - dependency-name: org.apache.karaf.diagnostic:*
+      - dependency-name: org.apache.karaf.jaas:*
+      - dependency-name: org.apache.karaf.specs:*
+      - dependency-name: org.apache.karaf:*
+      - dependency-name: org.apache.tomcat:tomcat-*
       - dependency-name: org.bouncycastle:*
+      - dependency-name: org.dom4j:dom4j
+      - dependency-name: org.eclipse.jetty.ee10:jetty-ee10-*
+      - dependency-name: org.eclipse.jetty:jetty-*
+      - dependency-name: org.eclipse.paho:org.eclipse.paho.client.mqttv3
+      - dependency-name: org.mozilla:rhino
+      - dependency-name: org.pentaho.hadoop:pentaho-shaded-netty
+      - dependency-name: org.slf4j:slf4j-api
+      - dependency-name: org.springframework.boot:spring-boot*
+      - dependency-name: org.springframework.ldap:spring-ldap-core
+      - dependency-name: org.springframework.retry:spring-retry
+      - dependency-name: org.springframework.security:spring-security-*
+      - dependency-name: org.springframework:spring-*
+      - dependency-name: org.xmlresolver:xmlresolver
     ignore:
+      - dependency-name: com.fasterxml.jackson.*:*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: com.google.guava:guava
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: io.grpc:grpc-protobuf
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
       - dependency-name: io.netty:*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: jakarta.activation:jakarta.activation-api
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: jakarta.mail:jakarta.mail-api
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: jakarta.xml.bind:jakarta.xml.bind-api
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: jakarta.xml.ws:jakarta.xml.ws-api
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.apache.aries.blueprint:org.apache.aries.blueprint.core
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.apache.httpcomponents.core5:httpcore5
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.apache.httpcomponents:httpcore*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.apache.jackrabbit:*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.apache.karaf.diagnostic:*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.apache.karaf.jaas:*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.apache.karaf.specs:*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.apache.karaf:*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.apache.tomcat:tomcat-*
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
       - dependency-name: org.bouncycastle:*
         update-types:
           - version-update:semver-major
+      - dependency-name: org.dom4j:dom4j
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.eclipse.jetty.ee10:jetty-ee10-*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.eclipse.jetty:jetty-*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.eclipse.paho:org.eclipse.paho.client.mqttv3
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.mozilla:rhino
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.pentaho.hadoop:pentaho-shaded-netty
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.slf4j:slf4j-api
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.springframework.boot:spring-boot*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.springframework.ldap:spring-ldap-core
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.springframework.retry:spring-retry
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.springframework.security:spring-security-*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.springframework:spring-*
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+      - dependency-name: org.xmlresolver:xmlresolver
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
