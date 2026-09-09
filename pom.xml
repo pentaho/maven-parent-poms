@@ -80,7 +80,7 @@
     <osgi.core.version>8.0.0</osgi.core.version>
     <osgi.compendium.version>7.0.0</osgi.compendium.version>
 
-    <karaf.version>4.4.11</karaf.version>
+    <karaf.version>4.4.6</karaf.version>
     <pentaho.custom.karaf.version>4.4.6-2026.07.06</pentaho.custom.karaf.version>
 
     <felix.http.api.version>3.0.0</felix.http.api.version>
