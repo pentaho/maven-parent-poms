@@ -372,10 +372,10 @@
     <javascript-doc_copy-resources-phase>pre-site</javascript-doc_copy-resources-phase>
 
     <!-- Node and npm root repositoryies -->
-    <nodeDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/nodejs-dist/</nodeDownloadRoot>
-    <npmDownloadRoot>https://repo.orl.eng.hitachivantara.com/artifactory/npm-release/npm/-/</npmDownloadRoot>
+    <nodeDownloadRoot>https://repo.pentaho.com/artifactory/nodejs-dist/</nodeDownloadRoot>
+    <npmDownloadRoot>https://repo.pentaho.com/artifactory/npm-release/npm/-/</npmDownloadRoot>
 
-    <pentaho.resolve.repo>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn</pentaho.resolve.repo>
+    <pentaho.resolve.repo>https://repo.pentaho.com/artifactory/pnt-mvn</pentaho.resolve.repo>
     <!-- No default repository URL deployments, these must be defined at build-time -->
     <pentaho.public.release.repo />
     <pentaho.public.snapshot.repo />
