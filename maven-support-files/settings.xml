@@ -24,7 +24,7 @@
   <mirrors>
     <mirror>
       <id>pentaho-public</id>
-      <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
+      <url>https://repo.pentaho.com/artifactory/pnt-mvn/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
@@ -55,7 +55,7 @@
         <repository>
           <id>pentaho-public</id>
           <name>Pentaho Public</name>
-          <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
+          <url>https://repo.pentaho.com/artifactory/pnt-mvn/</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>always</updatePolicy>
@@ -70,7 +70,7 @@
         <pluginRepository>
           <id>pentaho-public</id>
           <name>Pentaho Public</name>
-          <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
+          <url>https://repo.pentaho.com/artifactory/pnt-mvn/</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>always</updatePolicy>
