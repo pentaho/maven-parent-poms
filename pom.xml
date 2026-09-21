@@ -339,7 +339,6 @@
     <!-- PHASE BINDINGS -->
     <set-highest-basedir-phase>initialize</set-highest-basedir-phase>
     <node-npm_install-phase>initialize</node-npm_install-phase>
-    <eula-wrap_assign-deps-to-properties-phase>initialize</eula-wrap_assign-deps-to-properties-phase>
     <javascript_unpack-rjs-phase>initialize</javascript_unpack-rjs-phase>
     <javascript_unpack-dependencies-phase>initialize</javascript_unpack-dependencies-phase>
     <javascript_transpile_custom_properties-phase>validate</javascript_transpile_custom_properties-phase>
@@ -364,9 +363,6 @@
     <test-integration_add-source-phase>pre-integration-test</test-integration_add-source-phase>
     <test-integration_compile-phase>pre-integration-test</test-integration_compile-phase>
     <test-integration_execute-phase>integration-test</test-integration_execute-phase>
-    <eula-wrap_create-izpack-installer-jar-phase>verify</eula-wrap_create-izpack-installer-jar-phase>
-    <eula-wrap_create-dist-phase>verify</eula-wrap_create-dist-phase>
-    <eula-wrap_attach-dist-phase>verify</eula-wrap_attach-dist-phase>
     <attach-sources-phase>verify</attach-sources-phase>
     <test-integration_report-phase>verify</test-integration_report-phase>
     <javascript-doc_copy-resources-phase>pre-site</javascript-doc_copy-resources-phase>
