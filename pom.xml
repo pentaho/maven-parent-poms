@@ -378,7 +378,7 @@
     <pentaho.private.release.repo />
     <pentaho.private.snapshot.repo />
 
-    <pentaho.docker.pull.host>repo.eng.pentaho.com/pnt-docker</pentaho.docker.pull.host>
+    <pentaho.docker.pull.host>repo.eng.pentaho.com/pnt-docker/</pentaho.docker.pull.host>
     <!-- No default docker push repository, it must be defined at build-time -->
     <pentaho.docker.push.host>${pentaho.docker.public.push.host}</pentaho.docker.push.host>
 
@@ -472,7 +472,7 @@
     <commons-configuration2.version>2.15.1</commons-configuration2.version>
     <commons-io.version>2.18.0</commons-io.version>
     <hsqldb.version>2.7.4</hsqldb.version>
-    
+
     <apache-sshd.version>2.19.0</apache-sshd.version>
 
     <lz4-java.version>1.10.3</lz4-java.version>
