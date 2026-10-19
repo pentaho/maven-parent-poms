@@ -460,7 +460,7 @@
     <openrtf.version>1.2.1</openrtf.version>
     <org.apache.thrift.version>0.20.0</org.apache.thrift.version>
     <jettison.version>1.5.4</jettison.version>
-    <amqp.version>5.22.0</amqp.version>
+    <amqp.version>5.34.0</amqp.version>
     <mina-core.version>2.2.8</mina-core.version>
     <saxon-he.version>12.7</saxon-he.version>
     <netty.version>4.1.138.Final</netty.version>
