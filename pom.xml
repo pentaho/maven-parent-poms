@@ -4,7 +4,7 @@
 
   <groupId>org.pentaho</groupId>
   <artifactId>pentaho-parent-pom</artifactId>
-  <version>11.1.0.0-SNAPSHOT</version>
+  <version>11.1.0.0-449</version>
 
   <packaging>pom</packaging>
 
@@ -253,9 +253,9 @@
     <org.apache.avro.version>1.12.1</org.apache.avro.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bouncycastle.version>1.86</bouncycastle.version>
-    <bcprov-jdk14.version>${bouncycastle.version}</bcprov-jdk14.version>
+    <bcprov-jdk14.version>1.86</bcprov-jdk14.version>
     <bcprov-jdk15on.version>1.70</bcprov-jdk15on.version>
-    <bcprov.version>${bouncycastle.version}</bcprov.version>
+    <bcprov.version>1.86</bcprov.version>
     <simple-jndi.version>1.0.14</simple-jndi.version>
     <json-smart.version>2.5.2</json-smart.version>
     <json-simple.version>1.1.1</json-simple.version>
@@ -281,8 +281,8 @@
 
     <!-- AspectJ - Spring AOP weaving support -->
     <aspectj.version>1.9.25.1</aspectj.version>
-    <aspectjrt.version>${aspectj.version}</aspectjrt.version>
-    <aspectjweaver.version>${aspectj.version}</aspectjweaver.version>
+    <aspectjrt.version>1.9.25.1</aspectjrt.version>
+    <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
 
     <enunciate-jersey-rt.version>1.27</enunciate-jersey-rt.version>
     <beanshell.version>2.1.1</beanshell.version>
@@ -292,7 +292,7 @@
     <maven.compiler.release>${release.jdk.version}</maven.compiler.release>
     <compilerArgument/>
     <checkstyle.version>10.13.0</checkstyle.version>
-    <coding-standards.version>11.1.0.0-SNAPSHOT</coding-standards.version>
+    <coding-standards.version>11.1.0.0-449</coding-standards.version>
     <spotbugs.version>3.1.3</spotbugs.version>
     <appscan-maven-plugin.version>1.0.7</appscan-maven-plugin.version>
     <dependency-check-maven.version>5.2.2</dependency-check-maven.version>
@@ -428,7 +428,7 @@
     <checkstyle.configLocation>checkstyle/pentaho_checks.xml</checkstyle.configLocation>
     <checkstyle.consoleOutput>true</checkstyle.consoleOutput>
     <checkstyle.linkXRef>true</checkstyle.linkXRef>
-    <pentaho-eula-wrap-config.version>11.1.0.0-SNAPSHOT</pentaho-eula-wrap-config.version>
+    <pentaho-eula-wrap-config.version>11.1.0.0-449</pentaho-eula-wrap-config.version>
 
     <!-- Documentation properties -->
     <!-- parsedVersion.* properties are dynamically created by the build-helper-maven-plugin:set-doc-version-property -->
