@@ -251,6 +251,7 @@
     <paho.version>1.2.2</paho.version>
     <h2.version>2.2.224</h2.version>
     <org.apache.avro.version>1.12.1</org.apache.avro.version>
+    <parquet.version>1.18.2</parquet.version>
     <!-- jdk14 and jdk15on versions not to be used; supports older third-party pom files in build -->
     <bouncycastle.version>1.86</bouncycastle.version>
     <bcprov-jdk14.version>${bouncycastle.version}</bcprov-jdk14.version>
@@ -1204,6 +1205,48 @@
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-clients</artifactId>
         <version>${kafka-clients.version}</version>
+      </dependency>
+
+      <!-- Apache Parquet -->
+      <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-avro</artifactId>
+        <version>${parquet.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-column</artifactId>
+        <version>${parquet.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-common</artifactId>
+        <version>${parquet.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-encoding</artifactId>
+        <version>${parquet.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-format-structures</artifactId>
+        <version>${parquet.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-hadoop</artifactId>
+        <version>${parquet.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-jackson</artifactId>
+        <version>${parquet.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-variant</artifactId>
+        <version>${parquet.version}</version>
       </dependency>
 
       <dependency>
